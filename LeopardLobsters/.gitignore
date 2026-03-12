@@ -1,0 +1,70 @@
+# ========== Unity Generated Folders ==========
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+
+# ========== Memory Captures ==========
+MemoryCaptures/
+
+# ========== Asset Import Pipeline ==========
+Assets/AssetStoreTools*
+
+# ========== Visual Studio / Rider / VSCode ==========
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# ========== Mono / Build Files ==========
+*.dll
+*.exe
+*.mdb
+*.pdb
+
+# ========== OS Generated Files ==========
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ========== Unity Cache ==========
+/Library/
+/Temp/
+/Obj/
+
+# ========== Crash Reports ==========
+sysinfo.txt
+
+# ========== Gradle / Android ==========
+.gradle/
+*.apk
+*.aab
+
+# ========== iOS ==========
+*.xcworkspace
+*.xcuserstate
+
+# ========== Addressables Build ==========
+/ServerData/
+
+# ========== Unity Cloud Build ==========
+/Builds/
+
+# ========== JetBrains Rider ==========
+.idea/
+
+# ========== Unity Meta Files ==========
+# IMPORTANT: Keep meta files for version control
+!*.meta

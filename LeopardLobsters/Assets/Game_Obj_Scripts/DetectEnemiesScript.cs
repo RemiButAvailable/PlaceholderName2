@@ -15,19 +15,18 @@ public class DetectEnemiesScript : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(PolygonCollider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "knight")
+        if (other.gameObject.tag == "knight")
         {
             archerTowerScript.queue.Add(other.gameObject);
         }
     }
-    void OnTriggerExit(PolygonCollider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "knight")
         {
             archerTowerScript.queue.Remove(other.gameObject);
         }
     }
-        
 }

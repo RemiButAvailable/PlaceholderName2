@@ -1,9 +1,11 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class ArcherTowerScript : MonoBehaviour
 {
     public GameObject AttackZone;
-    List<GameObject> queue;
+    public List<GameObject> queue;
     public float cooldown;
     public GameObject Arrow;
     public bool enemyInZone = false;
@@ -15,27 +17,41 @@ public class ArcherTowerScript : MonoBehaviour
     {
         queue = new List<GameObject>();
         StartCoroutine(ShootArrows());
+        StartCoroutine(Printer());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(queue.Count > 0)
+        if (queue.Count > 0)
         {
             enemyInZone = true;
+        }
+        else
+        {
+            enemyInZone = false;
         }
     }
     public IEnumerator ShootArrows()
     {
-        while(true)
+        while (true)
         {
-            if(enemyInZone)
+            Debug.Log(enemyInZone);
+            if (enemyInZone)
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
-                arrowScript = spawnedArrow.GetComponent<arrowScript>();
+                arrowScript = spawnedArrow.GetComponent<ArrowScript>();
                 arrowScript.direction = queue[0].transform.position - transform.position; //placeholder direction
             }
             yield return new WaitForSeconds(cooldown);
+        }
+    }
+    public IEnumerator Printer()
+    {
+        while(true)
+        {
+            //Debug.Log("val is " + queue.Count);
+            yield return new WaitForSeconds(1);
         }
     }
 }

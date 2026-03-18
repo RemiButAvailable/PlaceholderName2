@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class HappinessManagerScript : MonoBehaviour
+public class Happiness_ManagerScript : MonoBehaviour
 {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Collider2D[] neighborhoods;
     public float[] distances;
     float impactOnHappiness;
-    float happiness;
+    public float happiness;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,10 +22,10 @@ public class HappinessManagerScript : MonoBehaviour
     }
     public void CalculateHappiness(GameObject building)
     {
-        for(int i = 0; i < neighborhoods.Length; i++)
+        for (int i = 0; i < neighborhoods.Length; i++)
         {
             distances[i] = Vector3.Distance(neighborhoods[i].ClosestPoint(building.transform.position), building.transform.position);
-            if(building.tag == "tower")
+            if (building.tag == "tower")
             {
                 impactOnHappiness -= distances[i];
             }

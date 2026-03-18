@@ -3,35 +3,46 @@ using System.Collections.Generic;
 
 public class KnightScript : MonoBehaviour
 {
-    //public List<Vector3> waypoints;
+    LineRenderer lineRenderer;
     public Vector3[] waypoints;
     Vector3 direction;
+
+    //num vals;
     public int index;
     public float speed;
-    LineRenderer lineRenderer;
-    WaveCode waveCode;
-    GameObject waveManager;
     public int health;
-    GameObject moneyManager;
+
+    //Manager Scripts
+    //WaveCode waveCode;
     MoneyManagerScript moneyManagerScript;
+    Happiness_ManagerScript happinessManagerScript;
+
+    //Managers Objs
+    GameObject waveManager;
+    GameObject moneyManager;
     GameObject happinessManager;
-    HappinessManagerScript happinessManagerScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         waypoints = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(waypoints);
+
+        //refrences to manager scripts/objects
         waveManager = GameObject.FindWithTag("WaveManager");
+        //waveCode = waveManager.GetComponent<waveCode>();
+
         moneyManager = GameObject.FindWithTag("MoneyManager");
+        moneyManagerScript = moneyManager.GetComponent<MoneyManagerScript>();
 
         happinessManager = GameObject.FindWithTag("HappinessManager");
-        waveCode = waveManager.GetComponent<waveCode>();
+        happinessManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //movement
         if(index < waypoints.Length)
         {
             direction = waypoints[index] - transform.position;
@@ -42,10 +53,11 @@ public class KnightScript : MonoBehaviour
                 index++;
             }
         }
+        //death
         if(health <= 0)
         {
-            waveCode.enemyNum -= 1;
-            moneyManagerScript.moneyNum += 
+            //waveCode.enemyNum -= 1;
+            //moneyManagerScript.moneyNum += happinessManagerScript.happiness;
             Destroy(gameObject);
         }
     }

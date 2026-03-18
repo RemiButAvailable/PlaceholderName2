@@ -106,6 +106,7 @@ MonoBehaviour:
   waypoints: []
   index: 0
   speed: 2
+  health: 3
 --- !u!60 &1087836518847089871
 PolygonCollider2D:
   m_ObjectHideFlags: 0

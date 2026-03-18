@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5375262394447873899}
   - component: {fileID: 5303198259594431156}
-  - component: {fileID: 4082984821515324145}
+  - component: {fileID: 5723361182436043768}
   m_Layer: 0
   m_Name: ArrowPrefab
   m_TagString: Untagged
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4082984821515324145
+--- !u!114 &5723361182436043768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,4 +101,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  speed: 10
+  speed: 0

@@ -12,6 +12,9 @@ public class ArcherTowerScript : MonoBehaviour
     Vector3 direction;
     ArrowScript arrowScript;
     GameObject spawnedArrow;
+    public int predictedSpot;
+    KnightScript knightScript;
+    GameObject targetedEnemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,10 +29,16 @@ public class ArcherTowerScript : MonoBehaviour
         if (queue.Count > 0)
         {
             enemyInZone = true;
+            targetedEnemy = queue[0];
         }
         else
         {
             enemyInZone = false;
+        }
+
+        if(targetedEnemy.GetComponent<KnightScript>().health <= 0)
+        {
+            queue.Remove(targetedEnemy);
         }
     }
     public IEnumerator ShootArrows()
@@ -41,7 +50,10 @@ public class ArcherTowerScript : MonoBehaviour
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
                 arrowScript = spawnedArrow.GetComponent<ArrowScript>();
-                arrowScript.direction = queue[0].transform.position - transform.position; //placeholder direction
+                knightScript = queue[0].GetComponent<KnightScript>();
+                //predicted spot will be based on enemy speed if we have multiple types of enemies
+                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot];
+                arrowScript.direction = target - transform.position; //placeholder direction
             }
             yield return new WaitForSeconds(cooldown);
         }

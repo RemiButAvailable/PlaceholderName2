@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PeopleLoseScreen.unity
     guid: a4f6f916739e00e478efd474766dac9c
   - enabled: 0
-    path: Assets/Scenes/GameMap.unity
+    path: Assets/Scenes/Albert's very secret spot.unity
     guid: 13bccb1cf4864d2498e81ba878751e50
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

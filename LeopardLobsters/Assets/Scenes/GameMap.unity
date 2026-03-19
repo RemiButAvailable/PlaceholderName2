@@ -426,7 +426,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1397400509
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -3923144209626001130, guid: a8a1f0f19568f074f90bc25a4ad45770, type: 3}
   m_Color: {r: 0.85660374, g: 0.85660374, b: 0.85660374, a: 1}
@@ -848,7 +848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -264.44745, y: 0}
+  m_AnchoredPosition: {x: -264.44745, y: -143}
   m_SizeDelta: {x: 528.89, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059680989
@@ -1635,6 +1635,11 @@ MonoBehaviour:
   peopleTotal: 0
   money: 0
   happiness: 1
+  inWave: 0
+  timerMax: 10
+  minPeopleNeeded: 2
+  maxPeopleDecrease: 10
+  percentPerPerson: 1.25
 --- !u!1001 &2170726721776768051
 PrefabInstance:
   m_ObjectHideFlags: 0

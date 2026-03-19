@@ -33,7 +33,7 @@ public class Placement : MonoBehaviour {
     private void OnMouseUp()
     {
         DragnDrop = false;
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     // Make sure tower is unable to be picked back up

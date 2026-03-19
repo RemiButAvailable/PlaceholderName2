@@ -8,6 +8,7 @@ public class MoneyManagerScript : MonoBehaviour
     Vector3 mousePos;
     public List<GameObject> products;
     bool DragnDrop;
+    GameObject selectedProduct;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,9 +30,14 @@ public class MoneyManagerScript : MonoBehaviour
                 }
             }
         }
-        if(DragnDrop)
+        if(DragnDrop && Input.GetMouseButton(0))
         {
-
+            selectedProduct.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if(Input.GetMouseButtonUp(0))
+            {
+                DragnDrop = false;
+                spawnedProduct = Instantiate(selectedProduct.transform.position);
+            }
         }
     }
     public void Buy(GameObject product)
@@ -40,6 +46,7 @@ public class MoneyManagerScript : MonoBehaviour
         {
             moneyNum -= 1;
             DragnDrop = true;
+            selectedProduct = product;
         }
         else
         {

@@ -33,7 +33,20 @@ public class Castle : MonoBehaviour
         }
     }
 
-    //more people stuff
+    public bool personGoesOut() {
+        if (peopleAtCastle > 0) { 
+            peopleAtCastle--;
+            return true;
+        }
+        return false;
+        
+    }
+    public void personGoesIn() {
+        peopleAtCastle++;
+    }
+
+
+    //people making stuff
     public bool inWave = false;
     float timer = 0;
     public int timerMax = 10;

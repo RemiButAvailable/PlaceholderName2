@@ -102,9 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd74a9e6fa5a04549bfac785f18dcdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
   waypoints: []
   index: 0
-  speed: 2
+  speed: 0.5
   health: 3
 --- !u!60 &1087836518847089871
 PolygonCollider2D:

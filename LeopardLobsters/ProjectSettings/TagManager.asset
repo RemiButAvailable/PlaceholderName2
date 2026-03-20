@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - knight
   - archerTower
+  - WaveManager
+  - MoneyManager
+  - HappinessManager
+  - castle
   layers:
   - Default
   - TransparentFX

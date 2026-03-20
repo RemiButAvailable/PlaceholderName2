@@ -19,7 +19,7 @@ public class WaveCode : MonoBehaviour
     public int TotalWealth = 1;
     public int WaveNum = 0;
 
-    private bool WaveStart = true;
+    public bool WaveStart = true;
 
     GameObject spawnedEnemy;
     public GameObject enemy;
@@ -44,7 +44,7 @@ public class WaveCode : MonoBehaviour
     {
         // Keep Game alive
         DontDestroyOnLoad(this);
-
+        StartNext();
         StartCoroutine(Spawner(cooldown));
       }
 

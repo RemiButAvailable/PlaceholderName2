@@ -4,8 +4,7 @@ using System.Collections;
 
 public class ArcherTowerScript : MonoBehaviour
 {
-    public GameObject AttackZone;
-    GameObject spawnedAttackZone;
+    public EnemyDetection attackZone;
     public List<GameObject> queue;
     public float cooldown;
     public GameObject Arrow;
@@ -19,8 +18,7 @@ public class ArcherTowerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spawnedAttackZone = Instantiate(AttackZone, transform.position, Quaternion.identity);
-        spawnedAttackZone.GetComponent<EnemyDetection>().Tower = this.gameObject;
+        attackZone.Tower = this.gameObject;
         queue = new List<GameObject>();
         StartCoroutine(ShootArrows());
         StartCoroutine(Printer());

@@ -5,6 +5,7 @@ using System.Collections;
 public class ArcherTowerScript : MonoBehaviour
 {
     public GameObject AttackZone;
+    GameObject spawnedAttackZone;
     public List<GameObject> queue;
     public float cooldown;
     public GameObject Arrow;
@@ -18,6 +19,8 @@ public class ArcherTowerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        spawnedAttackZone = Instantiate(AttackZone, transform.position, Quaternion.identity);
+        spawnedAttackZone.GetComponent<EnemyDetection>().Tower = this.gameObject;
         queue = new List<GameObject>();
         StartCoroutine(ShootArrows());
         StartCoroutine(Printer());
@@ -30,15 +33,15 @@ public class ArcherTowerScript : MonoBehaviour
         {
             enemyInZone = true;
             targetedEnemy = queue[0];
+
+            if (targetedEnemy.GetComponent<KnightScript>().health <= 0)
+            {
+                queue.Remove(targetedEnemy);
+            }
         }
         else
         {
             enemyInZone = false;
-        }
-
-        if(targetedEnemy.GetComponent<KnightScript>().health <= 0)
-        {
-            queue.Remove(targetedEnemy);
         }
     }
     public IEnumerator ShootArrows()
@@ -51,9 +54,10 @@ public class ArcherTowerScript : MonoBehaviour
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
                 arrowScript = spawnedArrow.GetComponent<ArrowScript>();
                 knightScript = queue[0].GetComponent<KnightScript>();
+
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
                 Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot];
-                arrowScript.direction = target - transform.position; //placeholder direction
+                arrowScript.direction = target - transform.position;
             }
             yield return new WaitForSeconds(cooldown);
         }

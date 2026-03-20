@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class FloatColor : IComparable<FloatColor>
+public class FloatColor : IComparable<FloatColor> //can be further expanded with animations or sounds
 {
     [SerializeField]
     public float percent;

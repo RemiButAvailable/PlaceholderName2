@@ -28,7 +28,7 @@ public class Happiness_ManagerScript : MonoBehaviour
             happiness += happinessROC;
         }*/ 
     }
-    public void CalculateHappiness(GameObject building)
+    /*public void CalculateHappiness(GameObject building)
     {
         for (int i = 0; i < neighborhoods.Length; i++)
         {
@@ -36,7 +36,7 @@ public class Happiness_ManagerScript : MonoBehaviour
             {
                 distances[i] = Vector3.Distance(neighborhoods[i].ClosestPoint(building.transform.position), building.transform.position);
                 //int distImpact = distances[i] 
-                /*if (building.tag == "archerTower")
+                if (building.tag == "archerTower")
                 {
                     neighborhoodScript = neighborhoods[i].gameObject.GetComponent<NeighborhoodScript>();
                     impactOnHappiness += distances[i] + neighborhoodScript.towerSensitivity;
@@ -50,10 +50,10 @@ public class Happiness_ManagerScript : MonoBehaviour
                 {
                     neighborhoodScript = neighborhoods[i].gameObject.GetComponent<NeighborhoodScript>();
                     impactOnHappiness += distances[i] + neighborhoodScript.fountainSensitivity;
-                }*/
+                }
                 Debug.Log("impact on happiness = " + impactOnHappiness);
             }
         }
         happiness += impactOnHappiness;
-    }
+    }*/
 }

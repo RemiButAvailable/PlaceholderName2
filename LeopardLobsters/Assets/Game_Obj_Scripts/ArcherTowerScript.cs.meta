@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 56ecc77cf8a35b64cba9e9a4de0cd9f7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AttackZone: {fileID: 4835302575955984982, guid: 684075ab225d4e745bac532ce3cd540a, type: 3}
+  - Arrow: {fileID: 2791822772802332911, guid: 8259970a4353e9f4fb61522114c12cbf, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

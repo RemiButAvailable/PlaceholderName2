@@ -18,6 +18,7 @@ public class Castle : MonoBehaviour
     //adds money based on population
     public void endOfWave() {
         moneyManager.moneyNum += peopleAtCastle * moneyPerPerson;
+
         //DO: add money sfx vfx
     }
 
@@ -25,19 +26,34 @@ public class Castle : MonoBehaviour
     public void enemyArrived() {
         peopleAtCastle--;
         if (peopleAtCastle < 0) {
-            //DO: lose game stuff 
+
+            //DO: lose game stuff vfx sfx transitions whatever
+
             SceneManager.LoadScene("PeopleLoseScreen");
         }
     }
 
-    //more people stuff
+    public bool personGoesOut() {
+        if (peopleAtCastle > 0) { 
+            peopleAtCastle--;
+            return true;
+        }
+        return false;
+        
+    }
+    public void personGoesIn() {
+        peopleAtCastle++;
+    }
+
+
+    //people making stuff
     public bool inWave = false;
     float timer = 0;
     public int timerMax = 10;
     
     public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
     public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
-    public float percentPerPerson = 1.25f; //the percent multiplied that reduce time for timer
+    public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
 
     public Image progressBar; //instantiate in inspector
 
@@ -51,10 +67,11 @@ public class Castle : MonoBehaviour
             timer += Time.deltaTime * Mathf.Pow(percentPerPerson, 
                 Mathf.Min(peopleAtCastle,maxPeopleDecrease)-minPeopleNeeded);
 
-            //increases people when timer is done BROKEN DO SOMETHING
+            //increases people when timer is done
             if (timer >= timerMax)
             {
                 timer = 0;
+
                 //DO: people added SFX VFX
 
                 peopleAtCastle++;

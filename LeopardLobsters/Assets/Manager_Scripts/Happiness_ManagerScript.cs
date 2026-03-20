@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Happiness_ManagerScript : MonoBehaviour
@@ -11,6 +12,7 @@ public class Happiness_ManagerScript : MonoBehaviour
     //NeighborhoodScript neighborhoodScript;
     public WaveCode waveCode;
     public GameObject waveManager;
+    public HappinessBar barHappyUI;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,6 +20,7 @@ public class Happiness_ManagerScript : MonoBehaviour
     {
         waveCode = waveManager.GetComponent<WaveCode>();
         distances = new float[neighborhoods.Length];
+        barHappyUI.ChangeBar(happiness);
     }
 
     // Update is called once per frame
@@ -55,5 +58,7 @@ public class Happiness_ManagerScript : MonoBehaviour
             }
         }
         happiness += impactOnHappiness;
+        // dont forget to call barHappyUI.ChangeBar(percent) to new happiness
     }*/
+
 }

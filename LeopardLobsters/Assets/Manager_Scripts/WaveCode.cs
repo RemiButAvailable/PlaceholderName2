@@ -2,10 +2,7 @@
  * Date: 3/16/26
  * 
  * Description: The code for the wave/rounds of the game,
- * will also keep track of A LOT of stuff like enemy number,
- * amount of happiness, and total wealth.
- 
- Nevermind, no need for that, I guess.*/
+ * will also keep track of stuff like enemy number, and total wealth.*/
 
 using UnityEngine;
 using System.Collections;
@@ -16,6 +13,7 @@ public class WaveCode : MonoBehaviour
 
     // Random unknown objects go WHEEEEE
     public int EnemyNum = 0;
+    private int PhantomEnemyNum = 0;
     public double EnemyMax = 1;
 
     public int TotalWealth = 1;
@@ -25,7 +23,7 @@ public class WaveCode : MonoBehaviour
 
     public GameObject enemy;
 
-    private GameObject SpawnedEnemy;
+    //private GameObject SpawnedEnemy;
 
     public int cooldown;
 
@@ -57,10 +55,13 @@ public class WaveCode : MonoBehaviour
     {
         while(true)
         {
-            if (WaveStart && EnemyNum < EnemyMax)
+            // With the game starting and the number of enemies being less than max
+            if (WaveStart && PhantomEnemyNum < EnemyMax)
             {
+                // Spawn the enemies
                 EnemyNum++;
-                SpawnedEnemy = Instantiate(enemy);
+                PhantomEnemyNum++;
+                Instantiate(enemy);
 
             }
                 yield return new WaitForSeconds(cooldown);
@@ -69,6 +70,7 @@ public class WaveCode : MonoBehaviour
 
     }
 
+    //Start Next Wave
     public void StartNext()
     {
         WaveNum++;

@@ -31,6 +31,7 @@ public class Placement : MonoBehaviour {
 
     private void OnMouseUp()
     {
+        //if()
         DragnDrop = false;
         Destroy(gameObject);
     }

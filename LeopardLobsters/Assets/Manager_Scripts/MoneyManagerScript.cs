@@ -36,7 +36,7 @@ public class MoneyManagerScript : MonoBehaviour
             if(Input.GetMouseButtonUp(0))
             {
                 DragnDrop = false;
-                spawnedProduct = Instantiate(selectedProduct.transform.position);
+                //spawnedProduct = Instantiate(selectedProduct.transform.position);
             }
         }
     }

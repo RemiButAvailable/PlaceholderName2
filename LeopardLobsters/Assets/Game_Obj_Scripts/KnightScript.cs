@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class KnightScript : MonoBehaviour
 {
-    LineRenderer lineRenderer;
+    public LineRenderer lineRenderer;
     public Vector3[] waypoints;
     Vector3 direction;
 
@@ -24,7 +24,6 @@ public class KnightScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
         waypoints = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(waypoints);
 

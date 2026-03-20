@@ -21,13 +21,17 @@ public class WaveCode : MonoBehaviour
 
     private bool WaveStart = true;
 
+    GameObject spawnedEnemy;
     public GameObject enemy;
 
-    public Vector3 pos1;
-    public Vector3 pos2;
-    public Vector3 pos3;
-
     public Vector3[] EnemySpawnPositions;
+
+    Vector3 EnemySpawnStart;
+    Vector3 EnemySpawnSpot;
+    LineRenderer StartingEnemyPath;
+    LineRenderer enemyPath;
+
+    public LineRenderer[] enemyPaths;
 
     //private GameObject SpawnedEnemy;
 
@@ -42,8 +46,6 @@ public class WaveCode : MonoBehaviour
         DontDestroyOnLoad(this);
 
         StartCoroutine(Spawner(cooldown));
-
-        EnemySpawnPositions = new Vector3[3];
       }
 
 
@@ -70,12 +72,19 @@ public class WaveCode : MonoBehaviour
 
                 EnemyNum++;
                 PhantomEnemyNum++;
-                if(PhantomEnemyNum <= 10) {
-                    int RandomNum = Random.Range(1, 3);
+                if(PhantomEnemyNum <= 10) 
+                {
+                    EnemySpawnSpot = EnemySpawnStart;
+                    enemyPath = StartingEnemyPath;
                 }
-
-                Instantiate(enemy);
-
+                else
+                {
+                    int RandomNum = Random.Range(0, 2);
+                    EnemySpawnSpot = EnemySpawnPositions[RandomNum];
+                    enemyPath = enemyPaths[RandomNum];
+                }
+                spawnedEnemy = Instantiate(enemy, EnemySpawnSpot, Quaternion.identity);
+                spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
             }
 
             // Have a cooldown for player to not get flung into the next wave
@@ -90,8 +99,9 @@ public class WaveCode : MonoBehaviour
     {
         WaveNum++;
         EnemyMax *= 2;
-        int RandomNum = Random.Range(1, 3);
-        Vector3 EnemySpawnStart = EnemySpawnPositions[RandomNum];
+        int RandomNum = Random.Range(0, 2);
+        EnemySpawnStart = EnemySpawnPositions[RandomNum];
+        StartingEnemyPath = enemyPaths[RandomNum];
         WaveStart = true;
     }
 

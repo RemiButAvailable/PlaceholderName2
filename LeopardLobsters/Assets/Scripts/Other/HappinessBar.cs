@@ -15,7 +15,7 @@ public class HappinessBar : MonoBehaviour
     }
 
     //changes color and updates index stuff when called by happiness manager
-    public void changeBar(float percent) {
+    public void ChangeBar(float percent) {
         bar.fillAmount = percent;
         GetIndex(percent);
         bar.color = colorChanges[index].color;

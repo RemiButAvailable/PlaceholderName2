@@ -56,7 +56,7 @@ public class KnightScript : MonoBehaviour
         //death
         if(health <= 0)
         {
-            //waveCode.enemyNum -= 1;
+            //WaveCode.EnemyNum -= 1;
             //moneyManagerScript.moneyNum += happinessManagerScript.happiness;
             Destroy(gameObject);
         }

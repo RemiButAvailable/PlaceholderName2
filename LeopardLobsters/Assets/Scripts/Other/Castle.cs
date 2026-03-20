@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,11 +9,17 @@ public class Castle : MonoBehaviour
     int peopleTotal;
     public int moneyPerPerson = 5;
     public MoneyManagerScript moneyManager; //instantiate in inspector
-
-
+    public TextMeshProUGUI textPeopleTotal;
+    public TextMeshProUGUI textPeopleOut;
+    
     private void Awake()
     {
         peopleTotal = peopleAtCastle;
+    }
+    private void Start()
+    {
+        textPeopleTotal.text = peopleTotal.ToString();
+        textPeopleOut.text = (peopleTotal - peopleAtCastle).ToString();
     }
 
     //adds money based on population
@@ -36,6 +43,7 @@ public class Castle : MonoBehaviour
     public bool personGoesOut() {
         if (peopleAtCastle > 0) { 
             peopleAtCastle--;
+            textPeopleOut.text = (peopleTotal - peopleAtCastle).ToString();
             return true;
         }
         return false;
@@ -43,6 +51,7 @@ public class Castle : MonoBehaviour
     }
     public void personGoesIn() {
         peopleAtCastle++;
+        textPeopleOut.text = (peopleTotal - peopleAtCastle).ToString();
     }
 
 
@@ -76,6 +85,7 @@ public class Castle : MonoBehaviour
 
                 peopleAtCastle++;
                 peopleTotal++;
+                textPeopleTotal.text = peopleTotal.ToString();
             }
         }
     }

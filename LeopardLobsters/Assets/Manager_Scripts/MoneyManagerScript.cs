@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class MoneyManagerScript : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class MoneyManagerScript : MonoBehaviour
     public List<GameObject> products;
     bool DragnDrop;
     GameObject selectedProduct;
+    public TextMeshProUGUI textMoney;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        textMoney.text = moneyNum.ToString();
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class MoneyManagerScript : MonoBehaviour
     {
         if(moneyNum >= product.GetComponent<ProductScript>().price)
         {
-            moneyNum -= 1;
+            changeMoney(-1);
             DragnDrop = true;
             selectedProduct = product;
         }
@@ -52,5 +54,10 @@ public class MoneyManagerScript : MonoBehaviour
         {
             //play not enough money sound, price turns red
         }
+    }
+
+    public void changeMoney(int num) {
+        moneyNum += num;
+        textMoney.text = moneyNum.ToString();
     }
 }

@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7863542542333435904}
   - component: {fileID: 2462851494534019581}
-  m_Layer: 0
+  - component: {fileID: 2339222400598746713}
+  - component: {fileID: 5480717791827848853}
+  m_Layer: 3
   m_Name: TowerPlaceholder
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -89,6 +91,61 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &2339222400598746713
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083855529344199545}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.017130012, y: -0.07010365}
+  m_Size: {x: 1.9047, y: 1.1200304}
+  m_Direction: 1
+--- !u!114 &5480717791827848853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083855529344199545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c234c014fab4aee44be70eda1f48db19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peopleNeeded: 2
+  isActive:
+    m_PersistentCalls:
+      m_Calls: []
+  towerCost: 10
+  sellPrice: 5
 --- !u!1 &6387739449286054107
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,9 +159,9 @@ GameObject:
   - component: {fileID: 4851980734617179348}
   - component: {fileID: 7380065654683514334}
   - component: {fileID: 7466913803500560965}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Radius
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 76733749656883017}
   - component: {fileID: 424935797035252453}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -307,3 +364,4 @@ MonoBehaviour:
   attackZone: {fileID: 4851980734617179348}
   cooldown: 1.2
   projectilePrefab: {fileID: 8776400681387974995, guid: 87ad15b888fc83b428d2cb190ff04fac, type: 3}
+  active: 0

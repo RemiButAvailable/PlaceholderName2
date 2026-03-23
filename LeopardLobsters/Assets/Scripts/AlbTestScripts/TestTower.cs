@@ -21,8 +21,8 @@ public class TestTower : MonoBehaviour
     {
         attackZone.EnemyEnter.AddListener(EnemyEnter);
         attackZone.EnemyExit.AddListener(EnemyExit);
+        GetComponentInParent<BaseTower>().isActive.AddListener(IsActive);
     }
-
 
     public void FixedUpdate()
     {
@@ -51,6 +51,11 @@ public class TestTower : MonoBehaviour
     void EnemyExit(TestEnemy knight)
     {
         queue.Remove(knight);
+    }
+
+    void IsActive(bool isTrue)
+    {
+        active = isTrue;
     }
 
 }

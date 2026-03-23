@@ -7,13 +7,15 @@ public class Castle : MonoBehaviour
 {
     public int peopleAtCastle = 5; //starting amount of people
     int peopleTotal;
-    public int moneyPerPerson = 5;
-    public MoneyManagerScript moneyManager; //instantiate in inspector
-    public TextMeshProUGUI textPeopleTotal;
-    public TextMeshProUGUI textPeopleOut;
-    
+    [SerializeField] int moneyPerPerson = 5;
+    [SerializeField] MoneyManagerScript moneyManager; 
+    [SerializeField] TextMeshProUGUI textPeopleTotal;
+    [SerializeField] TextMeshProUGUI textPeopleOut;
+
+    public static Castle self;
     private void Awake()
     {
+        self = this;
         peopleTotal = peopleAtCastle;
     }
     private void Start()

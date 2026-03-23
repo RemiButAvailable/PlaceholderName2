@@ -13,6 +13,7 @@ public class ButtonPanel : MonoBehaviour
     public void Sell() {
         if (!tower) return;
         tower.Sell();
+        gameObject.SetActive(false);    
     }
     public void Add()
     {

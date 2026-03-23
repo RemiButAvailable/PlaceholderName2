@@ -11,27 +11,24 @@ public class BaseTower : MonoBehaviour
     public int towerCost = 10;
     public int sellPrice = 5;
 
-    Animation buttonAppears; //animation for the buttons
 
-    private void Start()
-    {
-    }
-
-    public void AddPeople() { //connected through button
+    public void AddPeople() { //connected through events
         if (people >= peopleNeeded) return;
         if (!Castle.self.personGoesOut()) return;
         people++;
         if (people >= peopleNeeded) isActive.Invoke(true);
     }
-    public void RemovePeople() { //connected through button
-        if (people <= 0) return;
+    public bool RemovePeople(){ //connected through events
+        if (people <= 0) return false;
         if (people >= peopleNeeded) isActive.Invoke(false);
         people--;
         Castle.self.personGoesIn();
+        return true;
     }
 
-    public void Sell() { //connected through button
-       // MoneyManagerScript.self.
+    public void Sell(){ //connected through events
+        MoneyManagerScript.self.changeMoney(sellPrice);
+        while (RemovePeople()) ;
        //VFX SFX
        Destroy(gameObject);
     }

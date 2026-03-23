@@ -11,6 +11,8 @@ TagManager:
   - MoneyManager
   - HappinessManager
   - castle
+  - arrow
+  - Tower
   layers:
   - Default
   - TransparentFX

@@ -49,10 +49,6 @@ public class ArcherTowerScript : MonoBehaviour
             if (enemyInZone)
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
-                if(spawnedArrow != null)
-                {
-                    Debug.Log("spawned arrow");
-                }
                 arrowScript = spawnedArrow.GetComponent<ArrowScript>();
                 knightScript = queue[0].GetComponent<KnightScript>();
 

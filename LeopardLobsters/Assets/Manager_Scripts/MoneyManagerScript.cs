@@ -12,12 +12,15 @@ public class MoneyManagerScript : MonoBehaviour
     bool DragnDrop;
     public TextMeshProUGUI textMoney;
     public List<GameObject> buildings;
+    public GameObject happinessManager;
+    Happiness_ManagerScript happiness_ManagerScript;
 
-    static MoneyManagerScript self;
+    static public MoneyManagerScript self;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        happiness_ManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();
         textMoney.text = moneyNum.ToString();
         self = this;
     }
@@ -47,6 +50,7 @@ public class MoneyManagerScript : MonoBehaviour
             spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
             Destroy(spawnedProduct);
             DragnDrop = false;
+            happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
         }
     }
     public void Buy(GameObject product)

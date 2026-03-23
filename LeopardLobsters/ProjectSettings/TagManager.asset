@@ -11,15 +11,16 @@ TagManager:
   - MoneyManager
   - HappinessManager
   - castle
+  - arrow
   - Tower
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Tower
+  - 
   - Water
   - UI
-  - Button
+  - 
   - 
   - 
   - 

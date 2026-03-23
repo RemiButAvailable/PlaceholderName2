@@ -13,15 +13,14 @@ public class KnightScript : MonoBehaviour
     public int health;
 
     //Manager Scripts
-    //WaveCode waveCode;
+    WaveCode waveCode;
     MoneyManagerScript moneyManagerScript;
     Happiness_ManagerScript happinessManagerScript;
-    WaveCode waveCode;
 
     //Managers Objs
-    /*GameObject waveManager;
+    GameObject waveManager;
     GameObject moneyManager;
-    GameObject happinessManager;*/
+    GameObject happinessManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,14 +28,14 @@ public class KnightScript : MonoBehaviour
         lineRenderer.GetPositions(waypoints);
 
         //refrences to manager scripts/objects
-        /*waveManager = GameObject.FindWithTag("WaveManager");
+        waveManager = GameObject.FindWithTag("WaveManager");
         waveCode = waveManager.GetComponent<WaveCode>();
 
         moneyManager = GameObject.FindWithTag("MoneyManager");
         moneyManagerScript = moneyManager.GetComponent<MoneyManagerScript>();
 
         happinessManager = GameObject.FindWithTag("HappinessManager");
-        happinessManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();*/
+        happinessManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();
     }
 
     // Update is called once per frame
@@ -56,8 +55,8 @@ public class KnightScript : MonoBehaviour
         //death
         if(health <= 0)
         {
-            //WaveCode.EnemyNum -= 1;
-            //moneyManagerScript.moneyNum += happinessManagerScript.happiness;
+            waveCode.EnemyNum -= 1;
+            moneyManagerScript.moneyNum += (int)happinessManagerScript.happiness;
             Destroy(gameObject);
         }
     }

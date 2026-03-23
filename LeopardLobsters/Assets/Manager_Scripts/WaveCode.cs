@@ -37,12 +37,13 @@ public class WaveCode : MonoBehaviour
 
     public int cooldown;
 
-
+    static public WaveCode self;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Keep Game alive
+        self = this;
         DontDestroyOnLoad(this);
         StartNext();
         StartCoroutine(Spawner(cooldown));

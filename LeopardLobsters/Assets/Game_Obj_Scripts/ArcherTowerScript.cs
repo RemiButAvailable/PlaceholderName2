@@ -46,7 +46,6 @@ public class ArcherTowerScript : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(enemyInZone);
             if (enemyInZone)
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);

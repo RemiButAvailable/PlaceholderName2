@@ -1,0 +1,58 @@
+using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
+using UnityEditor.Experimental.GraphView;
+
+public class TestTower : MonoBehaviour
+{
+    [SerializeField] TestDetector attackZone;
+
+    List<TestEnemy> queue = new List<TestEnemy>();
+
+    float timer = 0;
+    [SerializeField] float cooldown;
+    [SerializeField] TestProjectile projectilePrefab;
+
+    TestEnemy target => queue[0];
+
+    public bool active = false;
+
+    void Start()
+    {
+        attackZone.EnemyEnter.AddListener(EnemyEnter);
+        attackZone.EnemyExit.AddListener(EnemyExit);
+    }
+
+
+    public void FixedUpdate()
+    {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        if (queue.Count > 0 && active)
+        {
+            if(timer<=0)
+            {
+                timer = cooldown;
+
+                Instantiate(projectilePrefab, transform).Shoot(target);
+            }
+        }
+    }
+
+    void EnemyEnter(TestEnemy knight)
+    {
+        queue.Add(knight);
+        queue.Sort();
+
+    }
+    void EnemyExit(TestEnemy knight)
+    {
+        queue.Remove(knight);
+    }
+
+}
+
+

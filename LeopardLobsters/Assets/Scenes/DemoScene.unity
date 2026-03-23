@@ -2376,6 +2376,8 @@ MonoBehaviour:
   products:
   - {fileID: 267162156}
   textMoney: {fileID: 199257048}
+  buildings:
+  - {fileID: 415200211965424030, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
 --- !u!4 &724975674
 Transform:
   m_ObjectHideFlags: 0

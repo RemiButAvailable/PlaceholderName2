@@ -13,13 +13,12 @@ public class KnightScript : MonoBehaviour
     public int health;
 
     //Manager Scripts
-    //WaveCode waveCode;
+    /*WaveCode waveCode;
     MoneyManagerScript moneyManagerScript;
     Happiness_ManagerScript happinessManagerScript;
-    WaveCode waveCode;
 
     //Managers Objs
-    /*GameObject waveManager;
+    GameObject waveManager;
     GameObject moneyManager;
     GameObject happinessManager;*/
     // Start is called once before the first execution of Update after the MonoBehaviour is created

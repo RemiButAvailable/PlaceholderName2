@@ -84,7 +84,7 @@ public class MoneyManagerScript : MonoBehaviour
                 
                 /*for(int i = 0; i < countGA; i++)
                 {
-                    overlappingGAs[i].gameObject.GetComponent<NeighborhoodScript>()
+                    overlappingGAs[i].gameObject.GetComponent<NeighborhoodScript>().Towe
                 }*/
             }
         }

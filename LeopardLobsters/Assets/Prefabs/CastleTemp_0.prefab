@@ -106,7 +106,7 @@ MonoBehaviour:
   moneyManager: {fileID: 0}
   textPeopleTotal: {fileID: 0}
   textPeopleOut: {fileID: 0}
-  CastleHitSound: {fileID: 2933898425939903883}
+  castleHitSound: {fileID: 2933898425939903883}
   inWave: 1
   timerMax: 10
   minPeopleNeeded: 2

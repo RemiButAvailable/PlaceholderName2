@@ -13,7 +13,7 @@ public class Castle : MonoBehaviour
     [SerializeField] TextMeshProUGUI textPeopleOut;
     //(Made by Dante Jones)
     //The audio for castle being hit
-    public AudioSource CastleHitSound;
+    public AudioSource castleHitSound;
 
     public static Castle self;
     private void Awake()
@@ -100,7 +100,7 @@ public class Castle : MonoBehaviour
         if(other.gameObject.tag == "knight")
         {
             //Sound that plays when enemy hits castle
-            CastleHitSound.Play();
+            castleHitSound.Play();
         }
     }
 

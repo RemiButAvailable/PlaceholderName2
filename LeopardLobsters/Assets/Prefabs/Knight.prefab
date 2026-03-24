@@ -108,7 +108,7 @@ MonoBehaviour:
   index: 0
   speed: 1
   health: 3
-  HurtSound: {fileID: -3791379049788072009}
+  hurtSound: {fileID: -3791379049788072009}
 --- !u!60 &1087836518847089871
 PolygonCollider2D:
   m_ObjectHideFlags: 0

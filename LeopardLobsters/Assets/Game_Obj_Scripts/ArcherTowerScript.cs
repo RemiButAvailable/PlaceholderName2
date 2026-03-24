@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using NUnit.Framework.Constraints;
 
 public class ArcherTowerScript : MonoBehaviour
 {
@@ -17,6 +18,13 @@ public class ArcherTowerScript : MonoBehaviour
     GameObject targetedEnemy;
     public WaveCode waveCode;
     public bool towerManned;
+    //(Made by Dante Jones)
+    //Sound when enemy dies
+    public AudioSource enemyDeathSound;
+    //Sound that plays when enemy shoots
+    public AudioSource arrowShootSound;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,7 +46,8 @@ public class ArcherTowerScript : MonoBehaviour
             {
                 queue.Remove(targetedEnemy);
 
-                //play death sound
+                //Sound that plasy when enemy dies
+                enemyDeathSound.Play();
             }
         }
         else
@@ -62,7 +71,9 @@ public class ArcherTowerScript : MonoBehaviour
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
 
-                //play shoot arrow sound
+
+                //Sound when arrow shoots
+                arrowShootSound.Play();
 
                 arrowScript = spawnedArrow.GetComponent<ArrowScript>();
                 knightScript = queue[0].GetComponent<KnightScript>();

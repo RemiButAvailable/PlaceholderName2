@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -7,10 +8,13 @@ public class BaseTower : MonoBehaviour
     int people = 0;
     public int peopleNeeded = 2;
     public UnityEvent<bool> isActive;
+    public UnityEvent<TowerType> Destroyed;
 
     public int towerCost = 10;
     public int sellPrice = 5;
 
+    
+    public TowerType type;
 
     public void AddPeople() { //connected through events
         if (people >= peopleNeeded) return;
@@ -40,4 +44,10 @@ public class BaseTower : MonoBehaviour
         active = isTrue;
     }
      */
+
+    private void OnDestroy()
+    {
+        Destroyed.Invoke(type);
+    }
 }
+public enum TowerType { Attack, Happy }

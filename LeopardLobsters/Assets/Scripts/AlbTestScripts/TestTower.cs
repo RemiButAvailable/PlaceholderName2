@@ -30,12 +30,13 @@ public class TestTower : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+        else if (queue.Count <= 0 || !active) timer = 0;
 
         if (queue.Count > 0 && active)
         {
-            if(timer<=0)
+            if (timer <= 0)
             {
-                timer = cooldown;
+                timer = cooldown - timer;
 
                 Instantiate(projectilePrefab, transform).Shoot(target);
             }

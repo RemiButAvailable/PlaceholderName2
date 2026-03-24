@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2590595783406254711}
   - component: {fileID: 7896496047019582160}
   - component: {fileID: 6609671118492574354}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7467089460193976708}
   - component: {fileID: 5133005913136589284}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ButtonPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 7892320096049217098}
   - component: {fileID: 8665534565274688183}
   - component: {fileID: 3763238372050788384}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: subtract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 6444694873931634848}
   - component: {fileID: 6751787133392099102}
   - component: {fileID: 1904664207418296674}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}

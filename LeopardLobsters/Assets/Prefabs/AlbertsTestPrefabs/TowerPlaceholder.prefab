@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2462851494534019581}
   - component: {fileID: 2339222400598746713}
   - component: {fileID: 5480717791827848853}
-  m_Layer: 3
+  - component: {fileID: 266141926357157087}
+  m_Layer: 2
   m_Name: TowerPlaceholder
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7773944089804818591, guid: af18f56721861d6439954ba6795b4e95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,8 +145,26 @@ MonoBehaviour:
   isActive:
     m_PersistentCalls:
       m_Calls: []
+  Destroyed:
+    m_PersistentCalls:
+      m_Calls: []
   towerCost: 10
   sellPrice: 5
+  type: 0
+--- !u!114 &266141926357157087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083855529344199545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2165f21f3e83b4e910aecc965b2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerCollider: {fileID: 2339222400598746713}
+  baseTower: {fileID: 5480717791827848853}
 --- !u!1 &6387739449286054107
 GameObject:
   m_ObjectHideFlags: 0

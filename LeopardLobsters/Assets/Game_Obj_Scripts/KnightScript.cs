@@ -66,6 +66,11 @@ public class KnightScript : MonoBehaviour
         if(collision.gameObject.tag == "arrow")
         {
             health -= 1;
+
+            if(health != 0)
+            {
+                //play enemy injured sound
+            }
         }
         else if(collision.gameObject.tag == "castle")
         {

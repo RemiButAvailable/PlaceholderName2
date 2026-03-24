@@ -47,10 +47,22 @@ public class MoneyManagerScript : MonoBehaviour
         }
         if (DragnDrop && Input.GetMouseButtonUp(0))
         {
-            spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
-            Destroy(spawnedProduct);
-            DragnDrop = false;
-            happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
+            int excludedLayer = LayerMask.NameToLayer("background");
+            int mask = ~(1 << excludedLayer);
+            /*if(spawnedProduct.G))
+            {
+
+            }
+            else
+            {*/
+                spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
+
+                //play place tower sound
+
+                Destroy(spawnedProduct);
+                DragnDrop = false;
+                happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
+            //}
         }
     }
     public void Buy(GameObject product)
@@ -60,6 +72,8 @@ public class MoneyManagerScript : MonoBehaviour
             changeMoney(-1);
             DragnDrop = true;
             spawnedProduct = Instantiate(product, mousePos, Quaternion.identity);
+
+            //play buy sound
         }
         else
         {

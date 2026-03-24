@@ -35,6 +35,8 @@ public class ArcherTowerScript : MonoBehaviour
             if (targetedEnemy.GetComponent<KnightScript>().health <= 0)
             {
                 queue.Remove(targetedEnemy);
+
+                //play death sound
             }
         }
         else
@@ -49,6 +51,9 @@ public class ArcherTowerScript : MonoBehaviour
             if (enemyInZone)
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
+
+                //play shoot arrow sound
+
                 arrowScript = spawnedArrow.GetComponent<ArrowScript>();
                 knightScript = queue[0].GetComponent<KnightScript>();
 

@@ -11,6 +11,9 @@ public class Castle : MonoBehaviour
     [SerializeField] MoneyManagerScript moneyManager; 
     [SerializeField] TextMeshProUGUI textPeopleTotal;
     [SerializeField] TextMeshProUGUI textPeopleOut;
+    //(Made by Dante Jones)
+    //The audio for castle being hit
+    public AudioSource castleHitSound;
 
     public static Castle self;
     private void Awake()
@@ -94,9 +97,10 @@ public class Castle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "enemy")
+        if(other.gameObject.tag == "knight")
         {
-            //play enemy touching tower sound
+            //Sound that plays when enemy hits castle
+            castleHitSound.Play();
         }
     }
 

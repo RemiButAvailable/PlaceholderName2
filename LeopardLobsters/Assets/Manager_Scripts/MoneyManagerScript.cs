@@ -14,6 +14,10 @@ public class MoneyManagerScript : MonoBehaviour
     public List<GameObject> buildings;
     public GameObject happinessManager;
     Happiness_ManagerScript happiness_ManagerScript;
+    Collider2D[] overlappingObjs;
+    Collider2D[] overlappingGAs;
+    ContactFilter2D contactFilter;
+    ContactFilter2D contactFilterGA;
 
     static public MoneyManagerScript self;
 
@@ -47,22 +51,42 @@ public class MoneyManagerScript : MonoBehaviour
         }
         if (DragnDrop && Input.GetMouseButtonUp(0))
         {
-            int excludedLayer = LayerMask.NameToLayer("background");
-            int mask = ~(1 << excludedLayer);
-            /*if(spawnedProduct.G))
+            int excludedLayerOne = LayerMask.NameToLayer("background");
+            int excludedLayerTwo = LayerMask.NameToLayer("neighborhoodGreaterAreas");
+            int mask = ~((1 << excludedLayerOne) | (1 << excludedLayerTwo));
+            overlappingObjs = new Collider2D[1];
+            contactFilter = new ContactFilter2D();
+            contactFilter.useLayerMask = true;
+            contactFilter.SetLayerMask(mask);
+            int count = spawnedProduct.GetComponent<Collider2D>().Overlap(contactFilter, overlappingObjs);
+            if (count > 1)
             {
-
+                //play not enough money sound
+                Destroy(gameObject);
+                DragnDrop = false;
             }
             else
-            {*/
-                spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
+            {
+            spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
 
                 //play place tower sound
 
                 Destroy(spawnedProduct);
                 DragnDrop = false;
-                happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
-            //}
+                //happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
+                int greaterAreasLayer = LayerMask.NameToLayer("neighborhoodGreaterAreas");
+                int galMask = 1 << greaterAreasLayer;
+                overlappingGAs = new Collider2D[3];
+                contactFilterGA = new ContactFilter2D();
+                contactFilterGA.useLayerMask = true;
+                contactFilterGA.SetLayerMask(galMask);
+                int countGA = spawnedProduct.GetComponent<Collider2D>().Overlap(contactFilterGA, overlappingGAs);
+                
+                /*for(int i = 0; i < countGA; i++)
+                {
+                    overlappingGAs[i].gameObject.GetComponent<NeighborhoodScript>().Towe
+                }*/
+            }
         }
     }
     public void Buy(GameObject product)

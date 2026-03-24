@@ -8,7 +8,7 @@ public class BaseTower : MonoBehaviour
     int people = 0;
     public int peopleNeeded = 2;
     public UnityEvent<bool> isActive;
-    public UnityEvent<TowerType> Destroyed;
+    public UnityEvent<BaseTower> Destroyed;
 
     public int towerCost = 10;
     public int sellPrice = 5;
@@ -47,7 +47,7 @@ public class BaseTower : MonoBehaviour
 
     private void OnDestroy()
     {
-        Destroyed.Invoke(type);
+        Destroyed.Invoke(this);
     }
 }
 public enum TowerType { Attack, Happy }

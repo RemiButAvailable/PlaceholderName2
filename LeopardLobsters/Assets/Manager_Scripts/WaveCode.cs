@@ -7,6 +7,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class WaveCode : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class WaveCode : MonoBehaviour
     public int cooldown;
 
     static public WaveCode self;
+    public UnityEvent waveStarted;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -104,6 +106,7 @@ public class WaveCode : MonoBehaviour
         EnemySpawnStart = EnemySpawnPositions[RandomNum];
         StartingEnemyPath = enemyPaths[RandomNum];
         WaveStart = true;
+        waveStarted.Invoke();
     }
 
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestNeighborhood : MonoBehaviour
 {
     [SerializeField]
-    Dictionary<TowerType, float> towerPreference;
+    Dictionary<TowerType, float> towerPreference = new Dictionary<TowerType, float>();
 
     [SerializeField]
     float happinessPerTower;
@@ -18,7 +18,8 @@ public class TestNeighborhood : MonoBehaviour
 
         //can add sfx vfx
 
-        if (towerPreference.ContainsKey(tower.type)) curHappinessChange += towerPreference[tower.type];
+        if (towerPreference.ContainsKey(tower.type)) 
+            curHappinessChange += towerPreference[tower.type];
         curHappinessChange += happinessPerTower;
     }
 
@@ -39,7 +40,7 @@ public class TestNeighborhood : MonoBehaviour
         if (timer > 0) { timer -= Time.deltaTime; }
         else {
             timer = timerMax -= timer;
-            //TestHappyManager.self.ChangeHappy(curHappinessChange);
+            TestHappyManager.self.ChangeHappy(curHappinessChange);
         }
     }
 

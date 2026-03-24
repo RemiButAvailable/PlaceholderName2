@@ -34,7 +34,7 @@ public class TestPlacement : MonoBehaviour
             RaycastHit2D neighborHit = Physics2D.Raycast(towerCollider.offset+(Vector2)transform.position,
                 Vector2.zero, 1f, LayerMask.GetMask("Neighborhood")); // checks if has neighboorhood, can change to be collider cast
             if (neighborHit) { 
-                neighborHit.collider.GetComponent<TestNeighborhood>().towerEnter(baseTower); 
+                neighborHit.collider.GetComponent<TestNeighborhood>().towerEnter(baseTower);
             }
 
             gameObject.layer = LayerMask.NameToLayer("Tower");

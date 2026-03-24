@@ -16,7 +16,7 @@ public class TestHappyManager : MonoBehaviour
 
     public void ChangeHappy(float change) {
         happy += change;
-        bar.ChangeBar(happy);
+        bar.ChangeBar(happy/100);
 
         if (happy <= 0) {
             //vfx sfx

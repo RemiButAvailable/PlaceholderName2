@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2749664105270218529}
   - component: {fileID: -3888917447268177710}
   - component: {fileID: -2819629580455469883}
+  - component: {fileID: 5134048936030875358}
   m_Layer: 0
   m_Name: TowerPlaceholder
   m_TagString: archerTower
@@ -109,6 +110,8 @@ MonoBehaviour:
   Arrow: {fileID: 2791822772802332911, guid: 8259970a4353e9f4fb61522114c12cbf, type: 3}
   enemyInZone: 0
   predictedSpot: 8
+  waveCode: {fileID: 0}
+  towerManned: 0
 --- !u!60 &-3888917447268177710
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -289,6 +292,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5134048936030875358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415200211965424030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c234c014fab4aee44be70eda1f48db19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peopleNeeded: 2
+  isActive:
+    m_PersistentCalls:
+      m_Calls: []
+  Destroyed:
+    m_PersistentCalls:
+      m_Calls: []
+  towerCost: 10
+  sellPrice: 5
+  type: 0
 --- !u!1 &8183656115784846105
 GameObject:
   m_ObjectHideFlags: 0

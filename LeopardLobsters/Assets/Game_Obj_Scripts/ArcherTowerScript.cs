@@ -15,6 +15,8 @@ public class ArcherTowerScript : MonoBehaviour
     public int predictedSpot;
     KnightScript knightScript;
     GameObject targetedEnemy;
+    public WaveCode waveCode;
+    public bool towerManned;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,7 +50,7 @@ public class ArcherTowerScript : MonoBehaviour
     {
         while (true)
         {
-            if (enemyInZone)
+            if (enemyInZone && towerManned && waveCode.WaveStart)
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
 

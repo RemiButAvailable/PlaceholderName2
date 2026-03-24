@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class BaseTower : MonoBehaviour
 {
-    int people = 0;
+    public int people = 0;
     public int peopleNeeded = 2;
     public UnityEvent<bool> isActive;
     public UnityEvent<TowerType> Destroyed;

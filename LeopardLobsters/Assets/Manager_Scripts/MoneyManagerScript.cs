@@ -14,6 +14,8 @@ public class MoneyManagerScript : MonoBehaviour
     public List<GameObject> buildings;
     public GameObject happinessManager;
     Happiness_ManagerScript happiness_ManagerScript;
+    Collider2D[] overlappingObjs;
+    ContactFilter2D contactFilter;
 
     static public MoneyManagerScript self;
 
@@ -49,20 +51,25 @@ public class MoneyManagerScript : MonoBehaviour
         {
             int excludedLayer = LayerMask.NameToLayer("background");
             int mask = ~(1 << excludedLayer);
-            /*if(spawnedProduct.G))
+            overlappingObjs = new Collider2D[1];
+            contactFilter = new ContactFilter2D();
+            contactFilter.useLayerMask = true;
+            contactFilter.SetLayerMask(mask);
+            int count = spawnedProduct.GetComponent<Collider2D>().Overlap(contactFilter, overlappingObjs);
+            if (count > 1)
             {
 
             }
             else
-            {*/
-                spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
+            {
+            spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
 
                 //play place tower sound
 
                 Destroy(spawnedProduct);
                 DragnDrop = false;
                 happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
-            //}
+            }
         }
     }
     public void Buy(GameObject product)

@@ -45,6 +45,14 @@ public class ArcherTowerScript : MonoBehaviour
         {
             enemyInZone = false;
         }
+        if(gameObject.GetComponent<BaseTower>().people >= gameObject.GetComponent<BaseTower>().peopleNeeded)
+        {
+            towerManned = true;
+        }
+        else
+        {
+            towerManned = false;
+        }
     }
     public IEnumerator ShootArrows()
     {

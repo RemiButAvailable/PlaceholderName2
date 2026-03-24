@@ -24,7 +24,7 @@ public class KnightScript : MonoBehaviour
 
     //(Made by Dante Jones)
     //The audio for enemy getting hurt
-    public AudioSource HurtSound;
+    public AudioSource hurtSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -74,7 +74,7 @@ public class KnightScript : MonoBehaviour
             if(health != 0)
             {
                 //Plays sound when enemy injured
-                HurtSound.Play();
+                hurtSound.Play();
             }
         }
         else if(collision.gameObject.tag == "castle")

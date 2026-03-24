@@ -19,6 +19,16 @@ public class MoneyManagerScript : MonoBehaviour
     ContactFilter2D contactFilter;
     ContactFilter2D contactFilterGA;
 
+    //(This is made by Dante Jone)
+    //
+    public AudioSource PlaceDenySound;
+    //
+    public AudioSource TowerPlaceSound;
+    //
+    public AudioSource BuySound;
+    //
+    public AudioSource BuyDenySound;
+    
     static public MoneyManagerScript self;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -61,7 +71,9 @@ public class MoneyManagerScript : MonoBehaviour
             int count = spawnedProduct.GetComponent<Collider2D>().Overlap(contactFilter, overlappingObjs);
             if (count > 1)
             {
-                //play not enough money sound
+                
+                //Plays when you are not allowed to place a tower somewere
+                PlaceDenySound.Play();
                 Destroy(gameObject);
                 DragnDrop = false;
             }
@@ -69,8 +81,8 @@ public class MoneyManagerScript : MonoBehaviour
             {
             spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
 
-                //play place tower sound
-
+                //Sound that plays when you place tower
+                TowerPlaceSound.Play();
                 Destroy(spawnedProduct);
                 DragnDrop = false;
                 //happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
@@ -97,11 +109,13 @@ public class MoneyManagerScript : MonoBehaviour
             DragnDrop = true;
             spawnedProduct = Instantiate(product, mousePos, Quaternion.identity);
 
-            //play buy sound
+            //Sound that plays when you by something
+            BuySound.Play();
         }
         else
         {
-            //play not enough money sound, price turns red
+            //When you place something, and you dont have enogh money this plays
+            BuyDenySound.Play();
         }
     }
 

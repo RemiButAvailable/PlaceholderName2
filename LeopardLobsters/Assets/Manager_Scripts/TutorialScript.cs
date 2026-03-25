@@ -30,6 +30,8 @@ public class TutorialScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        
+        //Have different events happen based on what text it is.
         if(TextNum == 6)
         {
 

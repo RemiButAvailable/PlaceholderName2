@@ -13,25 +13,21 @@ public class TestFountain : MonoBehaviour
     float timer = 0;
 
     public bool active = false;
+    [SerializeField]BaseTower baseTower;
 
     private void Start()
     {
-        //hManager = Happiness_ManagerScript.instance
+        //hManager = Happiness_ManagerScript.self
+        baseTower.isActive.AddListener(SetActive);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void TowerEnter(Collider2D other)
     {
-        if (other.gameObject.tag == "tower")
-        {
             towerCount++;
-        }
     }
-    void OnTriggerExit2D(Collider2D other)
+    void TowerExit(Collider2D other)
     {
-        if (other.gameObject.tag == "tower")
-        {
             towerCount--;
-        }
     }
 
     private void FixedUpdate()
@@ -48,5 +44,7 @@ public class TestFountain : MonoBehaviour
             //happiness change sfx vfx
         }
     }
+
+    void SetActive(bool towerActive) { active = towerActive; }
 }
 

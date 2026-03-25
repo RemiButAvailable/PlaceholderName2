@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class TestEnemy : MonoBehaviour, IComparable<TestEnemy>
 {
-    [SerializeField] LineRenderer lineRenderer;
+    public LineRenderer lineRenderer;
     Vector3[] waypoints;
     Vector3 direction;
 
@@ -13,6 +14,8 @@ public class TestEnemy : MonoBehaviour, IComparable<TestEnemy>
     public int index;
     [SerializeField] float speed;
     [SerializeField] int health;
+    public int damage;
+    [SerializeField] int money = 3;
 
     public UnityEvent<TestEnemy> OnDeath;
     public UnityEvent<Vector3> DeathPosition;
@@ -43,6 +46,7 @@ public class TestEnemy : MonoBehaviour, IComparable<TestEnemy>
     public void changeHealth(int num) {
         health += num;
         if (health <= 0) {
+            TestMoneyMan.self.ChangeMoney(money);
 
             OnDeath.Invoke(this);
             DeathPosition.Invoke(transform.position);
@@ -52,6 +56,10 @@ public class TestEnemy : MonoBehaviour, IComparable<TestEnemy>
 
             Destroy(gameObject);
         }
+    }
+
+    public void ReachedCastle() {
+        Destroy(gameObject);
     }
 
     public int CompareTo(TestEnemy other) {

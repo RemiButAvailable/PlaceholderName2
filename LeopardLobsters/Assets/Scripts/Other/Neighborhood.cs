@@ -12,6 +12,8 @@ public class Neighborhood : MonoBehaviour
     [SerializeField] List<float> typeImpact = new List<float>(); //change later with a better solution like a serializeable dictionary
     List<BaseTower> towers = new List<BaseTower>();
 
+    Collider2D neighboorhoodCenter;
+
     [SerializeField]
     float happinessPerTower;
 
@@ -19,7 +21,8 @@ public class Neighborhood : MonoBehaviour
 
     private void Start()
     {
-        WaveCode.self.waveStarted.AddListener(resetCalculations);
+        //WaveCode.self.waveStarted.AddListener(resetCalculations);
+        neighboorhoodCenter = GetComponent<Collider2D>();
     }
 
     public void towerEnter(BaseTower tower)
@@ -34,7 +37,7 @@ public class Neighborhood : MonoBehaviour
             curHappinessChange += typeImpact[typeIndex.IndexOf(tower.type)];
 
         //distance to closest point on collider calculation
-        float dist = (tower.transform.position - tower.GetComponent<BaseTower>().GetClosestPointOnCollider(GetComponent<Collider2D>())).magnitude;
+        float dist = (tower.transform.position - tower.GetComponent<BaseTower>().GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
         dist = ((dist) / (1 + (1 / 3) * dist));
 
         Happiness_ManagerScript.self.CalculateHappiness(happinessPerTower + dist);
@@ -48,8 +51,8 @@ public class Neighborhood : MonoBehaviour
             curHappinessChange -= typeImpact[typeIndex.IndexOf(tower.type)];
 
         //distance to center calculation
-        float dist = (tower.transform.position - tower.GetComponent<BaseTower>().GetClosestPointOnCollider(GetComponent<Collider2D>())).magnitude;
-        dist = 4 - (dist / (1 + (1 / 3) * dist));
+        float dist = (tower.transform.position - tower.GetComponent<BaseTower>().GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
+        dist = ((dist) / (1 + (1 / 3) * dist));
 
         curHappinessChange -= happinessPerTower + dist;
     }

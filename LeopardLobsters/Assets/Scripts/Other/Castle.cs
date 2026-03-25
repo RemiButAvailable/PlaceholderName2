@@ -101,6 +101,7 @@ public class Castle : MonoBehaviour
         {
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
+
         }
     }
 

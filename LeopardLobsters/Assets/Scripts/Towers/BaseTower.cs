@@ -49,5 +49,11 @@ public class BaseTower : MonoBehaviour
     {
         Destroyed.Invoke(this);
     }
+
+    public Vector3 GetClosestPointOnCollider(Collider2D neighborhoodCollider)
+    {
+        Vector3 closestPointOnCollider = neighborhoodCollider.GetComponent<Collider2D>().ClosestPoint(transform.position);
+        return closestPointOnCollider;
+    }
 }
 public enum TowerType { Attack, Happy }

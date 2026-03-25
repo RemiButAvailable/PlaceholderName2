@@ -11,6 +11,8 @@ public class Happiness_ManagerScript : MonoBehaviour
     public HappinessBar barHappyUI;
     static public Happiness_ManagerScript self;
 
+    public TextMeshProUGUI tempHappinessText;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +31,7 @@ public class Happiness_ManagerScript : MonoBehaviour
         {
             happiness += happinessROC;
             barHappyUI.ChangeBar(happiness);
+            tempHappinessText.text = "happiness = " + happiness + " happiness rate of change = " + happinessROC;
         } 
     }
 

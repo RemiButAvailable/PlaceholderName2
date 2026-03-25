@@ -94,10 +94,10 @@ public class MoneyManagerScript : MonoBehaviour
                 contactFilterGA.SetLayerMask(galMask);
                 int countGA = spawnedProduct.GetComponent<Collider2D>().Overlap(contactFilterGA, overlappingGAs);
                 
-                /*for(int i = 0; i < countGA; i++)
+                for(int i = 0; i < countGA; i++)
                 {
-                    overlappingGAs[i].gameObject.GetComponent<NeighborhoodScript>().Towe
-                }*/
+                    overlappingGAs[i].gameObject.GetComponent<Neighborhood>().towerEnter(spawnedBuilding.GetComponent<BaseTower>());
+                }
             }
         }
     }

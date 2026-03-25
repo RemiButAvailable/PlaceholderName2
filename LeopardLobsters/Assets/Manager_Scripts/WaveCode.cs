@@ -45,13 +45,15 @@ public class WaveCode : MonoBehaviour
     void Start()
     {
         // Keep Game alive
-        self = this;
         DontDestroyOnLoad(this);
         StartNext();
         StartCoroutine(Spawner(cooldown));
       }
 
-
+    private void Awake()
+    {
+        self = this;
+    }
     // Update is called once per frame
     void Update()
         {

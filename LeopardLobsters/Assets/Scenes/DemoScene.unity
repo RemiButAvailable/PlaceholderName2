@@ -1048,6 +1048,7 @@ GameObject:
   - component: {fileID: 263250744}
   - component: {fileID: 263250743}
   - component: {fileID: 263250747}
+  - component: {fileID: 263250748}
   m_Layer: 0
   m_Name: HappyNeighborhood
   m_TagString: Untagged
@@ -1351,7 +1352,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263250742}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 411eeed493d5b5a469a1a84ab5aaad0d, type: 3}
   m_Name: 
@@ -1360,6 +1361,21 @@ MonoBehaviour:
   soldierTowerSensitivity: 0
   fountainSensitivity: 2
   happinessIcon: {fileID: 0}
+--- !u!114 &263250748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263250742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a52dab102682f74a95c4d785699442e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeIndex: 
+  typeImpact: []
+  happinessPerTower: 0
 --- !u!1 &267162156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,7 +1707,8 @@ GameObject:
   - component: {fileID: 279870997}
   - component: {fileID: 279870996}
   - component: {fileID: 279871000}
-  m_Layer: 0
+  - component: {fileID: 279871001}
+  m_Layer: 7
   m_Name: UnhappyNeighborhood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2014,7 +2031,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279870995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 411eeed493d5b5a469a1a84ab5aaad0d, type: 3}
   m_Name: 
@@ -2023,6 +2040,21 @@ MonoBehaviour:
   soldierTowerSensitivity: 2
   fountainSensitivity: 1
   happinessIcon: {fileID: 0}
+--- !u!114 &279871001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279870995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a52dab102682f74a95c4d785699442e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeIndex: 
+  typeImpact: []
+  happinessPerTower: 0
 --- !u!1001 &306283700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2378,7 +2410,7 @@ GameObject:
   - component: {fileID: 550390846}
   - component: {fileID: 550390845}
   - component: {fileID: 550390844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'HNGreaterArea '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2772,6 +2804,9 @@ MonoBehaviour:
   - {fileID: 1067015714}
   - {fileID: 1460171686}
   cooldown: 5
+  waveStarted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &626876290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,7 +2819,7 @@ GameObject:
   - component: {fileID: 626876294}
   - component: {fileID: 626876293}
   - component: {fileID: 626876292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VUNGreaterArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3570,7 +3605,8 @@ GameObject:
   - component: {fileID: 747162428}
   - component: {fileID: 747162427}
   - component: {fileID: 747162431}
-  m_Layer: 0
+  - component: {fileID: 747162432}
+  m_Layer: 7
   m_Name: VeryUnhappyNeighborhood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3879,7 +3915,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747162426}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 411eeed493d5b5a469a1a84ab5aaad0d, type: 3}
   m_Name: 
@@ -3888,6 +3924,21 @@ MonoBehaviour:
   soldierTowerSensitivity: 3
   fountainSensitivity: 1
   happinessIcon: {fileID: 0}
+--- !u!114 &747162432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747162426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a52dab102682f74a95c4d785699442e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeIndex: 
+  typeImpact: []
+  happinessPerTower: 0
 --- !u!1 &778908314
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,19 +5349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e62f9fabb939140a78d09d6fabd5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neighborhoods:
-  - {fileID: 279870996}
-  - {fileID: 263250743}
-  - {fileID: 747162427}
-  neighborhoodGreaterAreas:
-  - {fileID: 1845701020}
-  - {fileID: 550390844}
-  - {fileID: 626876292}
-  distances: []
   happiness: 1
   happinessROC: 0
-  waveCode: {fileID: 588754497}
-  waveManager: {fileID: 588754495}
   barHappyUI: {fileID: 187119707}
 --- !u!1001 &1266185989
 PrefabInstance:
@@ -6601,7 +6641,7 @@ GameObject:
   - component: {fileID: 1845701022}
   - component: {fileID: 1845701021}
   - component: {fileID: 1845701020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UNGreaterArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

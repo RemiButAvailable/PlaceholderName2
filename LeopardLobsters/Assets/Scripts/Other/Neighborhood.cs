@@ -33,8 +33,8 @@ public class Neighborhood : MonoBehaviour
         if (typeIndex.Contains(tower.type)) 
             curHappinessChange += typeImpact[typeIndex.IndexOf(tower.type)];
 
-        //distance to center calculation
-        float dist = (tower.transform.position-transform.position).magnitude;
+        //distance to closest point on collider calculation
+        float dist = (tower.transform.position - tower.GetComponent<BaseTower>().GetClosestPointOnCollider(GetComponent<Collider2D>())).magnitude;
         dist = ((dist) / (1 + (1 / 3) * dist));
 
         Happiness_ManagerScript.self.CalculateHappiness(happinessPerTower + dist);
@@ -48,7 +48,7 @@ public class Neighborhood : MonoBehaviour
             curHappinessChange -= typeImpact[typeIndex.IndexOf(tower.type)];
 
         //distance to center calculation
-        float dist = (tower.transform.position - transform.position).magnitude;
+        float dist = (tower.transform.position - tower.GetComponent<BaseTower>().GetClosestPointOnCollider(GetComponent<Collider2D>())).magnitude;
         dist = ((dist) / (1 + (1 / 3) * dist));
 
         curHappinessChange -= happinessPerTower + dist;

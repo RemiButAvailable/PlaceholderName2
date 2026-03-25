@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 53e023eca7b135448ac0a42300273ec0
+guid: 75c615654c2a23846b1800ebbf78b24c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3870647471981617305
-    second: Wood background with people and money_0
+      213: 2235580953107651492
+    second: minus_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wood background with people and money_0
+      name: minus_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 250
-        height: 1080
+        x: 21
+        y: 24
+        width: 24
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76f95cdb1a2b84ac0800000000000000
-      internalID: -3870647471981617305
+      spriteID: 4ab5c904801660f10800000000000000
+      internalID: 2235580953107651492
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wood background with people and money_0: -3870647471981617305
+      minus_0: 2235580953107651492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

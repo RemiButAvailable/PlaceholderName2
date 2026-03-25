@@ -101,7 +101,10 @@ public class Castle : MonoBehaviour
         {
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
-
+            peopleAtCastle--;
+            if (peopleAtCastle < 0) {
+                SceneManager.LoadScene("HappyLoseScreen");
+            }
         }
     }
 

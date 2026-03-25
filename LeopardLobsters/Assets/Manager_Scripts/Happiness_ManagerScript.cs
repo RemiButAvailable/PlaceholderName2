@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class Happiness_ManagerScript : MonoBehaviour
 {
@@ -23,14 +25,15 @@ public class Happiness_ManagerScript : MonoBehaviour
         //distances = new float[neighborhoods.Length];
         barHappyUI.ChangeBar(happiness);
         happinessROC = 0;
+        StartCoroutine(changeHappiness());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(WaveCode.self.WaveStart)
+        /*if(WaveCode.self.WaveStart)
         {
-            happiness += happinessROC;
+            happiness -= happinessROC;
             convertedToPercentHappiness = 1/(happiness);
             if(convertedToPercentHappiness > 1)
             {
@@ -38,13 +41,12 @@ public class Happiness_ManagerScript : MonoBehaviour
             }
             barHappyUI.ChangeBar(convertedToPercentHappiness);
             tempHappinessText.text = "happiness = " + convertedToPercentHappiness + " happiness rate of change = " + happinessROC;
-        } 
+        }*/ 
     }
 
     public void CalculateHappiness(float amount) {
         Debug.Log("amount is " + amount);
         happinessROC += amount;
-        //happinessROC *= 0.0001f;
     }
 
 
@@ -88,4 +90,23 @@ public class Happiness_ManagerScript : MonoBehaviour
         // dont forget to call barHappyUI.ChangeBar(percent) to new happiness
     }
     */
+
+    IEnumerator changeHappiness()
+    {
+        while(true)
+        {
+            if (WaveCode.self.WaveStart)
+            {
+                happiness -= happinessROC;
+                convertedToPercentHappiness = 1 / (happiness);
+                if (convertedToPercentHappiness > 1)
+                {
+                    convertedToPercentHappiness = 1;
+                }
+                barHappyUI.ChangeBar(convertedToPercentHappiness);
+                tempHappinessText.text = "happiness = " + convertedToPercentHappiness + " happiness rate of change = " + happinessROC;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 }

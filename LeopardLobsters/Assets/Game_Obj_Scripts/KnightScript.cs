@@ -10,36 +10,23 @@ public class KnightScript : MonoBehaviour
     //num vals;
     public int index;
     public float speed;
+    public int peopleKillOnReachTower = 1;
     public int health;
 
     //Manager Scripts
-    WaveCode waveCode;
-    MoneyManagerScript moneyManagerScript;
-    Happiness_ManagerScript happinessManagerScript;
-
-    //Managers Objs
-    GameObject waveManager;
-    GameObject moneyManager;
-    GameObject happinessManager;
+    WaveCode waveCode => WaveCode.self;
+    MoneyManagerScript moneyManagerScript => MoneyManagerScript.self;
+    Happiness_ManagerScript happinessManagerScript=>Happiness_ManagerScript.self;
 
     //(Made by Dante Jones)
     //The audio for enemy getting hurt
     public AudioSource hurtSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         waypoints = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(waypoints);
-
-        //refrences to manager scripts/objects
-        waveManager = GameObject.FindWithTag("WaveManager");
-        waveCode = waveManager.GetComponent<WaveCode>();
-
-        moneyManager = GameObject.FindWithTag("MoneyManager");
-        moneyManagerScript = moneyManager.GetComponent<MoneyManagerScript>();
-
-        happinessManager = GameObject.FindWithTag("HappinessManager");
-        happinessManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();
     }
 
     // Update is called once per frame
@@ -64,22 +51,10 @@ public class KnightScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "arrow")
-        {
-            health -= 1;
-
-            if(health != 0)
-            {
-                //Plays sound when enemy injured
-                hurtSound.Play();
-            }
-        }
-        else if(collision.gameObject.tag == "castle")
-        {
-            Destroy(gameObject);
-        }
+    public void TakeDamage(int damage) {
+        health -= damage;
+    }
+    public void ReachedTower() {
+        Destroy(gameObject);
     }
 }

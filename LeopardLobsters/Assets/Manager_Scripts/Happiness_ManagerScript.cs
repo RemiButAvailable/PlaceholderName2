@@ -4,15 +4,10 @@ using UnityEngine;
 public class Happiness_ManagerScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public Collider2D[] neighborhoods;
-    public Collider2D[] neighborhoodGreaterAreas;
-    public float[] distances;
-    float impactOnHappiness;
+    
     public float happiness;
     public float happinessROC;
-    NeighborhoodScript neighborhoodScript;
-    public WaveCode waveCode;
-    public GameObject waveManager;
+    
     public HappinessBar barHappyUI;
     static public Happiness_ManagerScript self;
 
@@ -21,8 +16,8 @@ public class Happiness_ManagerScript : MonoBehaviour
     void Start()
     {
         self = this;
-        waveCode = waveManager.GetComponent<WaveCode>();
-        distances = new float[neighborhoods.Length];
+        //waveCode = waveManager.GetComponent<WaveCode>();
+        //distances = new float[neighborhoods.Length];
         barHappyUI.ChangeBar(happiness);
         happinessROC = 0;
     }
@@ -30,12 +25,26 @@ public class Happiness_ManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(waveCode.WaveStart)
+        if(WaveCode.self.WaveStart)
         {
             happiness += happinessROC;
             barHappyUI.ChangeBar(happiness);
         } 
     }
+
+    public void CalculateHappiness(float amount) {
+        happinessROC += amount;
+    }
+
+
+    /*
+    public Collider2D[] neighborhoods;
+    public Collider2D[] neighborhoodGreaterAreas;
+    public float[] distances;
+    float impactOnHappiness;
+    NeighborhoodScript neighborhoodScript;
+    public WaveCode waveCode;
+    public GameObject waveManager;
     public void CalculateHappiness(GameObject building)
     {
         for (int i = 0; i < neighborhoods.Length; i++)
@@ -67,5 +76,5 @@ public class Happiness_ManagerScript : MonoBehaviour
         Debug.Log("happinessROC = " + happinessROC);
         // dont forget to call barHappyUI.ChangeBar(percent) to new happiness
     }
-
+    */
 }

@@ -1,15 +1,20 @@
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class Happiness_ManagerScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
+    public float convertedToPercentHappiness;
     public float happiness;
     public float happinessROC;
     
     public HappinessBar barHappyUI;
     static public Happiness_ManagerScript self;
+
+    public TextMeshProUGUI tempHappinessText;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,19 +25,27 @@ public class Happiness_ManagerScript : MonoBehaviour
         //distances = new float[neighborhoods.Length];
         barHappyUI.ChangeBar(happiness);
         happinessROC = 0;
+        StartCoroutine(changeHappiness());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(WaveCode.self.WaveStart)
+        /*if(WaveCode.self.WaveStart)
         {
-            happiness += happinessROC;
-            barHappyUI.ChangeBar(happiness);
-        } 
+            happiness -= happinessROC;
+            convertedToPercentHappiness = 1/(happiness);
+            if(convertedToPercentHappiness > 1)
+            {
+                convertedToPercentHappiness = 1;
+            }
+            barHappyUI.ChangeBar(convertedToPercentHappiness);
+            tempHappinessText.text = "happiness = " + convertedToPercentHappiness + " happiness rate of change = " + happinessROC;
+        }*/ 
     }
 
     public void CalculateHappiness(float amount) {
+        Debug.Log("amount is " + amount);
         happinessROC += amount;
     }
 
@@ -77,4 +90,23 @@ public class Happiness_ManagerScript : MonoBehaviour
         // dont forget to call barHappyUI.ChangeBar(percent) to new happiness
     }
     */
+
+    IEnumerator changeHappiness()
+    {
+        while(true)
+        {
+            if (WaveCode.self.WaveStart)
+            {
+                happiness -= happinessROC;
+                convertedToPercentHappiness = 1 / (happiness);
+                if (convertedToPercentHappiness > 1)
+                {
+                    convertedToPercentHappiness = 1;
+                }
+                barHappyUI.ChangeBar(convertedToPercentHappiness);
+                tempHappinessText.text = "happiness = " + convertedToPercentHappiness + " happiness rate of change = " + happinessROC;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 }

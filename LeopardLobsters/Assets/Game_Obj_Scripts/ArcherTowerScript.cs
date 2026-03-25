@@ -17,6 +17,7 @@ public class ArcherTowerScript : MonoBehaviour
     KnightScript knightScript;
     GameObject targetedEnemy;
     public WaveCode waveCode;
+    //GameObject
     public bool towerManned;
     //(Made by Dante Jones)
     //Sound when enemy dies
@@ -67,10 +68,10 @@ public class ArcherTowerScript : MonoBehaviour
     {
         while (true)
         {
-            if (enemyInZone && towerManned && waveCode.WaveStart)
+            if (enemyInZone /*&& towerManned*/ && waveCode.WaveStart)
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
-
+                Debug.Log("shooting");
 
                 //Sound when arrow shoots
                 arrowShootSound.Play();

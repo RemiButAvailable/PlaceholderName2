@@ -13,6 +13,7 @@ public class TestPlacement : MonoBehaviour
         transform.position = mousePos+towerCollider.offset;
 
         if (Input.GetMouseButtonUp(0)) {
+            if (!TestMoneyMan.self.Check(baseTower.towerCost)) { Destroy(gameObject); }
             Collider2D[] results = new Collider2D[1];
 
             ContactFilter2D filter = new ContactFilter2D();
@@ -28,7 +29,7 @@ public class TestPlacement : MonoBehaviour
 
             //vfx sfx
 
-            //MoneyManager.changeMoney(baseTower.towerCost);
+            TestMoneyMan.self.ChangeMoney(-baseTower.towerCost);
 
             //neighboorhood stuff
             RaycastHit2D neighborHit = Physics2D.Raycast(towerCollider.offset+(Vector2)transform.position,

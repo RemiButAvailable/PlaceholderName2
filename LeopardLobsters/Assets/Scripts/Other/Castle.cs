@@ -101,9 +101,14 @@ public class Castle : MonoBehaviour
         {
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
-            peopleAtCastle--;
+            TestEnemy enemy = other.gameObject.GetComponent<TestEnemy>();
+            peopleAtCastle -= enemy.damage;
+            peopleTotal -= enemy.damage;
+            textPeopleOut.text = (peopleTotal - peopleAtCastle).ToString();
+            textPeopleTotal.text = peopleTotal.ToString();
+            enemy.ReachedCastle();
             if (peopleAtCastle < 0) {
-                SceneManager.LoadScene("HappyLoseScreen");
+                SceneManager.LoadScene("PeopleLoseScreen");
             }
         }
     }

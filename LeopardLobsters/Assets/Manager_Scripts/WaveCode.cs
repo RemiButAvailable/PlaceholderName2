@@ -1,4 +1,4 @@
-/* Author: Victoria T.
+/* Author: Victoria T. (And two others)
  * Date: 3/16/26
  * 
  * Description: The code for the wave/rounds of the game,
@@ -81,6 +81,7 @@ public class WaveCode : MonoBehaviour
                     enemyPath = StartingEnemyPath;
                 }
                 else
+                // Have a randomiser to where each enemy spawns
                 {
                     int RandomNum = Random.Range(0, 2);
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];

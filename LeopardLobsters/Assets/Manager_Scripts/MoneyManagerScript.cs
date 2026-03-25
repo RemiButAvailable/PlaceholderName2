@@ -79,24 +79,25 @@ public class MoneyManagerScript : MonoBehaviour
             }
             else
             {
-            spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
+                spawnedBuilding = Instantiate(buildings[spawnedProduct.GetComponent<ProductScript>().ID], spawnedProduct.transform.position, Quaternion.identity);
+                Physics2D.SyncTransforms();
 
                 //Sound that plays when you place tower
                 TowerPlaceSound.Play();
                 Destroy(spawnedProduct);
                 DragnDrop = false;
                 //happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
-                int greaterAreasLayer = LayerMask.NameToLayer("neighborhoodGreaterAreas");
+                int greaterAreasLayer = LayerMask.NameToLayer("NeighborhoodGreaterAreas");
                 int galMask = 1 << greaterAreasLayer;
                 overlappingGAs = new Collider2D[3];
                 contactFilterGA = new ContactFilter2D();
                 contactFilterGA.useLayerMask = true;
                 contactFilterGA.SetLayerMask(galMask);
-                int countGA = spawnedProduct.GetComponent<Collider2D>().Overlap(contactFilterGA, overlappingGAs);
+                int countGA = spawnedBuilding.GetComponent<Collider2D>().Overlap(contactFilterGA, overlappingGAs);
                 
                 for(int i = 0; i < countGA; i++)
                 {
-                    overlappingGAs[i].gameObject.GetComponent<Neighborhood>().towerEnter(spawnedBuilding.GetComponent<BaseTower>());
+                    overlappingGAs[i].gameObject.transform.GetChild(0).gameObject.GetComponent<Neighborhood>().towerEnter(spawnedBuilding.GetComponent<BaseTower>());
                 }
             }
         }

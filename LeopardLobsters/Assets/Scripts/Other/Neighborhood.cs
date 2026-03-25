@@ -49,7 +49,7 @@ public class Neighborhood : MonoBehaviour
 
         //distance to center calculation
         float dist = (tower.transform.position - tower.GetComponent<BaseTower>().GetClosestPointOnCollider(GetComponent<Collider2D>())).magnitude;
-        dist = ((dist) / (1 + (1 / 3) * dist));
+        dist = 4 - (dist / (1 + (1 / 3) * dist));
 
         curHappinessChange -= happinessPerTower + dist;
     }

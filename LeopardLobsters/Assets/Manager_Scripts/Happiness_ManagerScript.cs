@@ -5,6 +5,7 @@ public class Happiness_ManagerScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
+    public float convertedToPercentHappiness;
     public float happiness;
     public float happinessROC;
     
@@ -30,13 +31,20 @@ public class Happiness_ManagerScript : MonoBehaviour
         if(WaveCode.self.WaveStart)
         {
             happiness += happinessROC;
-            barHappyUI.ChangeBar(happiness);
-            tempHappinessText.text = "happiness = " + happiness + " happiness rate of change = " + happinessROC;
+            convertedToPercentHappiness = 1/(happiness);
+            if(convertedToPercentHappiness > 1)
+            {
+                convertedToPercentHappiness = 1;
+            }
+            barHappyUI.ChangeBar(convertedToPercentHappiness);
+            tempHappinessText.text = "happiness = " + convertedToPercentHappiness + " happiness rate of change = " + happinessROC;
         } 
     }
 
     public void CalculateHappiness(float amount) {
+        Debug.Log("amount is " + amount);
         happinessROC += amount;
+        //happinessROC *= 0.0001f;
     }
 
 

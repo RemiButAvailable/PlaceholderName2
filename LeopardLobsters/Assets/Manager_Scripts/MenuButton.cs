@@ -1,26 +1,23 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
-public class ReturnToMenu : MonoBehaviour
+public class MenuButton : MonoBehaviour
 {
-
-    public string MainMenu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
-
-    }
-
-
-    private void OnMouseDown()
     {
         
     }
 
-
     // Update is called once per frame
     void Update()
     {
-     
+        
+    }
 
+    private void OnMouseUp()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

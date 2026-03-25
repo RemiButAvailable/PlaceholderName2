@@ -4,6 +4,8 @@ public class ArrowScript : MonoBehaviour
 {
     public Vector3 direction;
     public float speed;
+    public int damage;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +25,7 @@ public class ArrowScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "knight")
         {
-            Debug.Log("hit enemy");
+            collision.GetComponent<KnightScript>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

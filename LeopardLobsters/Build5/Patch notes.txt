@@ -1,0 +1,8 @@
+Finished happiness system
+Added buttons that appear when you select a tower that let you add people to it and sell it
+Added a boss and faster enemies
+Fixed Wave starting and ending mechanic
+Started a soldier tower
+Edited tower placement
+Made Fountains
+Added music but it's not hooked up to functionality yet

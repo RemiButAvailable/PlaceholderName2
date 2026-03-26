@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
-public class MoneyManagerScript : MonoBehaviour // YO the money manager does nto need all this, It is litterally just a number that anyone can access
+public class MoneyManagerScript : MonoBehaviour 
 {
     public int moneyNum;
     GameObject spawnedProduct;
@@ -44,7 +44,7 @@ public class MoneyManagerScript : MonoBehaviour // YO the money manager does nto
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && false)
         {
             for (int i = 0; i < products.Count; i++)
             {
@@ -55,11 +55,11 @@ public class MoneyManagerScript : MonoBehaviour // YO the money manager does nto
                 }
             }
         }
-        if(DragnDrop && Input.GetMouseButton(0))
+        if(DragnDrop && Input.GetMouseButton(0) && false)
         {
             spawnedProduct.transform.position = mousePos;
         }
-        if (DragnDrop && Input.GetMouseButtonUp(0))
+        if (DragnDrop && Input.GetMouseButtonUp(0) && false)
         {
             int excludedLayerOne = LayerMask.NameToLayer("background");
             int excludedLayerTwo = LayerMask.NameToLayer("CheckTowerPlacement");
@@ -120,8 +120,25 @@ public class MoneyManagerScript : MonoBehaviour // YO the money manager does nto
         }
     }
 
+    public void playBuySound() {
+        BuySound.Play();
+    }
+    public void playBuyDenySound() {
+        BuyDenySound.Play();
+    }
+
     public void changeMoney(int num) {
         moneyNum += num;
         textMoney.text = moneyNum.ToString();
+    }
+    public void ChangeMoney(int num)
+    {
+        moneyNum += num;
+        textMoney.text = moneyNum.ToString();
+    }
+    public bool Check(int num)
+    {
+        if ((moneyNum + num) < 0) return false;
+        return true;
     }
 }

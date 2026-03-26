@@ -1,44 +1,57 @@
-/* Author: Victoria T.
- * Date: 3/16/26
- * 
- * 
- * 
- * Description: The way the player will place their wonderful towers*/
+/* Author: ferg is the name ben baller did the chain*/
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Placement : MonoBehaviour {
+public class Placement : MonoBehaviour
+{
+    [SerializeField] Collider2D towerCollider;
+    [SerializeField] BaseTower baseTower;
 
-    private bool DragnDrop = false;
-    private Vector3 offset;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (DragnDrop)
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //add clamping later
+        transform.position = mousePos + towerCollider.offset;
+
+        if (Input.GetMouseButtonUp(0))
         {
-            //Have tower follow mouse and be where it was dropped.
-            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+            if (!MoneyManagerScript.self.Check(baseTower.towerCost)) { Destroy(gameObject); return; }
+            Collider2D[] results = new Collider2D[1];
+
+            ContactFilter2D filter = new ContactFilter2D();
+            filter.SetLayerMask(LayerMask.GetMask("Tower", "Path"));
+
+            int overlapping = towerCollider.Overlap(filter, results); //checks if can place
+
+            if (overlapping > 0)
+            {
+                //vfx sfx
+                Destroy(gameObject);
+            }
+
+            //vfx sfx
+
+            MoneyManagerScript.self.ChangeMoney(-baseTower.towerCost);
+
+            //neighboorhood stuff
+            results = new Collider2D[100];
+            filter.SetLayerMask(LayerMask.GetMask("CheckTowerPlacement"));
+            filter.useTriggers = true;
+            overlapping = towerCollider.Overlap(filter, results);
+            foreach (Collider2D col in results)
+            {
+                if (col == null) break;
+                col.GetComponent<TowerAddedChecker>().TowerEnter(baseTower);
+            }
+
+            gameObject.layer = LayerMask.NameToLayer("Tower");
+            baseTower.OnPlace.Invoke();
+
+            Destroy(this);
         }
-
     }
-
-    private void OnMouseDown()
-    {
-        // Grab UI of Tower
-            offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            DragnDrop = true;   
-    }
-
-    private void OnMouseUp()
-    {
-        DragnDrop = false;
-        Destroy(gameObject);
-    }
-
-    // Make sure tower is unable to be picked back up
 
 
 }
+
 

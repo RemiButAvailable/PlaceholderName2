@@ -7,7 +7,7 @@ public class TestWaveSpawner : MonoBehaviour
     [SerializeField] TestEnemy prefab;
 
     [SerializeField] float timerMax = 10;
-    float timer = 5;
+    [SerializeField] float timer = 5;
     [SerializeField] float timerMultiplier = .85f;
 
     private void Update()

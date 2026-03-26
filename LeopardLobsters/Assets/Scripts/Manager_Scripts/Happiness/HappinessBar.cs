@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class HappinessBar : MonoBehaviour
 {
     public Image bar;
-    public FloatColor[] colorChanges; 
+    public FloatColor[] colorChanges;
+    public Image icon;
     int index = 0;
 
     private void Start()
@@ -19,6 +20,7 @@ public class HappinessBar : MonoBehaviour
         bar.fillAmount = percent;
         GetIndex(percent);
         bar.color = colorChanges[index].color;
+        if(colorChanges[index].sprite) icon.sprite = colorChanges[index].sprite;
     }
 
     //goes up or down the array until it hits the right thing

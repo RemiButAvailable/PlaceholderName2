@@ -41,6 +41,11 @@ public class WaveCode : MonoBehaviour
     static public WaveCode self;
     public UnityEvent waveStarted;
 
+    //(This is made by Dante Jones)
+    //Diffrent music for diffrent parts of the game
+    public AudioSource buildMusic;
+    public AudioSource battleMusic;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -63,6 +68,9 @@ public class WaveCode : MonoBehaviour
         if (EnemyNum == 0)
         {
             WaveStart = false;
+            //Turns on building phase music stops battle phase music
+            buildMusic.Play();
+            battleMusic.Stop();
         }
     }
 
@@ -110,6 +118,9 @@ public class WaveCode : MonoBehaviour
         StartingEnemyPath = enemyPaths[RandomNum];
         WaveStart = true;
         waveStarted.Invoke();
+        ////Turns on battle phase music stops building phase music
+        buildMusic.Stop();
+        battleMusic.Play();
     }
 
 

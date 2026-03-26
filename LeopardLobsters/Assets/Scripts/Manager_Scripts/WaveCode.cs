@@ -25,8 +25,13 @@ public class WaveCode : MonoBehaviour
 
     GameObject spawnedEnemy;
     public GameObject enemy;
+    GameObject bossEnemy;
+    public GameObject spawnedBossEnemy;
+    public GameObject fastEnemy;
+    GameObject selectedEnemy;
 
     public Vector3[] EnemySpawnPositions;
+    public GameObject[] enemies;
 
     Vector3 EnemySpawnStart;
     Vector3 EnemySpawnSpot;
@@ -49,6 +54,7 @@ public class WaveCode : MonoBehaviour
 
     public TextMeshProUGUI waveText;
     bool enemiesStartedSpawning;
+    int probOfFastEnemyDeterminer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -68,7 +74,7 @@ public class WaveCode : MonoBehaviour
         {
         // After every enemy is defeated, put up the number.
         // Get ready for a new wave
-        if (EnemyNum == 0 && WaveStart && enemiesStartedSpawning)
+        if (EnemyNum == 0 && WaveStart && enemiesStartedSpawning && PhantomEnemyNum == EnemyMax)
         {
             WaveStart = false;
             enemiesStartedSpawning = false;
@@ -84,10 +90,11 @@ public class WaveCode : MonoBehaviour
         {
             Debug.Log(WaveStart);
             // With the game starting and the number of enemies being less than max
-            if (WaveStart && PhantomEnemyNum < EnemyMax)
+            if (WaveStart /*&& PhantomEnemyNum < EnemyMax*/)
             {
                 // Spawn the enemies
                 cooldown -= PhantomEnemyNum * 0.01f;
+                probOfFastEnemyDeterminer -= 1;
                 EnemyNum++;
                 PhantomEnemyNum++;
                 if(PhantomEnemyNum <= 10) 
@@ -101,10 +108,24 @@ public class WaveCode : MonoBehaviour
                     int RandomNum = Random.Range(0, 2);
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
+                    int RandomNumTwo = Random.Range(0, probOfFastEnemyDeterminer);
+                    if(RandomNumTwo >= 10)
+                    {
+                        RandomNumTwo = 0;
+                    }
+                    else
+                    {
+                        RandomNumTwo = 1;
+                    }
+                    selectedEnemy = enemies[RandomNumTwo];
                 }
-                spawnedEnemy = Instantiate(enemy, EnemySpawnSpot, Quaternion.identity);
+                spawnedEnemy = Instantiate(/*enemy*/ selectedEnemy, EnemySpawnSpot, Quaternion.identity);
                 spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
                 enemiesStartedSpawning = true;
+                if (PhantomEnemyNum > 20 && PhantomEnemyNum < 21)
+                {
+                    spawnedBossEnemy = Instantiate(bossEnemy, EnemySpawnSpot, Quaternion.identity);
+                }
             }
 
             // Have a cooldown for player to not get flung into the next wave

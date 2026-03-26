@@ -25,26 +25,27 @@ public class Happiness_ManagerScript : MonoBehaviour
         //distances = new float[neighborhoods.Length];
         barHappyUI.ChangeBar(happiness);
         happinessROC = 0;
-        StartCoroutine(changeHappiness());
+        //StartCoroutine(changeHappiness());
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if(WaveCode.self.WaveStart)
+        if(WaveCode.self.WaveStart)
         {
             happiness -= happinessROC;
-            convertedToPercentHappiness = 1/(happiness);
-            if(convertedToPercentHappiness > 1)
+            //convertedToPercentHappiness = 1/(happiness);
+            if(/*convertedToPercentHappiness*/ happiness > 1)
             {
-                convertedToPercentHappiness = 1;
+                /*convertedToPercentHappiness*/ happiness = 1;
             }
-            barHappyUI.ChangeBar(convertedToPercentHappiness);
-            tempHappinessText.text = "happiness = " + convertedToPercentHappiness + " happiness rate of change = " + happinessROC;
-        }*/ 
+            barHappyUI.ChangeBar(/*convertedToPercentHappiness*/ happiness);
+            tempHappinessText.text = "happiness = " + /*convertedToPercentHappiness*/ happiness + " happiness rate of change = " + happinessROC;
+        }
     }
 
     public void CalculateHappiness(float amount) {
+        amount *= 0.0001f;
         Debug.Log("amount is " + amount);
         happinessROC += amount;
     }
@@ -91,7 +92,7 @@ public class Happiness_ManagerScript : MonoBehaviour
     }
     */
 
-    IEnumerator changeHappiness()
+    /*IEnumerator changeHappiness()
     {
         while(true)
         {
@@ -106,7 +107,7 @@ public class Happiness_ManagerScript : MonoBehaviour
                 barHappyUI.ChangeBar(convertedToPercentHappiness);
                 tempHappinessText.text = "happiness = " + convertedToPercentHappiness + " happiness rate of change = " + happinessROC;
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1);
         }
-    }
+    }*/
 }

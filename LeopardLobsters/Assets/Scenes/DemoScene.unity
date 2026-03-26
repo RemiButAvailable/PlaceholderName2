@@ -3000,6 +3000,8 @@ MonoBehaviour:
   waveStarted:
     m_PersistentCalls:
       m_Calls: []
+  buildMusic: {fileID: 219736196}
+  battleMusic: {fileID: 698470490}
 --- !u!1 &626876290
 GameObject:
   m_ObjectHideFlags: 0

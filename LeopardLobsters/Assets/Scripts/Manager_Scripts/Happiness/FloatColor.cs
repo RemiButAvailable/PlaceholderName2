@@ -8,6 +8,8 @@ public class FloatColor : IComparable<FloatColor> //can be further expanded with
     public float percent;
     [SerializeField]
     public Color color;
+    [SerializeField]
+    public Sprite sprite;
 
     public int CompareTo(FloatColor other)
     {

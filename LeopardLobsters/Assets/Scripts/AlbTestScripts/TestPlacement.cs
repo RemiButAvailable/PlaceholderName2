@@ -13,16 +13,15 @@ public class TestPlacement : MonoBehaviour
         transform.position = mousePos+towerCollider.offset;
 
         if (Input.GetMouseButtonUp(0)) {
-            if (!TestMoneyMan.self.Check(baseTower.towerCost)) { Destroy(gameObject); }
+            if (!TestMoneyMan.self.Check(baseTower.towerCost)) { Destroy(gameObject); return; }
             Collider2D[] results = new Collider2D[1];
 
             ContactFilter2D filter = new ContactFilter2D();
             filter.SetLayerMask(LayerMask.GetMask("Tower", "Path"));
-            filter.useLayerMask = true;
 
-            int noTowerHit = towerCollider.Overlap(filter, results); //checks if can place
+            int overlapping = towerCollider.Overlap(filter, results); //checks if can place
 
-            if (noTowerHit > 0) {
+            if (overlapping > 0) {
                 //vfx sfx
                 Destroy(gameObject);
             }
@@ -32,13 +31,18 @@ public class TestPlacement : MonoBehaviour
             TestMoneyMan.self.ChangeMoney(-baseTower.towerCost);
 
             //neighboorhood stuff
-            RaycastHit2D neighborHit = Physics2D.Raycast(towerCollider.offset+(Vector2)transform.position,
-                Vector2.zero, 1f, LayerMask.GetMask("Neighborhood")); // checks if has neighboorhood, can change to be collider cast
-            if (neighborHit) { 
-                neighborHit.collider.GetComponent<Neighborhood>().towerEnter(baseTower);
+            results = new Collider2D[100];
+            filter.SetLayerMask(LayerMask.GetMask("CheckTowerPlacement"));
+            filter.useTriggers = true;
+            overlapping = towerCollider.Overlap(filter, results);
+            foreach (Collider2D col in results) { 
+                if (col == null) break;
+                col.GetComponent<TowerAddedChecker>().TowerEnter(baseTower);
             }
 
             gameObject.layer = LayerMask.NameToLayer("Tower");
+            baseTower.OnPlace.Invoke();
+
             Destroy(this);
         }
     }

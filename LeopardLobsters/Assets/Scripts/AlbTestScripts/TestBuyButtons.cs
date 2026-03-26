@@ -1,11 +1,20 @@
+using TMPro;
 using UnityEngine;
 
 public class TestBuyButtons : MonoBehaviour
 {
-    [SerializeField] TestPlacement prefab;
+    [SerializeField] BaseTower prefab;
+    [SerializeField] TextMeshProUGUI costText;
+    [SerializeField] TextMeshProUGUI peopleText;
 
-    public void buyThing()
+    private void Start()
     {
-        Instantiate(prefab);
+        costText.text = prefab.towerCost.ToString();
+        peopleText.text = prefab.peopleNeeded.ToString();
+    }
+
+    public void buyThing() // connected by button event
+    {
+        Instantiate(prefab,Camera.main.ScreenToWorldPoint(Input.mousePosition), prefab.transform.rotation);
     }
 }

@@ -1513,6 +1513,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeIndex: 
   typeImpact: []
+  neighboorhoodCenter: {fileID: 263250743}
+  checker: {fileID: 550390848}
   happinessPerTower: 0
 --- !u!1 &267162156
 GameObject:
@@ -2129,7 +2131,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: 595030951
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Color: {r: 0.5698112, g: 0.33866137, b: 0.33866137, a: 1}
+  m_Color: {r: 0.4528302, g: 0.27554289, b: 0.27554289, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_Sprites:
@@ -2175,6 +2177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeIndex: 
   typeImpact: []
+  neighboorhoodCenter: {fileID: 279870996}
+  checker: {fileID: 1845701024}
   happinessPerTower: 0
 --- !u!1001 &306283700
 PrefabInstance:
@@ -2532,6 +2536,7 @@ GameObject:
   - component: {fileID: 550390845}
   - component: {fileID: 550390844}
   - component: {fileID: 550390847}
+  - component: {fileID: 550390848}
   m_Layer: 8
   m_Name: 'HNGreaterArea '
   m_TagString: Untagged
@@ -2774,7 +2779,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550390842}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -2812,7 +2817,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: 595030951
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Color: {r: 0.27998543, g: 0.5018867, b: 0.13920254, a: 1}
+  m_Color: {r: 0.27998543, g: 0.5018867, b: 0.13920254, a: 0.3764706}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_Sprites:
@@ -2856,6 +2861,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &550390848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550390842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1254c088243879f4293eba3dade7c267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  towerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &572224659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,6 +2990,7 @@ GameObject:
   - component: {fileID: 626876293}
   - component: {fileID: 626876292}
   - component: {fileID: 626876295}
+  - component: {fileID: 626876296}
   m_Layer: 8
   m_Name: VUNGreaterArea
   m_TagString: Untagged
@@ -3215,7 +3239,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626876290}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -3253,7 +3277,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: 595030951
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Color: {r: 0.3584906, g: 0.05343535, b: 0.05343535, a: 1}
+  m_Color: {r: 0.3584906, g: 0.05343535, b: 0.05343535, a: 0.2784314}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_Sprites:
@@ -3297,6 +3321,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &626876296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626876290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1254c088243879f4293eba3dade7c267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  towerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &694960352
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,6 +4156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeIndex: 
   typeImpact: []
+  neighboorhoodCenter: {fileID: 747162427}
+  checker: {fileID: 626876296}
   happinessPerTower: 0
 --- !u!1 &778908314
 GameObject:
@@ -6820,6 +6864,7 @@ GameObject:
   - component: {fileID: 1845701021}
   - component: {fileID: 1845701020}
   - component: {fileID: 1845701023}
+  - component: {fileID: 1845701024}
   m_Layer: 8
   m_Name: UNGreaterArea
   m_TagString: Untagged
@@ -7082,7 +7127,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845701018}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -7120,7 +7165,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: 595030951
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Color: {r: 0.5698112, g: 0.33866137, b: 0.33866137, a: 1}
+  m_Color: {r: 0.5698112, g: 0.33866137, b: 0.33866137, a: 0.33333334}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_Sprites:
@@ -7164,6 +7209,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1845701024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845701018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1254c088243879f4293eba3dade7c267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  towerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1972483142
 GameObject:
   m_ObjectHideFlags: 0

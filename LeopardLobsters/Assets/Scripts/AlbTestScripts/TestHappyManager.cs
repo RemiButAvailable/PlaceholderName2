@@ -1,10 +1,12 @@
+using System;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TestHappyManager : MonoBehaviour
 {
-    float happy = 100;
+    [SerializeField]float happy = 100;
     [SerializeField]HappinessBar bar;
     public static TestHappyManager self;
 
@@ -24,6 +26,7 @@ public class TestHappyManager : MonoBehaviour
         }
         if (happy > 100) happy = 100;
     }
+
 
 
 }

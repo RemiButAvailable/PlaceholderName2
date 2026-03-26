@@ -4,7 +4,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class TestFountain : MonoBehaviour
 {
-    Happiness_ManagerScript hManager;
     int towerCount = 0;
 
     [SerializeField] float happyPerTower = .05f;
@@ -15,17 +14,22 @@ public class TestFountain : MonoBehaviour
     public bool active = false;
     [SerializeField]BaseTower baseTower;
 
+    [SerializeField] TowerAddedChecker checker;
+
     private void Start()
     {
         //hManager = Happiness_ManagerScript.self
         baseTower.isActive.AddListener(SetActive);
+        baseTower.OnPlace.AddListener(CheckTowersInArea);
+        checker.towerEnter.AddListener(TowerEnter);
+        checker.towerExit.AddListener(TowerExit);
     }
 
-    void TowerEnter(Collider2D other)
+    void TowerEnter(BaseTower other)
     {
             towerCount++;
     }
-    void TowerExit(Collider2D other)
+    void TowerExit(BaseTower other)
     {
             towerCount--;
     }
@@ -42,7 +46,29 @@ public class TestFountain : MonoBehaviour
             timer = cooldown;
 
             //happiness change sfx vfx
+
+            TestHappyManager.self.ChangeHappy(happyPerTower*towerCount);
         }
+    }
+
+    void CheckTowersInArea() {
+        Collider2D col = GetComponent<Collider2D>();
+
+        col.gameObject.layer = LayerMask.NameToLayer("CheckTowerPlacement");
+
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.SetLayerMask(LayerMask.GetMask("Tower"));
+
+        Collider2D[] results = new Collider2D[100];
+
+        col.Overlap(filter, results);
+
+        int i = 0;
+        while (i<results.Length && results[i] != null) {
+            towerCount++;
+            i++;
+        }
+
     }
 
     void SetActive(bool towerActive) { active = towerActive; }

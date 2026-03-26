@@ -9,6 +9,7 @@ public class BaseTower : MonoBehaviour
     public int peopleNeeded = 2;
     public UnityEvent<bool> isActive;
     public UnityEvent<BaseTower> Destroyed;
+    public UnityEvent OnPlace; //add change sprite layer later
 
     public int towerCost = 10;
     public int sellPrice = 5;
@@ -31,7 +32,8 @@ public class BaseTower : MonoBehaviour
     }
 
     public void Sell(){ //connected through events
-        MoneyManagerScript.self.changeMoney(sellPrice);
+        //MoneyManagerScript.self.changeMoney(sellPrice);
+        TestMoneyMan.self.ChangeMoney(sellPrice);
         while (RemovePeople()) ;
        //VFX SFX
        Destroy(gameObject);

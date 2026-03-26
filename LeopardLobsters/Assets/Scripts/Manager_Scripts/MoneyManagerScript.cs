@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
-public class MoneyManagerScript : MonoBehaviour
+public class MoneyManagerScript : MonoBehaviour // YO the money manager does nto need all this, It is litterally just a number that anyone can access
 {
     public int moneyNum;
     GameObject spawnedProduct;
@@ -62,7 +62,7 @@ public class MoneyManagerScript : MonoBehaviour
         if (DragnDrop && Input.GetMouseButtonUp(0))
         {
             int excludedLayerOne = LayerMask.NameToLayer("background");
-            int excludedLayerTwo = LayerMask.NameToLayer("neighborhoodGreaterAreas");
+            int excludedLayerTwo = LayerMask.NameToLayer("CheckTowerPlacement");
             int mask = ~((1 << excludedLayerOne) | (1 << excludedLayerTwo));
             overlappingObjs = new Collider2D[1];
             contactFilter = new ContactFilter2D();
@@ -87,8 +87,8 @@ public class MoneyManagerScript : MonoBehaviour
                 Destroy(spawnedProduct);
                 DragnDrop = false;
                 //happiness_ManagerScript.CalculateHappiness(spawnedBuilding);
-                int greaterAreasLayer = LayerMask.NameToLayer("NeighborhoodGreaterAreas");
-                int galMask = 1 << greaterAreasLayer;
+                int greaterAreasLayer = LayerMask.NameToLayer("CheckTowerPlacement"); 
+                int galMask = 1 << greaterAreasLayer; // WHY??? BRUh 
                 overlappingGAs = new Collider2D[3];
                 contactFilterGA = new ContactFilter2D();
                 contactFilterGA.useLayerMask = true;

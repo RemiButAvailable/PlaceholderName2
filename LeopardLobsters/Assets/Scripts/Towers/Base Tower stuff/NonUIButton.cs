@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
-public class NonUIButton : MonoBehaviour
+public class NonUIButton : MonoBehaviour, IPointerDownHandler
 {
     public UnityEvent OnClick;
     Animation changeColor;
+    
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
         OnClick?.Invoke();
         changeColor?.Play();

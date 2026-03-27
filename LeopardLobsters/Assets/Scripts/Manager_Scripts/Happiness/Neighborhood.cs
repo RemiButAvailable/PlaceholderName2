@@ -18,13 +18,14 @@ public class Neighborhood : MonoBehaviour
     [SerializeField]
     float happinessPerTower;
 
-    float curHappinessChange = 0;
+    public float curHappinessChange = 0;
 
     private void Start()
     {
         //WaveCode.self.waveStarted.AddListener(resetCalculations);
         checker.towerEnter.AddListener(towerEnter);
         checker.towerExit.AddListener(towerLeft);
+        Happiness_ManagerScript.self.Neighborhoods.Add(this);
     }
 
     public void towerEnter(BaseTower tower)
@@ -40,9 +41,9 @@ public class Neighborhood : MonoBehaviour
 
         //distance to closest point on collider calculation
         float dist = (tower.transform.position - tower.GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
-        dist = ((dist) / (1 + (1 / 3) * dist));
+        dist = (1 / (1 + dist / 3));
 
-        Happiness_ManagerScript.self.CalculateHappiness(happinessPerTower + dist);
+        curHappinessChange += happinessPerTower * dist;
     }
 
     void towerLeft(BaseTower tower) {
@@ -54,9 +55,9 @@ public class Neighborhood : MonoBehaviour
 
         //distance to center calculation
         float dist = (tower.transform.position - tower.GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
-        dist = ((dist) / (1 + (1 / 3) * dist));
+        dist = (1 / (1 + dist / 3));
 
-        curHappinessChange -= happinessPerTower + dist;
+        curHappinessChange -= happinessPerTower * dist;
     }
 
     void resetCalculations() { //do after every wave just in case

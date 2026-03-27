@@ -43,7 +43,7 @@ public class TestFountain : MonoBehaviour
         }
         else
         {
-            timer = cooldown - timer;
+            timer = cooldown + timer;
 
             //happiness change sfx vfx
 

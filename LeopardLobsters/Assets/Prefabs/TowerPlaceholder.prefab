@@ -167,6 +167,36 @@ MonoBehaviour:
   OnPlace:
     m_PersistentCalls:
       m_Calls: []
+  AddedPeople:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4154047454215975713, guid: c6b8bd8c2cff4454db12b75c390b11b9, type: 3}
+        m_TargetAssemblyTypeName: SoldierTowerScript, Assembly-CSharp
+        m_MethodName: AddSoldier
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 201317035348081751, guid: c6b8bd8c2cff4454db12b75c390b11b9, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  RemovedPeople:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4154047454215975713, guid: c6b8bd8c2cff4454db12b75c390b11b9, type: 3}
+        m_TargetAssemblyTypeName: SoldierTowerScript, Assembly-CSharp
+        m_MethodName: RemoveSoldier
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   towerCost: 10
   sellPrice: 5
   type: 0

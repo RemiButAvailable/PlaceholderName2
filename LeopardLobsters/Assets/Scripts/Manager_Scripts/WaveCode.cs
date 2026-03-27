@@ -101,6 +101,7 @@ public class WaveCode : MonoBehaviour
                 {
                     EnemySpawnSpot = EnemySpawnStart;
                     enemyPath = StartingEnemyPath;
+                    selectedEnemy = enemies[0];
                 }
                 else
                 // Have a randomiser to where each enemy spawns

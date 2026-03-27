@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoldierTowerPlaceholder Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: AddedPeople.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4154047454215975713}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: RemovedPeople.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4154047454215975713}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: AddedPeople.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 201317035348081751}
     - target: {fileID: 8218147361620304378, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.0811377
@@ -54,12 +66,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2749664105270218529, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
-    m_RemovedGameObjects: []
+    - {fileID: 2239792696032037312, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 4270045994117222848, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 415200211965424030, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4154047454215975713}
+    - targetCorrespondingSourceObject: {fileID: 8183656115784846105, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4321486839226931381}
   m_SourcePrefab: {fileID: 100100000, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
 --- !u!1 &201317035348081751 stripped
 GameObject:
@@ -79,3 +96,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldier: {fileID: 6608690578147413099, guid: 455d08329958ac440b240baf054fe5b6, type: 3}
+  soldiers: []
+--- !u!1 &8546144628330104528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8183656115784846105, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+  m_PrefabInstance: {fileID: 506706233344232905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4321486839226931381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546144628330104528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd3ab304705c2047a30388725a98fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

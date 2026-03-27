@@ -33,7 +33,7 @@ public class BaseTower : MonoBehaviour
 
     public void Sell(){ //connected through events
         //MoneyManagerScript.self.changeMoney(sellPrice);
-        TestMoneyMan.self.ChangeMoney(sellPrice);
+        MoneyManagerScript.self.ChangeMoney(sellPrice);
         while (RemovePeople()) ;
        //VFX SFX
        Destroy(gameObject);

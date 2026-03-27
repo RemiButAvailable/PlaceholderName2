@@ -14,7 +14,6 @@ public class Happiness_ManagerScript : MonoBehaviour
     public HappinessBar barHappyUI;
     static public Happiness_ManagerScript self;
 
-    public TextMeshProUGUI tempHappinessText;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,7 +28,7 @@ public class Happiness_ManagerScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(WaveCode.self.WaveStart)
         {
@@ -40,7 +39,6 @@ public class Happiness_ManagerScript : MonoBehaviour
                 /*convertedToPercentHappiness*/ happiness = 1;
             }
             barHappyUI.ChangeBar(/*convertedToPercentHappiness*/ happiness);
-            tempHappinessText.text = "happiness = " + /*convertedToPercentHappiness*/ happiness + " happiness rate of change = " + happinessROC;
         }
     }
 
@@ -49,7 +47,11 @@ public class Happiness_ManagerScript : MonoBehaviour
         Debug.Log("amount is " + amount);
         happinessROC += amount;
     }
-
+    public void ChangeHappy(float amount)
+    {
+        Debug.Log("amount is " + amount);
+        happiness += amount;
+    }
 
     /*
     public Collider2D[] neighborhoods;

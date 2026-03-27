@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2819629580455469883}
   - component: {fileID: 5134048936030875358}
   - component: {fileID: 7736639828261574638}
+  - component: {fileID: 9107644497228952034}
   m_Layer: 3
   m_Name: TowerPlaceholder
   m_TagString: archerTower
@@ -206,6 +207,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0.041484848, y: 0.087507196}
   m_Size: {x: 2.0102758, y: 1.4650612}
   m_Direction: 1
+--- !u!114 &9107644497228952034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415200211965424030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2da25705a3b1a04d90edff6f0a6e0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerCollider: {fileID: 7736639828261574638}
+  baseTower: {fileID: 5134048936030875358}
 --- !u!1 &4270045994117222848
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +363,7 @@ GameObject:
   - component: {fileID: 4758047625983512124}
   - component: {fileID: 2239792696032037312}
   - component: {fileID: 3640299927137169966}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Radius
   m_TagString: Untagged
   m_Icon: {fileID: 0}

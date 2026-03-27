@@ -1,3 +1,8 @@
+/*
+ * Remi de Plater
+ * 3/27/26
+ * Soldier Tower Functionality
+ */
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -33,11 +38,21 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
-    public void RemoveSoldier(soldier)
+    public void RemoveSoldier(GameObject soldier)
     {
         for (int i = 0; i <= soldierPositions.Count; i++)
         {
-            if(Vector3.Distance(soldier))
+            if(Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, soldierPositions[i]) < 0.1f)
+            {
+                soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
+                if(soldier.GetComponent<SoldierScript>().target != null)
+                {
+                    //
+                }
+                soldiers.Remove(soldier);
+                //play death sound?
+                break;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,6 +60,30 @@ public class SoldierTowerScript : MonoBehaviour
         if(collision.gameObject.tag == "enemy")
         {
             enemiesInZone.Add(collision.gameObject);
+            foreach(var soldier in soldiers)
+            {
+                if(soldier.GetComponent<SoldierScript>().engaged == false)
+                {
+                    soldier.GetComponent<SoldierScript>().target = collision.gameObject;
+                    soldier.GetComponent<SoldierScript>().engaged = true;
+                    break;
+                }
+            }
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "enemy")
+        {
+            enemiesInZone.Remove(collision.gameObject);
+            foreach(var soldier in soldiers)
+            {
+                if(soldier.GetComponent<SoldierScript>().target.GetInstanceID() == collision.gameObject.GetInstanceID())
+                {
+                    soldier.GetComponent<SoldierScript>().target = null;
+                    soldier.GetComponent<SoldierScript>().engaged = false;
+                }
+            }
         }
     } */
 }

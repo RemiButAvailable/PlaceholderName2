@@ -8,6 +8,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using TMPro;
 
 public class WaveCode : MonoBehaviour
 {
@@ -20,12 +21,17 @@ public class WaveCode : MonoBehaviour
     public int TotalWealth = 1;
     public int WaveNum = 0;
 
-    public bool WaveStart = true;
+    public bool WaveStart;
 
     GameObject spawnedEnemy;
     public GameObject enemy;
+    GameObject bossEnemy;
+    public GameObject spawnedBossEnemy;
+    public GameObject fastEnemy;
+    GameObject selectedEnemy;
 
     public Vector3[] EnemySpawnPositions;
+    public GameObject[] enemies;
 
     Vector3 EnemySpawnStart;
     Vector3 EnemySpawnSpot;
@@ -41,12 +47,21 @@ public class WaveCode : MonoBehaviour
     static public WaveCode self;
     public UnityEvent waveStarted;
 
+    //(This is made by Dante Jones)
+    //Diffrent music for diffrent parts of the game
+    public AudioSource buildMusic;
+    public AudioSource battleMusic;
+
+    public TextMeshProUGUI waveText;
+    bool enemiesStartedSpawning;
+    int probOfFastEnemyDeterminer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Keep Game alive
+        WaveStart = false;
         DontDestroyOnLoad(this);
-        StartNext();
         StartCoroutine(Spawner(cooldown));
       }
 
@@ -57,24 +72,29 @@ public class WaveCode : MonoBehaviour
     // Update is called once per frame
     void Update()
         {
-
         // After every enemy is defeated, put up the number.
         // Get ready for a new wave
-        if (EnemyNum == 0)
+        if (EnemyNum == 0 && WaveStart && enemiesStartedSpawning && PhantomEnemyNum == EnemyMax)
         {
             WaveStart = false;
+            enemiesStartedSpawning = false;
+            //Turns on building phase music stops battle phase music
+            buildMusic.Play();
+            battleMusic.Stop();
         }
     }
 
-    public IEnumerator Spawner(int cooldown)
+    public IEnumerator Spawner(float cooldown)
     {
         while(true)
         {
+            Debug.Log(WaveStart);
             // With the game starting and the number of enemies being less than max
-            if (WaveStart && PhantomEnemyNum < EnemyMax)
+            if (WaveStart /*&& PhantomEnemyNum < EnemyMax*/)
             {
                 // Spawn the enemies
-
+                cooldown -= PhantomEnemyNum * 0.01f;
+                probOfFastEnemyDeterminer -= 1;
                 EnemyNum++;
                 PhantomEnemyNum++;
                 if(PhantomEnemyNum <= 10) 
@@ -88,16 +108,29 @@ public class WaveCode : MonoBehaviour
                     int RandomNum = Random.Range(0, 2);
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
+                    int RandomNumTwo = Random.Range(0, probOfFastEnemyDeterminer);
+                    if(RandomNumTwo >= 10)
+                    {
+                        RandomNumTwo = 0;
+                    }
+                    else
+                    {
+                        RandomNumTwo = 1;
+                    }
+                    selectedEnemy = enemies[RandomNumTwo];
                 }
-                spawnedEnemy = Instantiate(enemy, EnemySpawnSpot, Quaternion.identity);
+                spawnedEnemy = Instantiate(/*enemy*/ selectedEnemy, EnemySpawnSpot, Quaternion.identity);
                 spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
+                enemiesStartedSpawning = true;
+                if (PhantomEnemyNum > 20 && PhantomEnemyNum < 21)
+                {
+                    spawnedBossEnemy = Instantiate(bossEnemy, EnemySpawnSpot, Quaternion.identity);
+                }
             }
 
             // Have a cooldown for player to not get flung into the next wave
                 yield return new WaitForSeconds(cooldown);
         }
-
-
     }
 
     //Start Next Wave
@@ -109,7 +142,11 @@ public class WaveCode : MonoBehaviour
         EnemySpawnStart = EnemySpawnPositions[RandomNum];
         StartingEnemyPath = enemyPaths[RandomNum];
         WaveStart = true;
+        waveText.text = "Wave: " + WaveNum;
         waveStarted.Invoke();
+        ////Turns on battle phase music stops building phase music
+        buildMusic.Stop();
+        battleMusic.Play();
     }
 
 

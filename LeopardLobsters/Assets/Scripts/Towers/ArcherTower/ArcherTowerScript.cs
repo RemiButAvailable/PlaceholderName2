@@ -17,7 +17,6 @@ public class ArcherTowerScript : MonoBehaviour
     KnightScript knightScript;
     GameObject targetedEnemy;
     public WaveCode waveCode;
-    //GameObject
     public bool towerManned;
     //(Made by Dante Jones)
     //Sound when enemy dies
@@ -33,6 +32,7 @@ public class ArcherTowerScript : MonoBehaviour
         queue = new List<GameObject>();
         StartCoroutine(ShootArrows());
         StartCoroutine(Printer());
+        GetComponent<BaseTower>().isActive.AddListener(IsActive);
     }
 
     // Update is called once per frame
@@ -55,20 +55,12 @@ public class ArcherTowerScript : MonoBehaviour
         {
             enemyInZone = false;
         }
-        if(gameObject.GetComponent<BaseTower>().people >= gameObject.GetComponent<BaseTower>().peopleNeeded)
-        {
-            towerManned = true;
-        }
-        else
-        {
-            towerManned = false;
-        }
     }
     public IEnumerator ShootArrows()
     {
         while (true)
         {
-            if (enemyInZone /*&& towerManned*/ && waveCode.WaveStart)
+            if (enemyInZone && towerManned && WaveCode.self.WaveStart)
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
                 Debug.Log("shooting");
@@ -90,8 +82,10 @@ public class ArcherTowerScript : MonoBehaviour
     {
         while(true)
         {
-            //Debug.Log("val is " + queue.Count);
+            Debug.Log("val is " + WaveCode.self.WaveStart);
             yield return new WaitForSeconds(1);
         }
     }
+
+    void IsActive(bool isActive) { towerManned = isActive; }
 }

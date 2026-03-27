@@ -1,9 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SoldierTowerScript : MonoBehaviour
 {
     bool allSoldiersDead;
-    //public 
+    public GameObject soldier;
+    List<GameObject> soldiers;
+    List<Vector3> soldierPositions;
+    List<GameObject> enemiesInZone;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,21 +19,32 @@ public class SoldierTowerScript : MonoBehaviour
     {
         
     }
-    /*public IEnumerator ShootArrows()
+    public void AddSoldier(GameObject soldier)
     {
-        while (true)
+        soldiers.Add(soldier);
+        for(int i = 0; i <= soldierPositions.Count; i++)
         {
-            if (allSoldiersDead)
+            if (soldierPositions[i].z == 0)
             {
-                spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
-                arrowScript = spawnedArrow.GetComponent<ArrowScript>();
-                knightScript = queue[0].GetComponent<KnightScript>();
-
-                //predicted spot will be based on enemy speed if we have multiple types of enemies
-                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot];
-                arrowScript.direction = target - transform.position;
+                soldier.transform.position = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
+                soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 1);
+                soldier.GetComponent<SoldierScript>().stationPosition = soldier.transform.position;
+                break;
             }
-            yield return new WaitForSeconds(cooldown);
         }
-    }*/
+    }
+    public void RemoveSoldier(soldier)
+    {
+        for (int i = 0; i <= soldierPositions.Count; i++)
+        {
+            if(Vector3.Distance(soldier))
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "enemy")
+        {
+            enemiesInZone.Add(collision.gameObject);
+        }
+    }
 }

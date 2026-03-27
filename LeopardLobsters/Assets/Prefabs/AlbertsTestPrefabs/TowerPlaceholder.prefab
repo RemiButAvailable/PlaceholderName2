@@ -149,6 +149,9 @@ MonoBehaviour:
   Destroyed:
     m_PersistentCalls:
       m_Calls: []
+  OnPlace:
+    m_PersistentCalls:
+      m_Calls: []
   towerCost: 10
   sellPrice: 5
   type: 0
@@ -382,6 +385,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackZone: {fileID: 4851980734617179348}
-  cooldown: 1.2
+  cooldown: 0.6
   projectilePrefab: {fileID: 8776400681387974995, guid: 87ad15b888fc83b428d2cb190ff04fac, type: 3}
   active: 0

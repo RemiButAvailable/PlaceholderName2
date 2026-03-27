@@ -24,7 +24,7 @@ public class SoldierTowerScript : MonoBehaviour
     {
         
     }
-   /* public void AddSoldier(GameObject soldier)
+    public void AddSoldier(GameObject soldier)
     {
         soldiers.Add(soldier);
         for(int i = 0; i <= soldierPositions.Count; i++)
@@ -85,5 +85,5 @@ public class SoldierTowerScript : MonoBehaviour
                 }
             }
         }
-    } */
+    }
 }

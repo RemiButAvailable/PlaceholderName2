@@ -1293,6 +1293,7 @@ MonoBehaviour:
   neighboorhoodCenter: {fileID: 263250743}
   checker: {fileID: 550390848}
   happinessPerTower: 0
+  curHappinessChange: 0
 --- !u!1 &268697997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,7 +1810,8 @@ MonoBehaviour:
   typeImpact: []
   neighboorhoodCenter: {fileID: 279870996}
   checker: {fileID: 1845701024}
-  happinessPerTower: 0
+  happinessPerTower: -0.0001
+  curHappinessChange: 0
 --- !u!1 &281089149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4021,6 +4023,7 @@ MonoBehaviour:
   neighboorhoodCenter: {fileID: 747162427}
   checker: {fileID: 626876296}
   happinessPerTower: 0
+  curHappinessChange: 0
 --- !u!1 &765353317
 GameObject:
   m_ObjectHideFlags: 0
@@ -5640,10 +5643,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e62f9fabb939140a78d09d6fabd5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  convertedToPercentHappiness: 0
   happiness: 1
-  happinessROC: 0
+  Neighborhoods: []
   barHappyUI: {fileID: 109915801}
+  timerMax: 0.1
+  timer: 0
 --- !u!1001 &1266185989
 PrefabInstance:
   m_ObjectHideFlags: 0

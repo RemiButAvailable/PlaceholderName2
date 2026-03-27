@@ -2,56 +2,73 @@ using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Happiness_ManagerScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
-    public float convertedToPercentHappiness;
+
     public float happiness;
-    public float happinessROC;
+    public List<Neighborhood> Neighborhoods = new List<Neighborhood>();
     
     public HappinessBar barHappyUI;
     static public Happiness_ManagerScript self;
 
-    public TextMeshProUGUI tempHappinessText;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
         self = this;
-        //waveCode = waveManager.GetComponent<WaveCode>();
-        //distances = new float[neighborhoods.Length];
+    }
+    void Start()
+    {
+        
         barHappyUI.ChangeBar(happiness);
-        happinessROC = 0;
-        //StartCoroutine(changeHappiness());
     }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] float timerMax = .1f;
+    [SerializeField] float timer = 0;
+    void FixedUpdate()
     {
         if(WaveCode.self.WaveStart)
         {
-            happiness -= happinessROC;
-            //convertedToPercentHappiness = 1/(happiness);
-            if(/*convertedToPercentHappiness*/ happiness > 1)
+            timer-=Time.deltaTime;
+
+            if (timer <= 0)
             {
-                /*convertedToPercentHappiness*/ happiness = 1;
+                timer = timerMax + timer;
+
+                foreach (Neighborhood hood in Neighborhoods)
+                {
+                    happiness += hood.curHappinessChange;
+                }
+
+                if (happiness > 1)
+                {
+                    happiness = 1;
+                }
+                if (happiness <= 0)
+                {
+                    //Game Lose Stuff
+                    //VFX SFX
+                    SceneManager.LoadScene("HappyLoseScreen");
+                }
+
+                barHappyUI.ChangeBar(happiness);
             }
-            barHappyUI.ChangeBar(/*convertedToPercentHappiness*/ happiness);
-            tempHappinessText.text = "happiness = " + /*convertedToPercentHappiness*/ happiness + " happiness rate of change = " + happinessROC;
         }
     }
 
-    public void CalculateHappiness(float amount) {
-        amount *= 0.0001f;
+
+    public void ChangeHappy(float amount)
+    {
         Debug.Log("amount is " + amount);
-        happinessROC += amount;
+        happiness += amount;
     }
 
-
     /*
+     *     public float convertedToPercentHappiness;
     public Collider2D[] neighborhoods;
     public Collider2D[] neighborhoodGreaterAreas;
     public float[] distances;

@@ -43,11 +43,11 @@ public class TestFountain : MonoBehaviour
         }
         else
         {
-            timer = cooldown;
+            timer = cooldown + timer;
 
             //happiness change sfx vfx
 
-            TestHappyManager.self.ChangeHappy(happyPerTower*towerCount);
+            Happiness_ManagerScript.self.ChangeHappy(happyPerTower*towerCount);
         }
     }
 

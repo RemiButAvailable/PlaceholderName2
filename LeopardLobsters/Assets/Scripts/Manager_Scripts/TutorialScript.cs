@@ -1,4 +1,4 @@
-/* Author: Alex P.
+/* Author: Victoria Troshkov
  * Date: 3/26/26
  * 
  * The script that will run the tutorial. 

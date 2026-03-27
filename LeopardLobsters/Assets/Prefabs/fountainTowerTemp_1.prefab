@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d7b8e04c972e8489e19caf85b1c86f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happyPerTower: 0.4
+  happyPerTower: 0.004
   cooldown: 0.5
   active: 0
   baseTower: {fileID: 2544903574498267057}

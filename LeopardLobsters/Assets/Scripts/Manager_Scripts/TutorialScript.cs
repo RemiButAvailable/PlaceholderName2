@@ -7,7 +7,7 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using System.Collections.Generic;
 
 public class TutorialScript : MonoBehaviour
 { //The Firey Abbyss we'll call the Tutorial
@@ -18,9 +18,13 @@ public class TutorialScript : MonoBehaviour
 
     private Vector3 changes;
 
+    private List<Canvas> NewText = new List<Canvas>();
+
     void Start()
     {
         changes = Camera.main.transform.position;
+
+        NewText.Add(NewText[0]);
 
     }
 

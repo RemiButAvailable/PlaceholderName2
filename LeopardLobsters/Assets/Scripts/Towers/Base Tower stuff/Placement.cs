@@ -27,6 +27,7 @@ public class Placement : MonoBehaviour
             {
                 //vfx sfx
                 Destroy(gameObject);
+                return;
             }
 
             //vfx sfx

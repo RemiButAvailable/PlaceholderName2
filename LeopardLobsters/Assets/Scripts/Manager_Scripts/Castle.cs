@@ -34,17 +34,6 @@ public class Castle : MonoBehaviour
         //DO: add money sfx vfx
     }
 
-    //when knight reaches the castle
-    public void enemyArrived() {
-        peopleAtCastle--;
-        if (peopleAtCastle < 0) {
-
-            //DO: lose game stuff vfx sfx transitions whatever
-
-            SceneManager.LoadScene("PeopleLoseScreen");
-        }
-    }
-
     public bool personGoesOut() {
         if (peopleAtCastle > 0) { 
             peopleAtCastle--;
@@ -102,7 +91,7 @@ public class Castle : MonoBehaviour
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
 
-            TestEnemy enemy = other.gameObject.GetComponent<TestEnemy>();
+            KnightScript enemy = other.gameObject.GetComponent<KnightScript>();
 
             peopleAtCastle -= enemy.damage;
             peopleTotal -= enemy.damage;

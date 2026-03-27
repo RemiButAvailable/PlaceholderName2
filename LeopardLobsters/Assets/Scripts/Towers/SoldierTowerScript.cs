@@ -10,9 +10,10 @@ public class SoldierTowerScript : MonoBehaviour
 {
     bool allSoldiersDead;
     public GameObject soldier;
-    List<GameObject> soldiers;
+    public List<GameObject> soldiers;
     List<Vector3> soldierPositions;
     List<GameObject> enemiesInZone;
+    //GameObject spa
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,10 +23,11 @@ public class SoldierTowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void AddSoldier(GameObject soldier)
     {
+        
         soldiers.Add(soldier);
         for(int i = 0; i <= soldierPositions.Count; i++)
         {
@@ -55,7 +57,32 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void AddEnemy(GameObject enemy)
+    {
+        enemiesInZone.Add(enemy);
+        foreach (var soldier in soldiers)
+        {
+            if (soldier.GetComponent<SoldierScript>().engaged == false)
+            {
+                soldier.GetComponent<SoldierScript>().target = enemy;
+                soldier.GetComponent<SoldierScript>().engaged = true;
+                break;
+            }
+        }
+    }
+    public void RemoveEnemy(GameObject enemy)
+    {
+        enemiesInZone.Remove(enemy);
+        foreach (var soldier in soldiers)
+        {
+            if (soldier.GetComponent<SoldierScript>().target.GetInstanceID() == enemy.GetInstanceID())
+            {
+                soldier.GetComponent<SoldierScript>().target = null;
+                soldier.GetComponent<SoldierScript>().engaged = false;
+            }
+        }
+    }
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "enemy")
         {
@@ -70,8 +97,8 @@ public class SoldierTowerScript : MonoBehaviour
                 }
             }
         }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
+    }*/
+    /*private void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "enemy")
         {
@@ -85,5 +112,5 @@ public class SoldierTowerScript : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }

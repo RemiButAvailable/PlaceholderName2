@@ -10,6 +10,8 @@ public class BaseTower : MonoBehaviour
     public UnityEvent<bool> isActive;
     public UnityEvent<BaseTower> Destroyed;
     public UnityEvent OnPlace; //add change sprite layer later
+    public UnityEvent AddedPeople;
+    public UnityEvent<GameObject> RemovedPeople;
 
     public int towerCost = 10;
     public int sellPrice = 5;
@@ -21,12 +23,14 @@ public class BaseTower : MonoBehaviour
         if (people >= peopleNeeded) return;
         if (!Castle.self.personGoesOut()) return;
         people++;
+        if(GetComponent<SoldierTowerScript>() != null) AddedPeople.Invoke();
         if (people >= peopleNeeded) isActive.Invoke(true);
     }
     public bool RemovePeople(){ //connected through events
         if (people <= 0) return false;
         if (people >= peopleNeeded) isActive.Invoke(false);
         people--;
+        if (GetComponent<SoldierTowerScript>() != null) RemovedPeople.Invoke(GetComponent<SoldierTowerScript>().soldiers[0]);
         Castle.self.personGoesIn();
         return true;
     }

@@ -2829,7 +2829,9 @@ MonoBehaviour:
   - {x: 3.27, y: -5.52, z: 0}
   - {x: 7.56, y: 5.46, z: 0}
   - {x: 1.18, y: 5.87, z: 0}
-  enemies: []
+  enemies:
+  - {fileID: 6679188643013759877, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
+  - {fileID: 2182285997643271437, guid: 635154ce5251358408f74e3b77d3c8ab, type: 3}
   enemyPaths:
   - {fileID: 694960353}
   - {fileID: 1067015714}

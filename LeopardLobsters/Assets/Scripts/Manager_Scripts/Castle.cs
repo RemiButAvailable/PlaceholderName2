@@ -58,7 +58,9 @@ public class Castle : MonoBehaviour
     public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
     public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
 
-    public Image progressBar; //instantiate in inspector
+    [SerializeField] Image progressBar; //instantiate in inspector
+    [SerializeField] Image barParent;
+    [SerializeField] float barYOffset;
 
     private void FixedUpdate()
     {
@@ -106,4 +108,8 @@ public class Castle : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        barParent.rectTransform.position = transform.position+Vector3.up * barYOffset;
+    }
 }

@@ -107,7 +107,6 @@ MonoBehaviour:
   textPeopleTotal: {fileID: 0}
   textPeopleOut: {fileID: 0}
   castleHitSound: {fileID: 2933898425939903883}
-  inWave: 1
   timerMax: 10
   minPeopleNeeded: 2
   maxPeopleDecrease: 10
@@ -124,9 +123,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: bce31b30771dee842a8411ce711609cd, type: 3}
+  m_Resource: {fileID: 6418180475301049370, guid: 2049c905a6889d245b807c137605077c, type: 2}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.228
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -34,17 +34,6 @@ public class Castle : MonoBehaviour
         //DO: add money sfx vfx
     }
 
-    //when knight reaches the castle
-    public void enemyArrived() {
-        peopleAtCastle--;
-        if (peopleAtCastle < 0) {
-
-            //DO: lose game stuff vfx sfx transitions whatever
-
-            SceneManager.LoadScene("PeopleLoseScreen");
-        }
-    }
-
     public bool personGoesOut() {
         if (peopleAtCastle > 0) { 
             peopleAtCastle--;
@@ -61,7 +50,7 @@ public class Castle : MonoBehaviour
 
 
     //people making stuff
-    public bool inWave = false;
+    bool inWave => WaveCode.self.WaveStart;
     float timer = 0;
     public int timerMax = 10;
     
@@ -69,7 +58,9 @@ public class Castle : MonoBehaviour
     public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
     public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
 
-    public Image progressBar; //instantiate in inspector
+    [SerializeField] Image progressBar; //instantiate in inspector
+    [SerializeField] Image barParent;
+    [SerializeField] float barYOffset;
 
     private void FixedUpdate()
     {
@@ -102,7 +93,7 @@ public class Castle : MonoBehaviour
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
 
-            TestEnemy enemy = other.gameObject.GetComponent<TestEnemy>();
+            KnightScript enemy = other.gameObject.GetComponent<KnightScript>();
 
             peopleAtCastle -= enemy.damage;
             peopleTotal -= enemy.damage;
@@ -117,4 +108,8 @@ public class Castle : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        barParent.rectTransform.position = transform.position+Vector3.up * barYOffset;
+    }
 }

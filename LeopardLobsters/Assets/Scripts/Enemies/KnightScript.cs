@@ -10,7 +10,8 @@ public class KnightScript : MonoBehaviour
     //num vals;
     public int index;
     public float speed;
-    public int peopleKillOnReachTower = 1;
+    public float defaultSpeed;
+    public int damage = 1;
     public int health;
 
     //Manager Scripts
@@ -51,10 +52,11 @@ public class KnightScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void TakeDamage(int damage) {
-        health -= damage;
+    public void TakeDamage(int dmg) {
+        health -= dmg;
+        hurtSound.Play();
     }
-    public void ReachedTower() {
+    public void ReachedCastle() {
         Destroy(gameObject);
     }
 }

@@ -14,17 +14,14 @@ public class TutorialScript : MonoBehaviour
 
     public bool TutorialEnd = false;
 
-    private int TextNum = 0;
-
     private Vector3 changes;
 
-    private List<Canvas> NewText = new List<Canvas>();
+    public List<TextAsset> NewText = new List<TextAsset>();
 
     void Start()
     {
         changes = Camera.main.transform.position;
 
-        NewText.Add(NewText[0]);
 
     }
 
@@ -35,27 +32,25 @@ public class TutorialScript : MonoBehaviour
         {
             SceneManager.LoadScene("DemoScene");
         }
+    }
+
+    private void OnMouseDown()
+    {
+        for(int i = 0; i < 10; i++) {
 
         //Have different events happen based on what text it is.
 
-        if (TextNum == 3)
+        if (NewText[3])
         {
             changes.x = +30;
         }
 
 
-        if (TextNum == 6)
-        {
+            if (NewText[6])
+            {
 
-
+            }
         }
-    }
-
-    private void OnMouseDown()
-    {
-
-     
-        
     }
 
 

@@ -7,6 +7,9 @@ public class Placement : MonoBehaviour
     [SerializeField] Collider2D towerCollider;
     [SerializeField] BaseTower baseTower;
 
+    [SerializeField] AudioSource PlaceSound;
+    [SerializeField] AudioSource PlaceDenySound;
+
     private void Start()
     {
         baseTower.TowerSelected();
@@ -37,11 +40,13 @@ public class Placement : MonoBehaviour
             if (overlapping > 0)
             {
                 //vfx sfx
+                //Fail Sound
+                //PlaceDenySound.Play();
                 Destroy(gameObject);
                 return;
             }
 
-            //vfx sfx
+            
 
             MoneyManagerScript.self.ChangeMoney(-baseTower.towerCost);
 
@@ -58,7 +63,8 @@ public class Placement : MonoBehaviour
 
             gameObject.layer = LayerMask.NameToLayer("Tower");
             baseTower.OnPlace.Invoke();
-
+            // Sound
+            PlaceSound.Play();
             baseTower.TowerDeselected();
             Destroy(this);
         }

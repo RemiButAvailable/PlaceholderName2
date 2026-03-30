@@ -13,7 +13,7 @@ public class SoldierTowerScript : MonoBehaviour
     public List<GameObject> soldiers;
     List<Vector3> soldierPositions;
     List<GameObject> enemiesInZone;
-    //GameObject spa
+    GameObject spawnedSoldier;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,7 +27,7 @@ public class SoldierTowerScript : MonoBehaviour
     }
     public void AddSoldier(GameObject soldier)
     {
-        
+        spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
         soldiers.Add(soldier);
         for(int i = 0; i <= soldierPositions.Count; i++)
         {

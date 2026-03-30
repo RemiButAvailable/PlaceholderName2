@@ -56,6 +56,8 @@ public class WaveCode : MonoBehaviour
     bool enemiesStartedSpawning;
     int probOfFastEnemyDeterminer;
 
+    bool endedWave;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -74,13 +76,9 @@ public class WaveCode : MonoBehaviour
         {
         // After every enemy is defeated, put up the number.
         // Get ready for a new wave
-        if (EnemyNum == 0 && WaveStart && enemiesStartedSpawning && PhantomEnemyNum == EnemyMax)
+        if (EnemyNum == 0 && WaveStart && enemiesStartedSpawning && PhantomEnemyNum == EnemyMax && endedWave == false)
         {
-            WaveStart = false;
-            enemiesStartedSpawning = false;
-            //Turns on building phase music stops battle phase music
-            buildMusic.Play();
-            battleMusic.Stop();
+            EndWave();
         }
     }
 
@@ -137,21 +135,30 @@ public class WaveCode : MonoBehaviour
     //Start Next Wave
     public void StartNext()
     {
-        WaveNum++;
-        EnemyMax *= 2;
-        int RandomNum = Random.Range(0, 2);
-        EnemySpawnStart = EnemySpawnPositions[RandomNum];
-        StartingEnemyPath = enemyPaths[RandomNum];
-        WaveStart = true;
-        waveText.text = "Wave: " + WaveNum;
-        waveStarted.Invoke();
-        ////Turns on battle phase music stops building phase music
-        buildMusic.Stop();
-        battleMusic.Play();
+        if(WaveStart == false)
+        {
+            WaveNum++;
+            EnemyMax *= 2;
+            int RandomNum = Random.Range(0, 2);
+            EnemySpawnStart = EnemySpawnPositions[RandomNum];
+            StartingEnemyPath = enemyPaths[RandomNum];
+            WaveStart = true;
+            waveText.text = "Wave: " + WaveNum;
+            waveStarted.Invoke();
+            ////Turns on battle phase music stops building phase music
+            buildMusic.Stop();
+            battleMusic.Play();
+            endedWave = false;
+        }
     }
-
-
-
-
+    public void EndWave()
+    {
+        WaveStart = false;
+        enemiesStartedSpawning = false;
+        //Turns on building phase music stops battle phase music
+        buildMusic.Play();
+        battleMusic.Stop();
+        endedWave = true;
+    }
 }
 

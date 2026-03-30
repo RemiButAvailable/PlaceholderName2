@@ -23,7 +23,7 @@ PrefabInstance:
     - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: AddedPeople.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 201317035348081751}
+      objectReference: {fileID: 6608690578147413099, guid: 455d08329958ac440b240baf054fe5b6, type: 3}
     - target: {fileID: 8218147361620304378, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.0811377
@@ -114,3 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd3ab304705c2047a30388725a98fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soliderTower: {fileID: 0}

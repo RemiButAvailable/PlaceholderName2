@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoldierTowerPlaceholder Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4925949044741141722, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2998648202503540636, guid: d0447409035aeb546b6a1016a0dee491, type: 3}
     - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: AddedPeople.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -114,3 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd3ab304705c2047a30388725a98fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soliderTower: {fileID: 0}

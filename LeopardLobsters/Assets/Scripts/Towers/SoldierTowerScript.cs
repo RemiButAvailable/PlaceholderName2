@@ -12,30 +12,28 @@ public class SoldierTowerScript : MonoBehaviour
     public GameObject soldier;
     public List<GameObject> soldiers;
     List<Vector3> soldierPositions;
-    List<GameObject> enemiesInZone;
+    public List<GameObject> enemiesInZone;
     GameObject spawnedSoldier;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
     public void AddSoldier(GameObject soldier)
     {
         spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
-        soldiers.Add(soldier);
+        soldiers.Add(spawnedSoldier);
         for(int i = 0; i <= soldierPositions.Count; i++)
         {
             if (soldierPositions[i].z == 0)
             {
-                soldier.transform.position = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
+                spawnedSoldier.transform.position = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
                 soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 1);
-                soldier.GetComponent<SoldierScript>().stationPosition = soldier.transform.position;
+                spawnedSoldier.GetComponent<SoldierScript>().stationPosition = spawnedSoldier.transform.position;
                 break;
             }
         }
@@ -66,6 +64,7 @@ public class SoldierTowerScript : MonoBehaviour
             {
                 soldier.GetComponent<SoldierScript>().target = enemy;
                 soldier.GetComponent<SoldierScript>().engaged = true;
+                Debug.Log(soldier.GetComponent<SoldierScript>().engaged);
                 break;
             }
         }
@@ -75,6 +74,7 @@ public class SoldierTowerScript : MonoBehaviour
         enemiesInZone.Remove(enemy);
         foreach (var soldier in soldiers)
         {
+            if(soldier.GetComponent<SoldierScript>().target != null)
             if (soldier.GetComponent<SoldierScript>().target.GetInstanceID() == enemy.GetInstanceID())
             {
                 soldier.GetComponent<SoldierScript>().target = null;
@@ -82,35 +82,13 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    public void SetSoldierStationPositions()
     {
-        if(collision.gameObject.tag == "enemy")
+        soldierPositions = new List<Vector3>()
         {
-            enemiesInZone.Add(collision.gameObject);
-            foreach(var soldier in soldiers)
-            {
-                if(soldier.GetComponent<SoldierScript>().engaged == false)
-                {
-                    soldier.GetComponent<SoldierScript>().target = collision.gameObject;
-                    soldier.GetComponent<SoldierScript>().engaged = true;
-                    break;
-                }
-            }
-        }
-    }*/
-    /*private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "enemy")
-        {
-            enemiesInZone.Remove(collision.gameObject);
-            foreach(var soldier in soldiers)
-            {
-                if(soldier.GetComponent<SoldierScript>().target.GetInstanceID() == collision.gameObject.GetInstanceID())
-                {
-                    soldier.GetComponent<SoldierScript>().target = null;
-                    soldier.GetComponent<SoldierScript>().engaged = false;
-                }
-            }
-        }
-    }*/
+            new Vector3(transform.position.x - 2, transform.position.y, 0),
+            new Vector3(transform.position.x, transform.position.y - 2, 0),
+            new Vector3(transform.position.x + 2, transform.position.y, 0)
+        };
+    }
 }

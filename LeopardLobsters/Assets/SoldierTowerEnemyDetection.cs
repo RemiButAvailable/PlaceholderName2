@@ -16,34 +16,17 @@ public class SoldierTowerEnemyDetection : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag == "knight")
         {
-            /*enemiesInZone.Add(collision.gameObject);
-            foreach (var soldier in soldiers)
-            {
-                if (soldier.GetComponent<SoldierScript>().engaged == false)
-                {
-                    soldier.GetComponent<SoldierScript>().target = collision.gameObject;
-                    soldier.GetComponent<SoldierScript>().engaged = true;
-                    break;
-                }
-            }*/
             soliderTower.GetComponent<SoldierTowerScript>().AddEnemy(collision.gameObject);
+            Debug.Log("detected enemy");
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag == "knight")
         {
-            /*enemiesInZone.Remove(collision.gameObject);
-            foreach (var soldier in soldiers)
-            {
-                if (soldier.GetComponent<SoldierScript>().target.GetInstanceID() == collision.gameObject.GetInstanceID())
-                {
-                    soldier.GetComponent<SoldierScript>().target = null;
-                    soldier.GetComponent<SoldierScript>().engaged = false;
-                }
-            }*/
+            Debug.Log("enemy left");
             soliderTower.GetComponent<SoldierTowerScript>().RemoveEnemy(collision.gameObject);
         }
     }

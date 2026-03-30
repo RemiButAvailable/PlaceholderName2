@@ -86,7 +86,6 @@ public class WaveCode : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log(WaveStart);
             // With the game starting and the number of enemies being less than max
             if (WaveStart /*&& PhantomEnemyNum < EnemyMax*/)
             {

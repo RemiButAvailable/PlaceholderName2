@@ -53,6 +53,7 @@ public class KnightScript : MonoBehaviour
     }
     public void TakeDamage(int dmg) {
         health -= dmg;
+        hurtSound.Play();
     }
     public void ReachedCastle() {
         Destroy(gameObject);

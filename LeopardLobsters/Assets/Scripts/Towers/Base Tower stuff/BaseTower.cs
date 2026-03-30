@@ -7,26 +7,29 @@ public class BaseTower : MonoBehaviour
 {
     public int people = 0;
     public int peopleNeeded = 2;
+    public int towerCost = 10;
+    public int sellPrice = 5;
+    public SpriteRenderer areaOfEffect;
+
     public UnityEvent<bool> isActive;
     public UnityEvent<BaseTower> Destroyed;
     public UnityEvent OnPlace; //add change sprite layer later
     public UnityEvent AddedPeople;
     public UnityEvent<GameObject> RemovedPeople;
 
-    public int towerCost = 10;
-    public int sellPrice = 5;
-
     
+
+
     public TowerType type;
 
     public void AddPeople() { //connected through events
         if (people >= peopleNeeded) return;
         if (!Castle.self.personGoesOut()) return;
         people++;
-        if(GetComponent<SoldierTowerScript>() != null) AddedPeople.Invoke();
+        if (GetComponent<SoldierTowerScript>() != null) AddedPeople.Invoke();
         if (people >= peopleNeeded) isActive.Invoke(true);
     }
-    public bool RemovePeople(){ //connected through events
+    public bool RemovePeople() { //connected through events
         if (people <= 0) return false;
         if (people >= peopleNeeded) isActive.Invoke(false);
         people--;
@@ -35,12 +38,12 @@ public class BaseTower : MonoBehaviour
         return true;
     }
 
-    public void Sell(){ //connected through events
+    public void Sell() { //connected through events
         //MoneyManagerScript.self.changeMoney(sellPrice);
         MoneyManagerScript.self.ChangeMoney(sellPrice);
         while (RemovePeople()) ;
-       //VFX SFX
-       Destroy(gameObject);
+        //VFX SFX
+        Destroy(gameObject);
     }
 
     /* what gets put on towers
@@ -50,6 +53,17 @@ public class BaseTower : MonoBehaviour
         active = isTrue;
     }
      */
+
+    public void TowerSelected()
+    {
+        if (!areaOfEffect) return;
+        areaOfEffect.enabled = true;
+    }
+    public void TowerDeselected()
+    {
+        if (!areaOfEffect) return;
+        areaOfEffect.enabled = false;
+    }
 
     private void OnDestroy()
     {

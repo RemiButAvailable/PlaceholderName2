@@ -7,6 +7,10 @@ public class Placement : MonoBehaviour
     [SerializeField] Collider2D towerCollider;
     [SerializeField] BaseTower baseTower;
 
+    private void Start()
+    {
+        baseTower.TowerSelected();
+    }
     private void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -16,12 +20,19 @@ public class Placement : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             if (!MoneyManagerScript.self.Check(baseTower.towerCost)) { Destroy(gameObject); return; }
-            Collider2D[] results = new Collider2D[1];
 
+            Collider2D[] results = new Collider2D[1];
             ContactFilter2D filter = new ContactFilter2D();
+
+            //check if placing within bounds
+            filter.SetLayerMask(LayerMask.GetMask("PlaceableBounds"));
+            int overlapping = towerCollider.Overlap(filter, results);
+            if (overlapping <= 0){ Destroy(gameObject); return; }
+
+            //Check if not overlaping path or towers
             filter.SetLayerMask(LayerMask.GetMask("Tower", "Path"));
 
-            int overlapping = towerCollider.Overlap(filter, results); //checks if can place
+            overlapping = towerCollider.Overlap(filter, results); //checks if can place
 
             if (overlapping > 0)
             {
@@ -48,6 +59,7 @@ public class Placement : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Tower");
             baseTower.OnPlace.Invoke();
 
+            baseTower.TowerDeselected();
             Destroy(this);
         }
     }

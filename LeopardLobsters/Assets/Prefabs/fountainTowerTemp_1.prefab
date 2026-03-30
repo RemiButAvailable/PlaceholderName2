@@ -294,6 +294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   people: 0
   peopleNeeded: 3
+  towerCost: 15
+  sellPrice: 10
+  areaOfEffect: {fileID: 5487279804624037001}
   isActive:
     m_PersistentCalls:
       m_Calls: []
@@ -303,8 +306,12 @@ MonoBehaviour:
   OnPlace:
     m_PersistentCalls:
       m_Calls: []
-  towerCost: 15
-  sellPrice: 10
+  AddedPeople:
+    m_PersistentCalls:
+      m_Calls: []
+  RemovedPeople:
+    m_PersistentCalls:
+      m_Calls: []
   type: 1
 --- !u!70 &7208256482449840061
 CapsuleCollider2D:

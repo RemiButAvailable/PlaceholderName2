@@ -50,7 +50,7 @@ public class Castle : MonoBehaviour
 
 
     //people making stuff
-    public bool inWave = false;
+    bool inWave => WaveCode.self.WaveStart;
     float timer = 0;
     public int timerMax = 10;
     

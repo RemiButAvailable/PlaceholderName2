@@ -2030,6 +2030,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 268697999}
     - target: {fileID: 6929179903699332378, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929179903699332378, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
@@ -2094,8 +2098,8 @@ Camera:
   m_GameObject: {fileID: 348938128}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.56078434, g: 0.75294125, b: 0.47450984, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4059,10 +4063,10 @@ RectTransform:
   - {fileID: 71087716}
   m_Father: {fileID: 963203674}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -845, y: -36}
-  m_SizeDelta: {x: 300.37, y: 41.7}
+  m_AnchorMin: {x: 0.029104166, y: 0.5442963}
+  m_AnchorMax: {x: 0.09216667, y: 0.64929634}
+  m_AnchoredPosition: {x: 0, y: -99}
+  m_SizeDelta: {x: 178.37, y: -71.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765353319
 MonoBehaviour:
@@ -4135,10 +4139,10 @@ RectTransform:
   - {fileID: 1080677307}
   m_Father: {fileID: 963203674}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -264.45, y: 0}
-  m_SizeDelta: {x: 528.89, y: 1080}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -264.445, y: 0}
+  m_SizeDelta: {x: 528.89, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817232309
 MonoBehaviour:
@@ -4622,10 +4626,10 @@ RectTransform:
   - {fileID: 252619375}
   m_Father: {fileID: 963203674}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1831, y: -979}
-  m_SizeDelta: {x: 125.03, y: 112.85}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -83, y: 90}
+  m_SizeDelta: {x: 125.03003, y: 112.849976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001762042
 MonoBehaviour:

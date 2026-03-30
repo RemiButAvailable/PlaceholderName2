@@ -44,6 +44,7 @@ public class SoldierScript : MonoBehaviour
             if (Vector3.Distance(transform.position, target.transform.position) < 1f)
             {
                 fighting = true;
+                target.GetComponent<KnightScript>().speed = 0;
             }
             else if (Vector3.Distance(transform.position, stationPosition) < 1f && engaged == false)
             {
@@ -54,6 +55,7 @@ public class SoldierScript : MonoBehaviour
         if(health == 0)
         {
             Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
+            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
             Destroy(gameObject);
         }
     }

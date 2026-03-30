@@ -10,6 +10,7 @@ public class KnightScript : MonoBehaviour
     //num vals;
     public int index;
     public float speed;
+    public float defaultSpeed;
     public int damage = 1;
     public int health;
 

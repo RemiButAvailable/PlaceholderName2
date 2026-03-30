@@ -17,17 +17,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2998648202503540636, guid: d0447409035aeb546b6a1016a0dee491, type: 3}
     - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: OnPlace.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: OnPlace.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: OnPlace.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4154047454215975713}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: OnPlace.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: AddedPeople.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4154047454215975713}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: OnPlace.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSoldierStationPositions
+      objectReference: {fileID: 0}
     - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: RemovedPeople.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4154047454215975713}
     - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: OnPlace.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoldierTowerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: AddedPeople.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 6608690578147413099, guid: 455d08329958ac440b240baf054fe5b6, type: 3}
+    - target: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: OnPlace.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8218147361620304378, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.0811377
@@ -101,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldier: {fileID: 6608690578147413099, guid: 455d08329958ac440b240baf054fe5b6, type: 3}
   soldiers: []
+  enemiesInZone: []
 --- !u!1 &8546144628330104528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8183656115784846105, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
@@ -118,4 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd3ab304705c2047a30388725a98fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soliderTower: {fileID: 0}
+  soliderTower: {fileID: 201317035348081751}

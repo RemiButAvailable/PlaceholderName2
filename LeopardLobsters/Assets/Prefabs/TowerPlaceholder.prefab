@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5134048936030875358}
   - component: {fileID: 7736639828261574638}
   - component: {fileID: 9107644497228952034}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: TowerPlaceholder
   m_TagString: archerTower
   m_Icon: {fileID: 0}
@@ -158,6 +158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   people: 0
   peopleNeeded: 2
+  towerCost: 10
+  sellPrice: 5
+  areaOfEffect: {fileID: 4748170670304274679}
   isActive:
     m_PersistentCalls:
       m_Calls: []
@@ -197,8 +200,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  towerCost: 10
-  sellPrice: 5
   type: 0
 --- !u!70 &7736639828261574638
 CapsuleCollider2D:
@@ -460,7 +461,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.5320754, g: 0.5320754, b: 0.5320754, a: 0.08627451}
+  m_Color: {r: 0.5320754, g: 0.5320754, b: 0.5320754, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

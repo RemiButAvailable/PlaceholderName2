@@ -7,7 +7,7 @@ public class SoldierScript : MonoBehaviour
     public bool engaged;
     public GameObject target;
     Vector3 direction;
-    float speed;
+    public float speed;
     public bool fighting;
     public float health;
     GameObject Tower;
@@ -16,6 +16,7 @@ public class SoldierScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(FightEnemy());
+        engaged = false;
     }
 
     // Update is called once per frame
@@ -23,31 +24,38 @@ public class SoldierScript : MonoBehaviour
     {
         if(engaged == true)
         {
-            direction = transform.position - target.transform.position;
+            Debug.Log("gkwdq");
+            direction = target.transform.position - transform.position;
             direction.Normalize();
             if (fighting == false)
             transform.position += direction * speed * Time.deltaTime;
         }
         else
         {
-            direction = transform.position - stationPosition;
+            Debug.Log("help");
+            direction = stationPosition - transform.position;
             direction.Normalize();
             if(atStation == false)
             transform.position += direction * speed * Time.deltaTime;
         }
 
-        if (Vector3.Distance(transform.position, target.transform.position) < 1f)
+        if(target != null)
         {
-            fighting = true;
-        }
-        else if (Vector3.Distance(transform.position, target.transform.position) < 1f && engaged == false)
-        {
-            atStation = true;
+            if (Vector3.Distance(transform.position, target.transform.position) < 1f)
+            {
+                fighting = true;
+                target.GetComponent<KnightScript>().speed = 0;
+            }
+            else if (Vector3.Distance(transform.position, stationPosition) < 1f && engaged == false)
+            {
+                atStation = true;
+            }
         }
 
         if(health == 0)
         {
             Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
+            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
             Destroy(gameObject);
         }
     }

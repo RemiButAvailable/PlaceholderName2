@@ -3015,7 +3015,7 @@ MonoBehaviour:
   waveText: {fileID: 1483426438}
   enemyClumpSizeRandomness: 6
   timeBetweenEnemySpawnsRandomness: 6
-  enemySpawnPosOffsetRandomness: 6.04
+  enemySpawnPosOffsetRandomness: 0.69
   cooldownWithinClump: 0.497
   probOfFastEnemyDeterminer: 6
   EnemyMax: 30
@@ -7053,7 +7053,7 @@ PrefabInstance:
     - target: {fileID: 3214315909892519069, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 4627414446906680087, guid: c6b8bd8c2cff4454db12b75c390b11b9, type: 3}
+      objectReference: {fileID: 4221169296759000926, guid: 17cf1063688f0fb458bb2a780c80b757, type: 3}
     - target: {fileID: 3916886374970591102, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

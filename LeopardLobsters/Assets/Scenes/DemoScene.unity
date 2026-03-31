@@ -652,7 +652,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1d6baa6d3a1273a4f8010a506bf1104f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.583
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2843,7 +2843,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyNum: 0
-  EnemyMax: 20
   TotalWealth: 1
   WaveNum: 0
   WaveStart: 1
@@ -2861,13 +2860,19 @@ MonoBehaviour:
   - {fileID: 694960353}
   - {fileID: 1067015714}
   - {fileID: 1460171686}
-  cooldown: 5
   waveStarted:
     m_PersistentCalls:
       m_Calls: []
   buildMusic: {fileID: 219736196}
   battleMusic: {fileID: 698470490}
   waveText: {fileID: 1483426438}
+  enemyClumpSizeRandomness: 6
+  timeBetweenEnemySpawnsRandomness: 6
+  enemySpawnPosOffsetRandomness: 6.04
+  cooldownWithinClump: 0.497
+  probOfFastEnemyDeterminer: 6
+  EnemyMax: 30
+  cooldown: 2
 --- !u!1 &626876290
 GameObject:
   m_ObjectHideFlags: 0
@@ -3555,9 +3560,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 6e1b30cf5ffbb614d85b768385ad09a8, type: 3}
+  m_Resource: {fileID: 8300000, guid: a6938bb87c864814fb2c31966f7f42a2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -10,7 +10,7 @@ public class SoldierScript : MonoBehaviour
     public float speed;
     public bool fighting;
     public float health;
-    GameObject Tower;
+    public GameObject Tower;
     bool atStation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,9 +22,8 @@ public class SoldierScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(engaged == true)
+        if(engaged == true && target != null)
         {
-            Debug.Log("gkwdq");
             direction = target.transform.position - transform.position;
             direction.Normalize();
             if (fighting == false)
@@ -32,7 +31,6 @@ public class SoldierScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("help");
             direction = stationPosition - transform.position;
             direction.Normalize();
             if(atStation == false)
@@ -52,11 +50,29 @@ public class SoldierScript : MonoBehaviour
             }
         }
 
-        if(health == 0)
+        if(health <= 0)
         {
             Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
             target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
+            target.GetComponent<KnightScript>().targeted = false;
             Destroy(gameObject);
+        }
+
+        if(target == null && fighting == true)
+        {
+            Debug.Log("needs new target");
+            foreach(var enemy in Tower.GetComponent<SoldierTowerScript>().enemiesInZone)
+            {
+                if(enemy.GetComponent<KnightScript>().targeted == false)
+                {
+                    Debug.Log("new target");
+                    target = enemy;
+                }
+            }
+            fighting = false;
+
+            if(target != null)
+            engaged = true;
         }
     }
     IEnumerator FightEnemy()

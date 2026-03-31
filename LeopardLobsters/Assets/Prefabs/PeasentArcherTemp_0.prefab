@@ -105,4 +105,5 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 1
   fighting: 0
-  health: 5
+  health: 3
+  Tower: {fileID: 0}

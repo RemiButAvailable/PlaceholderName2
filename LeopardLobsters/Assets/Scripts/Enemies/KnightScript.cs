@@ -13,6 +13,7 @@ public class KnightScript : MonoBehaviour
     public float defaultSpeed;
     public int damage = 1;
     public int health;
+    public bool targeted;
 
     //Manager Scripts
     WaveCode waveCode => WaveCode.self;

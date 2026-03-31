@@ -2843,7 +2843,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyNum: 0
-  EnemyMax: 20
   TotalWealth: 1
   WaveNum: 0
   WaveStart: 1
@@ -2861,13 +2860,19 @@ MonoBehaviour:
   - {fileID: 694960353}
   - {fileID: 1067015714}
   - {fileID: 1460171686}
-  cooldown: 5
   waveStarted:
     m_PersistentCalls:
       m_Calls: []
   buildMusic: {fileID: 219736196}
   battleMusic: {fileID: 698470490}
   waveText: {fileID: 1483426438}
+  enemyClumpSizeRandomness: 6
+  timeBetweenEnemySpawnsRandomness: 6
+  enemySpawnPosOffsetRandomness: 6.04
+  cooldownWithinClump: 0.497
+  probOfFastEnemyDeterminer: 6
+  EnemyMax: 30
+  cooldown: 2
 --- !u!1 &626876290
 GameObject:
   m_ObjectHideFlags: 0

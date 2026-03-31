@@ -16,7 +16,6 @@ public class WaveCode : MonoBehaviour
     // Random unknown objects go WHEEEEE
     public int EnemyNum = 0;
     private int PhantomEnemyNum = 0;
-    public double EnemyMax = 1;
 
     public int TotalWealth = 1;
     public int WaveNum = 0;
@@ -42,7 +41,6 @@ public class WaveCode : MonoBehaviour
 
     //private GameObject SpawnedEnemy;
 
-    public int cooldown;
 
     static public WaveCode self;
     public UnityEvent waveStarted;
@@ -54,9 +52,23 @@ public class WaveCode : MonoBehaviour
 
     public TextMeshProUGUI waveText;
     bool enemiesStartedSpawning;
-    int probOfFastEnemyDeterminer;
 
     bool endedWave;
+
+    [Range(0, 12)]
+    public int enemyClumpSizeRandomness;
+    [Range (0, 12)]
+    public float timeBetweenEnemySpawnsRandomness;
+    [Range (0, 12)]
+    public float enemySpawnPosOffsetRandomness;
+    [Range(0, 1)]
+    public float cooldownWithinClump;
+    [Range (0, 12)]
+    public int probOfFastEnemyDeterminer;
+    [Range (0, 60)]
+    public double EnemyMax;
+    [Range (0, 12)]
+    public int cooldown;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -103,7 +115,7 @@ public class WaveCode : MonoBehaviour
                 else
                 // Have a randomiser to where each enemy spawns
                 {
-                    int RandomNum = Random.Range(0, 2);
+                    int RandomNum = Random.Range(0, 3);
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
                     int RandomNumTwo = Random.Range(0, probOfFastEnemyDeterminer);
@@ -117,17 +129,24 @@ public class WaveCode : MonoBehaviour
                     }
                     selectedEnemy = enemies[RandomNumTwo];
                 }
-                spawnedEnemy = Instantiate(/*enemy*/ selectedEnemy, EnemySpawnSpot, Quaternion.identity);
-                spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
+                int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness);
+                for(int i = 0; i <= enemyClumpSize; i++)
+                {
+                    float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
+                    Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
+                    spawnedEnemy = Instantiate(/*enemy*/ selectedEnemy, offsetEnemySpawnPos, Quaternion.identity);
+                    spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
+                    yield return new WaitForSeconds(cooldownWithinClump);
+                }
                 enemiesStartedSpawning = true;
                 if (PhantomEnemyNum > 20 && PhantomEnemyNum < 21)
                 {
                     spawnedBossEnemy = Instantiate(bossEnemy, EnemySpawnSpot, Quaternion.identity);
                 }
             }
-
+            float cooldownMultiplier = Random.Range(1/timeBetweenEnemySpawnsRandomness, timeBetweenEnemySpawnsRandomness);
             // Have a cooldown for player to not get flung into the next wave
-                yield return new WaitForSeconds(cooldown);
+                yield return new WaitForSeconds(cooldown * cooldownMultiplier);
         }
     }
 

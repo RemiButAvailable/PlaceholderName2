@@ -136,6 +136,7 @@ public class WaveCode : MonoBehaviour
                     Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
                     spawnedEnemy = Instantiate(/*enemy*/ selectedEnemy, offsetEnemySpawnPos, Quaternion.identity);
                     spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
+                    spawnedEnemy.GetComponent<KnightScript>().offset = new Vector3(enemySpawnPosOffsetFloat, enemySpawnPosOffsetFloat, 0);
                     yield return new WaitForSeconds(cooldownWithinClump);
                 }
                 enemiesStartedSpawning = true;

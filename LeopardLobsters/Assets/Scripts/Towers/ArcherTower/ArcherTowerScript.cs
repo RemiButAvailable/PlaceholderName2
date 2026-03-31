@@ -72,7 +72,7 @@ public class ArcherTowerScript : MonoBehaviour
                 knightScript = queue[0].GetComponent<KnightScript>();
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
-                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot];
+                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot] + knightScript.offset;
                 arrowScript.direction = target - transform.position;
             }
             yield return new WaitForSeconds(cooldown);

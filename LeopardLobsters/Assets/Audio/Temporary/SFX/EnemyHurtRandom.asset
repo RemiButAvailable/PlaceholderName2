@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1233149941 &4838283041669371041
+--- !u!1233149941 &1321164802407490887
 AudioContainerElement:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SFX_EnemyDie_{4838283041669371041}
-  m_AudioClip: {fileID: 8300000, guid: 9205df9fa93e6a34293153f20ccd9dd1, type: 3}
+  m_Name: SFX_EnemyHit_{1321164802407490887}
+  m_AudioClip: {fileID: 8300000, guid: f029cb29b1f140f43b4e13d11d8359be, type: 3}
   m_Volume: 0
   m_Enabled: 1
 --- !u!1307931743 &6418180475301049370
@@ -16,8 +16,8 @@ AudioRandomContainer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyDeathRandom
-  m_Volume: -12
+  m_Name: EnemyHurtRandom
+  m_Volume: 0
   m_Pitch: 0
   m_AutomaticTriggerTime: 0
   m_LoopCount: 1
@@ -26,7 +26,7 @@ AudioRandomContainer:
   m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
   m_LoopCountRandomizationRange: {x: 0, y: 0}
   m_Elements:
-  - {fileID: 4838283041669371041}
+  - {fileID: 1321164802407490887}
   m_AvoidRepeatingLast: 0
   m_PlaybackMode: 0
   m_TriggerMode: 1

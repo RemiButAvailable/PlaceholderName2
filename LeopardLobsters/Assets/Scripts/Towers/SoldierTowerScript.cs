@@ -48,6 +48,7 @@ public class SoldierTowerScript : MonoBehaviour
             {
                 soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
                 soldiers.Remove(soldier);
+                GetComponent<BaseTower>().people -= 1;
                 //play death sound?
                 break;
             }

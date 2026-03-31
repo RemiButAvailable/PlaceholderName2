@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1087836518847089871, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1367835570923021150, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
       propertyPath: m_Volume

@@ -1292,7 +1292,7 @@ MonoBehaviour:
   typeImpact: []
   neighboorhoodCenter: {fileID: 263250743}
   checker: {fileID: 550390848}
-  happinessPerTower: 0
+  happinessPerTower: 0.0001
   curHappinessChange: 0
 --- !u!1 &268697997
 GameObject:
@@ -4054,7 +4054,7 @@ MonoBehaviour:
   typeImpact: []
   neighboorhoodCenter: {fileID: 747162427}
   checker: {fileID: 626876296}
-  happinessPerTower: 0
+  happinessPerTower: -0.0002
   curHappinessChange: 0
 --- !u!1 &765353317
 GameObject:
@@ -5710,8 +5710,8 @@ Transform:
   m_GameObject: {fileID: 1191855090}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.0737, y: -0.2463, z: 0.06208199}
-  m_LocalScale: {x: 75.53702, y: 50.74663, z: 1}
+  m_LocalPosition: {x: -9.3058, y: -0.2898, z: 0.06208199}
+  m_LocalScale: {x: 72.6364, y: 50.203644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 398192746}

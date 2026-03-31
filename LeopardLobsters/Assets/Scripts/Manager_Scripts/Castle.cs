@@ -45,7 +45,7 @@ public class Castle : MonoBehaviour
     }
     public void personGoesIn() {
         peopleAtCastle++;
-        textUpdatePIn() ;
+        textUpdatePIn();
     }
 
 
@@ -82,6 +82,7 @@ public class Castle : MonoBehaviour
                 peopleAtCastle++;
                 peopleTotal++;
                 textUpdatePTotal();
+                textUpdatePIn();
             }
         }
     }
@@ -92,14 +93,12 @@ public class Castle : MonoBehaviour
         {
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
-
             KnightScript enemy = other.gameObject.GetComponent<KnightScript>();
 
-            peopleAtCastle -= enemy.damage;
-            peopleTotal -= enemy.damage;
+            PersonDead(enemy);
 
+            peopleAtCastle -= enemy.damage;
             textUpdatePIn();
-            textUpdatePTotal();
 
             enemy.ReachedCastle();
             if (peopleAtCastle < 0) {
@@ -107,6 +106,12 @@ public class Castle : MonoBehaviour
             }
         }
     }
+
+    public void PersonDead(KnightScript enemy){    
+        peopleTotal -= enemy.damage;
+        textUpdatePTotal();
+    }
+
 
     void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString(); }
     void textUpdatePIn() { textPeopleIn.text = peopleAtCastle.ToString(); }

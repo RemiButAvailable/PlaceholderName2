@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2909537519910427773, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: m_Offset.x
-      value: 0.43716764
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2909537519910427773, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: m_Offset.y
-      value: -0.30788594
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4925949044741141722, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: m_Sprite

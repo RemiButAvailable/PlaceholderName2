@@ -20,7 +20,7 @@ public class MouseClicker : MonoBehaviour
 
                 buttonPanel.transform.position = hit.collider.transform.position;
                 //ButtonPanelAnimation.Play("Clicked"); //maybe later
-                buttonPanel.towerSelect(hit.collider.GetComponent<BaseTower>());
+                buttonPanel.towerSelect(hit.collider.GetComponentInParent<BaseTower>());
                 buttonPanel.gameObject.SetActive(true);
             }
             else if (!hit.collider && hit.collider?.gameObject.layer != LayerMask.NameToLayer("Button"))

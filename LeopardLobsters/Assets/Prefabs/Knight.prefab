@@ -240,6 +240,7 @@ MonoBehaviour:
   defaultSpeed: 0
   damage: 1
   health: 3
+  targeted: 0
   hurtSound: {fileID: 96976140371490336}
   deathSound: {fileID: 6418180475301049370, guid: ef63285bce8c22548a5896bfa40f601f, type: 2}
   aPlayerPrefab: {fileID: 8468978810788666128, guid: aabb5ee098e74ea47914a9b48aa4fa64, type: 3}
@@ -349,7 +350,7 @@ GameObject:
   - component: {fileID: 156072854096229119}
   - component: {fileID: 96976140371490336}
   m_Layer: 0
-  m_Name: Death
+  m_Name: Hurt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,7 +382,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 6418180475301049370, guid: ef63285bce8c22548a5896bfa40f601f, type: 2}
+  m_Resource: {fileID: 6418180475301049370, guid: 1bacad884ba2f864c999cf5643131c17, type: 2}
   m_PlayOnAwake: 0
   m_Volume: 0.267
   m_Pitch: 1

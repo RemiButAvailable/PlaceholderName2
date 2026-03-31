@@ -364,3 +364,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerCollider: {fileID: 7208256482449840061}
   baseTower: {fileID: 2544903574498267057}
+  PlaceSound: {fileID: 0}
+  PlaceDenySound: {fileID: 0}

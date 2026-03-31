@@ -14,6 +14,7 @@ public class SoldierTowerScript : MonoBehaviour
     List<Vector3> soldierPositions;
     public List<GameObject> enemiesInZone;
     GameObject spawnedSoldier;
+    [SerializeField] AudioSource RemoveSoldierSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,7 +50,9 @@ public class SoldierTowerScript : MonoBehaviour
                 soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
                 soldiers.Remove(soldier);
                 GetComponent<BaseTower>().people -= 1;
-                //play death sound?
+
+                //(Dante Made this)
+                RemoveSoldierSound.Play();
                 break;
             }
         }

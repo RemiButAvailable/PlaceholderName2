@@ -10,7 +10,7 @@ public class MouseClicker : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 1f, LayerMask.GetMask("Tower", "Button")); //change later to be editable in inspector or somehting
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 1f, LayerMask.GetMask("TowerSelection", "Button")); //change later to be editable in inspector or somehting
             
             if (hit.collider && hit.collider.gameObject.layer == LayerMask.NameToLayer("Tower"))
             {

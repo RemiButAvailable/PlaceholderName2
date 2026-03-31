@@ -39,8 +39,9 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
-    public void RemoveSoldier(GameObject soldier)
+    public void RemoveSoldier() //connected through inspector
     {
+        GameObject soldier = soldiers[0];
         for (int i = 0; i < soldierPositions.Count; i++)
         {
             Vector3 convertedSoldierPosition = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);

@@ -9,32 +9,42 @@ public class BaseTower : MonoBehaviour
     public int peopleNeeded = 2;
     public int towerCost = 10;
     public int sellPrice = 5;
-    public SpriteRenderer areaOfEffect;
+
+    [SerializeField] SpriteRenderer areaOfEffect;
+    [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[2];
+
 
     public UnityEvent<bool> isActive;
     public UnityEvent<BaseTower> Destroyed;
     public UnityEvent OnPlace; //add change sprite layer later
     public UnityEvent AddedPeople;
-    public UnityEvent<GameObject> RemovedPeople;
-
-    
-
+    public UnityEvent RemovedPeople;
 
     public TowerType type;
 
     public void AddPeople() { //connected through events
         if (people >= peopleNeeded) return;
         if (!Castle.self.personGoesOut()) return;
+
+        if(peopleSprites[people])peopleSprites[people].enabled = true;
+
         people++;
-        if (GetComponent<SoldierTowerScript>() != null) AddedPeople.Invoke();
+        AddedPeople.Invoke();
+
         if (people >= peopleNeeded) isActive.Invoke(true);
+
     }
     public bool RemovePeople() { //connected through events
         if (people <= 0) return false;
         if (people >= peopleNeeded) isActive.Invoke(false);
+
         people--;
-        if (GetComponent<SoldierTowerScript>() != null) RemovedPeople.Invoke(GetComponent<SoldierTowerScript>().soldiers[0]);
+        RemovedPeople.Invoke();
+
         Castle.self.personGoesIn();
+
+
+
         return true;
     }
 

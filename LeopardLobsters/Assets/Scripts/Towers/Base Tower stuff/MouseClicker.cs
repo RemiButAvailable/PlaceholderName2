@@ -10,17 +10,17 @@ public class MouseClicker : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 1f, LayerMask.GetMask("Tower", "Button")); //change later to be editable in inspector or somehting
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 1f, LayerMask.GetMask("TowerSelection", "Button")); //change later to be editable in inspector or somehting
             
-            if (hit.collider && hit.collider.gameObject.layer == LayerMask.NameToLayer("Tower"))
+            if (hit.collider && hit.collider.gameObject.layer == LayerMask.NameToLayer("TowerSelection"))
             {
                 towerSelected?.TowerDeselected();
-                towerSelected  =hit.collider.GetComponent<BaseTower>();
+                towerSelected  =hit.collider.GetComponentInParent<BaseTower>();
                 towerSelected?.TowerSelected();
 
                 buttonPanel.transform.position = hit.collider.transform.position;
                 //ButtonPanelAnimation.Play("Clicked"); //maybe later
-                buttonPanel.towerSelect(hit.collider.GetComponent<BaseTower>());
+                buttonPanel.towerSelect(hit.collider.GetComponentInParent<BaseTower>());
                 buttonPanel.gameObject.SetActive(true);
             }
             else if (!hit.collider && hit.collider?.gameObject.layer != LayerMask.NameToLayer("Button"))

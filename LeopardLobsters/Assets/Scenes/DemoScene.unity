@@ -1292,7 +1292,7 @@ MonoBehaviour:
   typeImpact: []
   neighboorhoodCenter: {fileID: 263250743}
   checker: {fileID: 550390848}
-  happinessPerTower: 0
+  happinessPerTower: 0.0001
   curHappinessChange: 0
 --- !u!1 &268697997
 GameObject:
@@ -1955,7 +1955,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1178274434}
+    m_TransformParent: {fileID: 2058164490}
     m_Modifications:
     - target: {fileID: 2910183811473147238, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalScale.x
@@ -1971,15 +1971,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2910183811473147238, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8
+      value: -9.04811
       objectReference: {fileID: 0}
     - target: {fileID: 2910183811473147238, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.58
+      value: 1.3418149
       objectReference: {fileID: 0}
     - target: {fileID: 2910183811473147238, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.025312211
       objectReference: {fileID: 0}
     - target: {fileID: 2910183811473147238, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2030,6 +2030,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 724975673}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: textPeopleIn
+      value: 
+      objectReference: {fileID: 1037222312}
+    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: textPeopleOut
       value: 
       objectReference: {fileID: 1037222312}
@@ -2037,6 +2041,10 @@ PrefabInstance:
       propertyPath: castleHitSound
       value: 
       objectReference: {fileID: 2097845426}
+    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: peopleAtCastle
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: textPeopleTotal
       value: 
@@ -4046,7 +4054,7 @@ MonoBehaviour:
   typeImpact: []
   neighboorhoodCenter: {fileID: 747162427}
   checker: {fileID: 626876296}
-  happinessPerTower: 0
+  happinessPerTower: -0.0002
   curHappinessChange: 0
 --- !u!1 &765353317
 GameObject:
@@ -5600,7 +5608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -85.42, y: -250.84999}
+  m_AnchoredPosition: {x: -85.42, y: -250.84998}
   m_SizeDelta: {x: 169.16, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1147211849
@@ -5672,7 +5680,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 306283701}
   - {fileID: 716792466}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5703,8 +5710,8 @@ Transform:
   m_GameObject: {fileID: 1191855090}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.0737, y: -0.2463, z: 0.06208199}
-  m_LocalScale: {x: 75.53702, y: 50.74663, z: 1}
+  m_LocalPosition: {x: -9.3058, y: -0.2898, z: 0.06208199}
+  m_LocalScale: {x: 72.6364, y: 50.203644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 398192746}
@@ -7758,7 +7765,7 @@ GameObject:
   - component: {fileID: 1902788208}
   - component: {fileID: 1902788207}
   m_Layer: 5
-  m_Name: People BUilding num
+  m_Name: People in castle num
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7797,14 +7804,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7584905, g: 0.7584905, b: 0.7584905, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3638559150044269003, guid: 97368e761a3c9aa4a80cf1a0aed09870, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7932,6 +7939,7 @@ Transform:
   - {fileID: 1208745388}
   - {fileID: 724975674}
   - {fileID: 588754496}
+  - {fileID: 306283701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090645649

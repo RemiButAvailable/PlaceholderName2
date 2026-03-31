@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class KnightScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class KnightScript : MonoBehaviour
     public float defaultSpeed;
     public int damage = 1;
     public int health;
+    public bool targeted;
 
     //Manager Scripts
     WaveCode waveCode => WaveCode.self;
@@ -21,7 +23,10 @@ public class KnightScript : MonoBehaviour
 
     //(Made by Dante Jones)
     //The audio for enemy getting hurt
-    public AudioSource hurtSound;
+    [SerializeField] AudioSource hurtSound;
+    [SerializeField] AudioResource deathSound;
+    [SerializeField] AudioPlayer aPlayerPrefab;
+    [SerializeField] float deathSoundVolume = .5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,17 +49,24 @@ public class KnightScript : MonoBehaviour
                 index++;
             }
         }
-        //death
-        if(health <= 0)
-        {
-            waveCode.EnemyNum -= 1;
-            moneyManagerScript.moneyNum += (int)happinessManagerScript.happiness;
-            Destroy(gameObject);
-        }
+       
     }
     public void TakeDamage(int dmg) {
         health -= dmg;
         hurtSound.Play();
+
+        //death
+        if (health <= 0)
+        {
+            waveCode.EnemyNum -= 1;
+            moneyManagerScript.moneyNum += (int)happinessManagerScript.happiness;
+
+            //sounds
+            AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
+            aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
+
+            Destroy(gameObject);
+        }
     }
     public void ReachedCastle() {
         Destroy(gameObject);

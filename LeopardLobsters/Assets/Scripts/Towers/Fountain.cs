@@ -15,7 +15,8 @@ public class TestFountain : MonoBehaviour
     [SerializeField]BaseTower baseTower;
 
     [SerializeField] TowerAddedChecker checker;
-
+    //(This was made by Dante Jones)
+    [SerializeField] AudioSource WaterSound;
     private void Start()
     {
         //hManager = Happiness_ManagerScript.self
@@ -71,6 +72,17 @@ public class TestFountain : MonoBehaviour
 
     }
 
-    void SetActive(bool towerActive) { active = towerActive; }
+    void SetActive(bool towerActive) { active = towerActive;
+        if (active)
+        {
+            WaterSound.Play();
+        }
+        else
+        {
+            WaterSound.Stop();
+        }
+    }
+
+
 }
 

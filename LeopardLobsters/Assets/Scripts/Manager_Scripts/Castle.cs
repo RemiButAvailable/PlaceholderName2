@@ -8,9 +8,9 @@ public class Castle : MonoBehaviour
     public int peopleAtCastle = 5; //starting amount of people
     int peopleTotal;
     [SerializeField] int moneyPerPerson = 5;
-    [SerializeField] MoneyManagerScript moneyManager; 
+    [SerializeField] MoneyManagerScript moneyManager;
     [SerializeField] TextMeshProUGUI textPeopleTotal;
-    [SerializeField] TextMeshProUGUI textPeopleOut;
+    [SerializeField] TextMeshProUGUI textPeopleIn;
     //(Made by Dante Jones)
     //The audio for castle being hit
     public AudioSource castleHitSound;
@@ -23,8 +23,8 @@ public class Castle : MonoBehaviour
     }
     private void Start()
     {
-        textPeopleTotal.text = peopleTotal.ToString();
-        textPeopleOut.text = (peopleTotal - peopleAtCastle).ToString();
+        textUpdatePTotal();
+        textUpdatePIn();
     }
 
     //adds money based on population
@@ -35,17 +35,17 @@ public class Castle : MonoBehaviour
     }
 
     public bool personGoesOut() {
-        if (peopleAtCastle > 0) { 
+        if (peopleAtCastle > 0) {
             peopleAtCastle--;
-            textPeopleOut.text = (peopleTotal - peopleAtCastle).ToString();
+            textUpdatePIn();
             return true;
         }
         return false;
-        
+
     }
     public void personGoesIn() {
         peopleAtCastle++;
-        textPeopleOut.text = (peopleTotal - peopleAtCastle).ToString();
+        textUpdatePIn();
     }
 
 
@@ -53,7 +53,7 @@ public class Castle : MonoBehaviour
     bool inWave => WaveCode.self.WaveStart;
     float timer = 0;
     public int timerMax = 10;
-    
+
     public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
     public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
     public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
@@ -64,13 +64,13 @@ public class Castle : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inWave && peopleAtCastle>=minPeopleNeeded)
+        if (inWave && peopleAtCastle >= minPeopleNeeded)
         {
             progressBar.fillAmount = timer / timerMax;
 
             //increase time passed based on people at castle
-            timer += Time.deltaTime * Mathf.Pow(percentPerPerson, 
-                Mathf.Min(peopleAtCastle,maxPeopleDecrease)-minPeopleNeeded);
+            timer += Time.deltaTime * Mathf.Pow(percentPerPerson,
+                Mathf.Min(peopleAtCastle, maxPeopleDecrease) - minPeopleNeeded);
 
             //increases people when timer is done
             if (timer >= timerMax)
@@ -81,25 +81,24 @@ public class Castle : MonoBehaviour
 
                 peopleAtCastle++;
                 peopleTotal++;
-                textPeopleTotal.text = peopleTotal.ToString();
+                textUpdatePTotal();
+                textUpdatePIn();
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "knight")
+        if (other.gameObject.tag == "knight")
         {
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
-
             KnightScript enemy = other.gameObject.GetComponent<KnightScript>();
 
-            peopleAtCastle -= enemy.damage;
-            peopleTotal -= enemy.damage;
+            PersonDead(enemy);
 
-            textPeopleOut.text = (peopleTotal - peopleAtCastle).ToString();
-            textPeopleTotal.text = peopleTotal.ToString();
+            peopleAtCastle -= enemy.damage;
+            textUpdatePIn();
 
             enemy.ReachedCastle();
             if (peopleAtCastle < 0) {
@@ -107,6 +106,15 @@ public class Castle : MonoBehaviour
             }
         }
     }
+
+    public void PersonDead(KnightScript enemy){    
+        peopleTotal -= enemy.damage;
+        textUpdatePTotal();
+    }
+
+
+    void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString(); }
+    void textUpdatePIn() { textPeopleIn.text = peopleAtCastle.ToString(); }
 
     private void Update()
     {

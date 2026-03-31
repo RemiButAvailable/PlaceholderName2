@@ -26,6 +26,7 @@ public class SoldierTowerScript : MonoBehaviour
     public void AddSoldier(GameObject soldier)
     {
         spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
+        spawnedSoldier.GetComponent<SoldierScript>().Tower = this.gameObject;
         soldiers.Add(spawnedSoldier);
         for(int i = 0; i <= soldierPositions.Count; i++)
         {
@@ -40,15 +41,12 @@ public class SoldierTowerScript : MonoBehaviour
     }
     public void RemoveSoldier(GameObject soldier)
     {
-        for (int i = 0; i <= soldierPositions.Count; i++)
+        for (int i = 0; i < soldierPositions.Count; i++)
         {
-            if(Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, soldierPositions[i]) < 0.1f)
+            Vector3 convertedSoldierPosition = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
+            if(Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, convertedSoldierPosition) < 0.1f)
             {
                 soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
-                if(soldier.GetComponent<SoldierScript>().target != null)
-                {
-                    //
-                }
                 soldiers.Remove(soldier);
                 //play death sound?
                 break;
@@ -63,6 +61,7 @@ public class SoldierTowerScript : MonoBehaviour
             if (soldier.GetComponent<SoldierScript>().engaged == false)
             {
                 soldier.GetComponent<SoldierScript>().target = enemy;
+                enemy.GetComponent<KnightScript>().targeted = true;
                 soldier.GetComponent<SoldierScript>().engaged = true;
                 Debug.Log(soldier.GetComponent<SoldierScript>().engaged);
                 break;

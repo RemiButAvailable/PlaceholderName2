@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Placement : MonoBehaviour
 {
     [SerializeField] Collider2D towerCollider;
+    [SerializeField] GameObject towerClickCollider;
     [SerializeField] BaseTower baseTower;
 
     [SerializeField] AudioSource PlaceSound;
@@ -62,6 +63,7 @@ public class Placement : MonoBehaviour
             }
 
             gameObject.layer = LayerMask.NameToLayer("Tower");
+            towerClickCollider.layer = LayerMask.NameToLayer("TowerSelection");
             baseTower.OnPlace.Invoke();
             // Sound
             PlaceSound.Play();

@@ -36,6 +36,7 @@ public class TutorialScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+
         for(int i = 0; i < 10; i++) {
 
         //Have different events happen based on what text it is.

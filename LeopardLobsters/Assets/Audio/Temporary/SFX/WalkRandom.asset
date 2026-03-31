@@ -6,8 +6,8 @@ AudioContainerElement:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SFX_GravelWalk_{-5544068644153919967}
-  m_AudioClip: {fileID: 8300000, guid: 3003d666a0c894e4db22d8752c2dbe39, type: 3}
+  m_Name: SFX_GravelWalk (2)_{-5544068644153919967}
+  m_AudioClip: {fileID: 8300000, guid: db30dae6d4bdae4468b84139f82e561a, type: 3}
   m_Volume: 0
   m_Enabled: 1
 --- !u!1307931743 &6418180475301049370

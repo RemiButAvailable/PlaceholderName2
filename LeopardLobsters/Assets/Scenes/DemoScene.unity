@@ -2030,6 +2030,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 724975673}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: textPeopleIn
+      value: 
+      objectReference: {fileID: 1037222312}
+    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: textPeopleOut
       value: 
       objectReference: {fileID: 1037222312}
@@ -5600,7 +5604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -85.42, y: -250.84999}
+  m_AnchoredPosition: {x: -85.42, y: -250.84998}
   m_SizeDelta: {x: 169.16, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1147211849
@@ -7758,7 +7762,7 @@ GameObject:
   - component: {fileID: 1902788208}
   - component: {fileID: 1902788207}
   m_Layer: 5
-  m_Name: People BUilding num
+  m_Name: People in castle num
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7797,14 +7801,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7584905, g: 0.7584905, b: 0.7584905, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3638559150044269003, guid: 97368e761a3c9aa4a80cf1a0aed09870, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

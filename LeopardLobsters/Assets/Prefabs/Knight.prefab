@@ -237,9 +237,13 @@ MonoBehaviour:
   waypoints: []
   index: 0
   speed: 0.5
+  defaultSpeed: 0
   damage: 1
   health: 3
   hurtSound: {fileID: 96976140371490336}
+  deathSound: {fileID: 6418180475301049370, guid: ef63285bce8c22548a5896bfa40f601f, type: 2}
+  aPlayerPrefab: {fileID: 8468978810788666128, guid: aabb5ee098e74ea47914a9b48aa4fa64, type: 3}
+  deathSoundVolume: 0.5
 --- !u!60 &1087836518847089871
 PolygonCollider2D:
   m_ObjectHideFlags: 0

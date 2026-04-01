@@ -8,6 +8,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Collections;
 
 public class TutorialScript : MonoBehaviour
 { //The Firey Abbyss we'll call the Tutorial
@@ -16,18 +17,23 @@ public class TutorialScript : MonoBehaviour
 
     private Vector3 changes;
 
+   // public Text uiText;
+
+    Vector2 endPosition;
+
     public List<TextAsset> NewText = new List<TextAsset>();
 
     void Start()
     {
         changes = Camera.main.transform.position;
-
+        //StartCoroutine(moveText());
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (TutorialEnd)
         {
             SceneManager.LoadScene("DemoScene");
@@ -37,7 +43,7 @@ public class TutorialScript : MonoBehaviour
     private void OnMouseDown()
     {
 
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 300; i++) {
 
         //Have different events happen based on what text it is.
 
@@ -50,6 +56,11 @@ public class TutorialScript : MonoBehaviour
             if (NewText[6])
             {
 
+            }
+
+            if (NewText[28])
+            {
+                TutorialEnd = true;
             }
         }
     }

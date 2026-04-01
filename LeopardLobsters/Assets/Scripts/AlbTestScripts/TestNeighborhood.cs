@@ -2,6 +2,7 @@ using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TestNeighborhood : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class TestNeighborhood : MonoBehaviour
 
     float curHappinessChange = 0;
 
+    //tutorial events
+    public UnityEvent blahBlah;
+
     private void Start()
     {
         //WaveCode.self.waveStarted.AddListener(resetCalculations);
@@ -29,6 +33,10 @@ public class TestNeighborhood : MonoBehaviour
 
     public void towerEnter(BaseTower tower)
     {
+        //tutorial stuff
+        blahBlah.Invoke();
+
+        //not tutorial stuff
         towers.Add(tower);
 
         //can add sfx vfx

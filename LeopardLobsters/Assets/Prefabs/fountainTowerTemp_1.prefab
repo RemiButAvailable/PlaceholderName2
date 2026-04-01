@@ -618,7 +618,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3521693598707257194, guid: eb6cce6f3a7c3f04fb53cf0185a1268e, type: 3}
+  m_Sprite: {fileID: 2086913850377502119, guid: c965773eda633c94eb3576ba7833058b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -765,7 +765,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 5ad06712bc9ec0f4397851e6dfc0888b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.501
+  m_Volume: 0.216
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1169,8 +1169,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.38034508, y: 1}
-      - {x: -0.49756932, y: 0.9965634}
+    - - {x: 0.1663961, y: 1.7131623}
+      - {x: -0.26935768, y: 1.7097249}
       - {x: -2.0719843, y: -0.33347085}
       - {x: -0.011989206, y: -0.6773591}
       - {x: 2.2133803, y: -0.3221447}

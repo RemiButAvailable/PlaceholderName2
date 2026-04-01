@@ -1,4 +1,4 @@
-/* Author: Victoria T. (And two others)
+/* Author: Victoria T. (And the other two)
  * Date: 3/16/26
  * 
  * Description: The code for the wave/rounds of the game,
@@ -17,7 +17,7 @@ public class WaveCode : MonoBehaviour
     public int EnemyNum = 0;
     private int PhantomEnemyNum = 0;
 
-    public int TotalWealth = 1;
+    [SerializeField]public int TotalWealth = 1;
     public int WaveNum = 0;
 
     public bool WaveStart;
@@ -106,6 +106,7 @@ public class WaveCode : MonoBehaviour
                 probOfFastEnemyDeterminer -= 1;
                 EnemyNum++;
                 PhantomEnemyNum++;
+
                 if(PhantomEnemyNum <= 10) 
                 {
                     EnemySpawnSpot = EnemySpawnStart;

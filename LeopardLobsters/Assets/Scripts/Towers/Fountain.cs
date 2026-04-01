@@ -38,7 +38,7 @@ public class TestFountain : MonoBehaviour
     private void FixedUpdate()
     {
         if (!active) return;
-        if (timer > 0)
+        if (timer > 0 && WaveCode.self.WaveStart)
         {
             timer -= Time.deltaTime;
         }
@@ -82,7 +82,5 @@ public class TestFountain : MonoBehaviour
             WaterSound.Stop();
         }
     }
-
-
 }
 

@@ -11,7 +11,7 @@ public class BaseTower : MonoBehaviour
     public int sellPrice = 5;
 
     [SerializeField] SpriteRenderer areaOfEffect;
-    [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[2];
+    [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
 
 
     public UnityEvent<bool> isActive;
@@ -40,10 +40,9 @@ public class BaseTower : MonoBehaviour
 
         people--;
         RemovedPeople.Invoke();
-
         Castle.self.personGoesIn();
 
-
+        if (peopleSprites[people]) peopleSprites[people].enabled = false;
 
         return true;
     }

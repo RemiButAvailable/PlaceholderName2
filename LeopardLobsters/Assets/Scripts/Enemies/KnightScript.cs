@@ -15,6 +15,7 @@ public class KnightScript : MonoBehaviour
     public int damage = 1;
     public int health;
     public bool targeted;
+    public Vector3 offset;
 
     //Manager Scripts
     WaveCode waveCode => WaveCode.self;
@@ -33,6 +34,12 @@ public class KnightScript : MonoBehaviour
     {
         waypoints = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(waypoints);
+        for(int i = 0; i < waypoints.Length; i++)
+        {
+            waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
+        }
+        Debug.Log( "first wayPoint is " + (waypoints[index] + offset));
+        Debug.Log("starting pos is " + transform.position);
     }
 
     // Update is called once per frame
@@ -41,10 +48,10 @@ public class KnightScript : MonoBehaviour
         //movement
         if(index < waypoints.Length)
         {
-            direction = waypoints[index] - transform.position;
+            direction = waypoints[index] + offset - transform.position;
             direction.Normalize();
             transform.position += direction * speed * Time.deltaTime;
-            if(Vector3.Distance(transform.position, waypoints[index]) < 0.1f)
+            if(Vector3.Distance(transform.position, waypoints[index] + offset) < 0.1f)
             {
                 index++;
             }

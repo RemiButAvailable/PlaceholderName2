@@ -8,6 +8,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Collections;
 
 public class TutorialScript : MonoBehaviour
 { //The Firey Abbyss we'll call the Tutorial
@@ -16,13 +17,16 @@ public class TutorialScript : MonoBehaviour
 
     private Vector3 changes;
 
-    Vector2 TextMove;
+   // public Text uiText;
+
+    Vector2 endPosition;
 
     public List<TextAsset> NewText = new List<TextAsset>();
 
     void Start()
     {
         changes = Camera.main.transform.position;
+        //StartCoroutine(moveText());
 
     }
 

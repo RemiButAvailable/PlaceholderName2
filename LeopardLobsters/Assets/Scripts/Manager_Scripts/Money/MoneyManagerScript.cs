@@ -104,19 +104,24 @@ public class MoneyManagerScript : MonoBehaviour
     }
     public void Buy(GameObject product)
     {
-        if(moneyNum >= product.GetComponent<ProductScript>().price)
+        //When you place something, and you dont have enogh money this plays
+        if (moneyNum < product.GetComponent<ProductScript>().price + 30)
         {
-            changeMoney(-1);
-            DragnDrop = true;
-            spawnedProduct = Instantiate(product, mousePos, Quaternion.identity);
-
-            //Sound that plays when you by something
-            BuySound.Play();
+            BuyDenySound.Play();
         }
+
         else
         {
-            //When you place something, and you dont have enogh money this plays
-            BuyDenySound.Play();
+            if (moneyNum >= product.GetComponent<ProductScript>().price)
+            {
+                changeMoney(-1);
+                DragnDrop = true;
+                spawnedProduct = Instantiate(product, mousePos, Quaternion.identity);
+
+                //Sound that plays when you by something
+                BuySound.Play();
+            }
+
         }
     }
 

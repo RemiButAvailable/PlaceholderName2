@@ -1,3 +1,8 @@
+/* Author: Albert Tan
+ * Utilized by: Victoria T.
+ * 4/1/26
+ ****************************/
+
 using System;
 using UnityEngine;
 using UnityEngine.Events;

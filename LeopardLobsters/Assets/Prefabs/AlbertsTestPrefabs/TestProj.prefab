@@ -107,4 +107,4 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hasEffect: 0
-  timerMax: 0.2
+  timerMax: 0.5

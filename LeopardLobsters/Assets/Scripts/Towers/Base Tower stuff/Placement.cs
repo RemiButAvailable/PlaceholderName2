@@ -23,7 +23,7 @@ public class Placement : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (!MoneyManagerScript.self.Check(baseTower.towerCost)) { Destroy(gameObject); return; }
+            if (!MoneyManagerScript.self.Check(-baseTower.towerCost)) { Destroy(gameObject); return; }
 
             Collider2D[] results = new Collider2D[1];
             ContactFilter2D filter = new ContactFilter2D();

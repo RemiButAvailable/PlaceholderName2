@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class Castle : MonoBehaviour
 {
-    public int peopleAtCastle = 5; //starting amount of people
+    public int peopleAtCastle = 2; //starting amount of people
+    [SerializeField] int peopleMax = 6;
+    [SerializeField] int increaseMaxCost = 30;
+    [SerializeField] float buyMaxMult = 2;
+
     int peopleTotal;
     [SerializeField] int moneyPerPerson = 5;
     [SerializeField] MoneyManagerScript moneyManager;
@@ -64,7 +68,7 @@ public class Castle : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inWave && peopleAtCastle >= minPeopleNeeded)
+        if (inWave && peopleAtCastle >= minPeopleNeeded && peopleTotal<peopleMax)
         {
             progressBar.fillAmount = timer / timerMax;
 

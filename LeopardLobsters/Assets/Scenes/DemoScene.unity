@@ -161,7 +161,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 6418180475301049370, guid: 19f7c07bffc5f3e4ba9a11c90d7791f8, type: 2}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6042,6 +6042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clicker_
       objectReference: {fileID: 0}
+    - target: {fileID: 591724172008360176, guid: e30973d3c9277164194a96668bc0910f, type: 3}
+      propertyPath: ButtonSound
+      value: 
+      objectReference: {fileID: 55833705}
     - target: {fileID: 735636217805366381, guid: e30973d3c9277164194a96668bc0910f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.6172748
@@ -6082,6 +6086,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4860839820101989217, guid: e30973d3c9277164194a96668bc0910f, type: 3}
+      propertyPath: ButtonSound
+      value: 
+      objectReference: {fileID: 55833705}
+    - target: {fileID: 5223702395199422784, guid: e30973d3c9277164194a96668bc0910f, type: 3}
+      propertyPath: ButtonSound
+      value: 
+      objectReference: {fileID: 55833705}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

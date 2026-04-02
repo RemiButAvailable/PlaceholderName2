@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 
 public class NonUIButton : MonoBehaviour, IPointerDownHandler
 {
+
+    public AudioSource ButtonSound;
     public UnityEvent OnClick;
     Animation changeColor;
     
@@ -13,5 +15,6 @@ public class NonUIButton : MonoBehaviour, IPointerDownHandler
         print("clicked "+gameObject);
         OnClick?.Invoke();
         changeColor?.Play();
+        ButtonSound.Play();
     }
 }

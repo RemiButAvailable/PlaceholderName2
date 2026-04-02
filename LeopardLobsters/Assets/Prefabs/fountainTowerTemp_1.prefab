@@ -719,7 +719,7 @@ MonoBehaviour:
   towerClickCollider: {fileID: 8919320486170738836}
   baseTower: {fileID: 2544903574498267057}
   PlaceSound: {fileID: 8665994680777551847}
-  PlaceDenySound: {fileID: 0}
+  PlaceDenySound: {fileID: 6292744743687921564}
 --- !u!1 &5430110189425759209
 GameObject:
   m_ObjectHideFlags: 0

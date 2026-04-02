@@ -5,6 +5,7 @@
  */
 using UnityEngine;
 using System.Collections.Generic;
+using static UnityEngine.GraphicsBuffer;
 
 public class SoldierTowerScript : MonoBehaviour
 {
@@ -13,11 +14,15 @@ public class SoldierTowerScript : MonoBehaviour
     public List<GameObject> soldiers;
     List<Vector3> soldierPositions;
     public List<GameObject> enemiesInZone;
-    GameObject spawnedSoldier;
+    BaseTower baseTower;
+
+
     [SerializeField] AudioSource RemoveSoldierSound;
+    [SerializeField] AudioSource SoldierDeathSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -26,7 +31,7 @@ public class SoldierTowerScript : MonoBehaviour
     }
     public void AddSoldier(GameObject soldier)
     {
-        spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
         spawnedSoldier.GetComponent<SoldierScript>().Tower = this.gameObject;
         soldiers.Add(spawnedSoldier);
         for(int i = 0; i <= soldierPositions.Count; i++)
@@ -40,7 +45,7 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
-    public void RemoveSoldier() //connected through inspector
+    public void RemoveSoldierViaButton() //connected through inspector
     {
         GameObject soldier = soldiers[0];
         for (int i = 0; i < soldierPositions.Count; i++)
@@ -49,8 +54,14 @@ public class SoldierTowerScript : MonoBehaviour
             if(Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, convertedSoldierPosition) < 0.1f)
             {
                 soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
+
+                if(soldier.GetComponent<SoldierScript>().target != null)
+                {
+                    soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().defaultSpeed;
+                    soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().targeted = false;
+                }
                 soldiers.Remove(soldier);
-                GetComponent<BaseTower>().people -= 1;
+                Destroy(soldier);
 
                 //(Dante Made this)
                 RemoveSoldierSound.Play();
@@ -58,7 +69,7 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
-    public void RemoveSoldier(GameObject soldier) //connected through inspector
+    public void RemoveSoldier(GameObject soldier)
     {
         for (int i = 0; i < soldierPositions.Count; i++)
         {
@@ -67,7 +78,9 @@ public class SoldierTowerScript : MonoBehaviour
             {
                 soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
                 soldiers.Remove(soldier);
+                Destroy (soldier);
                 GetComponent<BaseTower>().people -= 1;
+                SoldierDeathSound.Play();
                 //play death sound?
                 break;
             }

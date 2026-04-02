@@ -24,6 +24,9 @@ public class ArcherTowerScript : MonoBehaviour
     //Sound that plays when enemy shoots
     public AudioSource arrowShootSound;
 
+    [Range(0, 12)]
+    public float multiplier;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -72,8 +75,17 @@ public class ArcherTowerScript : MonoBehaviour
                 knightScript = queue[0].GetComponent<KnightScript>();
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
-                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot] + knightScript.offset;
+                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot * (int)(knightScript.speed * multiplier)] + knightScript.offset;
                 arrowScript.direction = target - transform.position;
+                /*float knightDistToNextTurn = Vector3.Distance(queue[0].transform.position, knightScript.nextWayPoint);
+                float minimumDistance;
+                if(knightDistToNextTurn < minimumDistance)
+                {
+
+                }*/
+                //arrowScript.direction = queue[0].transform.position + (knightScript.direction.normalized) * (knightScript.speed * multiplier) - transform.position;
+
+                //arrowPosition(t) = knightPosition(t)
             }
             yield return new WaitForSeconds(cooldown);
         }

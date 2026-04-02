@@ -1439,7 +1439,7 @@ MonoBehaviour:
   typeImpact: []
   neighboorhoodCenter: {fileID: 263250743}
   checker: {fileID: 550390848}
-  happinessPerTower: 0.0001
+  happinessPerTower: 0.0007
   curHappinessChange: 0
 --- !u!1 &268697997
 GameObject:
@@ -1957,7 +1957,7 @@ MonoBehaviour:
   typeImpact: []
   neighboorhoodCenter: {fileID: 279870996}
   checker: {fileID: 1845701024}
-  happinessPerTower: -0.0001
+  happinessPerTower: -0.0007
   curHappinessChange: 0
 --- !u!1 &281089149
 GameObject:
@@ -4206,7 +4206,7 @@ MonoBehaviour:
   typeImpact: []
   neighboorhoodCenter: {fileID: 747162427}
   checker: {fileID: 626876296}
-  happinessPerTower: -0.0002
+  happinessPerTower: -0.0009
   curHappinessChange: 0
 --- !u!1 &765353317
 GameObject:

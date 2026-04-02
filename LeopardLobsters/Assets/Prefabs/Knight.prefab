@@ -233,14 +233,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd74a9e6fa5a04549bfac785f18dcdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 0}
-  waypoints: []
-  index: 0
-  speed: 0.5
-  defaultSpeed: 0
+  defaultSpeed: 2.52
   damage: 1
   health: 3
+  speed: 0.5
+  index: 0
   targeted: 0
+  offset: {x: 0, y: 0, z: 0}
+  lineRenderer: {fileID: 0}
+  waypoints: []
   hurtSound: {fileID: 96976140371490336}
   deathSound: {fileID: 6418180475301049370, guid: ef63285bce8c22548a5896bfa40f601f, type: 2}
   aPlayerPrefab: {fileID: 8468978810788666128, guid: aabb5ee098e74ea47914a9b48aa4fa64, type: 3}

@@ -116,6 +116,7 @@ MonoBehaviour:
   peopleSprites:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   isActive:
     m_PersistentCalls:
       m_Calls: []
@@ -157,7 +158,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8716366860728251673}
         m_TargetAssemblyTypeName: SoldierTowerScript, Assembly-CSharp
-        m_MethodName: RemoveSoldier
+        m_MethodName: RemoveSoldierViaButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -238,6 +239,7 @@ MonoBehaviour:
   soldiers: []
   enemiesInZone: []
   RemoveSoldierSound: {fileID: 1962428767925325588}
+  SoldierDeathSound: {fileID: 0}
 --- !u!1 &3912358992479251152
 GameObject:
   m_ObjectHideFlags: 0

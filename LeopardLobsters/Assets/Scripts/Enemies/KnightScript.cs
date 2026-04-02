@@ -1,21 +1,38 @@
+/*
+ * Remi de Plater
+ * Knight enemy functionality
+ */
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
 public class KnightScript : MonoBehaviour
 {
+    //vals that can be edited in the inspector
+    [Range(0, 12)]
+    public float defaultSpeed;
+    [Range(0, 12)]
+    public int damage;
+    [Range(0, 12)]
+    public int health;
+
+    //vals that are public but not cause they're meant to be edited in the inspector
+
+    [HideInInspector]
+    public float speed;
+    [HideInInspector]
+    public int index;
+    [HideInInspector]
+    public bool targeted;
+    [HideInInspector]
+    public Vector3 offset;
+    [HideInInspector]
+    public Vector3 direction;
+    public Vector3 nextWayPoint;
+
+    //public objects and lists
     public LineRenderer lineRenderer;
     public Vector3[] waypoints;
-    Vector3 direction;
-
-    //num vals;
-    public int index;
-    public float speed;
-    public float defaultSpeed;
-    public int damage = 1;
-    public int health;
-    public bool targeted;
-    public Vector3 offset;
 
     //Manager Scripts
     WaveCode waveCode => WaveCode.self;
@@ -32,14 +49,14 @@ public class KnightScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        speed = defaultSpeed;
+        //sets waypoints to the points along the line renderer
         waypoints = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(waypoints);
-        for(int i = 0; i < waypoints.Length; i++)
+        for(int i = 0; i < waypoints.Length; i++) //sets all waypoint's z pos to 0
         {
             waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
         }
-        Debug.Log( "first wayPoint is " + (waypoints[index] + offset));
-        Debug.Log("starting pos is " + transform.position);
     }
 
     // Update is called once per frame
@@ -48,6 +65,7 @@ public class KnightScript : MonoBehaviour
         //movement
         if(index < waypoints.Length)
         {
+            nextWayPoint = waypoints[index];
             direction = waypoints[index] + offset - transform.position;
             direction.Normalize();
             transform.position += direction * speed * Time.deltaTime;

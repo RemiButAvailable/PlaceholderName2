@@ -7,8 +7,8 @@ public class Castle : MonoBehaviour
 {
     public int peopleAtCastle = 2; //starting amount of people
     [SerializeField] int peopleMax = 6;
-    [SerializeField] int increaseMaxCost = 30;
-    [SerializeField] float buyMaxMult = 2;
+    [SerializeField] int peopleMaxCost = 30;
+    [SerializeField] float peopleMaxCostMult = 2;
 
     int peopleTotal;
     [SerializeField] int moneyPerPerson = 5;
@@ -117,7 +117,15 @@ public class Castle : MonoBehaviour
     }
 
 
-    void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString(); }
+    public void BuyMaxPeople() {
+        if (!MoneyManagerScript.self.Check(-peopleMaxCost)) return;
+
+        MoneyManagerScript.self.changeMoney(-peopleMaxCost);
+        peopleMax++;
+        peopleMaxCost = (int)( peopleMaxCost * peopleMaxCostMult);
+    }
+
+    void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString() +" / "  +peopleMax.ToString(); }
     void textUpdatePIn() { textPeopleIn.text = peopleAtCastle.ToString(); }
 
     private void Update()

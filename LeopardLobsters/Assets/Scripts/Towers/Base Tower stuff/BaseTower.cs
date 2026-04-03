@@ -23,6 +23,12 @@ public class BaseTower : MonoBehaviour
     public TowerType type;
 
     public void AddPeople() { //connected through events
+        while (people < peopleNeeded)
+        {
+            // Have the grayed out tower, or just different color to show inactive.
+
+        }
+
         if (people >= peopleNeeded) return;
         if (!Castle.self.personGoesOut()) return;
 

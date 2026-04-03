@@ -82,8 +82,10 @@ public class SoldierScript : MonoBehaviour
             if(fighting == true)
             {
                 //attack animation?
+                //play enemy damage sound
                 target.GetComponent<KnightScript>().health -= 1;
                 yield return new WaitForSeconds(1);
+                //play soldier damage sound
                 //enemy attack animation?
                 health -= 1;
                 yield return new WaitForSeconds(1);

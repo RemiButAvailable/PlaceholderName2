@@ -17,6 +17,7 @@ public class SoldierScript : MonoBehaviour
     [SerializeField] AudioSource hitSound;
     [SerializeField] AudioResource deathSound;
     [SerializeField] AudioPlayer aSoundPrefab;
+    [SerializeField] float deathSoundVolume = .5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,7 +60,7 @@ public class SoldierScript : MonoBehaviour
         {
             //Will add volume
             AudioPlayer aPlayer = Instantiate(aSoundPrefab);
-            aPlayer.playClip(transform.position, deathSound);
+            aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
             target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
             target.GetComponent<KnightScript>().targeted = false;
             Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);

@@ -1,0 +1,8 @@
+Patch notes 4/2/26
+
+Changed happiness vals
+added more sounds
+messed around with changing aiming
+main menu was changed
+wave code edited
+removing soldiers fixed

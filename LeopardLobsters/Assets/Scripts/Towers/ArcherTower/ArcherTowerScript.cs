@@ -34,7 +34,7 @@ public class ArcherTowerScript : MonoBehaviour
         attackZone.Tower = this.gameObject;
         queue = new List<GameObject>();
         StartCoroutine(ShootArrows());
-        StartCoroutine(Printer());
+        //StartCoroutine(Printer());
         GetComponent<BaseTower>().isActive.AddListener(IsActive);
     }
 
@@ -66,7 +66,6 @@ public class ArcherTowerScript : MonoBehaviour
             if (enemyInZone && towerManned && WaveCode.self.WaveStart)
             {
                 spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
-                Debug.Log("shooting");
 
                 //Sound when arrow shoots
                 arrowShootSound.Play();
@@ -75,7 +74,7 @@ public class ArcherTowerScript : MonoBehaviour
                 knightScript = queue[0].GetComponent<KnightScript>();
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
-                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot * (int)(knightScript.speed * multiplier)] + knightScript.offset;
+                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot/* * (int)(knightScript.speed * directionMultiplier)*/] + knightScript.offset;
                 arrowScript.direction = target - transform.position;
                 /*float knightDistToNextTurn = Vector3.Distance(queue[0].transform.position, knightScript.nextWayPoint);
                 float minimumDistance;

@@ -18,7 +18,7 @@ public class KnightScript : MonoBehaviour
 
     //vals that are public but not cause they're meant to be edited in the inspector
 
-    [HideInInspector]
+    //[HideInInspector]
     public float speed;
     [HideInInspector]
     public int index;
@@ -84,8 +84,19 @@ public class KnightScript : MonoBehaviour
         if (health <= 0)
         {
             waveCode.EnemyNum -= 1;
-            moneyManagerScript.moneyNum += (int)happinessManagerScript.happiness;
 
+            if(happinessManagerScript.happiness <= (1/3))
+            {
+                moneyManagerScript.moneyNum += 1;
+            }
+            else if(moneyManagerScript.moneyNum > (1/3) && moneyManagerScript.moneyNum <= (2/3))
+            {
+                moneyManagerScript.moneyNum += 2;
+            }
+            else
+            {
+                moneyManagerScript.moneyNum += 3;
+            }
             //sounds
             AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
             aPlayer.playClip(transform.position, deathSound, deathSoundVolume);

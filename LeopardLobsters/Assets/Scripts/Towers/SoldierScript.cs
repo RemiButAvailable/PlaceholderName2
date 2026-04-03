@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoldierScript : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class SoldierScript : MonoBehaviour
     public float health;
     public GameObject Tower;
     bool atStation;
+    //This was made by Dante Jones
+    [SerializeField] AudioSource hitSound;
+    [SerializeField] AudioResource deathSound;
+    [SerializeField] AudioPlayer aSoundPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,6 +57,9 @@ public class SoldierScript : MonoBehaviour
 
         if(health <= 0)
         {
+            //Will add volume
+            AudioPlayer aPlayer = Instantiate(aSoundPrefab);
+            aPlayer.playClip(transform.position, deathSound);
             target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
             target.GetComponent<KnightScript>().targeted = false;
             Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
@@ -86,6 +94,7 @@ public class SoldierScript : MonoBehaviour
                 target.GetComponent<KnightScript>().health -= 1;
                 yield return new WaitForSeconds(1);
                 //play soldier damage sound
+                hitSound.Play();
                 //enemy attack animation?
                 health -= 1;
                 yield return new WaitForSeconds(1);

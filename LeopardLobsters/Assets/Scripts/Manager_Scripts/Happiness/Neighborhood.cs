@@ -9,7 +9,7 @@ public class Neighborhood : MonoBehaviour
     //Dictionary<TowerType, float> towerPreference = new Dictionary<TowerType, float>();
 
     [SerializeField] List<TowerType> typeIndex = new List<TowerType>();
-    [SerializeField] List<float> typeImpact = new List<float>(); //change later with a better solution like a serializeable dictionary
+    [SerializeField] List<float> typeMult = new List<float>(); //change later with a better solution like a serializeable dictionary
     List<BaseTower> towers = new List<BaseTower>();
 
     [SerializeField]Collider2D neighboorhoodCenter;
@@ -20,44 +20,83 @@ public class Neighborhood : MonoBehaviour
 
     public float curHappinessChange = 0;
 
+    //Animation + sfx
+    [SerializeField] Animator animator;
+    [SerializeField] GameObject animatorParent;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip happyUp;
+    [SerializeField] AudioClip happyDown;
+
     private void Start()
     {
-        //WaveCode.self.waveStarted.AddListener(resetCalculations);
         checker.towerEnter.AddListener(towerEnter);
         checker.towerExit.AddListener(towerLeft);
-        Happiness_ManagerScript.self.Neighborhoods.Add(this);
-    }
 
-    public void towerEnter(BaseTower tower)
+        Happiness_ManagerScript.self.Neighborhoods.Add(this);
+        WaveCode.self.waveStarted.AddListener(resetCalculations);
+
+        animatorParent.transform.position = neighboorhoodCenter.bounds.center;
+    }
+    public float calcTower(BaseTower tower)
     {
+        float happinessChange = 0;
+
         tower.Destroyed.AddListener(towerLeft);
         towers.Add(tower);
 
-        //can add sfx vfx
-        
-        //tower type change
-        if (typeIndex.Contains(tower.type)) 
-            curHappinessChange += typeImpact[typeIndex.IndexOf(tower.type)];
+        happinessChange += happinessPerTower;
+
+        //tower type mult
+        if (typeIndex.Contains(tower.type))
+            happinessChange *= typeMult[typeIndex.IndexOf(tower.type)];
 
         //distance to closest point on collider calculation
         float dist = (tower.transform.position - tower.GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
         dist = (1 / (1 + dist / 3));
+        happinessChange *= dist;
 
-        curHappinessChange += happinessPerTower * dist;
+        curHappinessChange += happinessChange;
+
+        return happinessChange;
+    }
+
+    public void towerEnter(BaseTower tower)
+    {
+        float happinessChange = calcTower(tower);
+
+        //sfx vfx
+        if (happinessChange > 0) {
+            animator.Play("HappinessUp");
+            audioSource.clip = happyUp;
+            audioSource.Play();
+        }
+        if (happinessChange < 0)
+        {
+            animator.Play("HappinessDown");
+            audioSource.clip = happyDown;
+            audioSource.Play();
+        }
+
     }
 
     void towerLeft(BaseTower tower) {
         towers.Remove(tower);
 
-        //tower type addition
-        if (typeIndex.Contains(tower.type))
-            curHappinessChange -= typeImpact[typeIndex.IndexOf(tower.type)];
+        float happinessChange = 0;
 
-        //distance to center calculation
+        happinessChange += happinessPerTower;
+
+        //tower type mult
+        if (typeIndex.Contains(tower.type))
+            happinessChange *= typeMult[typeIndex.IndexOf(tower.type)];
+
+        //distance to closest point on collider calculation
         float dist = (tower.transform.position - tower.GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
         dist = (1 / (1 + dist / 3));
+        happinessChange *= dist;
 
-        curHappinessChange -= happinessPerTower * dist;
+        curHappinessChange -= happinessChange;
     }
 
     void resetCalculations() { //do after every wave just in case
@@ -69,6 +108,7 @@ public class Neighborhood : MonoBehaviour
         }
     }
     
-    
+
+
 }
 

@@ -6,8 +6,8 @@ public class TestFountain : MonoBehaviour
 {
     int towerCount = 0;
 
-    [SerializeField] float happyPerTower = .05f;
-    [SerializeField] float cooldown = 1;
+    [SerializeField] float happyPerTower = .004f;
+    [SerializeField] float cooldown = .5f;
 
     float timer = 0;
 
@@ -17,6 +17,10 @@ public class TestFountain : MonoBehaviour
     [SerializeField] TowerAddedChecker checker;
     //(This was made by Dante Jones)
     [SerializeField] AudioSource WaterSound;
+    [SerializeField] AudioSource happySound;
+    //animation
+    [SerializeField] Animator happinessGain;
+
     private void Start()
     {
         //hManager = Happiness_ManagerScript.self
@@ -37,8 +41,8 @@ public class TestFountain : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!active) return;
-        if (timer > 0 && WaveCode.self.WaveStart)
+        if (!active || !WaveCode.self.WaveStart) return;
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
@@ -47,6 +51,8 @@ public class TestFountain : MonoBehaviour
             timer = cooldown + timer;
 
             //happiness change sfx vfx
+            happinessGain.Play("HappinessUp");
+            happySound.Play();
 
             Happiness_ManagerScript.self.ChangeHappy(happyPerTower*towerCount);
         }

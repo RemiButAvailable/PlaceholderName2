@@ -52,9 +52,9 @@ public class SoldierScript : MonoBehaviour
 
         if(health <= 0)
         {
-            Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
             target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
             target.GetComponent<KnightScript>().targeted = false;
+            Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
             Destroy(gameObject);
         }
 

@@ -18,7 +18,7 @@ public class KnightScript : MonoBehaviour
 
     //vals that are public but not cause they're meant to be edited in the inspector
 
-    [HideInInspector]
+    //[HideInInspector]
     public float speed;
     [HideInInspector]
     public int index;

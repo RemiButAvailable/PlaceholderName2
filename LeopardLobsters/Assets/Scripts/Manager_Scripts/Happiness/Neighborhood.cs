@@ -35,6 +35,7 @@ public class Neighborhood : MonoBehaviour
 
         //can add sfx vfx
         
+
         //tower type change
         if (typeIndex.Contains(tower.type)) 
             curHappinessChange += typeImpact[typeIndex.IndexOf(tower.type)];

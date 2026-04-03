@@ -48,6 +48,7 @@ public class Happiness_ManagerScript : MonoBehaviour
                 if (happiness > 1)
                 {
                     happiness = 1;
+
                 }
                 if (happiness <= 0)
                 {

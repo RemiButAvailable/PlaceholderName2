@@ -137,6 +137,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5934918693651144803, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6679188643013759877, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
       propertyPath: m_Name
       value: Boss Variant

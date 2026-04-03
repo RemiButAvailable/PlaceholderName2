@@ -18,7 +18,7 @@ public class Castle : MonoBehaviour
     //(Made by Dante Jones)
     //The audio for castle being hit
     public AudioSource castleHitSound;
-
+    [SerializeField] AudioSource PeopleGainSound;
     public static Castle self;
     private void Awake()
     {
@@ -82,7 +82,7 @@ public class Castle : MonoBehaviour
                 timer = 0;
 
                 //DO: people added SFX VFX
-
+                PeopleGainSound.Play();
                 peopleAtCastle++;
                 peopleTotal++;
                 textUpdatePTotal();

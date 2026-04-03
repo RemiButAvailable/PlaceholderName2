@@ -117,6 +117,7 @@ MonoBehaviour:
   towerManned: 0
   enemyDeathSound: {fileID: 0}
   arrowShootSound: {fileID: 9203424643166714103}
+  multiplier: 0
 --- !u!114 &5134048936030875358
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: f76704149c49c3a4e9f56a6583796df8
+guid: 95d32c7518bd9654da6736d8f8d40554
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4933436251192114026
-    second: Anger_icon_0
-  - first:
-      213: 1247185750813415856
-    second: Anger_icon_1
+      213: -9163426285224168042
+    second: Tile_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 95
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,23 +113,27 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Anger_icon_0
+      name: Tile_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 52
-        width: 58
-        height: 62
+        x: 0
+        y: 0
+        width: 95
+        height: 95
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 47.5, y: 47.5}
+        - {x: -47.5, y: 47.5}
+        - {x: -47.5, y: -47.5}
+        - {x: 47.5, y: -47.5}
+      tessellationDetail: 0
       bones: []
-      spriteID: 694c8a53ed9e88bb0800000000000000
-      internalID: -4933436251192114026
+      spriteID: 6957cbfe758f4d080800000000000000
+      internalID: -9163426285224168042
       vertices: []
       indices: 
       edges: []
@@ -141,7 +142,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3354e7614835d7941bf30ca2afa3c944
+    spriteID: ef54fa34206a14b4c95655736a674cd4
     internalID: 0
     vertices: []
     indices: 
@@ -151,7 +152,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Anger_icon_0: -4933436251192114026
+      Tile_0: -9163426285224168042
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

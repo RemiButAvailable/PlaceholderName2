@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5913d5355d89e1644b03f56d5371a468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ButtonSound: {fileID: 0}
   OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -786,4 +787,4 @@ MonoBehaviour:
   prefab: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
   costText: {fileID: 6768738244543236749}
   peopleText: {fileID: 7362842014264369413}
-  timeClickVsDrag: 0.1
+  timeClickVsDrag: 0.2

@@ -12,7 +12,7 @@ public class Neighborhood : MonoBehaviour
     [SerializeField] List<float> typeMult = new List<float>(); //change later with a better solution like a serializeable dictionary
     List<BaseTower> towers = new List<BaseTower>();
 
-    [SerializeField]Collider2D neighboorhoodCenter;
+    [SerializeField] Collider2D neighboorhoodCenter;
     [SerializeField] TowerAddedChecker checker;
 
     [SerializeField]
@@ -104,7 +104,7 @@ public class Neighborhood : MonoBehaviour
         List<BaseTower> tempTowers = towers;
         towers = new List<BaseTower>();
         foreach (BaseTower tower in tempTowers) {
-            towerEnter(tower);
+            calcTower(tower);
         }
     }
     

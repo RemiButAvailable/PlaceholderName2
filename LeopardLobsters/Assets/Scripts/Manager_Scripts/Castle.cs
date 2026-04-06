@@ -10,16 +10,21 @@ public class Castle : MonoBehaviour
     [SerializeField] int peopleMaxCost = 30;
     [SerializeField] float peopleMaxCostMult = 2;
 
+    [SerializeField] TowerSelectable towerSelectable;
+    [SerializeField] GameObject buttonPanel;
+
     int peopleTotal;
     [SerializeField] int moneyPerPerson = 5;
-    [SerializeField] MoneyManagerScript moneyManager;
     [SerializeField] TextMeshProUGUI textPeopleTotal;
     [SerializeField] TextMeshProUGUI textPeopleIn;
+
     //(Made by Dante Jones)
     //The audio for castle being hit
     public AudioSource castleHitSound;
     [SerializeField] AudioSource PeopleGainSound;
+
     public static Castle self;
+
     private void Awake()
     {
         self = this;
@@ -29,11 +34,18 @@ public class Castle : MonoBehaviour
     {
         textUpdatePTotal();
         textUpdatePIn();
+
+        towerSelectable.selected.AddListener(TowerSelected);
+        towerSelectable.deSelected.AddListener(TowerDeselected);
     }
+
+    void TowerSelected() { buttonPanel?.SetActive(true); }
+    void TowerDeselected() { buttonPanel?.SetActive(false); }
+
 
     //adds money based on population
     public void endOfWave() {
-        moneyManager.moneyNum += peopleAtCastle * moneyPerPerson;
+        MoneyManagerScript.self.ChangeMoney (peopleAtCastle * moneyPerPerson);
 
         //DO: add money sfx vfx
     }
@@ -64,7 +76,7 @@ public class Castle : MonoBehaviour
 
     [SerializeField] Image progressBar; //instantiate in inspector
     [SerializeField] Image barParent;
-    [SerializeField] float barYOffset;
+    [SerializeField] GameObject barPosition;
 
     private void FixedUpdate()
     {
@@ -117,10 +129,10 @@ public class Castle : MonoBehaviour
     }
 
 
-    public void BuyMaxPeople() {
+    public void BuyMaxPeople() { //connected through inspector
         if (!MoneyManagerScript.self.Check(-peopleMaxCost)) return;
 
-        MoneyManagerScript.self.changeMoney(-peopleMaxCost);
+        MoneyManagerScript.self.ChangeMoney(-peopleMaxCost);
         peopleMax++;
         peopleMaxCost = (int)( peopleMaxCost * peopleMaxCostMult);
     }
@@ -130,6 +142,8 @@ public class Castle : MonoBehaviour
 
     private void Update()
     {
-        barParent.rectTransform.position = transform.position+Vector3.up * barYOffset;
+        barParent.rectTransform.position = barPosition.transform.position;
     }
+
+    public void CastleSelected() { }
 }

@@ -4,7 +4,7 @@ public class MouseClicker : MonoBehaviour
 {
     [SerializeField] ButtonPanel buttonPanel;
     //[SerializeField] Animation buttonPanelAnimation;
-    BaseTower towerSelected;
+    TowerSelectable towerSelected;
 
     private void Update()
     {
@@ -14,18 +14,24 @@ public class MouseClicker : MonoBehaviour
             
             if (hit.collider && hit.collider.gameObject.layer == LayerMask.NameToLayer("TowerSelection"))
             {
-                towerSelected?.TowerDeselected();
-                towerSelected  =hit.collider.GetComponentInParent<BaseTower>();
-                towerSelected?.TowerSelected();
+                towerSelected?.Deselected();
+                towerSelected  =hit.collider.GetComponentInParent<TowerSelectable>();
+                towerSelected?.Selected();
 
-                buttonPanel.transform.position = hit.collider.transform.position;
-                //ButtonPanelAnimation.Play("Clicked"); //maybe later
-                buttonPanel.towerSelect(hit.collider.GetComponentInParent<BaseTower>());
-                buttonPanel.gameObject.SetActive(true);
+                print(towerSelected.transform.parent);
+
+                if (towerSelected.gameObject.tag == "Tower")
+                {
+                    buttonPanel.transform.position = hit.collider.transform.position;
+                    //ButtonPanelAnimation.Play("Clicked"); //maybe later
+                    buttonPanel.towerSelect(hit.collider.GetComponentInParent<BaseTower>());
+                    buttonPanel.gameObject.SetActive(true);
+                }
             }
+            
             else if (!hit.collider && hit.collider?.gameObject.layer != LayerMask.NameToLayer("Button"))
             {
-                towerSelected?.TowerDeselected();
+                towerSelected?.Deselected();
 
                 //ButtonPanelAnimation.Play();
                 buttonPanel.gameObject.SetActive(false);

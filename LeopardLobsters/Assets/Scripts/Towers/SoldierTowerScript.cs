@@ -58,7 +58,7 @@ public class SoldierTowerScript : MonoBehaviour
 
                 if(soldier.GetComponent<SoldierScript>().target != null)
                 {
-                    soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().defaultSpeed;
+                    soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed;
                     soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().targeted = false;
                 }
                 soldiers.Remove(soldier);

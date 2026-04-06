@@ -115,7 +115,7 @@ public class MoneyManagerScript : MonoBehaviour
         {
             if (moneyNum >= product.GetComponent<ProductScript>().price)
             {
-                changeMoney(-1);
+                ChangeMoney(-1);
                 DragnDrop = true;
                 spawnedProduct = Instantiate(product, mousePos, Quaternion.identity);
 
@@ -131,11 +131,6 @@ public class MoneyManagerScript : MonoBehaviour
     }
     public void playBuyDenySound() {
         BuyDenySound.Play();
-    }
-
-    public void changeMoney(int num) {
-        moneyNum += num;
-        textMoney.text = moneyNum.ToString();
     }
     public void ChangeMoney(int num)
     {

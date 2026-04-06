@@ -9,17 +9,17 @@ using UnityEngine.Audio;
 public class KnightScript : MonoBehaviour
 {
     //vals that can be edited in the inspector
-    [Range(0, 12)]
-    public float defaultSpeed;
-    [Range(0, 12)]
+    [Range(0, 5)]
+    public float speed;
+    [Range(0, 10)]
     public int damage;
-    [Range(0, 12)]
+
     public int health;
+    [Range(0, 100)]
+    public int money;
 
     //vals that are public but not cause they're meant to be edited in the inspector
 
-    //[HideInInspector]
-    public float speed;
     [HideInInspector]
     public int index;
     [HideInInspector]
@@ -28,10 +28,13 @@ public class KnightScript : MonoBehaviour
     public Vector3 offset;
     [HideInInspector]
     public Vector3 direction;
+    [HideInInspector]
     public Vector3 nextWayPoint;
 
     //public objects and lists
+    [HideInInspector]
     public LineRenderer lineRenderer;
+    [HideInInspector]
     public Vector3[] waypoints;
 
     //Manager Scripts
@@ -49,7 +52,6 @@ public class KnightScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = defaultSpeed;
         //sets waypoints to the points along the line renderer
         waypoints = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(waypoints);
@@ -85,21 +87,8 @@ public class KnightScript : MonoBehaviour
         {
             waveCode.EnemyNum -= 1;
 
-            if(moneyManagerScript.moneyNum < moneyManagerScript.moneyNumMax)
-            {
-                if (happinessManagerScript.happiness <= (1 / 3))
-                {
-                    moneyManagerScript.moneyNum += 1;
-                }
-                else if (moneyManagerScript.moneyNum > (1 / 3) && moneyManagerScript.moneyNum <= (2 / 3))
-                {
-                    moneyManagerScript.moneyNum += 2;
-                }
-                else
-                {
-                    moneyManagerScript.moneyNum += 3;
-                }
-            }
+            moneyManagerScript.ChangeMoney(money);
+
             //sounds
             AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
             aPlayer.playClip(transform.position, deathSound, deathSoundVolume);

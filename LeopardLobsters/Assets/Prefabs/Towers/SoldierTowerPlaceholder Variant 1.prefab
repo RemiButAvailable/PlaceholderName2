@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8716366860728251673}
   m_Layer: 2
   m_Name: SoldierTowerPlaceholder Variant 1
-  m_TagString: archerTower
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,10 +35,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4446672800222061192}
-  - {fileID: 1998617170013636568}
-  - {fileID: 3510227356716767307}
+  - {fileID: 3591941054157244461}
   - {fileID: 5140558783521829517}
-  - {fileID: 7191374952708022954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8894117093595119621
@@ -169,6 +167,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   type: 0
+  towerSelectable: {fileID: 6166359583225323565}
 --- !u!70 &6917196402851779880
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -241,6 +240,40 @@ MonoBehaviour:
   soldierSpawnPosDistFromClosestPointOnPath: 4
   RemoveSoldierSound: {fileID: 1962428767925325588}
   SoldierDeathSound: {fileID: 0}
+--- !u!1 &3579561176905446250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3591941054157244461}
+  m_Layer: 2
+  m_Name: sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3591941054157244461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579561176905446250}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1998617170013636568}
+  - {fileID: 3510227356716767307}
+  - {fileID: 7191374952708022954}
+  m_Father: {fileID: 5411756801687318624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3912358992479251152
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,12 +299,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3912358992479251152}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5411756801687318624}
+  m_Father: {fileID: 3591941054157244461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4052934545521788611
 AudioSource:
@@ -395,12 +428,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5734527037022203082}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5411756801687318624}
+  m_Father: {fileID: 3591941054157244461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &8850935774377772573
 AudioSource:
@@ -529,7 +562,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5411756801687318624}
+  m_Father: {fileID: 3591941054157244461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1962428767925325588
 AudioSource:
@@ -638,9 +671,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5140558783521829517}
   - component: {fileID: 917342830289463150}
-  m_Layer: 2
+  - component: {fileID: 6166359583225323565}
+  m_Layer: 26
   m_Name: TowerSelectionHitbox
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -706,6 +740,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.40193987, y: 0.66937697}
   m_EdgeRadius: 0
+--- !u!114 &6166359583225323565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864939985113487504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4130009c94c1e498671dde320c297d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected:
+    m_PersistentCalls:
+      m_Calls: []
+  deSelected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8597901105428833105
 GameObject:
   m_ObjectHideFlags: 0

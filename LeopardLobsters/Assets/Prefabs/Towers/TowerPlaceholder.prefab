@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9107644497228952034}
   m_Layer: 2
   m_Name: TowerPlaceholder
-  m_TagString: archerTower
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   type: 0
+  towerSelectable: {fileID: 4207161583072249494}
 --- !u!70 &7736639828261574638
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -381,9 +382,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5492149843050495627}
   - component: {fileID: 2909537519910427773}
+  - component: {fileID: 4207161583072249494}
   m_Layer: 2
   m_Name: TowerSelectionHitbox
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,6 +451,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.84424996, y: 0.92212546}
   m_EdgeRadius: 0
+--- !u!114 &4207161583072249494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204623970941417416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4130009c94c1e498671dde320c297d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected:
+    m_PersistentCalls:
+      m_Calls: []
+  deSelected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4270045994117222848
 GameObject:
   m_ObjectHideFlags: 0

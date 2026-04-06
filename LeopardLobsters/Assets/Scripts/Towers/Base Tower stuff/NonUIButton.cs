@@ -12,7 +12,6 @@ public class NonUIButton : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        print("clicked "+gameObject);
         OnClick?.Invoke();
         changeColor?.Play();
         if (ButtonSound) ButtonSound.Play();

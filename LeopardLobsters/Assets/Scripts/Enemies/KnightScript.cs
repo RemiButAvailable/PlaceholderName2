@@ -85,17 +85,20 @@ public class KnightScript : MonoBehaviour
         {
             waveCode.EnemyNum -= 1;
 
-            if(happinessManagerScript.happiness <= (1/3))
+            if(moneyManagerScript.moneyNum < moneyManagerScript.moneyNumMax)
             {
-                moneyManagerScript.moneyNum += 1;
-            }
-            else if(moneyManagerScript.moneyNum > (1/3) && moneyManagerScript.moneyNum <= (2/3))
-            {
-                moneyManagerScript.moneyNum += 2;
-            }
-            else
-            {
-                moneyManagerScript.moneyNum += 3;
+                if (happinessManagerScript.happiness <= (1 / 3))
+                {
+                    moneyManagerScript.moneyNum += 1;
+                }
+                else if (moneyManagerScript.moneyNum > (1 / 3) && moneyManagerScript.moneyNum <= (2 / 3))
+                {
+                    moneyManagerScript.moneyNum += 2;
+                }
+                else
+                {
+                    moneyManagerScript.moneyNum += 3;
+                }
             }
             //sounds
             AudioPlayer aPlayer = Instantiate(aPlayerPrefab);

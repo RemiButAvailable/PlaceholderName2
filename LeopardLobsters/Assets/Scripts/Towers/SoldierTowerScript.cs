@@ -15,6 +15,7 @@ public class SoldierTowerScript : MonoBehaviour
     List<Vector3> soldierPositions;
     public List<GameObject> enemiesInZone;
     BaseTower baseTower;
+    public int soldierSpawnPosDistFromClosestPointOnPath;
 
 
     [SerializeField] AudioSource RemoveSoldierSound;
@@ -114,13 +115,50 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
+
+    [System.Obsolete]
     public void SetSoldierStationPositions()
     {
-        soldierPositions = new List<Vector3>()
+        LineRenderer[] enemyPaths = Object.FindObjectsOfType<LineRenderer>(); //array of the line renderers
+        float[] closestPointsOnEachLineDists = new float[enemyPaths.Length]; //array of distances from the closest point to the tower on each line to the tower
+        int[] closestPointsOnEachLineIndex = new int[enemyPaths.Length]; //array of the indexes of these points in each line renderer's array
+        Vector3[] closestPointsOnEachLine = new Vector3[enemyPaths.Length]; //array of the points themselves
+        float closestPoint = 100; //point for comparing against
+        LineRenderer closestLine; //the closest line renderer to the tower
+        int selectedIndex = 0; //the index of the closest line renderer to the tower
+        for (int i = 0; i < enemyPaths.Length; i++) //for each line renderer, check which point along it is closes to the tower
         {
-            new Vector3(transform.position.x - 2, transform.position.y, 0),
+            for(int o = 0; o < enemyPaths[i].positionCount; o++)
+            {
+                if(Vector3.Distance(enemyPaths[i].GetPosition(o), transform.position) < closestPointsOnEachLineDists[i])
+                {
+                    closestPointsOnEachLineDists[i] = Vector3.Distance(enemyPaths[i].GetPosition(o), transform.position);
+                    closestPointsOnEachLine[i] = enemyPaths[i].GetPosition(o); 
+                    closestPointsOnEachLineIndex[i] = o;
+                }
+            }
+        }
+        for(int i = 0; i < closestPointsOnEachLineDists.Length; i++) //check which point is closest to the tower of the three selected
+        {
+            if (closestPointsOnEachLineDists[i] < closestPoint)
+            {
+                closestPoint = closestPointsOnEachLineDists[i];
+                selectedIndex = i;
+            }
+        }
+        closestLine = enemyPaths[selectedIndex];
+        soldierPositions = new List<Vector3>() //set the station positions to the closest spot and two spots ahead or behind in the line renderer's index
+        {
+            closestPointsOnEachLine[selectedIndex],
+            enemyPaths[selectedIndex].GetPosition((closestPointsOnEachLineIndex[selectedIndex]) + soldierSpawnPosDistFromClosestPointOnPath),
+            enemyPaths[selectedIndex].GetPosition((closestPointsOnEachLineIndex[selectedIndex]) - soldierSpawnPosDistFromClosestPointOnPath)
+            /*new Vector3(transform.position.x - 2, transform.position.y, 0),
             new Vector3(transform.position.x, transform.position.y - 2, 0),
-            new Vector3(transform.position.x + 2, transform.position.y, 0)
+            new Vector3(transform.position.x + 2, transform.position.y, 0)*/
         };
+        foreach(var loc in soldierPositions)
+        {
+            Debug.Log(loc);
+        }
     }
 }

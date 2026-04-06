@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   people: 0
-  peopleNeeded: 2
+  peopleNeeded: 3
   towerCost: 10
   sellPrice: 5
   areaOfEffect: {fileID: 5297667874337039895}
@@ -238,7 +238,7 @@ MonoBehaviour:
   soldier: {fileID: 6608690578147413099, guid: 455d08329958ac440b240baf054fe5b6, type: 3}
   soldiers: []
   enemiesInZone: []
-  soldierSpawnPosDistFromClosestPointOnPath: 4
+  soldierSpawnPosDistFromClosestPointOnPath: 5
   RemoveSoldierSound: {fileID: 1962428767925325588}
   SoldierDeathSound: {fileID: 0}
 --- !u!1 &3912358992479251152

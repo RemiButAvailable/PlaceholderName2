@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 5140558783521829517}
   - component: {fileID: 917342830289463150}
   - component: {fileID: 6166359583225323565}
-  m_Layer: 26
+  m_Layer: 2
   m_Name: TowerSelectionHitbox
   m_TagString: Tower
   m_Icon: {fileID: 0}

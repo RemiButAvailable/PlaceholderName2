@@ -1,9 +1,0 @@
-Patch Notes 4/3/26
-
-Changed Main Menu
-Tiles Change
-Sounds:
-Castle Volume Raised
-Gain Sound
-Added People
-Soldier sounds

@@ -14,14 +14,14 @@ public class BaseTower : MonoBehaviour
     [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
     //[SerializeField] SpriteRenderer[] towerSprites = new SpriteRenderer[22];
 
-
-    public UnityEvent<bool> isActive;
-    public UnityEvent<BaseTower> Destroyed;
-    public UnityEvent OnPlace; //add change sprite layer later
-    public UnityEvent AddedPeople;
-    public UnityEvent RemovedPeople;
+    [HideInInspector] public UnityEvent<bool> isActive;
+    [HideInInspector] public UnityEvent<BaseTower> Destroyed;
+    [HideInInspector] public UnityEvent OnPlace; //add change sprite layer later
+    [HideInInspector] public UnityEvent AddedPeople;
+    [HideInInspector] public UnityEvent RemovedPeople;
 
     public TowerType type;
+
 
     public void AddPeople() { //connected through events
 
@@ -67,7 +67,12 @@ public class BaseTower : MonoBehaviour
         active = isTrue;
     }
      */
-
+    [SerializeField]TowerSelectable towerSelectable;
+    public void Start()
+    {
+        towerSelectable.selected.AddListener(TowerSelected);
+        towerSelectable.deSelected.AddListener(TowerDeselected);
+    }
     public void TowerSelected()
     {
         if (!areaOfEffect) return;

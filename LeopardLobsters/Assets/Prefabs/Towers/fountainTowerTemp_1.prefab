@@ -701,6 +701,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   type: 1
+  towerSelectable: {fileID: 3155138750380419273}
 --- !u!70 &7208256482449840061
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -798,7 +799,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 5ad06712bc9ec0f4397851e6dfc0888b, type: 3}
+  m_Resource: {fileID: 8300000, guid: d87ae8e42119d724990c4502e56ca563, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.095
   m_Pitch: 1
@@ -1266,9 +1267,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4405703812442688637}
   - component: {fileID: 7953901608043942699}
+  - component: {fileID: 3155138750380419273}
   m_Layer: 2
   m_Name: TowerSelectionHitbox
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1340,6 +1342,24 @@ PolygonCollider2D:
       - {x: -0.011989206, y: -0.6773591}
       - {x: 2.2133803, y: -0.3221447}
   m_UseDelaunayMesh: 0
+--- !u!114 &3155138750380419273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919320486170738836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4130009c94c1e498671dde320c297d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected:
+    m_PersistentCalls:
+      m_Calls: []
+  deSelected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3973639097633168766
 PrefabInstance:
   m_ObjectHideFlags: 0

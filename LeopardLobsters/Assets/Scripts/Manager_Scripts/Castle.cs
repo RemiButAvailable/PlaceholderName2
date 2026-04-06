@@ -12,6 +12,7 @@ public class Castle : MonoBehaviour
 
     [SerializeField] TowerSelectable towerSelectable;
     [SerializeField] GameObject buttonPanel;
+    [SerializeField] TextMeshPro maxPeoplCostButtonText;
 
     int peopleTotal;
     [SerializeField] int moneyPerPerson = 5;
@@ -32,6 +33,7 @@ public class Castle : MonoBehaviour
     }
     private void Start()
     {
+        maxPeoplCostButtonText.text = peopleMaxCost.ToString();
         textUpdatePTotal();
         textUpdatePIn();
 
@@ -135,6 +137,8 @@ public class Castle : MonoBehaviour
         MoneyManagerScript.self.ChangeMoney(-peopleMaxCost);
         peopleMax++;
         peopleMaxCost = (int)( peopleMaxCost * peopleMaxCostMult);
+        maxPeoplCostButtonText.text = peopleMaxCost.ToString();
+        textUpdatePTotal();
     }
 
     void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString() +" / "  +peopleMax.ToString(); }

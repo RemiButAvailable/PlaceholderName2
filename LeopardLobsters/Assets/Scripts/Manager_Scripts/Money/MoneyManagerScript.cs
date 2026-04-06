@@ -18,6 +18,7 @@ public class MoneyManagerScript : MonoBehaviour
     Collider2D[] overlappingGAs;
     ContactFilter2D contactFilter;
     ContactFilter2D contactFilterGA;
+    public int moneyNumMax;
 
     //(This is made by Dante Jone)
     //
@@ -35,13 +36,13 @@ public class MoneyManagerScript : MonoBehaviour
     void Start()
     {
         happiness_ManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();
-        textMoney.text = moneyNum.ToString();
         self = this;
     }
 
     // Update is called once per frame
     void Update()
     {
+        textMoney.text = moneyNum.ToString();
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         if (Input.GetMouseButtonDown(0) && false)
@@ -55,7 +56,7 @@ public class MoneyManagerScript : MonoBehaviour
                 }
             }
         }
-        if(DragnDrop && Input.GetMouseButton(0) && false)
+        /*if(DragnDrop && Input.GetMouseButton(0) && false)
         {
             spawnedProduct.transform.position = mousePos;
         }
@@ -100,7 +101,7 @@ public class MoneyManagerScript : MonoBehaviour
                     overlappingGAs[i].gameObject.transform.GetChild(0).gameObject.GetComponent<Neighborhood>().towerEnter(spawnedBuilding.GetComponent<BaseTower>());
                 }
             }
-        }
+        }*/
     }
     public void Buy(GameObject product)
     {

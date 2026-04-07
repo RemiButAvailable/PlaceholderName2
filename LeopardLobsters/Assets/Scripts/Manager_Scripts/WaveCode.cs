@@ -59,6 +59,7 @@ public class WaveCode : MonoBehaviour
     public AudioSource battleMusic;
 
     public TextMeshProUGUI waveText;
+    public TextMeshProUGUI buildPhaseText;
     bool enemiesStartedSpawning;
 
     //vals that can be edited in the inspector
@@ -78,6 +79,8 @@ public class WaveCode : MonoBehaviour
     public int cooldown;//cooldown between clumps
     [Range(0, 12)]
     public int phantomEnemyNumBeforeAltEnemies;//the amount of normal enemies that can spawn before there's a chance of fast ones and bosses
+    [Range(0, 12)]
+    public int enemyMaxMultiplier;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -107,17 +110,14 @@ public class WaveCode : MonoBehaviour
     {
         while(true)
         {
-            // With the game starting and the number of enemies being less than max
             if (WaveStart && PhantomEnemyNum < EnemyMax)
             {
-                // Spawn the enemies
-                cooldown -= PhantomEnemyNum * 0.01f;
+                Debug.Log("Phantom Enemy Num is " + PhantomEnemyNum);
 
-                if(PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies)
+                cooldown -= PhantomEnemyNum * 0.01f;//cooldown decreases over the course of the wave as the amount of enemies increases
+
+                if(PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies && probOfFastEnemyDeterminer > 4 /*min amount probOfFastEnemyDeterminerCanBe*/)//if a certain amount of enemies have spawned and the prob of fast enemy determiner hasn't decreased too much, decrease it
                 probOfFastEnemyDeterminer -= 1;
-
-                EnemyNum++;
-                PhantomEnemyNum++;
 
                 if(PhantomEnemyNum <= phantomEnemyNumBeforeAltEnemies) 
                 {
@@ -125,22 +125,21 @@ public class WaveCode : MonoBehaviour
                     enemyPath = StartingEnemyPath;
                     selectedEnemy = enemies[0];
                 }
-                else
-                // Have a randomiser to where each enemy spawns
+                else// if a certain amount of enemies have spawned, select a spawn spot for the clump 
                 {
                     int RandomNum = Random.Range(0, 3);
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
-                    int RandomNumTwo = Random.Range(0, probOfFastEnemyDeterminer);
-                    if(RandomNumTwo >= 10)
+
+                    //select an enemy type. The prob of getting a fast one increases over the course of the game
+                    int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);
+                    if(RandomNumTwo >= 1)
                     {
                         RandomNumTwo = 0;
-                        Debug.Log("zero");
                     }
                     else
                     {
                         RandomNumTwo = 1;
-                        Debug.Log("one");
                     }
                     selectedEnemy = enemies[RandomNumTwo];
                 }
@@ -152,6 +151,8 @@ public class WaveCode : MonoBehaviour
                     spawnedEnemy = Instantiate(selectedEnemy, offsetEnemySpawnPos, Quaternion.identity);
                     spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
                     spawnedEnemy.GetComponent<KnightScript>().offset = new Vector3(enemySpawnPosOffsetFloat, enemySpawnPosOffsetFloat, 0);
+                    EnemyNum++;
+                    PhantomEnemyNum++;
                     yield return new WaitForSeconds(cooldownWithinClump);
                 }
                 enemiesStartedSpawning = true;
@@ -172,14 +173,16 @@ public class WaveCode : MonoBehaviour
         if(WaveStart == false)
         {
             WaveNum++;
-            EnemyMax *= 2;
+            EnemyMax *= enemyMaxMultiplier;
+
             int RandomNum = Random.Range(0, 2);
             EnemySpawnStart = EnemySpawnPositions[RandomNum];
             StartingEnemyPath = enemyPaths[RandomNum];
+
             WaveStart = true;
             waveText.text = "Wave: " + WaveNum;
-            waveStarted.Invoke();
-            ////Turns on battle phase music stops building phase music
+            
+            //Turns on battle phase music stops building phase music
             buildMusic.Stop();
             battleMusic.Play();
             endedWave = false;
@@ -192,6 +195,7 @@ public class WaveCode : MonoBehaviour
         //Turns on building phase music stops battle phase music
         buildMusic.Play();
         battleMusic.Stop();
+        buildPhaseText.enabled = true;
         endedWave = true;
     }
 }

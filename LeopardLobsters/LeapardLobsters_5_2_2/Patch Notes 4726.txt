@@ -1,0 +1,8 @@
+Patch Notes 4/7/26
+
+Added the active and inactive tower colors
+Changed arrow code (Stops at a certain point)
+Added sounds (Have not been implemented yet)
+Main Menu fix
+Neighborhoods were changed
+Pathing is better

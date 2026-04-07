@@ -53,7 +53,8 @@ public class Neighborhood : MonoBehaviour
 
         //distance to closest point on collider calculation
         float dist = (tower.transform.position - tower.GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
-        dist = 1 / (dist / (dist + 4));
+        //dist = 1 / (dist / (dist + 4));
+        dist = 1 / (1 / dist + 4);
         happinessChange *= dist;
 
         curHappinessChange += happinessChange;

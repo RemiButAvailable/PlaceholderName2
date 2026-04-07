@@ -110,14 +110,13 @@ public class WaveCode : MonoBehaviour
     {
         while(true)
         {
-            // With the game starting and the number of enemies being less than max
             if (WaveStart && PhantomEnemyNum < EnemyMax)
             {
                 Debug.Log("Phantom Enemy Num is " + PhantomEnemyNum);
-                // Spawn the enemies
-                cooldown -= PhantomEnemyNum * 0.01f;
 
-                if(PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies && probOfFastEnemyDeterminer > 4 /*min amount probOfFastEnemyDeterminerCanBe*/)
+                cooldown -= PhantomEnemyNum * 0.01f;//cooldown decreases over the course of the wave as the amount of enemies increases
+
+                if(PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies && probOfFastEnemyDeterminer > 4 /*min amount probOfFastEnemyDeterminerCanBe*/)//if a certain amount of enemies have spawned and the prob of fast enemy determiner hasn't decreased too much, decrease it
                 probOfFastEnemyDeterminer -= 1;
 
                 if(PhantomEnemyNum <= phantomEnemyNumBeforeAltEnemies) 
@@ -126,12 +125,13 @@ public class WaveCode : MonoBehaviour
                     enemyPath = StartingEnemyPath;
                     selectedEnemy = enemies[0];
                 }
-                else
-                // Have a randomiser to where each enemy spawns
+                else// if a certain amount of enemies have spawned, select a spawn spot for the clump 
                 {
                     int RandomNum = Random.Range(0, 3);
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
+
+                    //select an enemy type. The prob of getting a fast one increases over the course of the game
                     int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);
                     if(RandomNumTwo >= 1)
                     {

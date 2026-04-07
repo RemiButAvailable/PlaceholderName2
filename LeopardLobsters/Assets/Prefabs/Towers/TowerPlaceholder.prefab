@@ -38,6 +38,7 @@ Transform:
   - {fileID: 5492149843050495627}
   - {fileID: 2504490616618882753}
   - {fileID: 2803095132214793590}
+  - {fileID: 6359486896496860870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4925949044741141722
@@ -109,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackZone: {fileID: 2239792696032037312}
   queue: []
+  arrowStartPosition: {fileID: 6359486896496860870}
   cooldown: 1
   predictedSpot: 2
   Arrow: {fileID: 5723361182436043768, guid: 8259970a4353e9f4fb61522114c12cbf, type: 3}
@@ -1098,3 +1100,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8987255689242658110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6359486896496860870}
+  m_Layer: 2
+  m_Name: Arrow Start pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6359486896496860870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987255689242658110}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8218147361620304378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

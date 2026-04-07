@@ -9,15 +9,16 @@ public class ArcherTowerScript : MonoBehaviour
     public List<GameObject> queue;
     public bool enemyInZone => queue.Count>0;
 
-    public float cooldown;
-    public int predictedSpot;
-    public ArrowScript Arrow;
+    [SerializeField] Transform arrowStartPosition;
+    [SerializeField] float cooldown;
+    [SerializeField] int predictedSpot;
+    [SerializeField] ArrowScript Arrow;
 
     public bool isActive;
 
     //(Made by Dante Jones)
     //Sound that plays when enemy shoots
-    public AudioSource arrowShootSound;
+    [SerializeField] AudioSource arrowShootSound;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -58,7 +59,8 @@ public class ArcherTowerScript : MonoBehaviour
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
                 Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot/* * (int)(knightScript.speed * directionMultiplier)*/] + knightScript.offset;
-                arrowScript.direction = target - transform.position;
+                arrowScript.target = target;
+                arrowScript.start = arrowStartPosition.transform.position;
 
 
 

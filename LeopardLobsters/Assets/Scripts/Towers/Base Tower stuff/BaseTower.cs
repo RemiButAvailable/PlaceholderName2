@@ -13,6 +13,7 @@ public class BaseTower : MonoBehaviour
     [SerializeField] SpriteRenderer areaOfEffect;
     [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
 
+    // Have an active and inactive sprite
     [SerializeField] SpriteRenderer towerSprite;
     [SerializeField] Color colorTint;
 

@@ -85,7 +85,7 @@ public class Castle : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (peopleAtCastle >= minPeopleNeeded)
+        /*if (peopleAtCastle >= minPeopleNeeded)
         {
             castleSprite.color = Color.white;
         }
@@ -93,7 +93,7 @@ public class Castle : MonoBehaviour
         {
             castleSprite.color = tintColor;
             return;
-        }
+        }*/
         if (inWave && peopleAtCastle >= minPeopleNeeded && peopleTotal < peopleMax)
         {
             progressBar.fillAmount = timer / timerMax;

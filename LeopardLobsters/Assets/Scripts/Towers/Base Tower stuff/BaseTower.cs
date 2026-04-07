@@ -12,8 +12,12 @@ public class BaseTower : MonoBehaviour
 
     [SerializeField] SpriteRenderer areaOfEffect;
     [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
+
     [SerializeField] SpriteRenderer towerSprite;
     [SerializeField] Color colorTint;
+
+    [SerializeField] AudioSource PeopleAddedSound;
+    [SerializeField] AudioSource PeopleRemovedSound;
 
     [HideInInspector] public UnityEvent<bool> isActive;
     [HideInInspector] public UnityEvent<BaseTower> Destroyed;
@@ -36,7 +40,8 @@ public class BaseTower : MonoBehaviour
         
         if (people >= peopleNeeded) {
            isActive.Invoke(true);
-            towerSprite.color = Color.white;
+           // PeopleAddedSound.Play();
+           towerSprite.color = Color.white;
         }
 
     }
@@ -47,6 +52,7 @@ public class BaseTower : MonoBehaviour
         people--;
         RemovedPeople.Invoke();
         Castle.self.personGoesIn();
+        //PeopleRemovedSound.Play();
         towerSprite.color = colorTint;
 
         if (peopleSprites[people]) peopleSprites[people].enabled = false;

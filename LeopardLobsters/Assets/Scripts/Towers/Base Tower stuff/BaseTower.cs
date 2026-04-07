@@ -12,7 +12,8 @@ public class BaseTower : MonoBehaviour
 
     [SerializeField] SpriteRenderer areaOfEffect;
     [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
-    //[SerializeField] SpriteRenderer[] towerSprites = new SpriteRenderer[22];
+    [SerializeField] SpriteRenderer towerSprite;
+    [SerializeField] Color colorTint;
 
     [HideInInspector] public UnityEvent<bool> isActive;
     [HideInInspector] public UnityEvent<BaseTower> Destroyed;
@@ -32,10 +33,11 @@ public class BaseTower : MonoBehaviour
 
         people++;
         AddedPeople.Invoke();
-
-        if (people >= peopleNeeded) isActive.Invoke(true);
-        //Color tower = Color.white;
         
+        if (people >= peopleNeeded) {
+           isActive.Invoke(true);
+            towerSprite.color = Color.white;
+        }
 
     }
     public bool RemovePeople() { //connected through events
@@ -45,7 +47,7 @@ public class BaseTower : MonoBehaviour
         people--;
         RemovedPeople.Invoke();
         Castle.self.personGoesIn();
-        //Color tower = Color.blue;
+        towerSprite.color = colorTint;
 
         if (peopleSprites[people]) peopleSprites[people].enabled = false;
 
@@ -72,6 +74,7 @@ public class BaseTower : MonoBehaviour
     {
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
+        towerSprite.color = colorTint;
     }
     public void TowerSelected()
     {

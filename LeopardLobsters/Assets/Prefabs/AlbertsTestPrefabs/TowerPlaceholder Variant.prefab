@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerPlaceholder Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2749664105270218529, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+      propertyPath: Arrow
+      value: 
+      objectReference: {fileID: 5723361182436043768, guid: 8259970a4353e9f4fb61522114c12cbf, type: 3}
     - target: {fileID: 8218147361620304378, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -60,11 +64,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1686103746476572932}
   m_SourcePrefab: {fileID: 100100000, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
---- !u!60 &3696533224719037512 stripped
-PolygonCollider2D:
-  m_CorrespondingSourceObject: {fileID: -3888917447268177710, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
-  m_PrefabInstance: {fileID: 8740206282248314010}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4500429735592718916 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
@@ -93,5 +92,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2165f21f3e83b4e910aecc965b2421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerCollider: {fileID: 3696533224719037512}
+  towerCollider: {fileID: 0}
   baseTower: {fileID: 4500429735592718916}

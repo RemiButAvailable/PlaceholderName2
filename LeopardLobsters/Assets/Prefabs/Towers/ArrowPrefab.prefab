@@ -102,9 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f43c094c709e846b26e8f58f6ae13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
-  speed: 8
-  damage: 3
+  timerMax: 0.3
+  damage: 1
+  start: {x: 0, y: 0}
+  target: {x: 0, y: 0}
+  yTargetableDis: 1
 --- !u!60 &-5509174774810610762
 PolygonCollider2D:
   m_ObjectHideFlags: 0

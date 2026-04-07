@@ -7,25 +7,17 @@ public class ArcherTowerScript : MonoBehaviour
 {
     public EnemyDetection attackZone;
     public List<GameObject> queue;
+    public bool enemyInZone => queue.Count>0;
+
     public float cooldown;
-    public GameObject Arrow;
-    public bool enemyInZone = false;
-    Vector3 direction;
-    ArrowScript arrowScript;
-    GameObject spawnedArrow;
     public int predictedSpot;
-    KnightScript knightScript;
-    GameObject targetedEnemy;
-    public WaveCode waveCode;
-    public bool towerManned;
+    public ArrowScript Arrow;
+
+    public bool isActive;
+
     //(Made by Dante Jones)
-    //Sound when enemy dies
-    public AudioSource enemyDeathSound;
     //Sound that plays when enemy shoots
     public AudioSource arrowShootSound;
-
-    [Range(0, 12)]
-    public float multiplier;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,41 +33,35 @@ public class ArcherTowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (queue.Count > 0)
+        if (enemyInZone)
         {
-            enemyInZone = true;
-            targetedEnemy = queue[0];
+            GameObject targetedEnemy = queue[0];
 
             if (targetedEnemy.GetComponent<KnightScript>().health <= 0)
             {
                 queue.Remove(targetedEnemy);
-
-                //Sound that plasy when enemy dies
-                enemyDeathSound.Play();
             }
-        }
-        else
-        {
-            enemyInZone = false;
         }
     }
     public IEnumerator ShootArrows()
     {
         while (true)
         {
-            if (enemyInZone && towerManned && WaveCode.self.WaveStart)
+            if (enemyInZone && isActive)
             {
-                spawnedArrow = Instantiate(Arrow, transform.position, Quaternion.identity);
+                ArrowScript arrowScript = Instantiate(Arrow, transform.position, Quaternion.identity);
 
                 //Sound when arrow shoots
                 arrowShootSound.Play();
 
-                arrowScript = spawnedArrow.GetComponent<ArrowScript>();
-                knightScript = queue[0].GetComponent<KnightScript>();
+                KnightScript knightScript = queue[0].GetComponent<KnightScript>();
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
                 Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot/* * (int)(knightScript.speed * directionMultiplier)*/] + knightScript.offset;
                 arrowScript.direction = target - transform.position;
+
+
+
                 /*float knightDistToNextTurn = Vector3.Distance(queue[0].transform.position, knightScript.nextWayPoint);
                 float minimumDistance;
                 if(knightDistToNextTurn < minimumDistance)
@@ -89,14 +75,6 @@ public class ArcherTowerScript : MonoBehaviour
             yield return new WaitForSeconds(cooldown);
         }
     }
-    public IEnumerator Printer()
-    {
-        while(true)
-        {
-            Debug.Log("val is " + WaveCode.self.WaveStart);
-            yield return new WaitForSeconds(1);
-        }
-    }
 
-    void IsActive(bool isActive) { towerManned = isActive; }
+    void IsActive(bool active) { isActive = active; }
 }

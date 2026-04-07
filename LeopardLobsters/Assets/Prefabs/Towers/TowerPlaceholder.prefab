@@ -110,14 +110,10 @@ MonoBehaviour:
   attackZone: {fileID: 2239792696032037312}
   queue: []
   cooldown: 1
-  Arrow: {fileID: 2791822772802332911, guid: 8259970a4353e9f4fb61522114c12cbf, type: 3}
-  enemyInZone: 0
   predictedSpot: 2
-  waveCode: {fileID: 0}
-  towerManned: 0
-  enemyDeathSound: {fileID: 0}
+  Arrow: {fileID: 5723361182436043768, guid: 8259970a4353e9f4fb61522114c12cbf, type: 3}
+  isActive: 0
   arrowShootSound: {fileID: 9203424643166714103}
-  multiplier: 0
 --- !u!114 &5134048936030875358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +130,7 @@ MonoBehaviour:
   peopleNeeded: 2
   towerCost: 10
   sellPrice: 5
+  toolTip: 
   areaOfEffect: {fileID: 4748170670304274679}
   peopleSprites:
   - {fileID: 2197303241987209672}

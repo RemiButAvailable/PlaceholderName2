@@ -9,14 +9,14 @@ using UnityEngine.Audio;
 public class KnightScript : MonoBehaviour
 {
     //vals that can be edited in the inspector
-    [Range(0, 5)]
-    public float speed;
-    [Range(0, 10)]
+    [Range(0, 12)]
+    public float defaultSpeed;
+    [Range(0, 12)]
     public int damage;
-
-    public int health;
     [Range(0, 100)]
     public int money;
+    [Range(0, 12)]
+    public int health;
 
     //vals that are public but not cause they're meant to be edited in the inspector
 
@@ -30,6 +30,8 @@ public class KnightScript : MonoBehaviour
     public Vector3 direction;
     [HideInInspector]
     public Vector3 nextWayPoint;
+    [HideInInspector]
+    public float speed;
 
     //public objects and lists
     [HideInInspector]
@@ -55,10 +57,11 @@ public class KnightScript : MonoBehaviour
         //sets waypoints to the points along the line renderer
         waypoints = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(waypoints);
-        for(int i = 0; i < waypoints.Length; i++) //sets all waypoint's z pos to 0
+        for (int i = 0; i < waypoints.Length; i++) //sets all waypoint's z pos to 0
         {
             waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
         }
+        speed = defaultSpeed;
     }
 
     // Update is called once per frame
@@ -85,6 +88,7 @@ public class KnightScript : MonoBehaviour
         //death
         if (health <= 0)
         {
+            if(waveCode.EnemyNum > 0)
             waveCode.EnemyNum -= 1;
 
             moneyManagerScript.ChangeMoney(money);
@@ -97,6 +101,9 @@ public class KnightScript : MonoBehaviour
         }
     }
     public void ReachedCastle() {
+        if(waveCode.EnemyNum > 0)
+        waveCode.EnemyNum -= 1;
+
         Destroy(gameObject);
     }
 }

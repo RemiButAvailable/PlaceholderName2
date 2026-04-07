@@ -1,0 +1,8 @@
+Patch notes build 5_1_2
+
+Made it so that soldiers spawn on paths
+edited distance equation for happiness
+fountain noise changed
+added buttons on castle to be able to add to max amount of people
+fixed knightscript money calculations
+fixed adding people

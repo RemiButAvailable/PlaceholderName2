@@ -9,14 +9,14 @@ using UnityEngine.Audio;
 public class KnightScript : MonoBehaviour
 {
     //vals that can be edited in the inspector
-    [Range(0, 5)]
-    public float speed;
-    [Range(0, 10)]
+    [Range(0, 12)]
+    public float defaultSpeed;
+    [Range(0, 12)]
     public int damage;
-
-    public int health;
     [Range(0, 100)]
     public int money;
+    [Range(0, 12)]
+    public int health;
 
     //vals that are public but not cause they're meant to be edited in the inspector
 
@@ -30,6 +30,8 @@ public class KnightScript : MonoBehaviour
     public Vector3 direction;
     [HideInInspector]
     public Vector3 nextWayPoint;
+    [HideInInspector]
+    public float speed;
 
     //public objects and lists
     [HideInInspector]

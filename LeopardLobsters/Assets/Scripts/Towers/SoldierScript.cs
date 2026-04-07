@@ -61,7 +61,7 @@ public class SoldierScript : MonoBehaviour
             //Will add volume
             AudioPlayer aPlayer = Instantiate(aSoundPrefab);
             aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
-            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().speed;
+            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
             target.GetComponent<KnightScript>().targeted = false;
             Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
             Destroy(gameObject);

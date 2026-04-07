@@ -57,10 +57,11 @@ public class KnightScript : MonoBehaviour
         //sets waypoints to the points along the line renderer
         waypoints = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(waypoints);
-        for(int i = 0; i < waypoints.Length; i++) //sets all waypoint's z pos to 0
+        for (int i = 0; i < waypoints.Length; i++) //sets all waypoint's z pos to 0
         {
             waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
         }
+        speed = defaultSpeed;
     }
 
     // Update is called once per frame
@@ -87,6 +88,7 @@ public class KnightScript : MonoBehaviour
         //death
         if (health <= 0)
         {
+            if(waveCode.EnemyNum > 0)
             waveCode.EnemyNum -= 1;
 
             moneyManagerScript.ChangeMoney(money);
@@ -99,6 +101,9 @@ public class KnightScript : MonoBehaviour
         }
     }
     public void ReachedCastle() {
+        if(waveCode.EnemyNum > 0)
+        waveCode.EnemyNum -= 1;
+
         Destroy(gameObject);
     }
 }

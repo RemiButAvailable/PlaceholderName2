@@ -233,15 +233,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd74a9e6fa5a04549bfac785f18dcdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  defaultSpeed: 0.89
   damage: 1
-  health: 3
   money: 3
+  health: 3
   index: 0
   targeted: 0
   offset: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   nextWayPoint: {x: 0, y: 0, z: 0}
+  speed: 0.5
   lineRenderer: {fileID: 0}
   waypoints: []
   hurtSound: {fileID: 96976140371490336}

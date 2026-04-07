@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: health
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5934918693651144803, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
+      propertyPath: defaultSpeed
+      value: 2.09
+      objectReference: {fileID: 0}
     - target: {fileID: 6679188643013759877, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
       propertyPath: m_Name
       value: FastKnight Variant

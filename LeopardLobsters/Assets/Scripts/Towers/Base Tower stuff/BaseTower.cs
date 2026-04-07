@@ -9,6 +9,7 @@ public class BaseTower : MonoBehaviour
     public int peopleNeeded = 2;
     public int towerCost = 10;
     public int sellPrice = 5;
+    public String toolTip;
 
     [SerializeField] SpriteRenderer areaOfEffect;
     [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];

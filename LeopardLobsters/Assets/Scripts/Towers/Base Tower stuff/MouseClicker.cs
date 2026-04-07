@@ -18,7 +18,6 @@ public class MouseClicker : MonoBehaviour
                 towerSelected  =hit.collider.GetComponentInParent<TowerSelectable>();
                 towerSelected?.Selected();
 
-                print(towerSelected.transform.parent);
 
                 if (towerSelected.gameObject.tag == "Tower")
                 {

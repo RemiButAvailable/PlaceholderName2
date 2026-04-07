@@ -685,6 +685,10 @@ MonoBehaviour:
   - {fileID: 7618463242622561739}
   - {fileID: 4523530129979979315}
   - {fileID: 2931919394248669298}
+  towerSprite: {fileID: 8605054236814021226}
+  colorTint: {r: 0.4402634, g: 0.48032, b: 0.5622641, a: 1}
+  PeopleAddedSound: {fileID: 0}
+  PeopleRemovedSound: {fileID: 0}
   isActive:
     m_PersistentCalls:
       m_Calls: []

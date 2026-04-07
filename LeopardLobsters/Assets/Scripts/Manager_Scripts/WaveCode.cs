@@ -13,31 +13,39 @@ using TMPro;
 public class WaveCode : MonoBehaviour
 {
 
-    // Random unknown objects go WHEEEEE
-    public int EnemyNum = 0;
-    private int PhantomEnemyNum = 0;
+    //Vals that are public but aren't meant to be edited in the inspector
 
-    [SerializeField]public int TotalWealth = 1;
+    [HideInInspector]
+    public int EnemyNum = 0; //number of enemies in the scene
+    [HideInInspector]
     public int WaveNum = 0;
-
+    [HideInInspector]
     public bool WaveStart;
+    [HideInInspector]
+    public bool endedWave; //keeps the end wave function from running contiguously
+    [SerializeField] public int TotalWealth = 1;
 
+    //Private vals
+    private int PhantomEnemyNum = 0; //amount of enemies that have spawned since the wave started
+
+    //Prefabs
+    public GameObject bossEnemy;
+    GameObject selectedEnemy; //(not a prefab but it stores the selected prefab)
+
+    //spawned Objects
     GameObject spawnedEnemy;
-    public GameObject enemy;
-    GameObject bossEnemy;
-    public GameObject spawnedBossEnemy;
-    public GameObject fastEnemy;
-    GameObject selectedEnemy;
+    GameObject spawnedBossEnemy;
 
+    //arrays
     public Vector3[] EnemySpawnPositions;
     public GameObject[] enemies;
-
-    Vector3 EnemySpawnStart;
-    Vector3 EnemySpawnSpot;
-    LineRenderer StartingEnemyPath;
-    LineRenderer enemyPath;
-
     public LineRenderer[] enemyPaths;
+
+    //Spawn Los
+    Vector3 EnemySpawnStart;//the location enemies spawn at until phantom enemy num is big enough
+    Vector3 EnemySpawnSpot;
+    LineRenderer StartingEnemyPath;//the path enemies march along until phantom enemy num is big enough
+    LineRenderer enemyPath;
 
     //private GameObject SpawnedEnemy;
 
@@ -53,22 +61,23 @@ public class WaveCode : MonoBehaviour
     public TextMeshProUGUI waveText;
     bool enemiesStartedSpawning;
 
-    bool endedWave;
-
+    //vals that can be edited in the inspector
     [Range(0, 12)]
     public int enemyClumpSizeRandomness;
     [Range (0, 12)]
-    public float timeBetweenEnemySpawnsRandomness;
+    public float timeBetweenEnemySpawnsRandomness;//cooldown between clumps randomizer
     [Range (0, 12)]
     public float enemySpawnPosOffsetRandomness;
     [Range(0, 1)]
     public float cooldownWithinClump;
     [Range (0, 12)]
-    public int probOfFastEnemyDeterminer;
+    public int probOfFastEnemyDeterminer;//upper limit of the range for the random val that determines if an enemy is fast. Decreases once they start spawning
     [Range (0, 60)]
     public double EnemyMax;
     [Range (0, 12)]
-    public int cooldown;
+    public int cooldown;//cooldown between clumps
+    [Range(0, 12)]
+    public int phantomEnemyNumBeforeAltEnemies;//the amount of normal enemies that can spawn before there's a chance of fast ones and bosses
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -99,15 +108,18 @@ public class WaveCode : MonoBehaviour
         while(true)
         {
             // With the game starting and the number of enemies being less than max
-            if (WaveStart /*&& PhantomEnemyNum < EnemyMax*/)
+            if (WaveStart && PhantomEnemyNum < EnemyMax)
             {
                 // Spawn the enemies
                 cooldown -= PhantomEnemyNum * 0.01f;
+
+                if(PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies)
                 probOfFastEnemyDeterminer -= 1;
+
                 EnemyNum++;
                 PhantomEnemyNum++;
 
-                if(PhantomEnemyNum <= 10) 
+                if(PhantomEnemyNum <= phantomEnemyNumBeforeAltEnemies) 
                 {
                     EnemySpawnSpot = EnemySpawnStart;
                     enemyPath = StartingEnemyPath;
@@ -123,10 +135,12 @@ public class WaveCode : MonoBehaviour
                     if(RandomNumTwo >= 10)
                     {
                         RandomNumTwo = 0;
+                        Debug.Log("zero");
                     }
                     else
                     {
                         RandomNumTwo = 1;
+                        Debug.Log("one");
                     }
                     selectedEnemy = enemies[RandomNumTwo];
                 }
@@ -135,7 +149,7 @@ public class WaveCode : MonoBehaviour
                 {
                     float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
                     Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
-                    spawnedEnemy = Instantiate(/*enemy*/ selectedEnemy, offsetEnemySpawnPos, Quaternion.identity);
+                    spawnedEnemy = Instantiate(selectedEnemy, offsetEnemySpawnPos, Quaternion.identity);
                     spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
                     spawnedEnemy.GetComponent<KnightScript>().offset = new Vector3(enemySpawnPosOffsetFloat, enemySpawnPosOffsetFloat, 0);
                     yield return new WaitForSeconds(cooldownWithinClump);

@@ -14,6 +14,9 @@ public class Castle : MonoBehaviour
     [SerializeField] GameObject buttonPanel;
     [SerializeField] TextMeshPro maxPeoplCostButtonText;
 
+    [SerializeField] SpriteRenderer castleSprite;
+    [SerializeField] Color tintColor;
+
     int peopleTotal;
     [SerializeField] int moneyPerPerson = 5;
     [SerializeField] TextMeshProUGUI textPeopleTotal;
@@ -82,7 +85,16 @@ public class Castle : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inWave && peopleAtCastle >= minPeopleNeeded && peopleTotal<peopleMax)
+        if (peopleAtCastle >= minPeopleNeeded)
+        {
+            castleSprite.color = Color.white;
+        }
+        else
+        {
+            castleSprite.color = tintColor;
+            return;
+        }
+        if (inWave && peopleAtCastle >= minPeopleNeeded && peopleTotal < peopleMax)
         {
             progressBar.fillAmount = timer / timerMax;
 
@@ -104,6 +116,7 @@ public class Castle : MonoBehaviour
             }
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

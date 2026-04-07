@@ -137,6 +137,10 @@ MonoBehaviour:
   peopleSprites:
   - {fileID: 2197303241987209672}
   - {fileID: 3996937148239709597}
+  towerSprite: {fileID: 4925949044741141722}
+  colorTint: {r: 0.3823781, g: 0.41112337, b: 0.4339623, a: 1}
+  PeopleAddedSound: {fileID: 0}
+  PeopleRemovedSound: {fileID: 0}
   isActive:
     m_PersistentCalls:
       m_Calls: []

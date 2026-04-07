@@ -115,6 +115,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  towerSprite: {fileID: 8894117093595119621}
+  colorTint: {r: 0.41427553, g: 0.46564296, b: 0.509434, a: 1}
   isActive:
     m_PersistentCalls:
       m_Calls: []

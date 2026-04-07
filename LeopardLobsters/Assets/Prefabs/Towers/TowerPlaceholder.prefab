@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackZone: {fileID: 2239792696032037312}
   queue: []
-  cooldown: 0.5
+  cooldown: 1
   Arrow: {fileID: 2791822772802332911, guid: 8259970a4353e9f4fb61522114c12cbf, type: 3}
   enemyInZone: 0
   predictedSpot: 2

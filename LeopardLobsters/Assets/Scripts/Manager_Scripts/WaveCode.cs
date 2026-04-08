@@ -81,6 +81,8 @@ public class WaveCode : MonoBehaviour
     public int phantomEnemyNumBeforeAltEnemies;//the amount of normal enemies that can spawn before there's a chance of fast ones and bosses
     [Range(0, 12)]
     public int enemyMaxMultiplier;
+    [Range(0, 50)]
+    public int pointAtWhichBossSpawns;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -130,22 +132,14 @@ public class WaveCode : MonoBehaviour
                     int RandomNum = Random.Range(0, 3);
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
-
-                    //select an enemy type. The prob of getting a fast one increases over the course of the game
-                    int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);
-                    if(RandomNumTwo >= 1)
-                    {
-                        RandomNumTwo = 0;
-                    }
-                    else
-                    {
-                        RandomNumTwo = 1;
-                    }
-                    selectedEnemy = enemies[RandomNumTwo];
                 }
                 int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness);
                 for(int i = 0; i <= enemyClumpSize; i++)
                 {
+                    //select an enemy type. The prob of getting a fast one increases over the course of the game
+                    int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);
+                    selectedEnemy = enemies[RandomNumTwo];
+
                     float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
                     Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
                     spawnedEnemy = Instantiate(selectedEnemy, offsetEnemySpawnPos, Quaternion.identity);
@@ -156,14 +150,14 @@ public class WaveCode : MonoBehaviour
                     yield return new WaitForSeconds(cooldownWithinClump);
                 }
                 enemiesStartedSpawning = true;
-                if (PhantomEnemyNum > 20 && PhantomEnemyNum < 21)
+
+                if (PhantomEnemyNum > pointAtWhichBossSpawns && PhantomEnemyNum < pointAtWhichBossSpawns + 1)//spawn boss
                 {
                     spawnedBossEnemy = Instantiate(bossEnemy, EnemySpawnSpot, Quaternion.identity);
                 }
             }
             float cooldownMultiplier = Random.Range(1/timeBetweenEnemySpawnsRandomness, timeBetweenEnemySpawnsRandomness);
-            // Have a cooldown for player to not get flung into the next wave
-                yield return new WaitForSeconds(cooldown * cooldownMultiplier);
+            yield return new WaitForSeconds(cooldown * cooldownMultiplier);
         }
     }
 

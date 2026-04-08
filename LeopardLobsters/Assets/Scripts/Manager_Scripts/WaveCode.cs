@@ -114,8 +114,6 @@ public class WaveCode : MonoBehaviour
         {
             if (WaveStart && PhantomEnemyNum < EnemyMax)
             {
-                Debug.Log("Phantom Enemy Num is " + PhantomEnemyNum);
-
                 cooldown -= PhantomEnemyNum * 0.01f;//cooldown decreases over the course of the wave as the amount of enemies increases
 
                 if(PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies && probOfFastEnemyDeterminer > 4 /*min amount probOfFastEnemyDeterminerCanBe*/)//if a certain amount of enemies have spawned and the prob of fast enemy determiner hasn't decreased too much, decrease it
@@ -138,8 +136,12 @@ public class WaveCode : MonoBehaviour
                 {
                     //select an enemy type. The prob of getting a fast one increases over the course of the game
                     int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);
+                    if(RandomNumTwo >= 1)
+                    RandomNumTwo = 1;
+
                     selectedEnemy = enemies[RandomNumTwo];
 
+                    //spawn an enemy at the clump's shared starting point with a randomized offset
                     float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
                     Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
                     spawnedEnemy = Instantiate(selectedEnemy, offsetEnemySpawnPos, Quaternion.identity);

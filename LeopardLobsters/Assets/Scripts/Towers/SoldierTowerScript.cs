@@ -66,7 +66,7 @@ public class SoldierTowerScript : MonoBehaviour
                 Destroy(soldier);
 
                 //(Dante Made this)
-                RemoveSoldierSound.Play();
+                RemoveSoldierSound.Play(); //make this a remove soldier sound
                 break;
             }
         }

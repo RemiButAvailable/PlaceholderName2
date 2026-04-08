@@ -230,13 +230,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d1cc9991c66a443bab064b10af2340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationPosition: {x: 8.058354, y: -7.307692, z: 0}
   engaged: 0
-  target: {fileID: 0}
-  speed: 1
   fighting: 0
-  health: 3
+  speed: 2
+  health: 6
+  stationPosition: {x: 8.058354, y: -7.307692, z: 0}
+  target: {fileID: 0}
   Tower: {fileID: 0}
+  isActive: 0
   hitSound: {fileID: 3952712213451866196}
   deathSound: {fileID: 6418180475301049370, guid: ef63285bce8c22548a5896bfa40f601f, type: 2}
   aSoundPrefab: {fileID: 8468978810788666128, guid: aabb5ee098e74ea47914a9b48aa4fa64, type: 3}

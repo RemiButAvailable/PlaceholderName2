@@ -32,6 +32,9 @@ public class WaveCode : MonoBehaviour
     public GameObject bossEnemy;
     GameObject selectedEnemy; //(not a prefab but it stores the selected prefab)
 
+    //UI
+    public GameObject percentOfWaveKilledBar;
+
     //spawned Objects
     GameObject spawnedEnemy;
     GameObject spawnedBossEnemy;
@@ -46,9 +49,6 @@ public class WaveCode : MonoBehaviour
     Vector3 EnemySpawnSpot;
     LineRenderer StartingEnemyPath;//the path enemies march along until phantom enemy num is big enough
     LineRenderer enemyPath;
-
-    //private GameObject SpawnedEnemy;
-
 
     static public WaveCode self;
     public UnityEvent waveStarted;
@@ -74,7 +74,7 @@ public class WaveCode : MonoBehaviour
     [Range (0, 12)]
     public int probOfFastEnemyDeterminer;//upper limit of the range for the random val that determines if an enemy is fast. Decreases once they start spawning
     [Range (0, 60)]
-    public double EnemyMax;
+    public int EnemyMax;
     [Range (0, 12)]
     public int cooldown;//cooldown between clumps
     [Range(0, 12)]
@@ -131,7 +131,7 @@ public class WaveCode : MonoBehaviour
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
                 }
-                int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness);
+                int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness + 1);
                 for(int i = 0; i <= enemyClumpSize; i++)
                 {
                     //select an enemy type. The prob of getting a fast one increases over the course of the game

@@ -4,7 +4,7 @@
  * The script that will run the tutorial. 
  * The whole thing could probably run it since it will be step by step so not many new scripts are needed.
  * Will have all the the ways the text will be clicked through and events tied with it */
-
+/*
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -63,4 +63,4 @@ public class TutorialScript : MonoBehaviour
     }
 
 
-}
+}*/

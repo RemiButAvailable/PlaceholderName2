@@ -51,12 +51,6 @@ public class Neighborhood : MonoBehaviour
         if (typeIndex.Contains(tower.type))
             happinessChange *= typeMult[typeIndex.IndexOf(tower.type)];
 
-        //distance to closest point on collider calculation
-        float dist = (tower.transform.position - tower.GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
-        //dist = 1 / (dist / (dist + 4));
-        dist = 1 / (1 / dist + 4);
-        happinessChange *= dist;
-
         curHappinessChange += happinessChange;
 
         return happinessChange;
@@ -91,11 +85,6 @@ public class Neighborhood : MonoBehaviour
         //tower type mult
         if (typeIndex.Contains(tower.type))
             happinessChange *= typeMult[typeIndex.IndexOf(tower.type)];
-
-        //distance to closest point on collider calculation
-        float dist = (tower.transform.position - tower.GetClosestPointOnCollider(neighboorhoodCenter)).magnitude;
-        dist = (1 / (1 + dist / 3));
-        happinessChange *= dist;
 
         curHappinessChange -= happinessChange;
     }

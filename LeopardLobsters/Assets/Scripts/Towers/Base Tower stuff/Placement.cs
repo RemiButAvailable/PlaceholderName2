@@ -1,6 +1,8 @@
 /* Author: ferg is the name ben baller did the chain*/
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Placement : MonoBehaviour
 {
@@ -9,8 +11,10 @@ public class Placement : MonoBehaviour
     [SerializeField] BaseTower baseTower;
 
     [SerializeField] AudioSource PlaceSound;
-    [SerializeField] AudioSource PlaceDenySound;
-
+   
+    [SerializeField] AudioResource PlaceDenySound;
+    [SerializeField] AudioPlayer aAudioPrefab;
+    [SerializeField] float SoundVolume = .5f;
     private void Start()
     {
         baseTower.TowerSelected();
@@ -42,8 +46,10 @@ public class Placement : MonoBehaviour
             {
                 //vfx sfx
                 //Fail Sound
-                //PlaceDenySound.Play();
+                AudioPlayer aPlayer = Instantiate(aAudioPrefab);
+                aAudioPrefab.playClip(transform.position, PlaceDenySound, SoundVolume);
                 Destroy(gameObject);
+
                 return;
             }
 

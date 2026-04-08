@@ -71,11 +71,11 @@ AudioRandomContainer:
   - {fileID: -6078165128733850226}
   - {fileID: -8096397343469039838}
   - {fileID: -8460550981185584606}
-  m_AvoidRepeatingLast: 0
+  m_AvoidRepeatingLast: 1
   m_PlaybackMode: 2
   m_TriggerMode: 1
   m_AutomaticTriggerMode: 1
-  m_LoopMode: 2
+  m_LoopMode: 1
   m_VolumeRandomizationEnabled: 0
   m_PitchRandomizationEnabled: 1
   m_AutomaticTriggerTimeRandomizationEnabled: 0

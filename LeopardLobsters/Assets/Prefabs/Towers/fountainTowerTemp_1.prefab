@@ -680,6 +680,7 @@ MonoBehaviour:
   peopleNeeded: 3
   towerCost: 15
   sellPrice: 10
+  toolTip: 
   areaOfEffect: {fileID: 5487279804624037001}
   peopleSprites:
   - {fileID: 7618463242622561739}
@@ -759,7 +760,9 @@ MonoBehaviour:
   towerClickCollider: {fileID: 8919320486170738836}
   baseTower: {fileID: 2544903574498267057}
   PlaceSound: {fileID: 8665994680777551847}
-  PlaceDenySound: {fileID: 6292744743687921564}
+  PlaceDenySound: {fileID: 8300000, guid: 4f553f0124c65e347bf76d303224493f, type: 3}
+  aAudioPrefab: {fileID: 8468978810788666128, guid: aabb5ee098e74ea47914a9b48aa4fa64, type: 3}
+  SoundVolume: 0.5
 --- !u!1 &5430110189425759209
 GameObject:
   m_ObjectHideFlags: 0

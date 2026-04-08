@@ -19,4 +19,20 @@ public class StartMenu : MonoBehaviour
     public void Quit() {
         Application.Quit();
     }
+
+
+    public void Credits(GameObject gameObject)
+    {
+        if (gameObject.active)
+        {
+            gameObject.SetActive(false);
+        }
+
+        else
+        {
+            gameObject.SetActive(true);
+        }
+
+
+    }
 }

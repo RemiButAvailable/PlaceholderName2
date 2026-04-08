@@ -1,9 +1,7 @@
 /* Author: Victoria Troshkov
  * Date: 3/26/26
  * 
- * The script that will run the tutorial. 
- * The whole thing could probably run it since it will be step by step so not many new scripts are needed.
- * Will have all the the ways the text will be clicked through and events tied with it */
+ * Am not doing the tutorial now :/ */
 /*
 using UnityEngine;
 using UnityEngine.SceneManagement;

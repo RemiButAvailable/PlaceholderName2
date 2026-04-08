@@ -1,25 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1233149941 &-6578992111362789600
-AudioContainerElement:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SFX_EnemyHit[4]_{-6578992111362789600}
-  m_AudioClip: {fileID: 8300000, guid: f03464b7cbebfe045aa4676e8372e677, type: 3}
-  m_Volume: 0
-  m_Enabled: 1
---- !u!1233149941 &-4969984170123261125
-AudioContainerElement:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SFX_EnemyHit[3]_{-4969984170123261125}
-  m_AudioClip: {fileID: 8300000, guid: 5b11da8236751ef46b3f8de1348dd793, type: 3}
-  m_Volume: 0
-  m_Enabled: 1
 --- !u!1233149941 &-3927400437395856838
 AudioContainerElement:
   m_ObjectHideFlags: 1
@@ -28,26 +8,6 @@ AudioContainerElement:
   m_PrefabAsset: {fileID: 0}
   m_Name: SFX_SheildHit_{-3927400437395856838}
   m_AudioClip: {fileID: 8300000, guid: 11d4a346cf0cce34d9f290a99343bdf3, type: 3}
-  m_Volume: 0
-  m_Enabled: 1
---- !u!1233149941 &325793904063598887
-AudioContainerElement:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SFX_EnemyHit[5]_{325793904063598887}
-  m_AudioClip: {fileID: 8300000, guid: e4583ba35d6f6684e9c96cbf74000f3b, type: 3}
-  m_Volume: 0
-  m_Enabled: 1
---- !u!1233149941 &4929457007993632744
-AudioContainerElement:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SFX_EnemyHit[2]_{4929457007993632744}
-  m_AudioClip: {fileID: 8300000, guid: c23f447332338c14d9db83334af386f6, type: 3}
   m_Volume: 0
   m_Enabled: 1
 --- !u!1307931743 &6418180475301049370
@@ -67,10 +27,6 @@ AudioRandomContainer:
   m_LoopCountRandomizationRange: {x: 0, y: 0}
   m_Elements:
   - {fileID: -3927400437395856838}
-  - {fileID: 4929457007993632744}
-  - {fileID: -4969984170123261125}
-  - {fileID: -6578992111362789600}
-  - {fileID: 325793904063598887}
   m_AvoidRepeatingLast: 0
   m_PlaybackMode: 0
   m_TriggerMode: 1

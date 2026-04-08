@@ -3595,6 +3595,7 @@ MonoBehaviour:
   buildMusic: {fileID: 219736196}
   battleMusic: {fileID: 698470490}
   waveText: {fileID: 1483426438}
+  buildPhaseText: {fileID: 0}
   enemyClumpSizeRandomness: 6
   timeBetweenEnemySpawnsRandomness: 6
   enemySpawnPosOffsetRandomness: 0.25
@@ -3603,6 +3604,8 @@ MonoBehaviour:
   EnemyMax: 30
   cooldown: 2
   phantomEnemyNumBeforeAltEnemies: 0
+  enemyMaxMultiplier: 0
+  pointAtWhichBossSpawns: 0
 --- !u!1 &626876290
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,7 +7778,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7079939810118749161, guid: d3a2855039ce1e4449ea5aa6890d627f, type: 3}
+  m_Sprite: {fileID: 24336968933430087, guid: 5c10ec6ff1332d249a7dd660a1382081, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9017,6 +9020,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8037753978620244795, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2998648202503540636, guid: d0447409035aeb546b6a1016a0dee491, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9287,6 +9294,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8037753978620244795, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2086913850377502119, guid: c965773eda633c94eb3576ba7833058b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9526,7 +9537,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 135, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1902788207
 MonoBehaviour:
@@ -9548,7 +9559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1586698600910507035, guid: 99770433bfdc43749ba39f30a7a8e42f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10512,10 +10523,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3214315909892519069, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
     - target: {fileID: 3916886374970591102, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10594,38 +10601,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3916886374970591102, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4265845231969937449, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4265845231969937449, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4265845231969937449, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4265845231969937449, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5939596204043234789, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5939596204043234789, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5939596204043234789, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5939596204043234789, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6469503428075644650, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}

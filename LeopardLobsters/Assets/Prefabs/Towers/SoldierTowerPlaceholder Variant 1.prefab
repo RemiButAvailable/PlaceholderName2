@@ -110,6 +110,7 @@ MonoBehaviour:
   peopleNeeded: 3
   towerCost: 10
   sellPrice: 5
+  toolTip: 
   areaOfEffect: {fileID: 5297667874337039895}
   peopleSprites:
   - {fileID: 0}
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2da25705a3b1a04d90edff6f0a6e0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerCollider: {fileID: 0}
+  towerCollider: {fileID: -1873903563541045705}
   towerClickCollider: {fileID: 7864939985113487504}
   baseTower: {fileID: 4221169296759000926}
   PlaceSound: {fileID: 8850935774377772573}

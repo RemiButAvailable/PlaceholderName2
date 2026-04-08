@@ -4,15 +4,29 @@ using UnityEngine.Audio;
 
 public class SoldierScript : MonoBehaviour
 {
-    public Vector3 stationPosition;
+    //soldier state bools
+    [HideInInspector]
     public bool engaged;
+    [HideInInspector]
+    public bool fighting;
+    [HideInInspector]
+    bool atStation;
+
+    //stat vals that can be edited in the inspector
+    [Range(0f, 12f)]
+    public float speed;
+    [Range (0f, 12f)]
+    public float health;
+
+    //Refrences and Vector3s
+    public Vector3 stationPosition;
     public GameObject target;
     Vector3 direction;
-    public float speed;
-    public bool fighting;
-    public float health;
     public GameObject Tower;
-    bool atStation;
+    BaseTower baseTowerScript;
+
+    public bool isActive; //is the tower active
+
     //This was made by Dante Jones
     [SerializeField] AudioSource hitSound;
     [SerializeField] AudioResource deathSound;
@@ -23,66 +37,68 @@ public class SoldierScript : MonoBehaviour
     {
         StartCoroutine(FightEnemy());
         engaged = false;
+        baseTowerScript = GetComponent<BaseTower>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(engaged == true && target != null)
-        {
-            direction = target.transform.position - transform.position;
-            direction.Normalize();
-            if (fighting == false)
-            transform.position += direction * speed * Time.deltaTime;
-        }
-        else
-        {
-            direction = stationPosition - transform.position;
-            direction.Normalize();
-            if(atStation == false)
-            transform.position += direction * speed * Time.deltaTime;
-        }
-
-        if(target != null)
-        {
-            if (Vector3.Distance(transform.position, target.transform.position) < 1f)
+        /*if(isActive)
+        {*/
+            if (engaged == true && target != null)
             {
-                fighting = true;
-                target.GetComponent<KnightScript>().speed = 0;
+                direction = target.transform.position - transform.position;
+                direction.Normalize();
+                if (fighting == false)
+                    transform.position += direction * speed * Time.deltaTime;
             }
-            else if (Vector3.Distance(transform.position, stationPosition) < 1f && engaged == false)
+            else
             {
-                atStation = true;
+                direction = stationPosition - transform.position;
+                direction.Normalize();
+                if (atStation == false)
+                    transform.position += direction * speed * Time.deltaTime;
             }
-        }
 
-        if(health <= 0)
-        {
-            //Will add volume
-            AudioPlayer aPlayer = Instantiate(aSoundPrefab);
-            aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
-            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
-            target.GetComponent<KnightScript>().targeted = false;
-            Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
-            Destroy(gameObject);
-        }
-
-        if(target == null && fighting == true)
-        {
-            Debug.Log("needs new target");
-            foreach(var enemy in Tower.GetComponent<SoldierTowerScript>().enemiesInZone)
+            if (target != null)
             {
-                if(enemy.GetComponent<KnightScript>().targeted == false)
+                if (Vector3.Distance(transform.position, target.transform.position) < 1f)
                 {
-                    Debug.Log("new target");
-                    target = enemy;
+                    fighting = true;
+                    target.GetComponent<KnightScript>().speed = 0;
+                }
+                else if (Vector3.Distance(transform.position, stationPosition) < 1f && engaged == false)
+                {
+                    atStation = true;
                 }
             }
-            fighting = false;
 
-            if(target != null)
-            engaged = true;
-        }
+            if (health <= 0)
+            {
+                //Will add volume
+                AudioPlayer aPlayer = Instantiate(aSoundPrefab);
+                aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
+                target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
+                target.GetComponent<KnightScript>().targeted = false;
+                Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
+                Destroy(gameObject);
+            }
+
+            if (target == null && fighting == true)
+            {
+                foreach (var enemy in Tower.GetComponent<SoldierTowerScript>().enemiesInZone)
+                {
+                    if (enemy.GetComponent<KnightScript>().targeted == false)
+                    {
+                        target = enemy;
+                    }
+                }
+                fighting = false;
+
+                if (target != null)
+                    engaged = true;
+            }
+        //}
     }
     IEnumerator FightEnemy()
     {

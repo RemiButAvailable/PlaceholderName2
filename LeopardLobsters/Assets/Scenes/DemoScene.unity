@@ -8072,7 +8072,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 52236d526ddfbbf4a80c079c3d7bfcfe, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.086
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11835,6 +11835,10 @@ PrefabInstance:
       propertyPath: denySound
       value: 
       objectReference: {fileID: 1147211851}
+    - target: {fileID: 3862140156211875495, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: ButtonSound
+      value: 
+      objectReference: {fileID: 55833705}
     - target: {fileID: 3916886374970591102, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12113,6 +12117,10 @@ PrefabInstance:
       propertyPath: denySound
       value: 
       objectReference: {fileID: 1147211851}
+    - target: {fileID: 3862140156211875495, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: ButtonSound
+      value: 
+      objectReference: {fileID: 55833705}
     - target: {fileID: 3916886374970591102, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14269,6 +14277,10 @@ PrefabInstance:
       propertyPath: denySound
       value: 
       objectReference: {fileID: 1147211851}
+    - target: {fileID: 3862140156211875495, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: ButtonSound
+      value: 
+      objectReference: {fileID: 55833705}
     - target: {fileID: 3916886374970591102, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

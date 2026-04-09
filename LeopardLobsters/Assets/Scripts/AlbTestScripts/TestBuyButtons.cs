@@ -22,7 +22,7 @@ public class TestBuyButtons : MonoBehaviour
     {
         if (!MoneyManagerScript.self.Check(-prefab.towerCost)) {
             denySound.Play();
-
+            yield break;
         }
 
         yield return new WaitForSeconds(timeClickVsDrag);

@@ -32,13 +32,17 @@ public class BaseTower : MonoBehaviour
     [HideInInspector] public UnityEvent AddedPeople;
     [HideInInspector] public UnityEvent RemovedPeople;
 
+    [SerializeField] AudioSource DenySound;
+
     public TowerType type;
 
     //Tower button effects
     public void AddPeople() { //acessed through button panel
 
-        if (people >= peopleNeeded || !Castle.self.personGoesOut()) return;
-
+        if (people >= peopleNeeded || !Castle.self.personGoesOut()) 
+        { DenySound.Play(); 
+         return; }
+        //sound 
         //enables the sprites of the people in the tower
         if(peopleSprites[people]) 
             peopleSprites[people].enabled = true;
@@ -55,8 +59,10 @@ public class BaseTower : MonoBehaviour
     }
 
     public bool RemovePeople() { //acessed through button panel
-        if (people <= 0) return false;
-
+        if (people <= 0) 
+        {DenySound.Play();
+         return false; }
+        //sound
         //checks if still active
         if (people >= peopleNeeded && needsMax) { 
             isActive.Invoke(false);

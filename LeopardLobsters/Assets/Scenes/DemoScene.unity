@@ -9546,7 +9546,7 @@ MonoBehaviour:
   barHappyUI: {fileID: 109915801}
   HappyGainSound: {fileID: 1800371354}
   HappyLoseSound: {fileID: 1382796825}
-  timerMax: 0.1
+  timerMax: 0.2
   timer: 0
 --- !u!1001 &1266185989
 PrefabInstance:

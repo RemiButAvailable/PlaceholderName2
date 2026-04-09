@@ -138,6 +138,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2577637345428575186, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+      propertyPath: needsMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577637345428575186, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       propertyPath: sellPrice
       value: 15
       objectReference: {fileID: 0}

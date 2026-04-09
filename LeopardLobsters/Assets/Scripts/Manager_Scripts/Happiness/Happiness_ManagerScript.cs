@@ -65,17 +65,7 @@ public class Happiness_ManagerScript : MonoBehaviour
 
     public void ChangeHappy(float amount)
     {
-        //Made by Dante Jones
-        float HappyVauleSave = happiness;
-        Debug.Log("amount is " + amount);
         happiness += amount;
-        if(happiness > HappyVauleSave)
-        {
-            HappyGainSound.Play();
-        }
-        if(happiness > HappyVauleSave)
-        {
-            HappyLoseSound.Play();
-        }
+
     }
 }

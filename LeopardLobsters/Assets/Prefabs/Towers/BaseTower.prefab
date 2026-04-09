@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   people: 0
   peopleNeeded: 0
+  needsMax: 1
   towerCost: 0
   sellPrice: 0
   toolTip: 

@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 4815356638891869846}
   - component: {fileID: 8794165906022203800}
   - component: {fileID: 1326640035918926968}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Radius (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d7b8e04c972e8489e19caf85b1c86f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happyPerTower: 0.009
+  happyPerTower: 0.03
   cooldown: 1
   active: 0
   baseTower: {fileID: 2392960027362687500}

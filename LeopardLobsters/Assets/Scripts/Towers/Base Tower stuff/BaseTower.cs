@@ -6,8 +6,10 @@ using UnityEngine.UIElements;
 public class BaseTower : MonoBehaviour
 {
     public int people = 0;
-    
+
     public int peopleNeeded = 2;
+    [SerializeField] bool needsMax = true; //if needs max amuont of people to work
+
     public int towerCost = 10;
     public int sellPrice = 5;
     
@@ -45,7 +47,7 @@ public class BaseTower : MonoBehaviour
         AddedPeople.Invoke();
         
         //checks if active + sfx vfx
-        if (people >= peopleNeeded) {
+        if (people >= peopleNeeded && needsMax) {
            isActive.Invoke(true);
            towerActiveSound?.Play();
            towerSprite.color = Color.white;
@@ -56,7 +58,7 @@ public class BaseTower : MonoBehaviour
         if (people <= 0) return false;
 
         //checks if still active
-        if (people >= peopleNeeded) { 
+        if (people >= peopleNeeded && needsMax) { 
             isActive.Invoke(false);
             towerDeactiveSound?.Play();
             towerSprite.color = colorTint;
@@ -85,7 +87,8 @@ public class BaseTower : MonoBehaviour
     {
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
-        towerSprite.color = colorTint;
+        
+        if(needsMax) towerSprite.color = colorTint;
     }
     public void TowerSelected()
     {

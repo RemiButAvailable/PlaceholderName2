@@ -23,8 +23,9 @@ public class SoldierTowerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        baseTower?.AddedPeople.AddListener(AddSoldier);
-        baseTower?.RemovedPeople.AddListener(RemoveSoldierViaButton);
+        baseTower.AddedPeople.AddListener(AddSoldier);
+        baseTower.RemovedPeople.AddListener(RemoveSoldierViaButton);
+        baseTower.OnPlace.AddListener(SetSoldierStationPositions);
     }
 
     public void AddSoldier()
@@ -61,8 +62,6 @@ public class SoldierTowerScript : MonoBehaviour
                 soldiers.Remove(soldier);
                 Destroy(soldier);
 
-                //(Dante Made this)
-                RemoveSoldierSound?.Play(); //make this a remove soldier sound
                 break;
             }
         }

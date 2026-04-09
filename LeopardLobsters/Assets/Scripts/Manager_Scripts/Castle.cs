@@ -5,26 +5,49 @@ using UnityEngine.UI;
 
 public class Castle : MonoBehaviour
 {
+    [Header("Editable values")]
     public int peopleAtCastle = 2; //starting amount of people
-    [SerializeField] int peopleMax = 6;
-    [SerializeField] int peopleMaxCost = 30;
-    [SerializeField] float peopleMaxCostMult = 2;
-
-    [SerializeField] TowerSelectable towerSelectable;
-    [SerializeField] GameObject buttonPanel;
-    [SerializeField] TextMeshPro maxPeoplCostButtonText;
-
-    [SerializeField] SpriteRenderer castleSprite;
-    [SerializeField] Color tintColor;
-
     int peopleTotal;
-    [SerializeField] int moneyPerPerson = 5;
+
+    [SerializeField] int peopleMax = 6; //max amount of people can have
+    [SerializeField] int peopleMaxCost = 30; //cost to add to people max
+    [SerializeField] float peopleMaxCostMult = 2; //cost multiplier each time bought
+    [SerializeField] int moneyPerPerson = 5; //money gained after a wave
+    [Space]
+    public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
+    public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
+    public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
+    
+    [Space][Space]
+    [Header("People add progress bar")]
+    [SerializeField] Image progressBar; //instantiate in inspector
+    [SerializeField] Image barParent;
+    [SerializeField] GameObject barPosition;
+
+    [Space][Space]
+    [Header("text and objects for castle")]
     [SerializeField] TextMeshProUGUI textPeopleTotal;
     [SerializeField] TextMeshProUGUI textPeopleIn;
+    
+    [SerializeField] TowerSelectable towerSelectable;
 
-    //(Made by Dante Jones)
-    //The audio for castle being hit
-    public AudioSource castleHitSound;
+
+    [Space][Space]
+    [Header("button pannel stuff")]
+    [SerializeField] TextMeshPro maxPeoplCostButtonText;
+    [SerializeField] GameObject buttonPanel;
+
+    [Space][Space]
+    [Header("tower active stuff")]
+    [SerializeField] SpriteRenderer castleSprite;
+    [SerializeField] SpriteRenderer[] peopleSprites;
+    [SerializeField] Color tintColor;
+    [SerializeField] AudioSource towerActive;
+    [SerializeField] AudioSource towerDeactive;
+
+    [Space][Space]
+    [Header("CastleHit sounds")]
+    [SerializeField] AudioSource castleHitSound;
     [SerializeField] AudioSource PeopleGainSound;
 
     public static Castle self;
@@ -33,6 +56,7 @@ public class Castle : MonoBehaviour
     {
         self = this;
         peopleTotal = peopleAtCastle;
+        //WaveCode.self.waveEnd.AddListener(endOfWave);
     }
     private void Start()
     {
@@ -57,16 +81,44 @@ public class Castle : MonoBehaviour
 
     public bool personGoesOut() {
         if (peopleAtCastle > 0) {
+
             peopleAtCastle--;
             textUpdatePIn();
+
+            //enabling people sprites
+            if (peopleAtCastle < peopleSprites.Length)
+            {
+                peopleSprites[peopleAtCastle].enabled = false;
+            }
+
+            //checking active or not
+            if (peopleAtCastle < minPeopleNeeded)
+            {
+                towerDeactive.Play();
+                castleSprite.color = tintColor;
+            }
+
             return true;
         }
         return false;
 
     }
     public void personGoesIn() {
+        //enabling people sprites
+        if (peopleAtCastle < peopleSprites.Length)
+        {
+            peopleSprites[peopleAtCastle].enabled = true;
+        }
+
         peopleAtCastle++;
         textUpdatePIn();
+
+        //checking active
+        if (peopleAtCastle >= minPeopleNeeded)
+        {
+            towerActive.Play();
+            castleSprite.color = Color.white;
+        }
     }
 
 
@@ -75,25 +127,8 @@ public class Castle : MonoBehaviour
     float timer = 0;
     public int timerMax = 10;
 
-    public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
-    public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
-    public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
-
-    [SerializeField] Image progressBar; //instantiate in inspector
-    [SerializeField] Image barParent;
-    [SerializeField] GameObject barPosition;
-
     private void FixedUpdate()
     {
-        /*if (peopleAtCastle >= minPeopleNeeded)
-        {
-            castleSprite.color = Color.white;
-        }
-        else
-        {
-            castleSprite.color = tintColor;
-            return;
-        }*/
         if (inWave && peopleAtCastle >= minPeopleNeeded && peopleTotal < peopleMax)
         {
             progressBar.fillAmount = timer / timerMax;

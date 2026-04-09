@@ -1,3 +1,8 @@
+/*
+ * Description: Will manage the happiness, as in keeping track of things related to it,
+ * Adding it, removing it, having weird fluctuations, stuff like that.
+ */
+
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;

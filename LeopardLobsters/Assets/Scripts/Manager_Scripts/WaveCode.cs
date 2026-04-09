@@ -182,6 +182,7 @@ public class WaveCode : MonoBehaviour
         if(WaveStart == false)
         {
             WaveNum++;
+            PhantomEnemyNum = 0;
             //EnemyMax *= enemyMaxMultiplier;
 
             int RandomNum = Random.Range(0, 2);

@@ -120,7 +120,7 @@ public class KnightScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "detectionLine")
+        if(collision.tag == "detectionLine" && collision.gameObject.GetComponentInParent<KnightScript>().order < order)
         {
             Debug.Log("ah");
             order--;

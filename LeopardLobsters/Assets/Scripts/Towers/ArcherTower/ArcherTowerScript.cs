@@ -40,7 +40,17 @@ public class ArcherTowerScript : MonoBehaviour
             }
         }*/
         /*if (queue.Count > 0)
-        queue[0].GetComponent<SpriteRenderer>().color = Color.green;*/
+        for(int i = 0; i < queue.Count; i++)
+        {
+            if(i == 0)
+            {
+                queue[i].GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            else
+            {
+                queue[i].GetComponent<SpriteRenderer>().color = Color.red;
+            }
+        }*/
     }
     public IEnumerator ShootArrows()
     {

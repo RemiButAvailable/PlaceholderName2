@@ -99,7 +99,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 95
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -164,10 +164,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 1427
-        width: 405
-        height: 419
+        x: 0
+        y: 1428
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +186,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_1
       rect:
         serializedVersion: 2
-        x: 516
-        y: 1427
-        width: 405
-        height: 420
+        x: 486
+        y: 1428
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +208,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_2
       rect:
         serializedVersion: 2
-        x: 1021
-        y: 1427
-        width: 370
-        height: 420
+        x: 972
+        y: 1428
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,10 +230,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_3
       rect:
         serializedVersion: 2
-        x: 1502
-        y: 1427
-        width: 375
-        height: 422
+        x: 1458
+        y: 1428
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_4
       rect:
         serializedVersion: 2
-        x: 1988
-        y: 1427
-        width: 368
-        height: 422
+        x: 1944
+        y: 1428
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,10 +274,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_5
       rect:
         serializedVersion: 2
-        x: 57
-        y: 951
-        width: 355
-        height: 423
+        x: 0
+        y: 952
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_6
       rect:
         serializedVersion: 2
-        x: 492
-        y: 951
-        width: 406
-        height: 423
+        x: 486
+        y: 952
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +318,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_7
       rect:
         serializedVersion: 2
-        x: 978
-        y: 951
-        width: 406
-        height: 425
+        x: 972
+        y: 952
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +340,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_8
       rect:
         serializedVersion: 2
-        x: 1472
-        y: 951
-        width: 470
-        height: 425
+        x: 1458
+        y: 952
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,10 +362,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_9
       rect:
         serializedVersion: 2
-        x: 1958
-        y: 951
-        width: 470
-        height: 423
+        x: 1944
+        y: 952
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +384,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_10
       rect:
         serializedVersion: 2
-        x: 6
-        y: 475
-        width: 468
-        height: 423
+        x: 0
+        y: 476
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,10 +406,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_11
       rect:
         serializedVersion: 2
-        x: 492
-        y: 475
-        width: 468
-        height: 422
+        x: 486
+        y: 476
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,10 +428,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_12
       rect:
         serializedVersion: 2
-        x: 1016
-        y: 475
-        width: 374
-        height: 422
+        x: 972
+        y: 476
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,10 +450,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_13
       rect:
         serializedVersion: 2
-        x: 1507
-        y: 475
-        width: 369
-        height: 420
+        x: 1458
+        y: 476
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,10 +472,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_14
       rect:
         serializedVersion: 2
-        x: 1974
-        y: 475
-        width: 389
-        height: 420
+        x: 1944
+        y: 476
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,10 +494,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_15
       rect:
         serializedVersion: 2
-        x: 30
+        x: 0
         y: 0
-        width: 389
-        height: 418
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,10 +516,10 @@ TextureImporter:
       name: Soldier_Attack_Ani_16
       rect:
         serializedVersion: 2
-        x: 516
+        x: 486
         y: 0
-        width: 405
-        height: 418
+        width: 486
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -534,11 +534,77 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_17
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 0
+        width: 486
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff04770b826a9854e894faca77faca26
+      internalID: 685644970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_18
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 0
+        width: 486
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878b82ce29c10b543ba9ee2e072c1220
+      internalID: 1167389197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_19
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 0
+        width: 486
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862fdc37ee26e5e44bfa67c83cbeb55d
+      internalID: 1252080849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1db0912380cdeed46b95457615e56e3e
     internalID: 0
     vertices: []
     indices: 
@@ -557,6 +623,9 @@ TextureImporter:
       Soldier_Attack_Ani_14: 751008633145537629
       Soldier_Attack_Ani_15: -2758752007918383891
       Soldier_Attack_Ani_16: 7531846189739485106
+      Soldier_Attack_Ani_17: 685644970
+      Soldier_Attack_Ani_18: 1167389197
+      Soldier_Attack_Ani_19: 1252080849
       Soldier_Attack_Ani_2: -2645060765966501520
       Soldier_Attack_Ani_3: -7514864702494779928
       Soldier_Attack_Ani_4: -5059717742797264430

@@ -1,3 +1,7 @@
+/* Description: The happiness bar that will show at what point of happiness it is.
+ * Showing really happy, happy, medium, upset and angry.
+ */
+
 using System;
 using UnityEngine;
 using UnityEngine.UI;

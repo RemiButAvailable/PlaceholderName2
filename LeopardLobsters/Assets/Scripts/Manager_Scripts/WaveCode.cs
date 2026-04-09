@@ -20,6 +20,8 @@ public class WaveCode : MonoBehaviour
     [HideInInspector]
     public int WaveNum = 0;
     [HideInInspector]
+    public int buildNum = 1;
+    [HideInInspector]
     public bool WaveStart;
     [HideInInspector]
     public bool endedWave; //keeps the end wave function from running contiguously
@@ -90,6 +92,7 @@ public class WaveCode : MonoBehaviour
     {
         // Keep Game alive
         WaveStart = false;
+        waveText.text = "Wave (Dormant): " + WaveNum + " Build (Active): " + buildNum;
         DontDestroyOnLoad(this);
         StartCoroutine(Spawner(cooldown));
       }
@@ -133,6 +136,10 @@ public class WaveCode : MonoBehaviour
                     enemyPath = enemyPaths[RandomNum];
                 }
                 int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness + 1);
+                if(enemyClumpSize > EnemyMax - PhantomEnemyNum)
+                {
+                    enemyClumpSize = EnemyMax - PhantomEnemyNum;
+                }
                 for(int i = 0; i <= enemyClumpSize; i++)
                 {
                     //select an enemy type. The prob of getting a fast one increases over the course of the game
@@ -182,7 +189,7 @@ public class WaveCode : MonoBehaviour
             StartingEnemyPath = enemyPaths[RandomNum];
 
             WaveStart = true;
-            waveText.text = "Wave: " + WaveNum;
+            waveText.text = "Wave (Active): " + WaveNum + " Build (Dormant): " + buildNum;
             
             //Turns on battle phase music stops building phase music
             buildMusic.Stop();
@@ -192,12 +199,14 @@ public class WaveCode : MonoBehaviour
     }
     public void EndWave()
     {
+        buildNum++;
         WaveStart = false;
         enemiesStartedSpawning = false;
         //Turns on building phase music stops battle phase music
         buildMusic.Play();
         battleMusic.Stop();
-        buildPhaseText.enabled = true;
+        //buildPhaseText.enabled = true;
+        waveText.text = "Wave (Dormant): " + WaveNum + " Build (Active): " + buildNum;
         endedWave = true;
     }
 }

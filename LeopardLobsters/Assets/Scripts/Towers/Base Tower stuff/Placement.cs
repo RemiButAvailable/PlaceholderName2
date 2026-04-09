@@ -67,9 +67,12 @@ public class Placement : MonoBehaviour
                 col.GetComponent<TowerAddedChecker>().TowerEnter(baseTower);
             }
 
+            //is good to place stuff
+
             gameObject.layer = LayerMask.NameToLayer("Tower");
             towerClickCollider.layer = LayerMask.NameToLayer("TowerSelection");
-            baseTower.OnPlace.Invoke();
+            baseTower.Placed();
+
             // Sound
             PlaceSound.Play();
             baseTower.TowerDeselected();

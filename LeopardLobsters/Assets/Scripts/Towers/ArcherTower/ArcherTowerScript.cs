@@ -19,8 +19,6 @@ public class ArcherTowerScript : MonoBehaviour
     //(Made by Dante Jones)
     //Sound that plays when enemy shoots
     [SerializeField] AudioSource arrowShootSound;
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,15 +32,13 @@ public class ArcherTowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyInZone)
+        /*if (enemyInZone)
         {
-            GameObject targetedEnemy = queue[0];
-
-            if (targetedEnemy.GetComponent<KnightScript>().health <= 0)
+            if (queue[0].GetComponent<KnightScript>().health <= 0)
             {
-                queue.Remove(targetedEnemy);
+                queue.Remove(queue[0]);
             }
-        }
+        }*/
     }
     public IEnumerator ShootArrows()
     {
@@ -55,28 +51,22 @@ public class ArcherTowerScript : MonoBehaviour
                 //Sound when arrow shoots
                 arrowShootSound.Play();
 
+                //KnightScript knightScript = queue[0].GetComponent<KnightScript>();
                 KnightScript knightScript = queue[0].GetComponent<KnightScript>();
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
                 Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot/* * (int)(knightScript.speed * directionMultiplier)*/] + knightScript.offset;
                 arrowScript.target = target;
                 arrowScript.start = arrowStartPosition.transform.position;
-
-
-
-                /*float knightDistToNextTurn = Vector3.Distance(queue[0].transform.position, knightScript.nextWayPoint);
-                float minimumDistance;
-                if(knightDistToNextTurn < minimumDistance)
-                {
-
-                }*/
-                //arrowScript.direction = queue[0].transform.position + (knightScript.direction.normalized) * (knightScript.speed * multiplier) - transform.position;
-
-                //arrowPosition(t) = knightPosition(t)
             }
             yield return new WaitForSeconds(cooldown);
         }
     }
 
     void IsActive(bool active) { isActive = active; }
+
+    public void ChangeTarget(GameObject knight)
+    {
+        queue[0] = knight;
+    }
 }

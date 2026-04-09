@@ -283,6 +283,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2711352092453901459, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       insertIndex: 1
       addedObject: {fileID: 468506462110688084}
+    - targetCorrespondingSourceObject: {fileID: 2711352092453901459, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 828553542742003043}
     - targetCorrespondingSourceObject: {fileID: 6730111401246257610, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 672195577911211984}
@@ -311,6 +314,22 @@ MonoBehaviour:
   soldierSpawnPosDistFromClosestPointOnPath: 5
   RemoveSoldierSound: {fileID: 0}
   SoldierDeathSound: {fileID: 7038404273192679490}
+--- !u!111 &828553542742003043
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720325453208777616}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!114 &3874348672811365585 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2577637345428575186, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}

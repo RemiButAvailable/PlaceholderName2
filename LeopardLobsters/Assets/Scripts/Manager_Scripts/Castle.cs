@@ -1,3 +1,9 @@
+/*
+ * 
+ * Description: The script for the castle, keeping track of the people there are and if an
+ * enemy has hit it. Will also generate more people as time goes on.
+ */
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -60,6 +66,7 @@ public class Castle : MonoBehaviour
     }
     private void Start()
     {
+        // Have the text be the same as the number
         maxPeoplCostButtonText.text = peopleMaxCost.ToString();
         textUpdatePTotal();
         textUpdatePIn();
@@ -78,7 +85,7 @@ public class Castle : MonoBehaviour
 
         //DO: add money sfx vfx
     }
-
+    // Everytime a person gets put out to the field, remove from the castle if available
     public bool personGoesOut() {
         if (peopleAtCastle > 0) {
 
@@ -103,6 +110,7 @@ public class Castle : MonoBehaviour
         return false;
 
     }
+    // When a person gets removed from the field, add to the castle
     public void personGoesIn() {
         //enabling people sprites
         if (peopleAtCastle < peopleSprites.Length)
@@ -155,6 +163,7 @@ public class Castle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // The people in castle killer
         if (other.gameObject.tag == "knight")
         {
             //Sound that plays when enemy hits castle
@@ -166,6 +175,7 @@ public class Castle : MonoBehaviour
             peopleAtCastle -= enemy.damage;
             textUpdatePIn();
 
+            // One of the reasons for the loss
             enemy.ReachedCastle();
             if (peopleAtCastle < 0) {
                 SceneManager.LoadScene("PeopleLoseScreen");
@@ -178,7 +188,7 @@ public class Castle : MonoBehaviour
         textUpdatePTotal();
     }
 
-
+    // Increase the max amount of people that can be housed in the castle
     public void BuyMaxPeople() { //connected through inspector
         if (!MoneyManagerScript.self.Check(-peopleMaxCost)) return;
 
@@ -189,6 +199,7 @@ public class Castle : MonoBehaviour
         textUpdatePTotal();
     }
 
+    // Text stuff
     void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString() +" / "  +peopleMax.ToString(); }
     void textUpdatePIn() { textPeopleIn.text = peopleAtCastle.ToString(); }
 

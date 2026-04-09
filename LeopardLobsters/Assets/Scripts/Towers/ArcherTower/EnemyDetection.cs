@@ -21,6 +21,7 @@ public class EnemyDetection : MonoBehaviour
         if (other.gameObject.tag == "knight")
         {
             archerTowerScript.queue.Add(other.gameObject);
+            other.gameObject.GetComponent<KnightScript>().inhabitedTowerZone = archerTowerScript;
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -28,6 +29,7 @@ public class EnemyDetection : MonoBehaviour
         if (other.gameObject.tag == "knight")
         {
             archerTowerScript.queue.Remove(other.gameObject);
+            other.gameObject.GetComponent<KnightScript>().inhabitedTowerZone = null;
         }
     }
 }

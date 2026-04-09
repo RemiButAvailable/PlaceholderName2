@@ -27,6 +27,7 @@ public class WaveCode : MonoBehaviour
 
     //Private vals
     private int PhantomEnemyNum = 0; //amount of enemies that have spawned since the wave started
+    private int order;
 
     //Prefabs
     public GameObject bossEnemy;
@@ -144,9 +145,14 @@ public class WaveCode : MonoBehaviour
                     //spawn an enemy at the clump's shared starting point with a randomized offset
                     float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
                     Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
+
+                    //spawn a new enemy
                     spawnedEnemy = Instantiate(selectedEnemy, offsetEnemySpawnPos, Quaternion.identity);
-                    spawnedEnemy.GetComponent<KnightScript>().lineRenderer = enemyPath;
-                    spawnedEnemy.GetComponent<KnightScript>().offset = new Vector3(enemySpawnPosOffsetFloat, enemySpawnPosOffsetFloat, 0);
+                    KnightScript knightScript = spawnedEnemy.GetComponent<KnightScript>();
+                    knightScript.lineRenderer = enemyPath;
+                    knightScript.offset = new Vector3(enemySpawnPosOffsetFloat, enemySpawnPosOffsetFloat, 0);
+                    knightScript.order = PhantomEnemyNum;
+
                     EnemyNum++;
                     PhantomEnemyNum++;
                     yield return new WaitForSeconds(cooldownWithinClump);
@@ -169,7 +175,7 @@ public class WaveCode : MonoBehaviour
         if(WaveStart == false)
         {
             WaveNum++;
-            EnemyMax *= enemyMaxMultiplier;
+            //EnemyMax *= enemyMaxMultiplier;
 
             int RandomNum = Random.Range(0, 2);
             EnemySpawnStart = EnemySpawnPositions[RandomNum];

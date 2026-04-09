@@ -120,7 +120,7 @@ public class MoneyManagerScript : MonoBehaviour
                 spawnedProduct = Instantiate(product, mousePos, Quaternion.identity);
 
                 //Sound that plays when you by something
-                BuySound.Play();
+                //BuySound.Play();
             }
 
         }
@@ -136,6 +136,7 @@ public class MoneyManagerScript : MonoBehaviour
     {
         moneyNum += num;
         textMoney.text = moneyNum.ToString();
+        BuySound.Play();
     }
     public bool Check(int num)
     {

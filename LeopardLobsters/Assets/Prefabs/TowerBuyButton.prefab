@@ -737,13 +737,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3916886374970591102}
+  - component: {fileID: 3214315909892519069}
   - component: {fileID: 7681664425324814754}
   - component: {fileID: 1267698464055442226}
   - component: {fileID: 7276588989142609581}
   - component: {fileID: 6723032441552907858}
-  - component: {fileID: 3214315909892519069}
   m_Layer: 5
-  m_Name: TowerBg
+  m_Name: TowerBuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -770,6 +770,22 @@ RectTransform:
   m_AnchoredPosition: {x: 84.58, y: -94.45}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3214315909892519069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861387754086292386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7b7178e66820e40917c6292a9ef2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
+  costText: {fileID: 6768738244543236749}
+  peopleText: {fileID: 7362842014264369413}
+  timeClickVsDrag: 0.2
 --- !u!222 &7681664425324814754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -848,19 +864,3 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &3214315909892519069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861387754086292386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7b7178e66820e40917c6292a9ef2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 5134048936030875358, guid: 6bf3614016004814a8b63d624704e34f, type: 3}
-  costText: {fileID: 6768738244543236749}
-  peopleText: {fileID: 7362842014264369413}
-  timeClickVsDrag: 0.2

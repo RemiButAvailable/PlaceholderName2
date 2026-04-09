@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5411756801687318624}
+  - component: {fileID: 8716366860728251673}
   - component: {fileID: 8894117093595119621}
   - component: {fileID: 4221169296759000926}
   - component: {fileID: 6864957519059136308}
-  - component: {fileID: 8716366860728251673}
   - component: {fileID: -1873903563541045705}
   m_Layer: 2
   m_Name: SoldierTowerPlaceholder Variant 1
@@ -39,6 +39,25 @@ Transform:
   - {fileID: 5140558783521829517}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8716366860728251673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062938302192672680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba453391aa58fce4897c5369feaefb3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldier: {fileID: 6608690578147413099, guid: 455d08329958ac440b240baf054fe5b6, type: 3}
+  soldiers: []
+  enemiesInZone: []
+  baseTower: {fileID: 0}
+  soldierSpawnPosDistFromClosestPointOnPath: 5
+  RemoveSoldierSound: {fileID: 1962428767925325588}
+  SoldierDeathSound: {fileID: 0}
 --- !u!212 &8894117093595119621
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -118,8 +137,8 @@ MonoBehaviour:
   - {fileID: 0}
   towerSprite: {fileID: 8894117093595119621}
   colorTint: {r: 0.41427553, g: 0.46564296, b: 0.509434, a: 1}
-  PeopleAddedSound: {fileID: 0}
-  PeopleRemovedSound: {fileID: 0}
+  towerActiveSound: {fileID: 0}
+  towerDeactiveSound: {fileID: 0}
   isActive:
     m_PersistentCalls:
       m_Calls: []
@@ -189,25 +208,9 @@ MonoBehaviour:
   towerClickCollider: {fileID: 7864939985113487504}
   baseTower: {fileID: 4221169296759000926}
   PlaceSound: {fileID: 8850935774377772573}
-  PlaceDenySound: {fileID: 4052934545521788611}
---- !u!114 &8716366860728251673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062938302192672680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba453391aa58fce4897c5369feaefb3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soldier: {fileID: 6608690578147413099, guid: 455d08329958ac440b240baf054fe5b6, type: 3}
-  soldiers: []
-  enemiesInZone: []
-  soldierSpawnPosDistFromClosestPointOnPath: 5
-  RemoveSoldierSound: {fileID: 1962428767925325588}
-  SoldierDeathSound: {fileID: 0}
+  PlaceDenySound: {fileID: 0}
+  aAudioPrefab: {fileID: 0}
+  SoundVolume: 0.5
 --- !u!60 &-1873903563541045705
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -6,21 +6,24 @@ using UnityEngine.UIElements;
 public class BaseTower : MonoBehaviour
 {
     public int people = 0;
+    
     public int peopleNeeded = 2;
     public int towerCost = 10;
     public int sellPrice = 5;
+    
     public String toolTip;
 
+    // for active and deactive feedback
     [SerializeField] SpriteRenderer areaOfEffect;
     [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
 
-    // Have an active and inactive sprite
     [SerializeField] SpriteRenderer towerSprite;
     [SerializeField] Color colorTint;
 
-    [SerializeField] AudioSource PeopleAddedSound;
-    [SerializeField] AudioSource PeopleRemovedSound;
+    [SerializeField] AudioSource towerActiveSound;
+    [SerializeField] AudioSource towerDeactiveSound;
 
+    // events for tower types
     [HideInInspector] public UnityEvent<bool> isActive;
     [HideInInspector] public UnityEvent<BaseTower> Destroyed;
     [HideInInspector] public UnityEvent OnPlace; //add change sprite layer later
@@ -29,54 +32,54 @@ public class BaseTower : MonoBehaviour
 
     public TowerType type;
 
+    //Tower button effects
+    public void AddPeople() { //acessed through button panel
 
-    public void AddPeople() { //connected through events
+        if (people >= peopleNeeded || !Castle.self.personGoesOut()) return;
 
-        if (people >= peopleNeeded) return;
-        if (!Castle.self.personGoesOut()) return;
-
-        if(peopleSprites[people])peopleSprites[people].enabled = true;
+        //enables the sprites of the people in the tower
+        if(peopleSprites[people]) 
+            peopleSprites[people].enabled = true;
 
         people++;
         AddedPeople.Invoke();
         
+        //checks if active + sfx vfx
         if (people >= peopleNeeded) {
            isActive.Invoke(true);
-           // PeopleAddedSound.Play();
+           towerActiveSound?.Play();
            towerSprite.color = Color.white;
         }
-
     }
-    public bool RemovePeople() { //connected through events
+
+    public bool RemovePeople() { //acessed through button panel
         if (people <= 0) return false;
-        if (people >= peopleNeeded) isActive.Invoke(false);
+
+        //checks if still active
+        if (people >= peopleNeeded) { 
+            isActive.Invoke(false);
+            towerDeactiveSound?.Play();
+            towerSprite.color = colorTint;
+        }
 
         people--;
         RemovedPeople.Invoke();
         Castle.self.personGoesIn();
-        //PeopleRemovedSound.Play();
-        towerSprite.color = colorTint;
 
         if (peopleSprites[people]) peopleSprites[people].enabled = false;
 
         return true;
     }
 
-    public void Sell() { //connected through events
-        //MoneyManagerScript.self.changeMoney(sellPrice);
+    public void Sell() { //acessed through button panel
         MoneyManagerScript.self.ChangeMoney(sellPrice);
         while (RemovePeople()) ;
-        //VFX SFX
         Destroy(gameObject);
     }
 
-    /* what gets put on towers
-     GetComponent<BaseTower>().isActive.AddListener(IsActive); 
-    
-     void IsActive(bool isTrue){
-        active = isTrue;
-    }
-     */
+
+
+    //tower selected stuff
     [SerializeField]TowerSelectable towerSelectable;
     public void Start()
     {
@@ -98,12 +101,6 @@ public class BaseTower : MonoBehaviour
     private void OnDestroy()
     {
         Destroyed.Invoke(this);
-    }
-
-    public Vector3 GetClosestPointOnCollider(Collider2D neighborhoodCollider)
-    {
-        Vector3 closestPointOnCollider = neighborhoodCollider.GetComponent<Collider2D>().ClosestPoint(transform.position);
-        return closestPointOnCollider;
     }
 }
 public enum TowerType { Attack, Happy }

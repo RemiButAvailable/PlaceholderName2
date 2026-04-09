@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 896222090170028303}
   - component: {fileID: 4344629477790636432}
   m_Layer: 0
-  m_Name: PeasentArcherTemp_0
+  m_Name: Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

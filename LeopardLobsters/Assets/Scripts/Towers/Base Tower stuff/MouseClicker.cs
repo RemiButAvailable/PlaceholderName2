@@ -8,6 +8,11 @@ public class MouseClicker : MonoBehaviour
 
     private void Update()
     {
+        //Tower highlight and tool tips stuff
+
+
+
+        // Tower selection stuff
         if (Input.GetMouseButtonDown(0)) {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 1f, LayerMask.GetMask("TowerSelection", "Button")); //change later to be editable in inspector or somehting

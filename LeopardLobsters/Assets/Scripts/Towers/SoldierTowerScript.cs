@@ -14,7 +14,7 @@ public class SoldierTowerScript : MonoBehaviour
     public List<GameObject> soldiers;
     List<Vector3> soldierPositions;
     public List<GameObject> enemiesInZone;
-    BaseTower baseTower;
+    [SerializeField]BaseTower baseTower;
     public int soldierSpawnPosDistFromClosestPointOnPath;
 
 
@@ -23,16 +23,12 @@ public class SoldierTowerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        baseTower?.AddedPeople.AddListener(AddSoldier);
+        baseTower?.RemovedPeople.AddListener(RemoveSoldierViaButton);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddSoldier()
     {
-    }
-    public void AddSoldier(GameObject soldier)
-    {
-        Debug.Log("added");
         GameObject spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
         spawnedSoldier.GetComponent<SoldierScript>().Tower = this.gameObject;
         soldiers.Add(spawnedSoldier);
@@ -47,7 +43,7 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
-    public void RemoveSoldierViaButton() //connected through inspector
+    public void RemoveSoldierViaButton()
     {
         GameObject soldier = soldiers[0];
         for (int i = 0; i < soldierPositions.Count; i++)
@@ -66,7 +62,7 @@ public class SoldierTowerScript : MonoBehaviour
                 Destroy(soldier);
 
                 //(Dante Made this)
-                RemoveSoldierSound.Play(); //make this a remove soldier sound
+                RemoveSoldierSound?.Play(); //make this a remove soldier sound
                 break;
             }
         }
@@ -82,7 +78,7 @@ public class SoldierTowerScript : MonoBehaviour
                 soldiers.Remove(soldier);
                 Destroy (soldier);
                 GetComponent<BaseTower>().people -= 1;
-                SoldierDeathSound.Play();
+                SoldierDeathSound?.Play();
                 //play death sound?
                 break;
             }

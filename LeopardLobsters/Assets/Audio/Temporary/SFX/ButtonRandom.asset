@@ -10,16 +10,6 @@ AudioContainerElement:
   m_AudioClip: {fileID: 8300000, guid: 2d4ea772423858643ace167674867f68, type: 3}
   m_Volume: 0
   m_Enabled: 1
---- !u!1233149941 &3981757793942799984
-AudioContainerElement:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ButtonPressSelect1_{3981757793942799984}
-  m_AudioClip: {fileID: 8300000, guid: a4d9da15613dd6e478becd0b29a00ea3, type: 3}
-  m_Volume: 0
-  m_Enabled: 1
 --- !u!1307931743 &6418180475301049370
 AudioRandomContainer:
   m_ObjectHideFlags: 0
@@ -36,8 +26,6 @@ AudioRandomContainer:
   m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
   m_LoopCountRandomizationRange: {x: 0, y: 0}
   m_Elements:
-  - {fileID: 8170295968722558432}
-  - {fileID: 3981757793942799984}
   - {fileID: 330978703063232830}
   m_AvoidRepeatingLast: 0
   m_PlaybackMode: 2
@@ -48,13 +36,3 @@ AudioRandomContainer:
   m_PitchRandomizationEnabled: 1
   m_AutomaticTriggerTimeRandomizationEnabled: 0
   m_LoopCountRandomizationEnabled: 0
---- !u!1233149941 &8170295968722558432
-AudioContainerElement:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ButtonPressSelect1-1_{8170295968722558432}
-  m_AudioClip: {fileID: 8300000, guid: 772c18a8e7357534f89a586f803486f1, type: 3}
-  m_Volume: 0
-  m_Enabled: 1

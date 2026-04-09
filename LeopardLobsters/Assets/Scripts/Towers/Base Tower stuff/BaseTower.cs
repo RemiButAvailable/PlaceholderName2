@@ -107,6 +107,12 @@ public class BaseTower : MonoBehaviour
         areaOfEffect.enabled = false;
     }
 
+    public void Placed() {
+        towerSprite.sortingLayerID = SortingLayer.NameToID("Default");
+        towerSprite.sortingOrder = 0;
+        OnPlace.Invoke();
+    }
+
     private void OnDestroy()
     {
         Destroyed.Invoke(this);

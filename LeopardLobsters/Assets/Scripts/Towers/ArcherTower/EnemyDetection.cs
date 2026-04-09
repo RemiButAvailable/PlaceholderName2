@@ -30,7 +30,7 @@ public class EnemyDetection : MonoBehaviour
         {
             archerTowerScript.queue.Remove(other.gameObject);
             other.gameObject.GetComponent<KnightScript>().inhabitedTowerZone = null;
-            //GetComponent<SpriteRenderer>().color = Color.red;
+            //GetComponent<SpriteRenderer>().color = Color.red;q
         }
     }
 }

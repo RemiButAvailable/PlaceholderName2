@@ -17,9 +17,10 @@ public class KnightScript : MonoBehaviour
     public int money;
     [Range(0, 12)]
     public int health;
+    [Range(0, 12)]
+    public float detectionObjDistFromKnight;
 
     //vals that are public but not cause they're meant to be edited in the inspector
-
     [HideInInspector]
     public int index;
     [HideInInspector]
@@ -32,17 +33,22 @@ public class KnightScript : MonoBehaviour
     public Vector3 nextWayPoint;
     [HideInInspector]
     public float speed;
+    [HideInInspector]
+    public float order;
+    [HideInInspector]
+    public ArcherTowerScript inhabitedTowerZone;
 
     //public objects and lists
     [HideInInspector]
     public LineRenderer lineRenderer;
     [HideInInspector]
     public Vector3[] waypoints;
+    public GameObject detectionObj;
 
     //Manager Scripts
     WaveCode waveCode => WaveCode.self;
     MoneyManagerScript moneyManagerScript => MoneyManagerScript.self;
-    Happiness_ManagerScript happinessManagerScript=>Happiness_ManagerScript.self;
+    Happiness_ManagerScript happinessManagerScript => Happiness_ManagerScript.self;
 
     //(Made by Dante Jones)
     //The audio for enemy getting hurt
@@ -78,8 +84,8 @@ public class KnightScript : MonoBehaviour
             {
                 index++;
             }
+            detectionObj.transform.position = transform.position + direction * detectionObjDistFromKnight;
         }
-       
     }
     public void TakeDamage(int dmg) {
         health -= dmg;
@@ -97,6 +103,9 @@ public class KnightScript : MonoBehaviour
             AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
             aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
 
+            if(inhabitedTowerZone != null)
+            inhabitedTowerZone.queue.Remove(this.gameObject);
+
             Destroy(gameObject);
         }
     }
@@ -105,5 +114,18 @@ public class KnightScript : MonoBehaviour
         waveCode.EnemyNum -= 1;
 
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "detectionLine")
+        {
+            order--;
+            collision.gameObject.GetComponentInParent<KnightScript>().order++;
+            if(inhabitedTowerZone != null && inhabitedTowerZone.queue[0] == collision.gameObject)
+            {
+                inhabitedTowerZone.ChangeTarget(collision.gameObject);
+            }
+        }
     }
 }

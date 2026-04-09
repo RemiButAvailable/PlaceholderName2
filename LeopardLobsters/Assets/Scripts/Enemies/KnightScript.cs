@@ -18,7 +18,7 @@ public class KnightScript : MonoBehaviour
     [Range(0, 12)]
     public int health;
     [Range(0, 12)]
-    public float detectionObjDistFromKnight;
+    public float detectionObjDistFromKnight;//the distance from the knight of the line that checks if an enemy surpassed this enemy
 
     //vals that are public but not cause they're meant to be edited in the inspector
     [HideInInspector]
@@ -85,6 +85,8 @@ public class KnightScript : MonoBehaviour
                 index++;
             }
             detectionObj.transform.position = transform.position + direction * detectionObjDistFromKnight;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            detectionObj.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
     public void TakeDamage(int dmg) {
@@ -120,6 +122,7 @@ public class KnightScript : MonoBehaviour
     {
         if(collision.tag == "detectionLine")
         {
+            Debug.Log("ah");
             order--;
             collision.gameObject.GetComponentInParent<KnightScript>().order++;
             if(inhabitedTowerZone != null && inhabitedTowerZone.queue[0] == collision.gameObject)

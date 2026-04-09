@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: ddf199f7eca59fa43b9b977bbe08a963
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7283027355728672271
+    second: Soldier_Attack_Ani_0
+  - first:
+      213: 3013830313203619390
+    second: Soldier_Attack_Ani_1
+  - first:
+      213: -2645060765966501520
+    second: Soldier_Attack_Ani_2
+  - first:
+      213: -7514864702494779928
+    second: Soldier_Attack_Ani_3
+  - first:
+      213: -5059717742797264430
+    second: Soldier_Attack_Ani_4
+  - first:
+      213: 4189555569713737942
+    second: Soldier_Attack_Ani_5
+  - first:
+      213: 6350378870149484091
+    second: Soldier_Attack_Ani_6
+  - first:
+      213: 84780100722366047
+    second: Soldier_Attack_Ani_7
+  - first:
+      213: 8312269589546730996
+    second: Soldier_Attack_Ani_8
+  - first:
+      213: 94662101378489154
+    second: Soldier_Attack_Ani_9
+  - first:
+      213: -696401081081052804
+    second: Soldier_Attack_Ani_10
+  - first:
+      213: 2149621225378792594
+    second: Soldier_Attack_Ani_11
+  - first:
+      213: 3316828016003450493
+    second: Soldier_Attack_Ani_12
+  - first:
+      213: -8513366784262950911
+    second: Soldier_Attack_Ani_13
+  - first:
+      213: 751008633145537629
+    second: Soldier_Attack_Ani_14
+  - first:
+      213: -2758752007918383891
+    second: Soldier_Attack_Ani_15
+  - first:
+      213: 7531846189739485106
+    second: Soldier_Attack_Ani_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1427
+        width: 405
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f90754053d7dea90800000000000000
+      internalID: -7283027355728672271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_1
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1427
+        width: 405
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e365ecfa3b643d920800000000000000
+      internalID: 3013830313203619390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_2
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1427
+        width: 370
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0797e3b5f3bda4bd0800000000000000
+      internalID: -2645060765966501520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_3
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 1427
+        width: 375
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e55da85e56d5b790800000000000000
+      internalID: -7514864702494779928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_4
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 1427
+        width: 368
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9e3dc358548c9b0800000000000000
+      internalID: -5059717742797264430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_5
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 951
+        width: 355
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0fb8be79a442a30800000000000000
+      internalID: 4189555569713737942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_6
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 951
+        width: 406
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e0868cfe3112850800000000000000
+      internalID: 6350378870149484091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_7
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 951
+        width: 406
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56149b6d033d2100800000000000000
+      internalID: 84780100722366047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_8
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 951
+        width: 470
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f50732c62d1b5370800000000000000
+      internalID: 8312269589546730996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_9
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 951
+        width: 470
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b5b5efdae405100800000000000000
+      internalID: 94662101378489154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 475
+        width: 468
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7147fc08e2e556f0800000000000000
+      internalID: -696401081081052804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_11
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 475
+        width: 468
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294c7548d1df4dd10800000000000000
+      internalID: 2149621225378792594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_12
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 475
+        width: 374
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7603fad18db70e20800000000000000
+      internalID: 3316828016003450493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_13
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 475
+        width: 369
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100b565f3027ad980800000000000000
+      internalID: -8513366784262950911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_14
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 475
+        width: 389
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5434e17f5e1c6a00800000000000000
+      internalID: 751008633145537629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_15
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 389
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec01a05aa1f6b9d0800000000000000
+      internalID: -2758752007918383891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Attack_Ani_16
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 405
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b72d42443e768860800000000000000
+      internalID: 7531846189739485106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Soldier_Attack_Ani_0: -7283027355728672271
+      Soldier_Attack_Ani_1: 3013830313203619390
+      Soldier_Attack_Ani_10: -696401081081052804
+      Soldier_Attack_Ani_11: 2149621225378792594
+      Soldier_Attack_Ani_12: 3316828016003450493
+      Soldier_Attack_Ani_13: -8513366784262950911
+      Soldier_Attack_Ani_14: 751008633145537629
+      Soldier_Attack_Ani_15: -2758752007918383891
+      Soldier_Attack_Ani_16: 7531846189739485106
+      Soldier_Attack_Ani_2: -2645060765966501520
+      Soldier_Attack_Ani_3: -7514864702494779928
+      Soldier_Attack_Ani_4: -5059717742797264430
+      Soldier_Attack_Ani_5: 4189555569713737942
+      Soldier_Attack_Ani_6: 6350378870149484091
+      Soldier_Attack_Ani_7: 84780100722366047
+      Soldier_Attack_Ani_8: 8312269589546730996
+      Soldier_Attack_Ani_9: 94662101378489154
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

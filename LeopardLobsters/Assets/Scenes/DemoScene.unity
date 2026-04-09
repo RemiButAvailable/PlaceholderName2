@@ -5732,7 +5732,7 @@ MonoBehaviour:
   WaveStart: 1
   endedWave: 0
   TotalWealth: 1
-  bossEnemy: {fileID: 0}
+  bossEnemy: {fileID: 620954286898344232, guid: b24fef5595677e046b3889e181ee897a, type: 3}
   percentOfWaveKilledBar: {fileID: 0}
   EnemySpawnPositions:
   - {x: 3.27, y: -5.52, z: 0}
@@ -5751,7 +5751,7 @@ MonoBehaviour:
   buildMusic: {fileID: 219736196}
   battleMusic: {fileID: 698470490}
   waveText: {fileID: 1483426438}
-  buildPhaseText: {fileID: 0}
+  buildPhaseText: {fileID: 1483426438}
   enemyClumpSizeRandomness: 6
   timeBetweenEnemySpawnsRandomness: 6
   enemySpawnPosOffsetRandomness: 0.25

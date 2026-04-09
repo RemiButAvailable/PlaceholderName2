@@ -39,6 +39,8 @@ public class ArcherTowerScript : MonoBehaviour
                 queue.Remove(queue[0]);
             }
         }*/
+        /*if (queue.Count > 0)
+        queue[0].GetComponent<SpriteRenderer>().color = Color.green;*/
     }
     public IEnumerator ShootArrows()
     {

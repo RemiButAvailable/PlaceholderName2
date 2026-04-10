@@ -126,7 +126,6 @@ public class KnightScript : MonoBehaviour
     {
         if(collision.tag == "detectionLine")
         {
-            Debug.Log("ah");
             order--;
             collision.gameObject.GetComponentInParent<KnightScript>().order++;
             if(inhabitedTowerZone != null && inhabitedTowerZone.queue[0] == collision.gameObject)

@@ -70,6 +70,7 @@ public class Castle : MonoBehaviour
         maxPeoplCostButtonText.text = peopleMaxCost.ToString();
         textUpdatePTotal();
         textUpdatePIn();
+        progressBar.fillAmount = timer;
 
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
@@ -103,6 +104,7 @@ public class Castle : MonoBehaviour
             {
                 towerDeactive.Play();
                 castleSprite.color = tintColor;
+                progressBar.color = tintColor;
             }
 
             return true;
@@ -126,6 +128,7 @@ public class Castle : MonoBehaviour
         {
             towerActive.Play();
             castleSprite.color = Color.white;
+            progressBar.color = Color.white;
         }
     }
 

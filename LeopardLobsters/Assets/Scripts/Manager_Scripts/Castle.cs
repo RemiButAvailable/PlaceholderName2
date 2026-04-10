@@ -89,6 +89,8 @@ public class Castle : MonoBehaviour
     // Everytime a person gets put out to the field, remove from the castle if available
     public bool personGoesOut() {
         if (peopleAtCastle > 0) {
+            bool wasActive = peopleAtCastle >= minPeopleNeeded;
+
 
             peopleAtCastle--;
             textUpdatePIn();
@@ -100,7 +102,7 @@ public class Castle : MonoBehaviour
             }
 
             //checking active or not
-            if (peopleAtCastle < minPeopleNeeded)
+            if (peopleAtCastle < minPeopleNeeded && wasActive)
             {
                 towerDeactive.Play();
                 castleSprite.color = tintColor;

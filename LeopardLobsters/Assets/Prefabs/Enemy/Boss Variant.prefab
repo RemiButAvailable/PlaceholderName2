@@ -154,6 +154,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5934918693651144803, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d09740ed25562524992bb2844576628d, type: 3}
+    - target: {fileID: 5934918693651144803, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
       propertyPath: defaultSpeed
       value: 0.2
       objectReference: {fileID: 0}

@@ -12,8 +12,6 @@ public class BaseTower : MonoBehaviour
 
     public int towerCost = 10;
     public int sellPrice = 5;
-    
-    public String toolTip;
 
     // for active and deactive feedback
     [SerializeField] SpriteRenderer areaOfEffect;

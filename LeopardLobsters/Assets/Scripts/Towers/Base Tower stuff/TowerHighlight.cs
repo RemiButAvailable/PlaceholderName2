@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class TowerHighlight : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    //highlight
+    [SerializeField] GameObject gamehighlightingSprite;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void Highlight() { gamehighlightingSprite.SetActive(true); }
+    public void DeHighlight() { gamehighlightingSprite.SetActive(false); }
 }

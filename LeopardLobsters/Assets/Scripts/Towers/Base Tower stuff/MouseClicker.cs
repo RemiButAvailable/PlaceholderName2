@@ -7,19 +7,30 @@ public class MouseClicker : MonoBehaviour
     //[SerializeField] Animation buttonPanelAnimation;
     TowerSelectable towerSelected;
     [SerializeField]TextMeshProUGUI toolTips;
+    TowerHighlight towerHighlighed;
 
     private void Update()
     {
         //Tower highlight and tool tips stuff
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 1f, LayerMask.GetMask("TowerSelection", "Button")); //change later to be editable in inspector or somehting
-        
-        if (hit.collider) {
-            TowerToolTip tips = hit.collider.GetComponent<TowerToolTip>();
-            if (tips) {}
 
-            TowerHighlight highlight = hit.collider.GetComponent<TowerHighlight>();
-            if (highlight) {}
+        if (hit.collider)
+        {
+            TowerToolTip tips = hit.collider.GetComponent<TowerToolTip>();
+            if (tips)
+            {
+                toolTips.text = tips.toolTip;
+            }
+
+            //highlights stuff when hovering over it
+            TowerHighlight highlighted = hit.collider.GetComponent<TowerHighlight>();
+            if (highlighted != towerHighlighed) { towerHighlighed?.DeHighlight(); }
+            towerHighlighed = highlighted;
+            towerHighlighed?.Highlight();
+        }
+        else {
+            towerHighlighed?.DeHighlight();
         }
 
         // Tower selection stuff

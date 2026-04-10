@@ -25,7 +25,7 @@ public class SoldierScript : MonoBehaviour
     public GameObject Tower;
     BaseTower baseTowerScript;
 
-    //[SerializeField] Animator anim;
+    [SerializeField] Animator anim;
 
     public bool isActive; //is the tower active    
 
@@ -109,7 +109,7 @@ public class SoldierScript : MonoBehaviour
             if(fighting == true)
             {
                 //attack animation?
-                //anim.Play("Attack");
+                anim.Play("Attack");
                 //play enemy damage sound
                 target.GetComponent<KnightScript>().health -= 1;
                 yield return new WaitForSeconds(1);

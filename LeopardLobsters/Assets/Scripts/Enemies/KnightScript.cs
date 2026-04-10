@@ -53,7 +53,9 @@ public class KnightScript : MonoBehaviour
     //(Made by Dante Jones)
     //The audio for enemy getting hurt
     [SerializeField] AudioSource hurtSound;
+    [SerializeField] AudioSource ArrowHitSound;
     [SerializeField] AudioResource deathSound;
+    
     [SerializeField] AudioPlayer aPlayerPrefab;
     [SerializeField] float deathSoundVolume = .5f;
 
@@ -92,6 +94,7 @@ public class KnightScript : MonoBehaviour
     public void TakeDamage(int dmg) {
         health -= dmg;
         hurtSound.Play();
+        ArrowHitSound.Play();
 
         //death
         if (health <= 0)
@@ -104,8 +107,9 @@ public class KnightScript : MonoBehaviour
             //sounds
             AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
             aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
+           
 
-            if(inhabitedTowerZone != null)
+            if (inhabitedTowerZone != null)
             inhabitedTowerZone.queue.Remove(this.gameObject);
 
             Destroy(gameObject);

@@ -40,7 +40,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     public LineRenderer lineRenderer;
     [HideInInspector]
     public Vector3[] waypoints;
-    public GameObject detectionObj;
+    //public GameObject detectionObj;
     [HideInInspector]
     public UnityEvent<KnightScript> onDeath;
 

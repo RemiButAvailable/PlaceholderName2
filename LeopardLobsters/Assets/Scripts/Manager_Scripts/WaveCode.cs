@@ -52,6 +52,7 @@ public class WaveCode : MonoBehaviour
 
     static public WaveCode self;
     public UnityEvent waveStarted;
+    public UnityEvent waveEnded;
 
     //(This is made by Dante Jones)
     //Diffrent music for diffrent parts of the game

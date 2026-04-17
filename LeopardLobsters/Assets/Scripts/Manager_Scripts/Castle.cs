@@ -6,17 +6,6 @@ using UnityEngine.UI;
 public class Castle : MonoBehaviour
 {
     public int peopleAtCastle = 2; //starting amount of people
-    [SerializeField] int peopleMax = 6;
-    [SerializeField] int peopleMaxCost = 30;
-    [SerializeField] float peopleMaxCostMult = 2;
-
-    [SerializeField] TowerSelectable towerSelectable;
-    [SerializeField] GameObject buttonPanel;
-    [SerializeField] TextMeshPro maxPeoplCostButtonText;
-
-    [SerializeField] SpriteRenderer castleSprite;
-    [SerializeField] Color tintColor;
-
     int peopleTotal;
 
     [SerializeField] int peopleMax = 6; //max amount of people can have
@@ -39,7 +28,7 @@ public class Castle : MonoBehaviour
     [Header("text and objects for castle")]
     [SerializeField] TextMeshProUGUI textPeopleTotal;
     [SerializeField] TextMeshProUGUI textPeopleIn;
-
+    [SerializeField] TowerSelectable towerSelectable;
 
     [Space]
     [Header("button pannel stuff")]
@@ -127,14 +116,6 @@ public class Castle : MonoBehaviour
     //people making stuff
     bool inWave => WaveCode.self.WaveStart;
     float timer = 0;
-
-    public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
-    public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
-    public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
-
-    [SerializeField] Image progressBar; //instantiate in inspector
-    [SerializeField] Image barParent;
-    [SerializeField] GameObject barPosition;
 
     private void FixedUpdate()
     {

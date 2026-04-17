@@ -34,20 +34,6 @@ public class ArcherTowerScript : MonoBehaviour
         GetComponent<BaseTower>().isActive.AddListener(IsActive);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (enemyInZone)
-        {
-            GameObject targetedEnemy = queue[0];
-
-            if (targetedEnemy.GetComponent<KnightScript>().health <= 0)
-            {
-                queue.Remove(targetedEnemy);
-            }
-        }
-    }
-
     public void EnemyEntered(KnightScript enemy) {
         if (queue.Contains(enemy)) return;
         queue.Add(enemy);

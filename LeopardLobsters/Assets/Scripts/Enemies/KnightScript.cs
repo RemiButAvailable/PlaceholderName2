@@ -90,9 +90,9 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
             {
                 index++;
             }
-            detectionObj.transform.position = transform.position + direction * detectionObjDistFromKnight;
+            //detectionObj.transform.position = transform.position + direction * detectionObjDistFromKnight;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            detectionObj.transform.rotation = Quaternion.Euler(0, 0, angle);
+            //detectionObj.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
     public void TakeDamage(int dmg) {
@@ -112,11 +112,6 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
             AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
             aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
            
-
-            if (inhabitedTowerZone != null)
-            inhabitedTowerZone.queue.Remove(this.gameObject);
-
-
             //if (inhabitedTowerZone != null)
             //inhabitedTowerZone.queue.Remove(this.gameObject);
 

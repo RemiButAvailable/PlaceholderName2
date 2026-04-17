@@ -16160,10 +16160,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 765353319}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
-      propertyPath: peopleMax
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 71087717}
@@ -16186,7 +16182,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4821838287946172068, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e67e966444adaad4da4357eec0712194, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

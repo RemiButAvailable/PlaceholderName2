@@ -377,7 +377,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   towerSprite: {fileID: 6938744550829511025}
-  colorTint: {r: 0.3823781, g: 0.41112337, b: 0.4339623, a: 1}
+  inactiveTint: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   towerActiveSound: {fileID: 5353452378903438980}
   towerDeactiveSound: {fileID: 5218354910279037193}
   isActive:
@@ -450,6 +450,7 @@ MonoBehaviour:
   towerCollider: {fileID: 4520742874935805274}
   towerClickCollider: {fileID: 2629366124167305250}
   baseTower: {fileID: 2577637345428575186}
+  denyTint: {r: 0.9245283, g: 0.44918123, b: 0.44918123, a: 1}
   PlaceSound: {fileID: 6066638028545896687}
   PlaceDenySound: {fileID: 8300000, guid: 4f553f0124c65e347bf76d303224493f, type: 3}
   aAudioPrefab: {fileID: 8468978810788666128, guid: aabb5ee098e74ea47914a9b48aa4fa64, type: 3}

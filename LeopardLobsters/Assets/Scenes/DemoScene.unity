@@ -5982,15 +5982,15 @@ MonoBehaviour:
   battleMusic: {fileID: 698470490}
   waveText: {fileID: 1483426438}
   buildPhaseText: {fileID: 1483426438}
-  enemyClumpSizeRandomness: 6
+  enemyClumpSizeRandomness: 3
   timeBetweenEnemySpawnsRandomness: 6
-  enemySpawnPosOffsetRandomness: 0.25
+  enemySpawnPosOffsetRandomness: 0.33
   cooldownWithinClump: 0.497
   probOfFastEnemyDeterminer: 3
-  EnemyMax: 2
+  EnemyMax: 1
   cooldown: 2
   phantomEnemyNumBeforeAltEnemies: 4
-  enemyMaxMultiplier: 2
+  enemyMaxMultiplier: 1.5
   pointAtWhichBossSpawns: 12
 --- !u!1 &626876290
 GameObject:
@@ -7660,7 +7660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91556e0fe0f32d74b9ba45e3c7d005d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyNum: 100
+  moneyNum: 10
   products:
   - {fileID: 0}
   - {fileID: 0}
@@ -9981,7 +9981,7 @@ Transform:
   m_GameObject: {fileID: 1191855090}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.3058, y: -0.2898, z: 0.06208199}
+  m_LocalPosition: {x: -9.3058, y: -0.32, z: 0.06208199}
   m_LocalScale: {x: 72.6364, y: 50.203644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16159,6 +16159,10 @@ PrefabInstance:
       propertyPath: barParent
       value: 
       objectReference: {fileID: 765353319}
+    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: peopleMax
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: progressBar
       value: 

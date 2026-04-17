@@ -1339,32 +1339,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a66a2f4b763444783c402615346f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peopleAtCastle: 4
+  peopleAtCastle: 2
   peopleMax: 6
   peopleMaxCost: 30
   peopleMaxCostMult: 2
   moneyPerPerson: 5
-  minPeopleNeeded: 2
-  maxPeopleDecrease: 10
+  minPeopleNeeded: 1
+  maxPeopleDecrease: 4
+  timerMax: 20
   percentPerPerson: 1.05
   progressBar: {fileID: 0}
   barParent: {fileID: 0}
   barPosition: {fileID: 1212003769686832157}
   textPeopleTotal: {fileID: 0}
   textPeopleIn: {fileID: 0}
-  towerSelectable: {fileID: 1621057731181503075}
-  maxPeoplCostButtonText: {fileID: 5512004340365354575}
-  buttonPanel: {fileID: 8872542303261452575}
-  castleSprite: {fileID: 6929179903699332378}
-  peopleSprites:
-  - {fileID: 5413661563508370397}
-  - {fileID: 4763478610847920662}
-  tintColor: {r: 0.49584192, g: 0.52023864, b: 0.5396226, a: 1}
-  towerActive: {fileID: 3884336706706579804}
-  towerDeactive: {fileID: 183126798976929792}
   castleHitSound: {fileID: 2933898425939903883}
   PeopleGainSound: {fileID: 8909137761355052742}
-  timerMax: 10
 --- !u!82 &2933898425939903883
 AudioSource:
   m_ObjectHideFlags: 0

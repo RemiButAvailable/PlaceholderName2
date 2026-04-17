@@ -84,7 +84,7 @@ public class WaveCode : MonoBehaviour
     [Range(0, 12)]
     public int phantomEnemyNumBeforeAltEnemies;//the amount of normal enemies that can spawn before there's a chance of fast ones and bosses
     [Range(0, 12)]
-    public int enemyMaxMultiplier;
+    public float enemyMaxMultiplier;
     [Range(0, 50)]
     public int pointAtWhichBossSpawns;
 
@@ -182,14 +182,17 @@ public class WaveCode : MonoBehaviour
     {
         if(WaveStart == false)
         {
+            WaveStart = true;
+            waveStarted.Invoke();
+
             WaveNum++;
-            EnemyMax *= enemyMaxMultiplier;
+            EnemyMax = (int)Mathf.Round(EnemyMax*enemyMaxMultiplier);
+            PhantomEnemyNum = 0;
 
             int RandomNum = Random.Range(0, 2);
             EnemySpawnStart = EnemySpawnPositions[RandomNum];
             StartingEnemyPath = enemyPaths[RandomNum];
 
-            WaveStart = true;
             waveText.text = "Wave Phase: " + WaveNum;
             
             //Turns on battle phase music stops building phase music
@@ -202,8 +205,12 @@ public class WaveCode : MonoBehaviour
     public void EndWave()
     {
         endedWave = true;
+        waveEnded.Invoke();
+
         WaveStart = false;
         enemiesStartedSpawning = false;
+
+
         //Turns on building phase music stops battle phase music
         buildMusic.Play();
         battleMusic.Stop();

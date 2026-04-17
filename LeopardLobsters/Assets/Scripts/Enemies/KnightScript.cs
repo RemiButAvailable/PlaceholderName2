@@ -2,11 +2,13 @@
  * Remi de Plater
  * Knight enemy functionality
  */
-using UnityEngine;
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Events;
 
-public class KnightScript : MonoBehaviour
+public class KnightScript : MonoBehaviour, IComparable<KnightScript>
 {
     //vals that can be edited in the inspector
     [Range(0, 12)]
@@ -43,7 +45,9 @@ public class KnightScript : MonoBehaviour
     public LineRenderer lineRenderer;
     [HideInInspector]
     public Vector3[] waypoints;
-    public GameObject detectionObj;
+    //public GameObject detectionObj;
+    [HideInInspector]
+    public UnityEvent<KnightScript> onDeath;
 
     //Manager Scripts
     WaveCode waveCode => WaveCode.self;
@@ -112,6 +116,10 @@ public class KnightScript : MonoBehaviour
             if (inhabitedTowerZone != null)
             inhabitedTowerZone.queue.Remove(this.gameObject);
 
+
+            //if (inhabitedTowerZone != null)
+            //inhabitedTowerZone.queue.Remove(this.gameObject);
+
             Destroy(gameObject);
         }
     }
@@ -122,16 +130,31 @@ public class KnightScript : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnDestroy()
+    {
+        onDeath.Invoke(this);
+    }
+
+    //albert test code
+    [SerializeField] float minLRNodeDistance;
+    [SerializeField] float timeCheckPass;
+    public int compareIndex => (lineRenderer.positionCount - index + (int)(speed * timeCheckPass / minLRNodeDistance));
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "detectionLine")
-        {
-            order--;
-            collision.gameObject.GetComponentInParent<KnightScript>().order++;
-            if(inhabitedTowerZone != null && inhabitedTowerZone.queue[0] == collision.gameObject)
-            {
-                inhabitedTowerZone.ChangeTarget(collision.gameObject);
-            }
-        }
+        //if(collision.tag == "detectionLine")
+        //{
+        //    order--;
+        //    collision.gameObject.GetComponentInParent<KnightScript>().order++;
+        //    if(inhabitedTowerZone != null && inhabitedTowerZone.queue[0] == collision.gameObject)
+        //    {
+        //        inhabitedTowerZone.ChangeTarget(collision.gameObject);
+        //    }
+        //}
+    }
+
+    public int CompareTo(KnightScript other) {
+        if(other.compareIndex < compareIndex) return 1;
+        if (other.compareIndex > compareIndex) return -1;
+        return 0;
     }
 }

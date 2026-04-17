@@ -42,7 +42,6 @@ public class Neighborhood : MonoBehaviour
     {
         float happinessChange = 0;
 
-        tower.Destroyed.AddListener(towerLeft);
         towers.Add(tower);
 
         happinessChange += happinessPerTower;

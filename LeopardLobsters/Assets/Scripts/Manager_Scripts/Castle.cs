@@ -22,28 +22,27 @@ public class Castle : MonoBehaviour
     [Space]
     public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
     public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
+    public int timerMax = 10; // time needed if minPeople needed is in castle
     public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
     
-    [Space][Space]
+    [Space]
     [Header("People add progress bar")]
     [SerializeField] Image progressBar; //instantiate in inspector
     [SerializeField] Image barParent;
     [SerializeField] GameObject barPosition;
 
-    [Space][Space]
+    [Space]
     [Header("text and objects for castle")]
     [SerializeField] TextMeshProUGUI textPeopleTotal;
     [SerializeField] TextMeshProUGUI textPeopleIn;
-    
     [SerializeField] TowerSelectable towerSelectable;
 
-
-    [Space][Space]
+    [Space]
     [Header("button pannel stuff")]
     [SerializeField] TextMeshPro maxPeoplCostButtonText;
     [SerializeField] GameObject buttonPanel;
 
-    [Space][Space]
+    [Space]
     [Header("tower active stuff")]
     [SerializeField] SpriteRenderer castleSprite;
     [SerializeField] SpriteRenderer[] peopleSprites;
@@ -51,7 +50,7 @@ public class Castle : MonoBehaviour
     [SerializeField] AudioSource towerActive;
     [SerializeField] AudioSource towerDeactive;
 
-    [Space][Space]
+    [Space]
     [Header("CastleHit sounds")]
     [SerializeField] AudioSource castleHitSound;
     [SerializeField] AudioSource PeopleGainSound;
@@ -66,14 +65,17 @@ public class Castle : MonoBehaviour
     }
     private void Start()
     {
-        // Have the text be the same as the number
+        //Setting UI
         maxPeoplCostButtonText.text = peopleMaxCost.ToString();
         textUpdatePTotal();
         textUpdatePIn();
         progressBar.fillAmount = timer;
 
+        //connecting events
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
+
+        WaveCode.self.waveEnded.AddListener(endOfWave);
     }
 
     void TowerSelected() { buttonPanel?.SetActive(true); }
@@ -82,15 +84,13 @@ public class Castle : MonoBehaviour
 
     //adds money based on population
     public void endOfWave() {
-        MoneyManagerScript.self.ChangeMoney (peopleAtCastle * moneyPerPerson);
-
-        //DO: add money sfx vfx
+        MoneyManagerScript.self.ChangeMoney (peopleTotal * moneyPerPerson);
+        //DO: add money sfx
     }
     // Everytime a person gets put out to the field, remove from the castle if available
     public bool personGoesOut() {
         if (peopleAtCastle > 0) {
             bool wasActive = peopleAtCastle >= minPeopleNeeded;
-
 
             peopleAtCastle--;
             textUpdatePIn();
@@ -116,6 +116,8 @@ public class Castle : MonoBehaviour
     }
     // When a person gets removed from the field, add to the castle
     public void personGoesIn() {
+        bool wasInactive = peopleAtCastle < minPeopleNeeded;
+
         //enabling people sprites
         if (peopleAtCastle < peopleSprites.Length)
         {
@@ -126,7 +128,7 @@ public class Castle : MonoBehaviour
         textUpdatePIn();
 
         //checking active
-        if (peopleAtCastle >= minPeopleNeeded)
+        if (peopleAtCastle >= minPeopleNeeded && wasInactive)
         {
             towerActive.Play();
             castleSprite.color = Color.white;
@@ -138,7 +140,6 @@ public class Castle : MonoBehaviour
     //people making stuff
     bool inWave => WaveCode.self.WaveStart;
     float timer = 0;
-    public int timerMax = 10;
 
     private void FixedUpdate()
     {

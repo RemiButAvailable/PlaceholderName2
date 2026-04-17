@@ -35,11 +35,9 @@ public class ArcherTowerScript : MonoBehaviour
     public void EnemyEntered(KnightScript enemy) {
         if (queue.Contains(enemy)) return;
         queue.Add(enemy);
-        printQueue();
     }
     public void EnemyExited(KnightScript enemy) {
         queue.Remove(enemy);
-        printQueue();
     }
 
 

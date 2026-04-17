@@ -18,13 +18,45 @@ public class Castle : MonoBehaviour
     [SerializeField] Color tintColor;
 
     int peopleTotal;
-    [SerializeField] int moneyPerPerson = 5;
+
+    [SerializeField] int peopleMax = 6; //max amount of people can have
+    [SerializeField] int peopleMaxCost = 30; //cost to add to people max
+    [SerializeField] float peopleMaxCostMult = 2; //cost multiplier each time bought
+    [SerializeField] int moneyPerPerson = 5; //money gained after a wave
+    [Space]
+    public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
+    public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
+    public int timerMax = 10; // time needed if minPeople needed is in castle
+    public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
+    
+    [Space]
+    [Header("People add progress bar")]
+    [SerializeField] Image progressBar; //instantiate in inspector
+    [SerializeField] Image barParent;
+    [SerializeField] GameObject barPosition;
+
+    [Space]
+    [Header("text and objects for castle")]
     [SerializeField] TextMeshProUGUI textPeopleTotal;
     [SerializeField] TextMeshProUGUI textPeopleIn;
 
-    //(Made by Dante Jones)
-    //The audio for castle being hit
-    public AudioSource castleHitSound;
+
+    [Space]
+    [Header("button pannel stuff")]
+    [SerializeField] TextMeshPro maxPeoplCostButtonText;
+    [SerializeField] GameObject buttonPanel;
+
+    [Space]
+    [Header("tower active stuff")]
+    [SerializeField] SpriteRenderer castleSprite;
+    [SerializeField] SpriteRenderer[] peopleSprites;
+    [SerializeField] Color tintColor;
+    [SerializeField] AudioSource towerActive;
+    [SerializeField] AudioSource towerDeactive;
+
+    [Space]
+    [Header("CastleHit sounds")]
+    [SerializeField] AudioSource castleHitSound;
     [SerializeField] AudioSource PeopleGainSound;
 
     public static Castle self;
@@ -36,12 +68,16 @@ public class Castle : MonoBehaviour
     }
     private void Start()
     {
+        //Setting UI
         maxPeoplCostButtonText.text = peopleMaxCost.ToString();
         textUpdatePTotal();
         textUpdatePIn();
 
+        //connecting events
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
+
+        WaveCode.self.waveEnded.AddListener(endOfWave);
     }
 
     void TowerSelected() { buttonPanel?.SetActive(true); }
@@ -50,13 +86,15 @@ public class Castle : MonoBehaviour
 
     //adds money based on population
     public void endOfWave() {
-        MoneyManagerScript.self.ChangeMoney (peopleAtCastle * moneyPerPerson);
-
-        //DO: add money sfx vfx
+        MoneyManagerScript.self.ChangeMoney (peopleTotal * moneyPerPerson);
+        //DO: add money sfx
     }
 
+    // Everytime a person gets put out to the field, remove from the castle if available
     public bool personGoesOut() {
         if (peopleAtCastle > 0) {
+            bool wasActive = peopleAtCastle >= minPeopleNeeded;
+
             peopleAtCastle--;
             textUpdatePIn();
             return true;
@@ -65,15 +103,30 @@ public class Castle : MonoBehaviour
 
     }
     public void personGoesIn() {
+        bool wasInactive = peopleAtCastle < minPeopleNeeded;
+
+        //enabling people sprites
+        if (peopleAtCastle < peopleSprites.Length)
+        {
+            peopleSprites[peopleAtCastle].enabled = true;
+        }
+
         peopleAtCastle++;
         textUpdatePIn();
+
+        //checking active
+        if (peopleAtCastle >= minPeopleNeeded && wasInactive)
+        {
+            towerActive.Play();
+            castleSprite.color = Color.white;
+            progressBar.color = Color.white;
+        }
     }
 
 
     //people making stuff
     bool inWave => WaveCode.self.WaveStart;
     float timer = 0;
-    public int timerMax = 10;
 
     public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
     public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer

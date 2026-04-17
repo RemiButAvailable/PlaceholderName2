@@ -245,10 +245,19 @@ MonoBehaviour:
   speed: 0.5
   lineRenderer: {fileID: 0}
   waypoints: []
+  detectionObj: {fileID: 8720260055419772048}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
   hurtSound: {fileID: 96976140371490336}
   deathSound: {fileID: 6418180475301049370, guid: ef63285bce8c22548a5896bfa40f601f, type: 2}
   aPlayerPrefab: {fileID: 8468978810788666128, guid: aabb5ee098e74ea47914a9b48aa4fa64, type: 3}
   deathSoundVolume: 0.5
+  PassedByOther:
+    m_PersistentCalls:
+      m_Calls: []
+  minLRNodeDistance: 0.1
+  timeCheckPass: 0.2
 --- !u!60 &1087836518847089871
 PolygonCollider2D:
   m_ObjectHideFlags: 0

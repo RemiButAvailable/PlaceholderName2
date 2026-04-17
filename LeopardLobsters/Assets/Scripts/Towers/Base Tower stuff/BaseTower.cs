@@ -19,8 +19,8 @@ public class BaseTower : MonoBehaviour
     [SerializeField] SpriteRenderer areaOfEffect;
     [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
 
-    [SerializeField] SpriteRenderer towerSprite;
-    [SerializeField] Color colorTint;
+    [SerializeField] public SpriteRenderer towerSprite;
+    [SerializeField] public Color inactiveTint;
 
     [SerializeField] AudioSource towerActiveSound;
     [SerializeField] AudioSource towerDeactiveSound;
@@ -61,7 +61,7 @@ public class BaseTower : MonoBehaviour
         if (people >= peopleNeeded && needsMax) { 
             isActive.Invoke(false);
             towerDeactiveSound?.Play();
-            towerSprite.color = colorTint;
+            towerSprite.color = inactiveTint;
         }
 
         people--;
@@ -74,7 +74,8 @@ public class BaseTower : MonoBehaviour
     }
 
     public void Sell() { //acessed through button panel
-        MoneyManagerScript.self.ChangeMoney(sellPrice);
+       if(WaveCode.self.WaveStart) MoneyManagerScript.self.ChangeMoney(sellPrice);
+       else MoneyManagerScript.self.ChangeMoney(towerCost);
         while (RemovePeople()) ;
         Destroy(gameObject);
     }
@@ -88,7 +89,7 @@ public class BaseTower : MonoBehaviour
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
         
-        if(needsMax) towerSprite.color = colorTint;
+        if(needsMax) towerSprite.color = inactiveTint;
     }
     public void TowerSelected()
     {
@@ -99,6 +100,13 @@ public class BaseTower : MonoBehaviour
     {
         if (!areaOfEffect) return;
         areaOfEffect.enabled = false;
+    }
+
+    public void Placed() { 
+        //changes sprite layer from UI 2
+        towerSprite.sortingLayerID = SortingLayer.NameToID("Default");
+        towerSprite.sortingOrder = 0;
+        OnPlace.Invoke();
     }
 
     private void OnDestroy()

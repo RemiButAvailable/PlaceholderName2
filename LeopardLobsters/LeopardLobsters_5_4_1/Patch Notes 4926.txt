@@ -1,0 +1,9 @@
+Patch Notes 4/9/26
+
+Added a soldier sprite
+Changed arrow speed
+Added sounds
+Changed castle to have more stuff (people, activation sounds)
+Pause menu added
+Removed tutorial button
+Changed the main menu a bit

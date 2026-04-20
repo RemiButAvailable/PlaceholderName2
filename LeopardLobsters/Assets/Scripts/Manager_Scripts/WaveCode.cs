@@ -20,8 +20,6 @@ public class WaveCode : MonoBehaviour
     [HideInInspector]
     public int WaveNum = 0;
     [HideInInspector]
-    public int buildNum = 1;
-    [HideInInspector]
     public bool WaveStart;
     [HideInInspector]
     public bool endedWave; //keeps the end wave function from running contiguously
@@ -53,8 +51,11 @@ public class WaveCode : MonoBehaviour
     LineRenderer StartingEnemyPath;//the path enemies march along until phantom enemy num is big enough
     LineRenderer enemyPath;
 
-    static public WaveCode self;
-    public UnityEvent waveStarted;
+
+    //for others to access
+    [HideInInspector] static public WaveCode self;
+    [HideInInspector]public UnityEvent waveStarted;
+    [HideInInspector]public UnityEvent waveEnded;
 
     //(This is made by Dante Jones)
     //Diffrent music for diffrent parts of the game
@@ -83,7 +84,7 @@ public class WaveCode : MonoBehaviour
     [Range(0, 12)]
     public int phantomEnemyNumBeforeAltEnemies;//the amount of normal enemies that can spawn before there's a chance of fast ones and bosses
     [Range(0, 12)]
-    public int enemyMaxMultiplier;
+    public float enemyMaxMultiplier;
     [Range(0, 50)]
     public int pointAtWhichBossSpawns;
 
@@ -92,7 +93,7 @@ public class WaveCode : MonoBehaviour
     {
         // Keep Game alive
         WaveStart = false;
-        waveText.text = "Wave (Dormant): " + WaveNum + " Build (Active): " + buildNum;
+        waveText.text = "Build Phase: " + 1;
         DontDestroyOnLoad(this);
         StartCoroutine(Spawner(cooldown));
       }
@@ -106,7 +107,7 @@ public class WaveCode : MonoBehaviour
         {
         // After every enemy is defeated, put up the number.
         // Get ready for a new wave
-        if (EnemyNum == 0 && WaveStart && enemiesStartedSpawning && PhantomEnemyNum == EnemyMax && endedWave == false)
+        if (EnemyNum <= 0 && WaveStart && enemiesStartedSpawning && PhantomEnemyNum >= EnemyMax && !endedWave)
         {
             EndWave();
         }
@@ -181,16 +182,18 @@ public class WaveCode : MonoBehaviour
     {
         if(WaveStart == false)
         {
+            WaveStart = true;
+            waveStarted.Invoke();
+
             WaveNum++;
+            EnemyMax = (int)Mathf.Round(EnemyMax*enemyMaxMultiplier);
             PhantomEnemyNum = 0;
-            //EnemyMax *= enemyMaxMultiplier;
 
             int RandomNum = Random.Range(0, 2);
             EnemySpawnStart = EnemySpawnPositions[RandomNum];
             StartingEnemyPath = enemyPaths[RandomNum];
 
-            WaveStart = true;
-            waveText.text = "Wave (Active): " + WaveNum + " Build (Dormant): " + buildNum;
+            waveText.text = "Wave Phase: " + WaveNum;
             
             //Turns on battle phase music stops building phase music
             buildMusic.Stop();
@@ -198,17 +201,21 @@ public class WaveCode : MonoBehaviour
             endedWave = false;
         }
     }
+
     public void EndWave()
     {
-        buildNum++;
+        endedWave = true;
+        waveEnded.Invoke();
+
         WaveStart = false;
         enemiesStartedSpawning = false;
+
+
         //Turns on building phase music stops battle phase music
         buildMusic.Play();
         battleMusic.Stop();
         //buildPhaseText.enabled = true;
-        waveText.text = "Wave (Dormant): " + WaveNum + " Build (Active): " + buildNum;
-        endedWave = true;
+        waveText.text = "Build Phase: " + (WaveNum+1);
     }
 }
 

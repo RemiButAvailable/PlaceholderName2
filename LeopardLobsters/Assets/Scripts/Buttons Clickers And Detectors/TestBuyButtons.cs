@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TestBuyButtons : MonoBehaviour
 {
@@ -26,7 +27,16 @@ public class TestBuyButtons : MonoBehaviour
         }
 
         yield return new WaitForSeconds(timeClickVsDrag);
-        Instantiate(prefab,Camera.main.ScreenToWorldPoint(Input.mousePosition), prefab.transform.rotation);
+        BaseTower tower = Instantiate(prefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), prefab.transform.rotation);
+
+        tower.OnPlace.AddListener(TowerPlaced);
     }
     public void BuyThing() { StartCoroutine(buyThing()); }
+
+    [SerializeField] UnityEvent towerPlaced;
+
+    void TowerPlaced(BaseTower tower){
+        TutorialHolder.curTower = tower;
+        towerPlaced.Invoke();
+    }
 }

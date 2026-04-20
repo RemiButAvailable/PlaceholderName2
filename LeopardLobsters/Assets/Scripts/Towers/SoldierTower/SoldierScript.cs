@@ -90,36 +90,15 @@ public class SoldierScript : MonoBehaviour
 
         if (target == null && fighting == true)
         {
-            /*foreach (var enemy in Tower.GetComponent<SoldierTowerScript>().enemiesInZone)
+            soldierTowerScript.enemiesInZone.Sort();
+            for (int i = 0; i < soldierTowerScript.enemiesInZone.Count; i++)
             {
-                if (enemy.GetComponent<KnightScript>().targeted == false)
+                if (soldierTowerScript.enemiesInZone[0].GetComponent<KnightScript>().targeted == false)
                 {
-                    target = enemy;
+                    target = soldierTowerScript.enemiesInZone[0];
                 }
-            }*/
-            GameObject closestEnemyToCastle = soldierTowerScript.enemiesInZone[0];
-            GameObject idealTarget = soldierTowerScript.enemiesInZone[0];
-            bool idealTargetSelected = false;
-            for(int i = 1; i < soldierTowerScript.enemiesInZone.Count; i++)
-            {
-                if(Vector3.Distance(closestEnemyToCastle.transform.position, castleObj.transform.position) > Vector3.Distance(soldierTowerScript.enemiesInZone[i].transform.position, castleObj.transform.position))
-                {
-                    closestEnemyToCastle = soldierTowerScript.enemiesInZone[i];
-                    if(closestEnemyToCastle.GetComponent<KnightScript>().targeted == false)
-                    {
-                        idealTarget = closestEnemyToCastle;
-                        idealTargetSelected = true;
-                    }
-                }
-            }
-            if(idealTargetSelected == true)
-            {
-                target = idealTarget;
             }
             fighting = false;
-
-            if (target != null)
-                engaged = true;
         }
     }
     IEnumerator FightEnemy()

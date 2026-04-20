@@ -37,32 +37,32 @@ public class BaseTower : MonoBehaviour
     //Tower button effects
     public void AddPeople() { //acessed through button panel
 
-        if (people >= peopleNeeded || !Castle.self.personGoesOut()) 
-        { DenySound.Play(); 
-         return; }
+        if (people >= peopleNeeded || !Castle.self.personGoesOut())
+        { DenySound.Play();
+            return; }
         //sound 
         //enables the sprites of the people in the tower
-        if(peopleSprites[people]) 
+        if (peopleSprites[people])
             peopleSprites[people].enabled = true;
 
         people++;
         AddedPeople.Invoke();
-        
+
         //checks if active + sfx vfx
         if (people >= peopleNeeded && needsMax) {
-           isActive.Invoke(true);
-           towerActiveSound?.Play();
-           towerSprite.color = Color.white;
+            isActive.Invoke(true);
+            towerActiveSound?.Play();
+            towerSprite.color = Color.white;
         }
     }
 
     public bool RemovePeople() { //acessed through button panel
-        if (people <= 0) 
-        {DenySound.Play();
-         return false; }
+        if (people <= 0)
+        { DenySound.Play();
+            return false; }
         //sound
         //checks if still active
-        if (people >= peopleNeeded && needsMax) { 
+        if (people >= peopleNeeded && needsMax) {
             isActive.Invoke(false);
             towerDeactiveSound?.Play();
             towerSprite.color = inactiveTint;
@@ -78,8 +78,8 @@ public class BaseTower : MonoBehaviour
     }
 
     public void Sell() { //acessed through button panel
-       if(WaveCode.self.WaveStart) MoneyManagerScript.self.ChangeMoney(sellPrice);
-       else MoneyManagerScript.self.ChangeMoney(towerCost);
+        if (WaveCode.self.WaveStart) MoneyManagerScript.self.ChangeMoney(sellPrice);
+        else MoneyManagerScript.self.ChangeMoney(towerCost);
         while (RemovePeople()) ;
         Destroy(gameObject);
     }
@@ -87,14 +87,19 @@ public class BaseTower : MonoBehaviour
 
 
     //tower selected stuff
-    [SerializeField]TowerSelectable towerSelectable;
+    [SerializeField] TowerSelectable towerSelectable;
     public void Start()
     {
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
-        
-        if(needsMax) towerSprite.color = inactiveTint;
+
+        BaseTowerInactiveTint();
     }
+
+    public void BaseTowerInactiveTint() {
+        if (needsMax) towerSprite.color = inactiveTint;
+    }
+
     public void TowerSelected()
     {
         if (!areaOfEffect) return;

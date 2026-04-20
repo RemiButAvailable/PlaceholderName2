@@ -136,10 +136,9 @@ public class WaveCode : MonoBehaviour
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
                 }
-                //int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness);
-                int enemyClumpSize = 1;
-                Debug.Log("enemy max - phantom enemy num is " + (EnemyMax - PhantomEnemyNum));
-                Debug.Log("enemy clump size is " + enemyClumpSize);
+                int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness);
+                //Debug.Log("enemy max - phantom enemy num is " + (EnemyMax - PhantomEnemyNum));
+                //Debug.Log("enemy clump size is " + enemyClumpSize);
 
                 if(enemyClumpSize > EnemyMax - PhantomEnemyNum)
                 {

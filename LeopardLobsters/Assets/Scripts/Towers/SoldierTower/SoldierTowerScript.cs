@@ -16,7 +16,7 @@ public class SoldierTowerScript : MonoBehaviour
     public List<GameObject> enemiesInZone;
     [SerializeField]BaseTower baseTower;
     public int soldierSpawnPosDistFromClosestPointOnPath;
-
+    GameObject castleObj;
 
     [SerializeField] AudioSource RemoveSoldierSound;
     [SerializeField] AudioSource SoldierDeathSound;
@@ -170,5 +170,27 @@ public class SoldierTowerScript : MonoBehaviour
             convertedPoint1,
             convertedPoint2
         };
+    }
+    public void TargetIdealEnemy()
+    {
+        GameObject closestEnemyToCastle = enemiesInZone[0];
+        GameObject idealTarget = enemiesInZone[0];
+        bool idealTargetSelected = false;
+        for (int i = 1; i < enemiesInZone.Count; i++)
+        {
+            if (Vector3.Distance(closestEnemyToCastle.transform.position, castleObj.transform.position) > Vector3.Distance(soldierTowerScript.enemiesInZone[i].transform.position, castleObj.transform.position))
+            {
+                closestEnemyToCastle = enemiesInZone[i];
+                if (closestEnemyToCastle.GetComponent<KnightScript>().targeted == false)
+                {
+                    idealTarget = closestEnemyToCastle;
+                    idealTargetSelected = true;
+                }
+            }
+        }
+        if (idealTargetSelected == true)
+        {
+            target = idealTarget;
+        }
     }
 }

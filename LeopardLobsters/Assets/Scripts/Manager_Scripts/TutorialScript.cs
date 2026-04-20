@@ -63,14 +63,14 @@ public class TutorialScript : MonoBehaviour
 
 }
 
- 
-            |
-            |
-            |
-            |
-            |
-            |
-
+             _________________
+            /                /
+            /                /
+            /                /
+            /                /
+            /                /
+            /                /
+            /________________/
 
 
 

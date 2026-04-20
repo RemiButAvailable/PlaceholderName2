@@ -21,9 +21,23 @@ public class TutorialHolder : MonoBehaviour
     TutorialPopup[] TutorialList = new TutorialPopup[5];
     TutorialPopup cur => TutorialList[index];
     int index = 0;
+    public static BaseTower curTower;
+
+    [SerializeField]
+    [Tooltip("this or tutorial list")]
+    GameObject TutorialListObject;
 
     private void Start()
     {
+        //gets a list from the object children
+        if (TutorialListObject) {
+            int childC = TutorialListObject.transform.childCount;
+            TutorialList = new TutorialPopup[childC];
+            for (int i = 0; i < childC; i++) {
+                TutorialList[i] = TutorialListObject.transform.GetChild(i).GetComponent<TutorialPopup>();
+            }
+        }
+
         OpenNew(cur);
     }
 

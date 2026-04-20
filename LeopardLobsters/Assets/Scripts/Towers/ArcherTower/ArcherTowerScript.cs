@@ -2,12 +2,13 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using NUnit.Framework.Constraints;
+using UnityEngine.Events;
 
 public class ArcherTowerScript : MonoBehaviour
 {
     public EnemyDetection attackZone;
     public List<KnightScript> queue;
-    public bool enemyInZone => queue.Count>0;
+    public bool enemyInZone => queue.Count > 0;
 
     [SerializeField] Transform arrowStartPosition;
     [SerializeField] float cooldown;
@@ -22,16 +23,20 @@ public class ArcherTowerScript : MonoBehaviour
 
     public float directionMultiplier;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
+        BaseTower baseTower = GetComponent<BaseTower>();
+        baseTower.isActive.AddListener(IsActive);
+
         //attackZone.Tower = this.gameObject;
-        attackZone.KnightEntered.AddListener(EnemyEntered);
-        attackZone.KnightExited.AddListener(EnemyExited);
+        attackZone?.KnightEntered.AddListener(EnemyEntered);
+        attackZone?.KnightExited.AddListener(EnemyExited);
 
         queue = new List<KnightScript>();
         StartCoroutine(ShootArrows());
         //StartCoroutine(Printer());
-        GetComponent<BaseTower>().isActive.AddListener(IsActive);
+
     }
 
     public void EnemyEntered(KnightScript enemy) {
@@ -81,4 +86,5 @@ public class ArcherTowerScript : MonoBehaviour
         }
         print(full);
     }
+
 }

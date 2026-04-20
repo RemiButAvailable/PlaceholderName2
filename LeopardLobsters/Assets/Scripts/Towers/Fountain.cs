@@ -58,7 +58,7 @@ public class TestFountain : MonoBehaviour
         }
     }
 
-    void CheckTowersInArea() {
+    void CheckTowersInArea(BaseTower tower) {
         Collider2D col = GetComponent<Collider2D>();
 
         col.gameObject.layer = LayerMask.NameToLayer("CheckTowerPlacement");

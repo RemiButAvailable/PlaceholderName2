@@ -26,9 +26,11 @@ public class BaseTower : MonoBehaviour
     // events for tower types
     [HideInInspector] public UnityEvent<bool> isActive;
     [HideInInspector] public UnityEvent<BaseTower> Destroyed;
-    [HideInInspector] public UnityEvent OnPlace; //add change sprite layer later
+    [HideInInspector] public UnityEvent<BaseTower> OnPlace;
     [HideInInspector] public UnityEvent AddedPeople;
     [HideInInspector] public UnityEvent RemovedPeople;
+    [HideInInspector] public UnityEvent Selected;
+    [HideInInspector] public UnityEvent Activated;
 
     [SerializeField] AudioSource DenySound;
 
@@ -51,6 +53,7 @@ public class BaseTower : MonoBehaviour
         //checks if active + sfx vfx
         if (people >= peopleNeeded && needsMax) {
             isActive.Invoke(true);
+            Activated.Invoke();
             towerActiveSound?.Play();
             towerSprite.color = Color.white;
         }
@@ -102,6 +105,7 @@ public class BaseTower : MonoBehaviour
 
     public void TowerSelected()
     {
+        Selected.Invoke();
         if (!areaOfEffect) return;
         areaOfEffect.enabled = true;
     }
@@ -115,7 +119,7 @@ public class BaseTower : MonoBehaviour
         //changes sprite layer from UI 2
         towerSprite.sortingLayerID = SortingLayer.NameToID("Default");
         towerSprite.sortingOrder = 0;
-        OnPlace.Invoke();
+        OnPlace.Invoke(this);
     }
 
     private void OnDestroy()

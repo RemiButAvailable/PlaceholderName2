@@ -136,12 +136,15 @@ public class WaveCode : MonoBehaviour
                     EnemySpawnSpot = EnemySpawnPositions[RandomNum];
                     enemyPath = enemyPaths[RandomNum];
                 }
-                int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness + 1);
+                int enemyClumpSize = Random.Range(1, enemyClumpSizeRandomness);
+                //Debug.Log("enemy max - phantom enemy num is " + (EnemyMax - PhantomEnemyNum));
+                //Debug.Log("enemy clump size is " + enemyClumpSize);
+
                 if(enemyClumpSize > EnemyMax - PhantomEnemyNum)
                 {
                     enemyClumpSize = EnemyMax - PhantomEnemyNum;
                 }
-                for(int i = 0; i <= enemyClumpSize; i++)
+                for(int i = 0; i < enemyClumpSize; i++)
                 {
                     //select an enemy type. The prob of getting a fast one increases over the course of the game
                     int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);

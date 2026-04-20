@@ -31,7 +31,7 @@ public class SoldierTowerScript : MonoBehaviour
     public void AddSoldier()
     {
         GameObject spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
-        spawnedSoldier.GetComponent<SoldierScript>().Tower = this.gameObject;
+        spawnedSoldier.GetComponent<SoldierScript>().soldierTower = this.gameObject;
         soldiers.Add(spawnedSoldier);
         for(int i = 0; i < soldierPositions.Count; i++)
         {
@@ -56,7 +56,7 @@ public class SoldierTowerScript : MonoBehaviour
 
                 if(soldier.GetComponent<SoldierScript>().target != null)
                 {
-                    soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed;
+                    soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().defaultSpeed;
                     soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().targeted = false;
                 }
                 soldiers.Remove(soldier);
@@ -75,11 +75,18 @@ public class SoldierTowerScript : MonoBehaviour
             {
                 soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
                 soldiers.Remove(soldier);
-                Destroy (soldier);
+                //Destroy(soldier);
                 GetComponent<BaseTower>().people -= 1;
                 SoldierDeathSound?.Play();
                 //play death sound?
                 break;
+            }
+        }
+        for(int i = 0; i < soldiers.Count; i++)
+        {
+            if (soldiers[i].GetComponent<SoldierScript>().target == null)
+            {
+
             }
         }
     }

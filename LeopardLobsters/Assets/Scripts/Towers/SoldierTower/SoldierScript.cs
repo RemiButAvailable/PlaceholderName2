@@ -22,8 +22,10 @@ public class SoldierScript : MonoBehaviour
     public Vector3 stationPosition;
     public GameObject target;
     Vector3 direction;
-    public GameObject Tower;
+    public GameObject soldierTower;
+    SoldierTowerScript soldierTowerScript;
     BaseTower baseTowerScript;
+    GameObject castleObj;
 
     [SerializeField] Animator anim;
 
@@ -40,68 +42,85 @@ public class SoldierScript : MonoBehaviour
         StartCoroutine(FightEnemy());
         engaged = false;
         baseTowerScript = GetComponent<BaseTower>();
+        soldierTowerScript = soldierTower.GetComponent<SoldierTowerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if(isActive)
-        {*/
-            if (engaged == true && target != null)
-            {
-                direction = target.transform.position - transform.position;
-                direction.Normalize();
-                if (fighting == false)
-                    transform.position += direction * speed * Time.deltaTime;
-            }
-            else
-            {
-                direction = stationPosition - transform.position;
-                direction.Normalize();
-                if (atStation == false)
-                    transform.position += direction * speed * Time.deltaTime;
-            }
+        if (engaged == true && target != null)
+        {
+            direction = target.transform.position - transform.position;
+            direction.Normalize();
+            if (fighting == false)
+                transform.position += direction * speed * Time.deltaTime;
+        }
+        else
+        {
+            direction = stationPosition - transform.position;
+            direction.Normalize();
+            if (atStation == false)
+                transform.position += direction * speed * Time.deltaTime;
+        }
 
-            if (target != null)
+        if (target != null)
+        {
+            if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
             {
-                if (Vector3.Distance(transform.position, target.transform.position) < 1f)
+                fighting = true;
+                target.GetComponent<KnightScript>().speed = 0;
+            }
+            else if (Vector3.Distance(transform.position, stationPosition) < 0.1f && engaged == false)
+            {
+                atStation = true;
+            }
+        }
+
+        if (health <= 0)
+        {
+            //Will add volume
+            AudioPlayer aPlayer = Instantiate(aSoundPrefab);
+            aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
+            //anim.Play("Soldier_Death");
+            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
+            target.GetComponent<KnightScript>().targeted = false;
+            /*soldierTower.GetComponent<SoldierTowerScript>()*/soldierTowerScript.RemoveSoldier(this.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (target == null && fighting == true)
+        {
+            /*foreach (var enemy in Tower.GetComponent<SoldierTowerScript>().enemiesInZone)
+            {
+                if (enemy.GetComponent<KnightScript>().targeted == false)
                 {
-                    fighting = true;
-                    target.GetComponent<KnightScript>().speed = 0;
+                    target = enemy;
                 }
-                else if (Vector3.Distance(transform.position, stationPosition) < 1f && engaged == false)
-                {
-                    atStation = true;
-                }
-            }
-
-            if (health <= 0)
+            }*/
+            GameObject closestEnemyToCastle = soldierTowerScript.enemiesInZone[0];
+            GameObject idealTarget = soldierTowerScript.enemiesInZone[0];
+            bool idealTargetSelected = false;
+            for(int i = 1; i < soldierTowerScript.enemiesInZone.Count; i++)
             {
-                //Will add volume
-                AudioPlayer aPlayer = Instantiate(aSoundPrefab);
-                aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
-                //anim.Play("Soldier_Death");
-                target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
-                target.GetComponent<KnightScript>().targeted = false;
-                Tower.GetComponent<SoldierTowerScript>().RemoveSoldier(this.gameObject);
-                Destroy(gameObject);
-            }
-
-            if (target == null && fighting == true)
-            {
-                foreach (var enemy in Tower.GetComponent<SoldierTowerScript>().enemiesInZone)
+                if(Vector3.Distance(closestEnemyToCastle.transform.position, castleObj.transform.position) > Vector3.Distance(soldierTowerScript.enemiesInZone[i].transform.position, castleObj.transform.position))
                 {
-                    if (enemy.GetComponent<KnightScript>().targeted == false)
+                    closestEnemyToCastle = soldierTowerScript.enemiesInZone[i];
+                    if(closestEnemyToCastle.GetComponent<KnightScript>().targeted == false)
                     {
-                        target = enemy;
+                        idealTarget = closestEnemyToCastle;
+                        idealTargetSelected = true;
                     }
                 }
-                fighting = false;
-
-                if (target != null)
-                    engaged = true;
             }
-        //}
+            if(idealTargetSelected == true)
+            {
+                target = idealTarget;
+            }
+            fighting = false;
+
+            if (target != null)
+                engaged = true;
+        }
     }
     IEnumerator FightEnemy()
     {
@@ -114,7 +133,7 @@ public class SoldierScript : MonoBehaviour
             {
                 //attack animation?
                 //play enemy damage sound
-                target.GetComponent<KnightScript>().health -= 1;
+                target.GetComponent<KnightScript>().TakeDamage(1);
                 yield return new WaitForSeconds(1);
                 //play soldier damage sound
                 hitSound.Play();

@@ -380,12 +380,20 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   waypoints: []
   detectionObj: {fileID: 8720260055419772048}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
   hurtSound: {fileID: 96976140371490336}
   ArrowHitSound: {fileID: 4609236076784178214, guid: 289e64cd69ecd84419dc9c70118b0e3d, type: 3}
   deathSound: {fileID: 6418180475301049370, guid: ef63285bce8c22548a5896bfa40f601f, type: 2}
   ArrowHitDeathSound: {fileID: 8300000, guid: 504eeae5c8e1882438645a0eed38ba1b, type: 3}
   aPlayerPrefab: {fileID: 8468978810788666128, guid: aabb5ee098e74ea47914a9b48aa4fa64, type: 3}
   deathSoundVolume: 0.5
+  PassedByOther:
+    m_PersistentCalls:
+      m_Calls: []
+  minLRNodeDistance: 0.1
+  timeCheckPass: 0.2
 --- !u!60 &1087836518847089871
 PolygonCollider2D:
   m_ObjectHideFlags: 0

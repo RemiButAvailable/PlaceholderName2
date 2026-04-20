@@ -171,9 +171,9 @@ public class SoldierTowerScript : MonoBehaviour
             convertedPoint2
         };
     }
-    public void TargetIdealEnemy()
+    /*public void TargetIdealEnemy()
     {
-        GameObject closestEnemyToCastle = enemiesInZone[0];
+        /*GameObject closestEnemyToCastle = enemiesInZone[0];
         GameObject idealTarget = enemiesInZone[0];
         bool idealTargetSelected = false;
         for (int i = 1; i < enemiesInZone.Count; i++)
@@ -192,5 +192,13 @@ public class SoldierTowerScript : MonoBehaviour
         {
             target = idealTarget;
         }
-    }
+        enemiesInZone.Sort();
+        for(int i = 0; i < enemiesInZone.Count; i++)
+        {
+            if(enemiesInZone[0].GetComponent<KnightScript>().targeted == false)
+            {
+                
+            }
+        }
+    }*/
 }

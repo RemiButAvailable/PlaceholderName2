@@ -37,25 +37,26 @@ public class MoneyManagerScript : MonoBehaviour
     {
         happiness_ManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();
         self = this;
+        textMoney.text = moneyNum.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        textMoney.text = moneyNum.ToString();
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
-        if (Input.GetMouseButtonDown(0) && false)
-        {
-            for (int i = 0; i < products.Count; i++)
-            {
-                if(Vector3.Distance(mousePos, products[i].transform.position) <= 1)
-                {
-                    Buy(products[i]);
-                    break;
-                }
-            }
-        }
+        
+        //mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //mousePos.z = 0;
+        //if (Input.GetMouseButtonDown(0) && false)
+        //{
+        //    for (int i = 0; i < products.Count; i++)
+        //    {
+        //        if(Vector3.Distance(mousePos, products[i].transform.position) <= 1)
+        //        {
+        //            Buy(products[i]);
+        //            break;
+        //        }
+        //    }
+        //}
         /*if(DragnDrop && Input.GetMouseButton(0) && false)
         {
             spawnedProduct.transform.position = mousePos;
@@ -137,6 +138,7 @@ public class MoneyManagerScript : MonoBehaviour
         moneyNum += num;
         textMoney.text = moneyNum.ToString();
         BuySound.Play();
+        textMoney.text = moneyNum.ToString();
     }
     public bool Check(int num)
     {

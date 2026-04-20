@@ -51,8 +51,8 @@ public class Placement : MonoBehaviour //places tower, created when pressing buy
             baseTower.towerSprite.color = denyTint; 
             goodSpot = false;
         }
-        else { 
-            baseTower.towerSprite.color = baseTower.inactiveTint; 
+        else {
+            baseTower.BaseTowerInactiveTint();
         }
 
 

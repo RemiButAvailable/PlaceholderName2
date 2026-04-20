@@ -113,7 +113,7 @@ public class SoldierTowerScript : MonoBehaviour
     }
 
     [System.Obsolete]
-    public void SetSoldierStationPositions()
+    public void SetSoldierStationPositions(BaseTower tower)
     {
         //Arrays
         LineRenderer[] enemyPaths = Object.FindObjectsOfType<LineRenderer>(); //array of the line renderers

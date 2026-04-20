@@ -18,7 +18,7 @@ public class WaveCode : MonoBehaviour
     [HideInInspector]
     public int EnemyNum = 0; //number of enemies in the scene
     [HideInInspector]
-    public int WaveNum = 0;
+    static public int WaveNum = 0;
     [HideInInspector]
     public bool WaveStart;
     [HideInInspector]

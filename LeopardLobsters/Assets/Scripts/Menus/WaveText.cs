@@ -3,13 +3,12 @@ using TMPro;
 
 public class WaveText : MonoBehaviour
 {
-    [SerializeField] WaveCode waveCode;
 
-    // Wafer :3
-    public TextMeshProUGUI wafer;
+    // Waffer :3
+    public TextMeshProUGUI waffer;
     private void Start()
     {
-        wafer.text = "Killed at wave " + waveCode.WaveNum;
+        waffer.text = "Killed at wave " + WaveCode.WaveNum;
     }
 
 

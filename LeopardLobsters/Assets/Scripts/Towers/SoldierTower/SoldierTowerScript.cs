@@ -86,7 +86,14 @@ public class SoldierTowerScript : MonoBehaviour
         {
             if (soldiers[i].GetComponent<SoldierScript>().target == null)
             {
-
+                enemiesInZone.Sort();
+                for(int o = 0; o < enemiesInZone.Count; o++)
+                {
+                    if(enemiesInZone[o].GetComponent<KnightScript>().targeted == false)
+                    {
+                        soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
+                    }
+                }
             }
         }
     }
@@ -171,34 +178,4 @@ public class SoldierTowerScript : MonoBehaviour
             convertedPoint2
         };
     }
-    /*public void TargetIdealEnemy()
-    {
-        /*GameObject closestEnemyToCastle = enemiesInZone[0];
-        GameObject idealTarget = enemiesInZone[0];
-        bool idealTargetSelected = false;
-        for (int i = 1; i < enemiesInZone.Count; i++)
-        {
-            if (Vector3.Distance(closestEnemyToCastle.transform.position, castleObj.transform.position) > Vector3.Distance(soldierTowerScript.enemiesInZone[i].transform.position, castleObj.transform.position))
-            {
-                closestEnemyToCastle = enemiesInZone[i];
-                if (closestEnemyToCastle.GetComponent<KnightScript>().targeted == false)
-                {
-                    idealTarget = closestEnemyToCastle;
-                    idealTargetSelected = true;
-                }
-            }
-        }
-        if (idealTargetSelected == true)
-        {
-            target = idealTarget;
-        }
-        enemiesInZone.Sort();
-        for(int i = 0; i < enemiesInZone.Count; i++)
-        {
-            if(enemiesInZone[0].GetComponent<KnightScript>().targeted == false)
-            {
-                
-            }
-        }
-    }*/
 }

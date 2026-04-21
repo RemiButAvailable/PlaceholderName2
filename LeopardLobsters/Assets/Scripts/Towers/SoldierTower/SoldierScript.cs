@@ -65,6 +65,7 @@ public class SoldierScript : MonoBehaviour
 
         if (target != null)
         {
+            engaged = true;
             if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
             {
                 fighting = true;
@@ -74,6 +75,10 @@ public class SoldierScript : MonoBehaviour
             {
                 atStation = true;
             }
+        }
+        else
+        {
+            engaged = false;
         }
 
         if (health <= 0)

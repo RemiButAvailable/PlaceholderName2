@@ -20,6 +20,8 @@ public class ArcherTowerScript : MonoBehaviour
     //(Made by Dante Jones)
     //Sound that plays when enemy shoots
     [SerializeField] AudioSource arrowShootSound;
+
+    public float directionMultiplier;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
@@ -62,7 +64,7 @@ public class ArcherTowerScript : MonoBehaviour
                 KnightScript knightScript = queue[0];
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
-                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot/* * (int)(knightScript.speed * directionMultiplier)*/] + knightScript.offset;
+                Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot * (int)(knightScript.speed * directionMultiplier)] + knightScript.offset;
                 arrowScript.target = target;
                 arrowScript.start = arrowStartPosition.transform.position;
             }

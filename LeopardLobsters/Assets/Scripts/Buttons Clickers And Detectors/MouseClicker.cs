@@ -25,12 +25,15 @@ public class MouseClicker : MonoBehaviour
 
             //highlights stuff when hovering over it
             TowerHighlight highlighted = hit.collider.GetComponent<TowerHighlight>();
-            if (highlighted != towerHighlighed) { towerHighlighed?.DeHighlight(); }
-            towerHighlighed = highlighted;
-            towerHighlighed?.Highlight();
+            if (highlighted != towerHighlighed) { 
+                towerHighlighed?.DeHighlight();
+                towerHighlighed = highlighted;
+                towerHighlighed?.Highlight();
+            }
         }
         else {
             towerHighlighed?.DeHighlight();
+            towerHighlighed = null;
         }
 
         // Tower selection stuff

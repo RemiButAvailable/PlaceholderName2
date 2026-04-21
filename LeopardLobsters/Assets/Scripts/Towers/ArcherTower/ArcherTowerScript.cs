@@ -20,6 +20,7 @@ public class ArcherTowerScript : MonoBehaviour
     //(Made by Dante Jones)
     //Sound that plays when enemy shoots
     [SerializeField] AudioSource arrowShootSound;
+    [SerializeField] Animator anim;
 
     public float directionMultiplier;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,6 +33,7 @@ public class ArcherTowerScript : MonoBehaviour
         //attackZone.Tower = this.gameObject;
         attackZone?.KnightEntered.AddListener(EnemyEntered);
         attackZone?.KnightExited.AddListener(EnemyExited);
+        anim.Play("Archer Idle");
 
         queue = new List<KnightScript>();
         StartCoroutine(ShootArrows());
@@ -59,6 +61,8 @@ public class ArcherTowerScript : MonoBehaviour
                 //Sound when arrow shoots
                 arrowShootSound.Play();
 
+                //anim.Play("Archer_guy_ATC");
+
                 queue.Sort();
                 //KnightScript knightScript = queue[0].GetComponent<KnightScript>();
                 KnightScript knightScript = queue[0];
@@ -70,6 +74,7 @@ public class ArcherTowerScript : MonoBehaviour
             }
             yield return new WaitForSeconds(cooldown);
         }
+     
     }
 
     void IsActive(bool active) { isActive = active; }

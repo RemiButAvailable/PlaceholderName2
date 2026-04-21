@@ -1,0 +1,568 @@
+fileFormatVersion: 2
+guid: e6f547a4f3ebd63438ba0d9733a01ba0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3761512028866947092
+    second: BOB_guy_Walk_0
+  - first:
+      213: -531898486400594623
+    second: BOB_guy_Walk_1
+  - first:
+      213: 4661734194482694818
+    second: BOB_guy_Walk_2
+  - first:
+      213: -809352246212186307
+    second: BOB_guy_Walk_3
+  - first:
+      213: -788501568579535125
+    second: BOB_guy_Walk_4
+  - first:
+      213: 8278002554495510011
+    second: BOB_guy_Walk_5
+  - first:
+      213: 4824056618205562224
+    second: BOB_guy_Walk_6
+  - first:
+      213: -1003960026654808066
+    second: BOB_guy_Walk_7
+  - first:
+      213: -846941417146719710
+    second: BOB_guy_Walk_8
+  - first:
+      213: 2536992914198046786
+    second: BOB_guy_Walk_9
+  - first:
+      213: 5378223344043157274
+    second: BOB_guy_Walk_10
+  - first:
+      213: -3710060787899328227
+    second: BOB_guy_Walk_11
+  - first:
+      213: -7035347398972700912
+    second: BOB_guy_Walk_12
+  - first:
+      213: 8636889488646484885
+    second: BOB_guy_Walk_13
+  - first:
+      213: -1890886802384015754
+    second: BOB_guy_Walk_14
+  - first:
+      213: -726278617720822030
+    second: BOB_guy_Walk_15
+  - first:
+      213: 2218184143507906773
+    second: BOB_guy_Walk_16
+  - first:
+      213: 469412231186376578
+    second: BOB_guy_Walk_17
+  - first:
+      213: -7673372674150539141
+    second: BOB_guy_Walk_18
+  - first:
+      213: -2645736256335656702
+    second: BOB_guy_Walk_19
+  - first:
+      213: -8923866812805767454
+    second: BOB_guy_Walk_20
+  - first:
+      213: -4950703331368760782
+    second: BOB_guy_Walk_21
+  - first:
+      213: -75915117801643191
+    second: BOB_guy_Walk_22
+  - first:
+      213: -7020161811119929721
+    second: BOB_guy_Walk_23
+  - first:
+      213: 8778340167883993210
+    second: BOB_guy_Walk_24
+  - first:
+      213: 7280446870945064522
+    second: BOB_guy_Walk_25
+  - first:
+      213: -3132576935724044742
+    second: BOB_guy_Walk_26
+  - first:
+      213: 4195549618033769626
+    second: BOB_guy_Walk_27
+  - first:
+      213: 1036911206966927054
+    second: BOB_guy_Walk_28
+  - first:
+      213: 5388764911136241898
+    second: BOB_guy_Walk_29
+  - first:
+      213: -4540656458855836440
+    second: BOB_guy_Walk_30
+  - first:
+      213: 8354322460593370184
+    second: BOB_guy_Walk_31
+  - first:
+      213: -1963953541600228533
+    second: BOB_guy_Walk_32
+  - first:
+      213: 9165162991109520653
+    second: BOB_guy_Walk_33
+  - first:
+      213: -2498499832814394877
+    second: BOB_guy_Walk_34
+  - first:
+      213: 280034383722187964
+    second: BOB_guy_Walk_35
+  - first:
+      213: -3310803137649514998
+    second: BOB_guy_Walk_36
+  - first:
+      213: 7874883291901197043
+    second: BOB_guy_Walk_37
+  - first:
+      213: 6719191655236269413
+    second: BOB_guy_Walk_38
+  - first:
+      213: 1042817796879632343
+    second: BOB_guy_Walk_39
+  - first:
+      213: -7417112894581120177
+    second: BOB_guy_Walk_40
+  - first:
+      213: 2146910497168885049
+    second: BOB_guy_Walk_41
+  - first:
+      213: -6901181087826044719
+    second: BOB_guy_Walk_42
+  - first:
+      213: 8887032938041625699
+    second: BOB_guy_Walk_43
+  - first:
+      213: -8023710000727461567
+    second: BOB_guy_Walk_44
+  - first:
+      213: 5878429966547820799
+    second: BOB_guy_Walk_45
+  - first:
+      213: -7668853300133007667
+    second: BOB_guy_Walk_46
+  - first:
+      213: -1173204080682248703
+    second: BOB_guy_Walk_47
+  - first:
+      213: -5077616675639157124
+    second: BOB_guy_Walk_48
+  - first:
+      213: -4835167247007734224
+    second: BOB_guy_Walk_49
+  - first:
+      213: 5821790240967163162
+    second: BOB_guy_Walk_50
+  - first:
+      213: 2814369708410930009
+    second: BOB_guy_Walk_51
+  - first:
+      213: 4298060082569700479
+    second: BOB_guy_Walk_52
+  - first:
+      213: -3800905749547818392
+    second: BOB_guy_Walk_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BOB_guy_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1306
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41829fac243933430800000000000000
+      internalID: 3761512028866947092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1306
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d468d05215e98f0800000000000000
+      internalID: -531898486400594623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1306
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aace6b0d8ec1b040800000000000000
+      internalID: 4661734194482694818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1306
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3fab529b6a94c4f0800000000000000
+      internalID: -809352246212186307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 653
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee7af3400eae05f0800000000000000
+      internalID: -788501568579535125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 653
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf52b7ee67f51e270800000000000000
+      internalID: 8278002554495510011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 653
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 075c3807fed72f240800000000000000
+      internalID: 4824056618205562224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 653
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef76c8acca73112f0800000000000000
+      internalID: -1003960026654808066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2226765b44f0f34f0800000000000000
+      internalID: -846941417146719710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24825782d95353320800000000000000
+      internalID: 2536992914198046786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_10
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17e768e2a943aa40800000000000000
+      internalID: 5378223344043157274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOB_guy_Walk_11
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 704
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d199722ce57338cc0800000000000000
+      internalID: -3710060787899328227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 199acc0756d011c4d9a1d6ff5909baf5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BOB_guy_Walk_0: 3761512028866947092
+      BOB_guy_Walk_1: -531898486400594623
+      BOB_guy_Walk_10: 5378223344043157274
+      BOB_guy_Walk_11: -3710060787899328227
+      BOB_guy_Walk_2: 4661734194482694818
+      BOB_guy_Walk_3: -809352246212186307
+      BOB_guy_Walk_4: -788501568579535125
+      BOB_guy_Walk_5: 8278002554495510011
+      BOB_guy_Walk_6: 4824056618205562224
+      BOB_guy_Walk_7: -1003960026654808066
+      BOB_guy_Walk_8: -846941417146719710
+      BOB_guy_Walk_9: 2536992914198046786
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

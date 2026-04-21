@@ -475,6 +475,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2711352092453901459, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1452198915307129915}
+    - targetCorrespondingSourceObject: {fileID: 2711352092453901459, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4474163500052394813}
     - targetCorrespondingSourceObject: {fileID: 6730111401246257610, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6487663675629054736}
@@ -496,7 +499,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a20ed905b582cd42a746b4032d2654a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tower: {fileID: 0}
+  KnightEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  KnightExited:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1916220521539962839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637188148630771071, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
@@ -532,3 +540,27 @@ MonoBehaviour:
   Arrow: {fileID: 5723361182436043768, guid: 8259970a4353e9f4fb61522114c12cbf, type: 3}
   isActive: 0
   arrowShootSound: {fileID: 1795041406276085977}
+  anim: {fileID: 0}
+  directionMultiplier: 0
+--- !u!95 &-4474163500052394813
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182270337222952507}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

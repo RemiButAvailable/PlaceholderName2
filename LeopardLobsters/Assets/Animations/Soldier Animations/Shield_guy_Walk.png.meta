@@ -1,0 +1,575 @@
+fileFormatVersion: 2
+guid: 9af324de54b981d45807bb4dee349bc8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8860897990892926765
+    second: Shield_guy_Walk_0
+  - first:
+      213: -2284202489243700161
+    second: Shield_guy_Walk_1
+  - first:
+      213: -308403155179889569
+    second: Shield_guy_Walk_2
+  - first:
+      213: 7423613700434548831
+    second: Shield_guy_Walk_3
+  - first:
+      213: 1751596853592875035
+    second: Shield_guy_Walk_4
+  - first:
+      213: -9080246707441834594
+    second: Shield_guy_Walk_5
+  - first:
+      213: -4054446593187583046
+    second: Shield_guy_Walk_6
+  - first:
+      213: -4274282540413729790
+    second: Shield_guy_Walk_7
+  - first:
+      213: 5931675194957916573
+    second: Shield_guy_Walk_8
+  - first:
+      213: 3354268094759251251
+    second: Shield_guy_Walk_9
+  - first:
+      213: -8070122102183183052
+    second: Shield_guy_Walk_10
+  - first:
+      213: -438052589557084496
+    second: Shield_guy_Walk_11
+  - first:
+      213: 7983204133708696729
+    second: Shield_guy_Walk_12
+  - first:
+      213: 3977254962114003698
+    second: Shield_guy_Walk_13
+  - first:
+      213: 414887480412131607
+    second: Shield_guy_Walk_14
+  - first:
+      213: 3421677699925730882
+    second: Shield_guy_Walk_15
+  - first:
+      213: -981115176108588910
+    second: Shield_guy_Walk_16
+  - first:
+      213: 5607954991925140528
+    second: Shield_guy_Walk_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shield_guy_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1368
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27352296cb38fa70800000000000000
+      internalID: 8860897990892926765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1368
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f34f09130f1ec40e0800000000000000
+      internalID: -2284202489243700161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 1368
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c94efd6f458bbf0800000000000000
+      internalID: -308403155179889569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 1368
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58df1c1459f50760800000000000000
+      internalID: 7423613700434548831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 1368
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b106818de0cee4810800000000000000
+      internalID: 1751596853592875035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 912
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95e4029abb7cf180800000000000000
+      internalID: -9080246707441834594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 912
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abbe24c0e46bbb7c0800000000000000
+      internalID: -4054446593187583046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 912
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2044cf4fca2bea4c0800000000000000
+      internalID: -4274282540413729790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 912
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d996676992b815250800000000000000
+      internalID: 5931675194957916573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 912
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d2d8d7f01cc8e20800000000000000
+      internalID: 3354268094759251251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43db75594ba210090800000000000000
+      internalID: -8070122102183183052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_11
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 456
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0be828e9d79bbe9f0800000000000000
+      internalID: -438052589557084496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_12
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 456
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c032fdcd90ace60800000000000000
+      internalID: 7983204133708696729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_13
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 456
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f207fdc05c023730800000000000000
+      internalID: 3977254962114003698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_14
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 456
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711d8bb17f9f1c500800000000000000
+      internalID: 414887480412131607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246e2ff3dbd3c7f20800000000000000
+      internalID: 3421677699925730882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_Walk_16
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 460
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2908d4c02f06262f0800000000000000
+      internalID: -981115176108588910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1bbcabdc476cc784987628af022f237a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Shield_guy_Walk_0: 8860897990892926765
+      Shield_guy_Walk_1: -2284202489243700161
+      Shield_guy_Walk_10: -8070122102183183052
+      Shield_guy_Walk_11: -438052589557084496
+      Shield_guy_Walk_12: 7983204133708696729
+      Shield_guy_Walk_13: 3977254962114003698
+      Shield_guy_Walk_14: 414887480412131607
+      Shield_guy_Walk_15: 3421677699925730882
+      Shield_guy_Walk_16: -981115176108588910
+      Shield_guy_Walk_2: -308403155179889569
+      Shield_guy_Walk_3: 7423613700434548831
+      Shield_guy_Walk_4: 1751596853592875035
+      Shield_guy_Walk_5: -9080246707441834594
+      Shield_guy_Walk_6: -4054446593187583046
+      Shield_guy_Walk_7: -4274282540413729790
+      Shield_guy_Walk_8: 5931675194957916573
+      Shield_guy_Walk_9: 3354268094759251251
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

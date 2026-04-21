@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 37a61b49906650147aa3210374a46d40
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6903718319089569205
+    second: Shield_guy_DEATH (1)_0
+  - first:
+      213: -982784051489402996
+    second: Shield_guy_DEATH (1)_1
+  - first:
+      213: 471563788602287641
+    second: Shield_guy_DEATH (1)_2
+  - first:
+      213: 655163043574687514
+    second: Shield_guy_DEATH (1)_3
+  - first:
+      213: 5362885540335987618
+    second: Shield_guy_DEATH (1)_4
+  - first:
+      213: -2042401958120671573
+    second: Shield_guy_DEATH (1)_5
+  - first:
+      213: -7432688073838762716
+    second: Shield_guy_DEATH (1)_6
+  - first:
+      213: -3699640101512133004
+    second: Shield_guy_DEATH (1)_7
+  - first:
+      213: 2397161069821438085
+    second: Shield_guy_DEATH (1)_8
+  - first:
+      213: 1061953356622470384
+    second: Shield_guy_DEATH (1)_9
+  - first:
+      213: -1217457909184917011
+    second: Shield_guy_DEATH (1)_10
+  - first:
+      213: -5729095525016207983
+    second: Shield_guy_DEATH (1)_11
+  - first:
+      213: -6860962128100376455
+    second: Shield_guy_DEATH (1)_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1420
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4328c493191bf8842a6b13a67620e63d
+      internalID: -212501360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_1
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1422
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3da2e62754e60240b9c344ca6b2c002
+      internalID: -1036991694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_2
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 1422
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f917192966e6df4fab6d3690d97ab8b
+      internalID: 1638898213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_3
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 1422
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9333722ffdcfd7a44b7ade14dd9cd46b
+      internalID: 1074195155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 948
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1ab1db149a3dc4099c58336a1f5d33
+      internalID: -597054330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_5
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 948
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c515d033822bee418ed69039ea930d1
+      internalID: 727272026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_6
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 948
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03cfb9df3b59c8e4ebb1269d2572c540
+      internalID: 1913283031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_7
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 948
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd9c2e0e18f95048ba5bd3c556def6f
+      internalID: -1300787667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 474
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6a5dc577d1e5a4c97f9f178cfae715
+      internalID: -1975018242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_9
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 474
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605b869c3b8c4a24dbf05e1730eaa23a
+      internalID: -78498665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_10
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 474
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ebb14f40e5e0c4a8d7f9eaa6cae291
+      internalID: 885216860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_11
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 474
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ebb80081b0848488b1e246731875c5
+      internalID: 1996544210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_guy_DEATH_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 774
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f137918fb56771148a75b6de41820a95
+      internalID: 1710724884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fef6e7db814b3234e836e3be622e274d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Shield_guy_DEATH_0: -212501360
+      Shield_guy_DEATH_1: -1036991694
+      Shield_guy_DEATH_10: 885216860
+      Shield_guy_DEATH_11: 1996544210
+      Shield_guy_DEATH_12: 1710724884
+      Shield_guy_DEATH_2: 1638898213
+      Shield_guy_DEATH_3: 1074195155
+      Shield_guy_DEATH_4: -597054330
+      Shield_guy_DEATH_5: 727272026
+      Shield_guy_DEATH_6: 1913283031
+      Shield_guy_DEATH_7: -1300787667
+      Shield_guy_DEATH_8: -1975018242
+      Shield_guy_DEATH_9: -78498665
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

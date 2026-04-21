@@ -19,6 +19,7 @@ public class BaseTower : MonoBehaviour
 
     [SerializeField] public SpriteRenderer towerSprite;
     [SerializeField] public Color inactiveTint;
+    [SerializeField] public TowerHighlight highlight;
 
     [SerializeField] AudioSource towerActiveSound;
     [SerializeField] AudioSource towerDeactiveSound;
@@ -96,6 +97,9 @@ public class BaseTower : MonoBehaviour
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
 
+        highlight.Highlighted.AddListener(TowerHighlighted);
+        highlight.DeHighlighted.AddListener(TowerDehighlighted);
+
         BaseTowerInactiveTint();
     }
 
@@ -111,6 +115,16 @@ public class BaseTower : MonoBehaviour
     }
     public void TowerDeselected()
     {
+        if (!areaOfEffect) return;
+        areaOfEffect.enabled = false;
+    }
+
+    void TowerHighlighted() {
+        if (!areaOfEffect) return;
+        areaOfEffect.enabled = true;
+    }
+
+    void TowerDehighlighted() {
         if (!areaOfEffect) return;
         areaOfEffect.enabled = false;
     }

@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 9b728527d5fa2a7409264cee532ef31c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6957791659355500051
+    second: BarbIAN_guy_walk_0
+  - first:
+      213: 8498049742861267960
+    second: BarbIAN_guy_walk_1
+  - first:
+      213: -2890500408745186506
+    second: BarbIAN_guy_walk_2
+  - first:
+      213: 8478734147364765031
+    second: BarbIAN_guy_walk_3
+  - first:
+      213: -5846786671248843368
+    second: BarbIAN_guy_walk_4
+  - first:
+      213: -1778160359528119031
+    second: BarbIAN_guy_walk_5
+  - first:
+      213: 7896402716674235363
+    second: BarbIAN_guy_walk_6
+  - first:
+      213: 7240346440042461805
+    second: BarbIAN_guy_walk_7
+  - first:
+      213: 6769145857467199810
+    second: BarbIAN_guy_walk_8
+  - first:
+      213: -7745467798460000070
+    second: BarbIAN_guy_walk_9
+  - first:
+      213: -6656816747391368005
+    second: BarbIAN_guy_walk_10
+  - first:
+      213: -8703692892517319713
+    second: BarbIAN_guy_walk_11
+  - first:
+      213: -8512400439490183713
+    second: BarbIAN_guy_walk_12
+  - first:
+      213: -7150871024903438546
+    second: BarbIAN_guy_walk_13
+  - first:
+      213: 5573250170496583254
+    second: BarbIAN_guy_walk_14
+  - first:
+      213: -8613910078662895608
+    second: BarbIAN_guy_walk_15
+  - first:
+      213: -8934325881893770393
+    second: BarbIAN_guy_walk_16
+  - first:
+      213: 2494025286446119493
+    second: BarbIAN_guy_walk_17
+  - first:
+      213: 4402868583305665568
+    second: BarbIAN_guy_walk_18
+  - first:
+      213: -629994553084021084
+    second: BarbIAN_guy_walk_19
+  - first:
+      213: 6562071144915086145
+    second: BarbIAN_guy_walk_20
+  - first:
+      213: -2202447065366891743
+    second: BarbIAN_guy_walk_21
+  - first:
+      213: 908623245564652123
+    second: BarbIAN_guy_walk_22
+  - first:
+      213: 7322302218021254138
+    second: BarbIAN_guy_walk_23
+  - first:
+      213: 2205585320771511128
+    second: BarbIAN_guy_walk_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1998
+        width: 603
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e6f0576aa0f8060800000000000000
+      internalID: 6957791659355500051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_1
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1998
+        width: 603
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f378de67332fe570800000000000000
+      internalID: 8498049742861267960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_2
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1998
+        width: 606
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63b2f995131e2e7d0800000000000000
+      internalID: -2890500408745186506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_3
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 1998
+        width: 606
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76db6a6e8c38aa570800000000000000
+      internalID: 8478734147364765031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_4
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 1998
+        width: 606
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89d59b6008a0cdea0800000000000000
+      internalID: -5846786671248843368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_5
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1501
+        width: 606
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90545a8f294b257e0800000000000000
+      internalID: -1778160359528119031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_6
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1501
+        width: 606
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb1cc21f68a59d60800000000000000
+      internalID: 7896402716674235363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_7
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1501
+        width: 606
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6abe79e9b0ea7460800000000000000
+      internalID: 7240346440042461805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_8
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 1501
+        width: 600
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241b32bfa46d0fd50800000000000000
+      internalID: 6769145857467199810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_9
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 1501
+        width: 600
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab890951312928490800000000000000
+      internalID: -7745467798460000070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1004
+        width: 600
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4cdd4007c3e93a0800000000000000
+      internalID: -6656816747391368005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_11
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1004
+        width: 603
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdbb96bad65463780800000000000000
+      internalID: -8703692892517319713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_12
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1004
+        width: 603
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fddfe42a6e0edd980800000000000000
+      internalID: -8512400439490183713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_13
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 1004
+        width: 603
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f3ff590b003cc90800000000000000
+      internalID: -7150871024903438546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_14
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 1004
+        width: 603
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65685d07089285d40800000000000000
+      internalID: 5573250170496583254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_15
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 507
+        width: 603
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80814220c6e357880800000000000000
+      internalID: -8613910078662895608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_16
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 507
+        width: 603
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ba42e42f5e20480800000000000000
+      internalID: -8934325881893770393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_17
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 507
+        width: 603
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a767bb8ce8c9220800000000000000
+      internalID: 2494025286446119493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_18
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 507
+        width: 603
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c59ac26a12a1d30800000000000000
+      internalID: 4402868583305665568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_19
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 507
+        width: 603
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6fef4ba4fc147f0800000000000000
+      internalID: -629994553084021084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_20
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 10
+        width: 603
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14b218f50f8211b50800000000000000
+      internalID: 6562071144915086145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_21
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 10
+        width: 603
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123743820165f61e0800000000000000
+      internalID: -2202447065366891743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_22
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 10
+        width: 603
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a2b8a17041c9c00800000000000000
+      internalID: 908623245564652123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_23
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 10
+        width: 603
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af33633721b0e9560800000000000000
+      internalID: 7322302218021254138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_walk_24
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 10
+        width: 603
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853e66ed920db9e10800000000000000
+      internalID: 2205585320771511128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BarbIAN_guy_walk_0: 6957791659355500051
+      BarbIAN_guy_walk_1: 8498049742861267960
+      BarbIAN_guy_walk_10: -6656816747391368005
+      BarbIAN_guy_walk_11: -8703692892517319713
+      BarbIAN_guy_walk_12: -8512400439490183713
+      BarbIAN_guy_walk_13: -7150871024903438546
+      BarbIAN_guy_walk_14: 5573250170496583254
+      BarbIAN_guy_walk_15: -8613910078662895608
+      BarbIAN_guy_walk_16: -8934325881893770393
+      BarbIAN_guy_walk_17: 2494025286446119493
+      BarbIAN_guy_walk_18: 4402868583305665568
+      BarbIAN_guy_walk_19: -629994553084021084
+      BarbIAN_guy_walk_2: -2890500408745186506
+      BarbIAN_guy_walk_20: 6562071144915086145
+      BarbIAN_guy_walk_21: -2202447065366891743
+      BarbIAN_guy_walk_22: 908623245564652123
+      BarbIAN_guy_walk_23: 7322302218021254138
+      BarbIAN_guy_walk_24: 2205585320771511128
+      BarbIAN_guy_walk_3: 8478734147364765031
+      BarbIAN_guy_walk_4: -5846786671248843368
+      BarbIAN_guy_walk_5: -1778160359528119031
+      BarbIAN_guy_walk_6: 7896402716674235363
+      BarbIAN_guy_walk_7: 7240346440042461805
+      BarbIAN_guy_walk_8: 6769145857467199810
+      BarbIAN_guy_walk_9: -7745467798460000070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

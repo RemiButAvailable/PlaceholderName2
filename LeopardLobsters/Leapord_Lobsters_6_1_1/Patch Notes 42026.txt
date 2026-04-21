@@ -1,0 +1,6 @@
+Patch Notes 4/20/26
+
+Changed both Game Over screens (Revolt Lose and People Lose)
+Soldier change
+Added new tutorial
+Replaced fountain and place sounds

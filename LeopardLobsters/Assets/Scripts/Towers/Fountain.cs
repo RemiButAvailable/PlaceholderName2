@@ -26,17 +26,12 @@ public class TestFountain : MonoBehaviour
         //hManager = Happiness_ManagerScript.self
         baseTower.isActive.AddListener(SetActive);
         baseTower.OnPlace.AddListener(CheckTowersInArea);
+
+        baseTower.highlight.Highlighted.AddListener(TowerHighlighted);
+        baseTower.highlight.DeHighlighted.AddListener(TowerDehighlighted);
+
         checker.towerEnter.AddListener(TowerEnter);
         checker.towerExit.AddListener(TowerExit);
-    }
-
-    void TowerEnter(BaseTower other)
-    {
-            towerCount++;
-    }
-    void TowerExit(BaseTower other)
-    {
-            towerCount--;
     }
 
     private void FixedUpdate()
@@ -58,6 +53,7 @@ public class TestFountain : MonoBehaviour
         }
     }
 
+    //basetower active event
     void CheckTowersInArea(BaseTower tower) {
         Collider2D col = GetComponent<Collider2D>();
 
@@ -78,15 +74,36 @@ public class TestFountain : MonoBehaviour
 
     }
 
-    void SetActive(bool towerActive) { active = towerActive;
+    void SetActive(bool towerActive) { 
+        active = towerActive;
+        
+        if(!active)
+        {
+            WaterSound.Stop();
+        }
+    }
+
+    //tower selectable events
+    void TowerEnter(BaseTower other)
+    {
+        towerCount++;
+    }
+    void TowerExit(BaseTower other)
+    {
+        towerCount--;
+    }
+
+    //tower higlighted events
+    void TowerHighlighted()
+    {
         if (active)
         {
             WaterSound.Play();
         }
-        else
-        {
-            WaterSound.Stop();
-        }
+    }
+    void TowerDehighlighted()
+    {
+        WaterSound.Stop();
     }
 }
 

@@ -54,6 +54,9 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     MoneyManagerScript moneyManagerScript => MoneyManagerScript.self;
     Happiness_ManagerScript happinessManagerScript => Happiness_ManagerScript.self;
 
+    //Animation :D
+    [SerializeField] Animator move;
+
     //(Made by Dante Jones)
     //The audio for enemy getting hurt
     [SerializeField] AudioSource hurtSound;
@@ -74,6 +77,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
             waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
         }
         speed = defaultSpeed;
+        //move.Play("BarbIAN_guy_walk");
     }
 
     // Update is called once per frame
@@ -108,6 +112,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
 
             moneyManagerScript.ChangeMoney(money);
 
+            //move.Play("BarbIAN_guy_DEATH");
             //sounds
             AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
             aPlayer.playClip(transform.position, deathSound, deathSoundVolume);

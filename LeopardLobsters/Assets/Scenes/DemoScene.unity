@@ -5955,7 +5955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyNum: 0
-  WaveNum: 0
   WaveStart: 1
   endedWave: 0
   TotalWealth: 1
@@ -7672,6 +7671,8 @@ MonoBehaviour:
   PlaceDenySound: {fileID: 1120232901}
   TowerPlaceSound: {fileID: 1446414711}
   BuySound: {fileID: 818502467}
+  numAnimatorParent: {fileID: 254156728}
+  numAnimator: {fileID: 2746398056380186373, guid: 0b111b5f391e89b4f8757c1735697d82, type: 3}
   BuyDenySound: {fileID: 93230781}
 --- !u!4 &724975674
 Transform:

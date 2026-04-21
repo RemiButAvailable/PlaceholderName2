@@ -27,7 +27,10 @@ public class MoneyManagerScript : MonoBehaviour
     public AudioSource TowerPlaceSound;
     //
     public AudioSource BuySound;
-    //
+
+    [SerializeField] Transform numAnimatorParent;
+    [SerializeField] NumberScript numAnimator;
+
     public AudioSource BuyDenySound;
     
     static public MoneyManagerScript self;
@@ -137,8 +140,14 @@ public class MoneyManagerScript : MonoBehaviour
     {
         moneyNum += num;
         textMoney.text = moneyNum.ToString();
+
         BuySound.Play();
-        textMoney.text = moneyNum.ToString();
+
+        NumberScript ani = Instantiate(numAnimator,numAnimatorParent);
+        string text = num.ToString();
+        if (num > 0) text = "+" + text;
+        ani.text.text = text;
+        ani.Play("Down");
     }
     public bool Check(int num)
     {

@@ -51,9 +51,10 @@ public class Castle : MonoBehaviour
     [SerializeField] AudioSource towerDeactive;
 
     [Space]
-    [Header("CastleHit sounds")]
+    [Header("people gain and killed feedback")]
     [SerializeField] AudioSource castleHitSound;
     [SerializeField] AudioSource PeopleGainSound;
+    [SerializeField] Animator PeopleGainAnimator;
 
     public static Castle self;
 
@@ -158,8 +159,11 @@ public class Castle : MonoBehaviour
 
                 //DO: people added SFX VFX
                 PeopleGainSound.Play();
+                PeopleGainAnimator.Play("People_Gain");
+
                 peopleAtCastle++;
                 peopleTotal++;
+
                 textUpdatePTotal();
                 textUpdatePIn();
             }

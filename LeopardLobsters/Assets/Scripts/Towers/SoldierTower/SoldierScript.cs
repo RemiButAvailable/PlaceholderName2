@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 public class SoldierScript : MonoBehaviour
 {
     //soldier state bools
-    [HideInInspector]
+    //[HideInInspector]
     public bool engaged;
     [HideInInspector]
     public bool fighting;
@@ -87,13 +87,16 @@ public class SoldierScript : MonoBehaviour
             AudioPlayer aPlayer = Instantiate(aSoundPrefab);
             aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
             //anim.Play("Soldier_Death");
-            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
-            target.GetComponent<KnightScript>().targeted = false;
-            /*soldierTower.GetComponent<SoldierTowerScript>()*/soldierTowerScript.RemoveSoldier(this.gameObject);
+            if(target != null)
+            {
+                target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
+                target.GetComponent<KnightScript>().targeted = false;
+            }
+            soldierTowerScript.RemoveSoldier(this.gameObject);
             Destroy(gameObject);
         }
 
-        if (target == null && fighting == true)
+        /*if (target == null && fighting == true)
         {
             soldierTowerScript.enemiesInZone.Sort();
             for (int i = 0; i < soldierTowerScript.enemiesInZone.Count; i++)
@@ -104,7 +107,7 @@ public class SoldierScript : MonoBehaviour
                 }
             }
             fighting = false;
-        }
+        }*/
     }
     IEnumerator FightEnemy()
     {

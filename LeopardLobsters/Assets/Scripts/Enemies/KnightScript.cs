@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 
+// HI
 public class KnightScript : MonoBehaviour, IComparable<KnightScript>
 {
     //vals that can be edited in the inspector

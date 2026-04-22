@@ -54,8 +54,8 @@ public class WaveCode : MonoBehaviour
 
     //for others to access
     [HideInInspector] static public WaveCode self;
-    [HideInInspector]public UnityEvent waveStarted;
-    [HideInInspector]public UnityEvent waveEnded;
+    [HideInInspector] public UnityEvent waveStarted;
+    [HideInInspector] public UnityEvent waveEnded;
 
     //(This is made by Dante Jones)
     //Diffrent music for diffrent parts of the game
@@ -69,17 +69,17 @@ public class WaveCode : MonoBehaviour
     //vals that can be edited in the inspector
     [Range(0, 12)]
     public int enemyClumpSizeRandomness;
-    [Range (0, 12)]
+    [Range(0, 12)]
     public float timeBetweenEnemySpawnsRandomness;//cooldown between clumps randomizer
-    [Range (0, 12)]
+    [Range(0, 12)]
     public float enemySpawnPosOffsetRandomness;
     [Range(0, 1)]
     public float cooldownWithinClump;
-    [Range (0, 12)]
+    [Range(0, 12)]
     public int probOfFastEnemyDeterminer;//upper limit of the range for the random val that determines if an enemy is fast. Decreases once they start spawning
-    [Range (0, 60)]
+    [Range(0, 60)]
     public int EnemyMax;
-    [Range (0, 12)]
+    [Range(0, 12)]
     public int cooldown;//cooldown between clumps
     [Range(0, 12)]
     public int phantomEnemyNumBeforeAltEnemies;//the amount of normal enemies that can spawn before there's a chance of fast ones and bosses
@@ -94,9 +94,12 @@ public class WaveCode : MonoBehaviour
         // Keep Game alive
         WaveStart = false;
         waveText.text = "Build Phase: " + 1;
+
+        Castle.self.gameOver.AddListener(GameOver);
+
         DontDestroyOnLoad(this);
         StartCoroutine(Spawner(cooldown));
-      }
+    }
 
     private void Awake()
     {
@@ -104,7 +107,7 @@ public class WaveCode : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-        {
+    {
         // After every enemy is defeated, put up the number.
         // Get ready for a new wave
         if (EnemyNum <= 0 && WaveStart && enemiesStartedSpawning && PhantomEnemyNum >= EnemyMax && !endedWave)
@@ -115,16 +118,16 @@ public class WaveCode : MonoBehaviour
 
     public IEnumerator Spawner(float cooldown)
     {
-        while(true)
+        while (true)
         {
             if (WaveStart && PhantomEnemyNum < EnemyMax)
             {
                 cooldown -= PhantomEnemyNum * 0.01f;//cooldown decreases over the course of the wave as the amount of enemies increases
 
-                if(PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies && probOfFastEnemyDeterminer > 4 /*min amount probOfFastEnemyDeterminerCanBe*/)//if a certain amount of enemies have spawned and the prob of fast enemy determiner hasn't decreased too much, decrease it
-                probOfFastEnemyDeterminer -= 1;
+                if (PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies && probOfFastEnemyDeterminer > 4 /*min amount probOfFastEnemyDeterminerCanBe*/)//if a certain amount of enemies have spawned and the prob of fast enemy determiner hasn't decreased too much, decrease it
+                    probOfFastEnemyDeterminer -= 1;
 
-                if(PhantomEnemyNum <= phantomEnemyNumBeforeAltEnemies) 
+                if (PhantomEnemyNum <= phantomEnemyNumBeforeAltEnemies)
                 {
                     EnemySpawnSpot = EnemySpawnStart;
                     enemyPath = StartingEnemyPath;
@@ -140,11 +143,11 @@ public class WaveCode : MonoBehaviour
                 //Debug.Log("enemy max - phantom enemy num is " + (EnemyMax - PhantomEnemyNum));
                 //Debug.Log("enemy clump size is " + enemyClumpSize);
 
-                if(enemyClumpSize > EnemyMax - PhantomEnemyNum)
+                if (enemyClumpSize > EnemyMax - PhantomEnemyNum)
                 {
                     enemyClumpSize = EnemyMax - PhantomEnemyNum;
                 }
-                for(int i = 0; i < enemyClumpSize; i++)
+                for (int i = 0; i < enemyClumpSize; i++)
                 {
                     //select an enemy type. The prob of getting a fast one increases over the course of the game
                     if(PhantomEnemyNum < phantomEnemyNumBeforeAltEnemies)
@@ -177,7 +180,7 @@ public class WaveCode : MonoBehaviour
                     spawnedBossEnemy = Instantiate(bossEnemy, EnemySpawnSpot, Quaternion.identity);
                 }
             }
-            float cooldownMultiplier = Random.Range(1/timeBetweenEnemySpawnsRandomness, timeBetweenEnemySpawnsRandomness);
+            float cooldownMultiplier = Random.Range(1 / timeBetweenEnemySpawnsRandomness, timeBetweenEnemySpawnsRandomness);
             yield return new WaitForSeconds(cooldown * cooldownMultiplier);
         }
     }
@@ -185,13 +188,13 @@ public class WaveCode : MonoBehaviour
     //Start Next Wave
     public void StartNext()
     {
-        if(WaveStart == false)
+        if (WaveStart == false)
         {
             WaveStart = true;
             waveStarted.Invoke();
 
             WaveNum++;
-            EnemyMax = (int)Mathf.Round(EnemyMax*enemyMaxMultiplier);
+            EnemyMax = (int)Mathf.Round(EnemyMax * enemyMaxMultiplier);
             PhantomEnemyNum = 0;
 
             int RandomNum = Random.Range(0, 2);
@@ -199,7 +202,7 @@ public class WaveCode : MonoBehaviour
             StartingEnemyPath = enemyPaths[RandomNum];
 
             waveText.text = "Wave Phase: " + WaveNum;
-            
+
             //Turns on battle phase music stops building phase music
             buildMusic.Stop();
             battleMusic.Play();
@@ -220,7 +223,11 @@ public class WaveCode : MonoBehaviour
         buildMusic.Play();
         battleMusic.Stop();
         //buildPhaseText.enabled = true;
-        waveText.text = "Build Phase: " + (WaveNum+1);
+        waveText.text = "Build Phase: " + (WaveNum + 1);
+    }
+
+    void GameOver() {
+        Global.GameOver(WaveNum);
     }
 }
 

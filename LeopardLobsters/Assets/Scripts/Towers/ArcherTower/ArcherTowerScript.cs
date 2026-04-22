@@ -33,7 +33,7 @@ public class ArcherTowerScript : MonoBehaviour
         //attackZone.Tower = this.gameObject;
         attackZone?.KnightEntered.AddListener(EnemyEntered);
         attackZone?.KnightExited.AddListener(EnemyExited);
-        anim.Play("Archer Idle");
+        //anim.Play("Archer Idle");
 
         queue = new List<KnightScript>();
         StartCoroutine(ShootArrows());

@@ -26,7 +26,7 @@ public class StartMenu : MonoBehaviour
     // To activate and deactivate the credits on the main menu with the buttons.
     public void Credits(GameObject gameObject)
     {
-        if (gameObject.active)
+        if (gameObject.activeSelf)
         {
             gameObject.SetActive(false);
         }
@@ -37,5 +37,10 @@ public class StartMenu : MonoBehaviour
         }
 
 
+    }
+
+    public void Tutorial(string scene) {
+        Global.inTutorial = true;
+        SceneManager.LoadScene(scene);
     }
 }

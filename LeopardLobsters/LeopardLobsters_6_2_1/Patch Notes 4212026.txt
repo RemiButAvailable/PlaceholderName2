@@ -1,0 +1,6 @@
+Patch Notes 4/21/2026
+
+added a bunch of animations including archer animations, soldier animations, and new sounds
+placement sound
+arrow hit sound
+soldiers almost able to correctly target most urgent enemy by checking if they can catch an enemy

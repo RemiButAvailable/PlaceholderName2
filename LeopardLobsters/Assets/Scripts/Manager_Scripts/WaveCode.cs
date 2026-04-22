@@ -150,12 +150,14 @@ public class WaveCode : MonoBehaviour
                 for (int i = 0; i < enemyClumpSize; i++)
                 {
                     //select an enemy type. The prob of getting a fast one increases over the course of the game
-                    int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);
-                    if (RandomNumTwo >= 1)
-                        RandomNumTwo = 1;
+                    if(PhantomEnemyNum < phantomEnemyNumBeforeAltEnemies)
+                    {
+                        int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);
+                        if (RandomNumTwo >= 1)
+                            RandomNumTwo = 1;
 
-                    selectedEnemy = enemies[RandomNumTwo];
-
+                        selectedEnemy = enemies[RandomNumTwo];
+                    }
                     //spawn an enemy at the clump's shared starting point with a randomized offset
                     float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
                     Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);

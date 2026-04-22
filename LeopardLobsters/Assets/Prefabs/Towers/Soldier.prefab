@@ -289,10 +289,10 @@ MonoBehaviour:
   engaged: 0
   fighting: 0
   speed: 2
-  health: 3
+  health: 4
   stationPosition: {x: 8.058354, y: -7.307692, z: 0}
   target: {fileID: 0}
-  Tower: {fileID: 0}
+  soldierTower: {fileID: 0}
   anim: {fileID: 8388224713025478264}
   isActive: 0
   hitSound: {fileID: 3952712213451866196}

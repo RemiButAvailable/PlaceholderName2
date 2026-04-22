@@ -6,6 +6,7 @@
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -57,6 +58,7 @@ public class Castle : MonoBehaviour
     [SerializeField] Animator PeopleGainAnimator;
 
     public static Castle self;
+    [HideInInspector] public UnityEvent gameOver;
 
     private void Awake()
     {
@@ -188,6 +190,7 @@ public class Castle : MonoBehaviour
             // One of the reasons for the loss
             enemy.ReachedCastle();
             if (peopleAtCastle < 0) {
+                gameOver.Invoke();
                 SceneManager.LoadScene("PeopleLoseScreen");
             }
         }

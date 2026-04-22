@@ -11,6 +11,8 @@ public class SoldierScript : MonoBehaviour
     public bool fighting;
     [HideInInspector]
     bool atStation;
+    [HideInInspector]
+    bool isDying;
 
     //stat vals that can be edited in the inspector
     [Range(0f, 12f)]
@@ -28,6 +30,7 @@ public class SoldierScript : MonoBehaviour
     GameObject castleObj;
 
     [SerializeField] Animator anim;
+    [SerializeField] Animator knightAnim;
 
     public bool isActive; //is the tower active    
 
@@ -71,10 +74,10 @@ public class SoldierScript : MonoBehaviour
                 fighting = true;
                 target.GetComponent<KnightScript>().speed = 0;
             }
-            else if (Vector3.Distance(transform.position, stationPosition) < 0.1f && engaged == false)
+            /*else if (Vector3.Distance(transform.position, stationPosition) < 0.1f && engaged == false)
             {
                 atStation = true;
-            }
+            }*/
         }
         else
         {
@@ -83,53 +86,51 @@ public class SoldierScript : MonoBehaviour
 
         if (health <= 0)
         {
-            //Will add volume
-            AudioPlayer aPlayer = Instantiate(aSoundPrefab);
-            aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
-            //anim.Play("Soldier_Death");
-            if(target != null)
-            {
-                target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
-                target.GetComponent<KnightScript>().targeted = false;
-            }
-            soldierTowerScript.RemoveSoldier(this.gameObject);
-            Destroy(gameObject);
+            anim.SetBool("isDead", true);
         }
 
-        /*if (target == null && fighting == true)
+        if(fighting == true && target == null)
         {
             soldierTowerScript.enemiesInZone.Sort();
-            for (int i = 0; i < soldierTowerScript.enemiesInZone.Count; i++)
+            foreach(var enemy in soldierTowerScript.enemiesInZone)
             {
-                if (soldierTowerScript.enemiesInZone[0].GetComponent<KnightScript>().targeted == false)
+                if(enemy.GetComponent<KnightScript>().targeted == false)
                 {
-                    target = soldierTowerScript.enemiesInZone[0];
+                    target = enemy;
+                    engaged = true;
+                    fighting = false;
                 }
             }
-            fighting = false;
-        }*/
+        }
     }
     IEnumerator FightEnemy()
     {
-        anim.Play("Soldier_Attack");
-
         while (true)
         {
-
             if(fighting == true)
             {
-                //attack animation?
-                //play enemy damage sound
+                anim.SetBool("isAttackin", true);
+                knightAnim.SetBool("isAttackin", true);
+                hitSound.Play();
                 target.GetComponent<KnightScript>().TakeDamage(1);
                 yield return new WaitForSeconds(1);
-                //play soldier damage sound
                 hitSound.Play();
-                //enemy attack animation?
                 health -= 1;
                 yield return new WaitForSeconds(1);
             }
-            //anim.Play("Soldier_Idle");
             yield return null;
         }
+    }
+    public void Die()
+    {
+        AudioPlayer aPlayer = Instantiate(aSoundPrefab);
+        aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
+        if (target != null)
+        {
+            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
+            target.GetComponent<KnightScript>().targeted = false;
+        }
+        soldierTowerScript.RemoveSoldier(this.gameObject);
+        Destroy(gameObject);
     }
 }

@@ -802,6 +802,8 @@ MonoBehaviour:
   PlaceDenySound: {fileID: 610230913}
   TowerPlaceSound: {fileID: 1891896310}
   BuySound: {fileID: 1167926668}
+  numAnimatorParent: {fileID: 0}
+  numAnimator: {fileID: 0}
   BuyDenySound: {fileID: 2017162298}
 --- !u!1 &239029376
 GameObject:
@@ -11475,7 +11477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyNum: 0
-  WaveNum: 0
   WaveStart: 1
   endedWave: 0
   TotalWealth: 1
@@ -16278,6 +16279,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1043354285}
     m_Modifications:
+    - target: {fileID: 1234506364020393677, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447150872018839680, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648217762070524959, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3913083330509632700, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -16318,13 +16331,73 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3999420397914291334, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364311825384307436, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4691992251782527532, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
       propertyPath: started.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 132532346}
+    - target: {fileID: 5189192079478675185, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5443362671257814087, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
       propertyPath: m_Name
       value: Tutorial Popup Holder Save
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078863750588619315, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135260203860374617, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637448820496897906, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858492969031244259, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759985230958063443, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849980796082231622, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425024384738074048, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444844294918590008, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835004029337300525, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062241027143833397, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090179351653780269, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093184888580807037, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

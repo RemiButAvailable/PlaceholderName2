@@ -88,7 +88,7 @@ public class SoldierTowerScript : MonoBehaviour
                 enemiesInZone.Sort();
                 for(int o = 0; o < enemiesInZone.Count; o++)
                 {
-                    /*bool canReachEnemy = false;
+                    bool canReachEnemy = false;
 
                     //find the point at which the enemy will leave the radius
                     Vector3 radiusPathIntersectionPoint = new Vector3(0, 0, 0);
@@ -129,14 +129,14 @@ public class SoldierTowerScript : MonoBehaviour
                     Vector2 enemyDir = closestContactToCastle - (Vector2)enemiesInZone[o].transform.position;
                     for(float t = 0; t < 1; t++)
                     {
+                        //check
+                    }
 
-                    }*/
-
-                    /*if (Vector3.Distance(enemiesInZone[o].transform.position, radius.ClosestPoint(enemiesInZone[o].transform.position)) >= Vector3.Distance(enemiesInZone[o].transform.position, soldiers[i].transform.position))
+                    if (Vector3.Distance(enemiesInZone[o].transform.position, radius.ClosestPoint(enemiesInZone[o].transform.position)) >= Vector3.Distance(enemiesInZone[o].transform.position, soldiers[i].transform.position))
                     {
                         canReachEnemy = true;
-                    }*/
-                    if(enemiesInZone[o].GetComponent<KnightScript>().targeted == false/* && canReachEnemy*/)
+                    }
+                    if(enemiesInZone[o].GetComponent<KnightScript>().targeted == false && canReachEnemy)
                     {
                         soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
                     }

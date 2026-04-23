@@ -215,12 +215,12 @@ TextureImporter:
       name: Archer_guy_ATC_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 2265
         width: 410
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: Archer_guy_ATC_1
       rect:
         serializedVersion: 2
-        x: 411
+        x: 410
         y: 2265
-        width: 400
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: Archer_guy_ATC_2
       rect:
         serializedVersion: 2
-        x: 821
+        x: 820
         y: 2265
-        width: 400
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: Archer_guy_ATC_3
       rect:
         serializedVersion: 2
-        x: 1231
+        x: 1230
         y: 2265
-        width: 393
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: Archer_guy_ATC_4
       rect:
         serializedVersion: 2
-        x: 1641
+        x: 1640
         y: 2265
-        width: 388
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: Archer_guy_ATC_5
       rect:
         serializedVersion: 2
-        x: 2051
+        x: 2050
         y: 2265
-        width: 388
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -347,12 +347,12 @@ TextureImporter:
       name: Archer_guy_ATC_6
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 1812
-        width: 388
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -369,12 +369,12 @@ TextureImporter:
       name: Archer_guy_ATC_7
       rect:
         serializedVersion: 2
-        x: 411
+        x: 410
         y: 1812
-        width: 388
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -391,12 +391,12 @@ TextureImporter:
       name: Archer_guy_ATC_8
       rect:
         serializedVersion: 2
-        x: 821
+        x: 820
         y: 1812
-        width: 388
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,12 +413,12 @@ TextureImporter:
       name: Archer_guy_ATC_9
       rect:
         serializedVersion: 2
-        x: 1231
+        x: 1230
         y: 1812
-        width: 388
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -435,12 +435,12 @@ TextureImporter:
       name: Archer_guy_ATC_10
       rect:
         serializedVersion: 2
-        x: 1641
+        x: 1640
         y: 1812
-        width: 388
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -457,12 +457,12 @@ TextureImporter:
       name: Archer_guy_ATC_11
       rect:
         serializedVersion: 2
-        x: 2051
+        x: 2050
         y: 1812
-        width: 388
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -479,12 +479,12 @@ TextureImporter:
       name: Archer_guy_ATC_12
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 1359
-        width: 388
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -501,12 +501,12 @@ TextureImporter:
       name: Archer_guy_ATC_13
       rect:
         serializedVersion: 2
-        x: 411
+        x: 410
         y: 1359
-        width: 388
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -523,12 +523,12 @@ TextureImporter:
       name: Archer_guy_ATC_14
       rect:
         serializedVersion: 2
-        x: 821
+        x: 820
         y: 1359
-        width: 388
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -545,12 +545,12 @@ TextureImporter:
       name: Archer_guy_ATC_15
       rect:
         serializedVersion: 2
-        x: 1231
+        x: 1230
         y: 1359
-        width: 388
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: Archer_guy_ATC_16
       rect:
         serializedVersion: 2
-        x: 1641
+        x: 1640
         y: 1359
-        width: 388
-        height: 439
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -589,12 +589,12 @@ TextureImporter:
       name: Archer_guy_ATC_17
       rect:
         serializedVersion: 2
-        x: 2051
+        x: 2050
         y: 1359
-        width: 388
-        height: 449
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -611,12 +611,12 @@ TextureImporter:
       name: Archer_guy_ATC_18
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 906
-        width: 388
-        height: 434
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -633,12 +633,12 @@ TextureImporter:
       name: Archer_guy_ATC_19
       rect:
         serializedVersion: 2
-        x: 411
+        x: 410
         y: 906
-        width: 388
-        height: 434
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -655,12 +655,12 @@ TextureImporter:
       name: Archer_guy_ATC_20
       rect:
         serializedVersion: 2
-        x: 821
+        x: 820
         y: 906
-        width: 388
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -677,12 +677,12 @@ TextureImporter:
       name: Archer_guy_ATC_21
       rect:
         serializedVersion: 2
-        x: 1231
+        x: 1230
         y: 906
-        width: 388
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -699,12 +699,12 @@ TextureImporter:
       name: Archer_guy_ATC_22
       rect:
         serializedVersion: 2
-        x: 1641
+        x: 1640
         y: 906
-        width: 388
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -721,12 +721,12 @@ TextureImporter:
       name: Archer_guy_ATC_23
       rect:
         serializedVersion: 2
-        x: 2051
+        x: 2050
         y: 906
-        width: 388
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -743,12 +743,12 @@ TextureImporter:
       name: Archer_guy_ATC_24
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 453
-        width: 388
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -765,12 +765,12 @@ TextureImporter:
       name: Archer_guy_ATC_25
       rect:
         serializedVersion: 2
-        x: 411
+        x: 410
         y: 453
-        width: 388
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -787,12 +787,12 @@ TextureImporter:
       name: Archer_guy_ATC_26
       rect:
         serializedVersion: 2
-        x: 821
+        x: 820
         y: 453
-        width: 388
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -809,12 +809,12 @@ TextureImporter:
       name: Archer_guy_ATC_27
       rect:
         serializedVersion: 2
-        x: 1231
+        x: 1230
         y: 453
-        width: 388
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -831,12 +831,12 @@ TextureImporter:
       name: Archer_guy_ATC_28
       rect:
         serializedVersion: 2
-        x: 1641
+        x: 1640
         y: 453
-        width: 388
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -853,12 +853,12 @@ TextureImporter:
       name: Archer_guy_ATC_29
       rect:
         serializedVersion: 2
-        x: 2051
+        x: 2050
         y: 453
-        width: 400
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -875,12 +875,12 @@ TextureImporter:
       name: Archer_guy_ATC_30
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 409
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -897,12 +897,12 @@ TextureImporter:
       name: Archer_guy_ATC_31
       rect:
         serializedVersion: 2
-        x: 411
+        x: 410
         y: 0
-        width: 409
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -919,12 +919,12 @@ TextureImporter:
       name: Archer_guy_ATC_32
       rect:
         serializedVersion: 2
-        x: 821
+        x: 820
         y: 0
         width: 410
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -941,12 +941,12 @@ TextureImporter:
       name: Archer_guy_ATC_33
       rect:
         serializedVersion: 2
-        x: 1231
+        x: 1230
         y: 0
         width: 410
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -959,11 +959,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_34
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 0
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.3, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bc541487e2f174cba5511615a48acc
+      internalID: -953507057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b6a3eeb870ee5474997d8404486c508c
     internalID: 0
     vertices: []
     indices: 
@@ -1001,6 +1023,7 @@ TextureImporter:
       Archer_guy_ATC_31: 2935525340833067927
       Archer_guy_ATC_32: 2731526918869843172
       Archer_guy_ATC_33: 9043599709385882051
+      Archer_guy_ATC_34: -953507057
       Archer_guy_ATC_4: -9191089402671774913
       Archer_guy_ATC_5: 7571172553894321107
       Archer_guy_ATC_6: 4918851968860503125

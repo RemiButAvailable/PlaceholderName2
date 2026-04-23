@@ -33,8 +33,9 @@ public class ArcherTowerScript : MonoBehaviour
         //attackZone.Tower = this.gameObject;
         attackZone?.KnightEntered.AddListener(EnemyEntered);
         attackZone?.KnightExited.AddListener(EnemyExited);
-        //anim.Play("Archer Idle");
 
+        anim.SetBool("Archer Idle",true);
+        
         queue = new List<KnightScript>();
         StartCoroutine(ShootArrows());
         //StartCoroutine(Printer());
@@ -54,6 +55,7 @@ public class ArcherTowerScript : MonoBehaviour
     {
         while (true)
         {
+
             if (enemyInZone && isActive)
             {
                 ArrowScript arrowScript = Instantiate(Arrow, transform.position, Quaternion.identity);
@@ -61,7 +63,7 @@ public class ArcherTowerScript : MonoBehaviour
                 //Sound when arrow shoots
                 arrowShootSound.Play();
 
-                //anim.Play("Archer_guy_ATC");
+                anim.SetBool("ArcherATC", true);
 
                 queue.Sort();
                 //KnightScript knightScript = queue[0].GetComponent<KnightScript>();

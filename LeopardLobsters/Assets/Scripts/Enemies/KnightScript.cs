@@ -80,12 +80,13 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
             waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
         }
         speed = defaultSpeed;
-        //move.Play("BarbIAN_guy_walk");
+        move.SetBool("isWalking", true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("walking animation " + move.GetBool("isAttacking"));
         //movement
         if(index < waypoints.Length)
         {
@@ -110,6 +111,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         //death
         if (health <= 0)
         {
+            move.SetBool("isWalking", false);
             move.SetBool("isDead", true);
         }
     }

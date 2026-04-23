@@ -7671,7 +7671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91556e0fe0f32d74b9ba45e3c7d005d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyNum: 10
+  moneyNum: 100
   products:
   - {fileID: 0}
   - {fileID: 0}

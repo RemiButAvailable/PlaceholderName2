@@ -34,7 +34,7 @@ public class ArcherTowerScript : MonoBehaviour
         attackZone?.KnightEntered.AddListener(EnemyEntered);
         attackZone?.KnightExited.AddListener(EnemyExited);
 
-        anim.SetBool("Archer Idle",true);
+        anim.SetBool("IsIdle",true);
         
         queue = new List<KnightScript>();
         StartCoroutine(ShootArrows());
@@ -63,7 +63,7 @@ public class ArcherTowerScript : MonoBehaviour
                 //Sound when arrow shoots
                 arrowShootSound.Play();
 
-                anim.SetBool("ArcherATC", true);
+                anim.SetBool("IsAttacking", true);
 
                 queue.Sort();
                 //KnightScript knightScript = queue[0].GetComponent<KnightScript>();

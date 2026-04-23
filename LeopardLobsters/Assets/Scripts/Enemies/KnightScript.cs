@@ -86,7 +86,6 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("walking animation " + move.GetBool("isAttacking"));
         //movement
         if(index < waypoints.Length)
         {

@@ -1445,7 +1445,7 @@ MonoBehaviour:
   towerSelectable: {fileID: 1621057731181503075}
   maxPeoplCostButtonText: {fileID: 5512004340365354575}
   buttonPanel: {fileID: 8872542303261452575}
-  castleSprite: {fileID: 6929179903699332378}
+  castleSprite: {fileID: 5660738079388908027}
   peopleSprites:
   - {fileID: 5413661563508370397}
   - {fileID: 4763478610847920662}

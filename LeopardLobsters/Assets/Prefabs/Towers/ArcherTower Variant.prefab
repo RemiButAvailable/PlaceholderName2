@@ -773,7 +773,7 @@ MonoBehaviour:
   isActive: 0
   arrowShootSound: {fileID: 1795041406276085977}
   anim: {fileID: -3479202337782320388}
-  directionMultiplier: 0
+  directionMultiplier: 1
 --- !u!95 &-3479202337782320388
 Animator:
   serializedVersion: 7

@@ -9,8 +9,8 @@ public class SoldierScript : MonoBehaviour
     public bool engaged;
     [HideInInspector]
     public bool fighting;
-    [HideInInspector]
-    bool atStation;
+    //[HideInInspector]
+    public bool atStation;
     [HideInInspector]
     bool isDying;
     [HideInInspector]
@@ -55,6 +55,10 @@ public class SoldierScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("isIdle " + anim.GetBool("isIdle"));
+        Debug.Log("isWalking " + anim.GetBool("isWalking"));
+        Debug.Log("isAttacking " + anim.GetBool("isAttacking"));
+        //Debug.Log("isIdle " + anim.GetBool("isIdle"));
         if (engaged == true && target != null)
         {
             anim.SetBool("isIdle", false);
@@ -72,9 +76,14 @@ public class SoldierScript : MonoBehaviour
             direction = stationPosition - transform.position;
             direction.Normalize();
             if (atStation == false)
+            {
                 transform.position += direction * speed * Time.deltaTime;
+            }
             else
+            {
+                //Debug.Log("at station");
                 anim.SetBool("isIdle", true);
+            }
         }
 
         if (target != null)
@@ -85,10 +94,7 @@ public class SoldierScript : MonoBehaviour
                 fighting = true;
                 target.GetComponent<KnightScript>().speed = 0;
             }
-            /*else if (Vector3.Distance(transform.position, stationPosition) < 0.1f && engaged == false)
-            {
-                atStation = true;
-            }*/
+            atStation = false;
         }
         else
         {
@@ -104,6 +110,7 @@ public class SoldierScript : MonoBehaviour
 
         if(fighting == true && target == null)
         {
+            fighting = false;
             soldierTowerScript.enemiesInZone.Sort();
             foreach(var enemy in soldierTowerScript.enemiesInZone)
             {
@@ -111,11 +118,20 @@ public class SoldierScript : MonoBehaviour
                 {
                     target = enemy;
                     engaged = true;
-                    fighting = false;
                     anim.SetBool("isAttacking", false);
                     anim.SetBool("isWalking", true);
                 }
             }
+        }
+
+        if(Vector3.Distance(transform.position, stationPosition) < 0.1f && engaged == false)
+        {
+            //Debug.Log("atStation");
+            atStation = true;
+        }
+        else
+        {
+            atStation = false;
         }
     }
     IEnumerator FightEnemy()

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e9350c8edaaf8a941a4c74b6419338f8
+guid: 7404e0950f025ce419fd7c160316a549
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7107862743366547023
-    second: RIVER_0
-  - first:
-      213: -8839309312641193607
-    second: RIVER_1
+      213: 4527621179873219339
+    second: TOWER_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,45 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RIVER_0
+      name: TOWER_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 390
-        height: 2154
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 110
+        y: 62
+        width: 417
+        height: 674
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14812529}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f46b89a818334a260800000000000000
-      internalID: 7107862743366547023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RIVER_1
-      rect:
-        serializedVersion: 2
-        x: 389
-        y: 0
-        width: 389
-        height: 2154
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 97928384307745580800000000000000
-      internalID: -8839309312641193607
+      spriteID: b03d0e7897755de30800000000000000
+      internalID: 4527621179873219339
       vertices: []
       indices: 
       edges: []
@@ -163,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3d6e7263c188fb242af354c039b19a67
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RIVER_0: 7107862743366547023
-      RIVER_1: -8839309312641193607
+      TOWER_0: 4527621179873219339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

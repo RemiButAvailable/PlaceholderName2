@@ -8,17 +8,13 @@ public class PauseButtonScript : MonoBehaviour
     bool paused;
     public GameObject fog; //makes the screen muted/have a transparent overlay of color while the game is paused
     TMP_Text text;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         text = GetComponentInChildren<TMP_Text>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void PauseOrResumeGame()
     {
@@ -32,16 +28,20 @@ public class PauseButtonScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("ah");
-            Time.timeScale = 1;
-            quitToMenuButton.SetActive(false);
-            fog.SetActive(false);
-            text.text = "Pause Game";
-            paused = false;
+            ResumeGame();
         }
     }
     public void QuitToMenu()
     {
+        ResumeGame();
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void ResumeGame() {
+        Time.timeScale = 1;
+        quitToMenuButton.SetActive(false);
+        fog.SetActive(false);
+        text.text = "Pause Game";
+        paused = false;
     }
 }

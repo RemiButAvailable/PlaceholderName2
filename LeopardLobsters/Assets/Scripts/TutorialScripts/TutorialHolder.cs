@@ -1,7 +1,4 @@
-/* Author: Albert Tan
- * Utilized by: Victoria T.
- * 4/1/26
- ****************************/
+
 
 using System;
 using UnityEngine;
@@ -22,6 +19,7 @@ public class TutorialHolder : MonoBehaviour
     private void Start()
     {
         if (!Global.inTutorial) { return; }
+        Global.inTutorial = false;
 
         //gets a list from the object children
         if (TutorialListObject) {
@@ -77,5 +75,5 @@ public class TutorialHolder : MonoBehaviour
         popUp.started.Invoke();
     }
 
-    public void tutorialDone() { Global.inTutorial = false; }
+    public void tutorialDone() {  }
 }

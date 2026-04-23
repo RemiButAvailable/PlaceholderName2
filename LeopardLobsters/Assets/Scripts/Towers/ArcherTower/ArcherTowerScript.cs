@@ -58,7 +58,7 @@ public class ArcherTowerScript : MonoBehaviour
 
             if (enemyInZone && isActive)
             {
-                ArrowScript arrowScript = Instantiate(Arrow, transform.position, Quaternion.identity);
+                ArrowScript arrowScript = Instantiate(Arrow, arrowStartPosition.transform.position, Quaternion.identity);
 
                 //Sound when arrow shoots
                 arrowShootSound.Play();

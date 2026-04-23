@@ -225,4 +225,53 @@ public class SoldierTowerScript : MonoBehaviour
             convertedPoint2
         };
     }
+
+    public bool CheckIfSoldierCanReachEnemy(int o_index)
+    {
+        bool canReachEnemy = false;
+
+        //find the point at which the enemy will leave the radius
+
+        //make an edge collider from the points along the enemy path
+        LineRenderer enemyO_LR = enemiesInZone[o_index].GetComponent<KnightScript>().lineRenderer;
+        enemyO_LR.useWorldSpace = false;
+        EdgeCollider2D enemyPathColldier2D = enemiesInZone[o_index].AddComponent<EdgeCollider2D>();
+        Vector3[] pointsAlongEnemyPath = new Vector3[enemyO_LR.positionCount];
+        enemyO_LR.GetPositions(pointsAlongEnemyPath);
+        Vector2[] convertedArr = System.Array.ConvertAll(pointsAlongEnemyPath, v => new Vector2(v.x, v.y));
+        enemyPathColldier2D.points = convertedArr;
+        enemyPathColldier2D.edgeRadius = 0.01f;
+
+        //make an edge collider from the points along the circumfrence of the radius
+        EdgeCollider2D radiusCollider2D = gameObject.AddComponent<EdgeCollider2D>();
+        radiusCollider2D.points = radius.points;
+        radiusCollider2D.edgeRadius = 0.01f;
+
+        //find all contact points between the two
+        int layerMask = 1 << LayerMask.NameToLayer("edgeColliders");
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.SetLayerMask(layerMask);
+        ContactPoint2D[] contacts = new ContactPoint2D[12];
+        int contactCount = radiusCollider2D.GetContacts(filter, contacts);
+
+        //find the contact point that's closest to the castle
+        Vector2 closestContactToCastle = contacts[0].point;
+        for (int p = 0; p < contactCount; p++)
+        {
+            if (Vector3.Distance(contacts[p].point, castleObj.transform.position) < Vector3.Distance(closestContactToCastle, castleObj.transform.position))
+            {
+                closestContactToCastle = contacts[p].point;
+            }
+        }
+
+        //check if the enemy will leave the radius before the knight reaches them
+        float timeForSoldierToReachKnight = 0;
+        float timeForKnightToReachRadiusEdge = Vector2.Distance(enemiesInZone[o_index].transform.position, closestContactToCastle) / enemiesInZone[o_index].GetComponent<KnightScript>().speed;
+        Vector2 enemyDir = closestContactToCastle - (Vector2)enemiesInZone[o_index].transform.position;
+        for (float t = 0; t < 12; t++)
+        {
+            
+        }
+        return canReachEnemy;
+    }
 }

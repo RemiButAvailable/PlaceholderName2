@@ -63,8 +63,10 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     [SerializeField] AudioSource hurtSound;
     [SerializeField] AudioSource ArrowHitSound;
     [SerializeField] AudioResource deathSound;
-    
+    [SerializeField] AudioResource hitDeathSound;
+
     [SerializeField] AudioPlayer aPlayerPrefab;
+    [SerializeField] AudioPlayer aHitSoundPrefab;
     [SerializeField] float deathSoundVolume = .5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -116,7 +118,9 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
             //move.Play("BarbIAN_guy_DEATH");
             //sounds
             AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
-            aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
+            AudioPlayer aHitSound = Instantiate(aHitSoundPrefab);
+            aPlayer.playClip(transform.position, hitDeathSound, deathSoundVolume);
+            aHitSoundPrefab.playClip(transform.position, deathSound, deathSoundVolume);
            
             //if (inhabitedTowerZone != null)
             //inhabitedTowerZone.queue.Remove(this.gameObject);

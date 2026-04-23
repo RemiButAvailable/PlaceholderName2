@@ -391,7 +391,7 @@ MonoBehaviour:
   defaultSpeed: 0.89
   damage: 1
   money: 3
-  health: 4
+  health: 1
   detectionObjDistFromKnight: 0.6
   index: 0
   targeted: 0

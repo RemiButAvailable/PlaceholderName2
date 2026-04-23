@@ -181,14 +181,21 @@ public class Castle : MonoBehaviour
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
             KnightScript enemy = other.gameObject.GetComponent<KnightScript>();
+            enemy.ReachedCastle();
 
+            //changing numbers
             PersonDead(enemy);
 
             peopleAtCastle -= enemy.damage;
             textUpdatePIn();
+            
+            //disable people sprites
+            if (peopleAtCastle < peopleSprites.Length)
+            {
+                peopleSprites[peopleAtCastle].enabled = false;
+            }
 
             // One of the reasons for the loss
-            enemy.ReachedCastle();
             if (peopleAtCastle < 0) {
                 gameOver.Invoke();
                 SceneManager.LoadScene("PeopleLoseScreen");

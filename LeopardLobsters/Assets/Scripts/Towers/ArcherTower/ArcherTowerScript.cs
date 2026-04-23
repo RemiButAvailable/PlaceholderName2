@@ -21,6 +21,7 @@ public class ArcherTowerScript : MonoBehaviour
     //Sound that plays when enemy shoots
     [SerializeField] AudioSource arrowShootSound;
     [SerializeField] Animator anim;
+    SpriteRenderer[] peopleSprites;
 
     public float directionMultiplier;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +30,7 @@ public class ArcherTowerScript : MonoBehaviour
     {
         BaseTower baseTower = GetComponent<BaseTower>();
         baseTower.isActive.AddListener(IsActive);
+        peopleSprites = baseTower.peopleSprites;
 
         //attackZone.Tower = this.gameObject;
         attackZone?.KnightEntered.AddListener(EnemyEntered);
@@ -73,6 +75,17 @@ public class ArcherTowerScript : MonoBehaviour
                 Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot * (int)(knightScript.speed * directionMultiplier)] + knightScript.offset;
                 arrowScript.target = target;
                 arrowScript.start = arrowStartPosition.transform.position;
+
+                foreach (SpriteRenderer person in peopleSprites)
+                {
+                    if (target.x < person.transform.position.x)
+                    {
+                        person.flipX = true;
+                    }
+                    else {
+                        person.flipX= false;
+                    }
+                }
             }
             yield return new WaitForSeconds(cooldown);
         }

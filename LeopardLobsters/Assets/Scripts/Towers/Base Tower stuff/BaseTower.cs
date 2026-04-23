@@ -15,7 +15,7 @@ public class BaseTower : MonoBehaviour
 
     // for active and deactive feedback
     [SerializeField] SpriteRenderer areaOfEffect;
-    [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
+    [SerializeField] public SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
 
     [SerializeField] public SpriteRenderer towerSprite;
     [SerializeField] public Color inactiveTint;

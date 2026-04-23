@@ -154,7 +154,6 @@ public class SoldierTowerScript : MonoBehaviour
                 soldier.GetComponent<SoldierScript>().target = enemy;
                 enemy.GetComponent<KnightScript>().targeted = true;
                 soldier.GetComponent<SoldierScript>().engaged = true;
-                Debug.Log(soldier.GetComponent<SoldierScript>().engaged);
                 break;
             }
         }

@@ -312,7 +312,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.68, y: -4.27, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7297585066373475914}
@@ -391,7 +391,7 @@ MonoBehaviour:
   defaultSpeed: 0.89
   damage: 1
   money: 3
-  health: 4
+  health: 1
   detectionObjDistFromKnight: 0.6
   index: 0
   targeted: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
-  move: {fileID: 0}
+  move: {fileID: 8985682355025615762}
   hurtSound: {fileID: 96976140371490336}
   ArrowHitSound: {fileID: 250816718428601404}
   deathSound: {fileID: 6418180475301049370, guid: ef63285bce8c22548a5896bfa40f601f, type: 2}

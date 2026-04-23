@@ -37,6 +37,14 @@ PrefabInstance:
       value: FastKnight Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7486532109844003784, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486532109844003784, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486532109844003784, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.499422
       objectReference: {fileID: 0}

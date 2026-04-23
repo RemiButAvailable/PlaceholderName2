@@ -57,6 +57,7 @@ public class ArcherTowerScript : MonoBehaviour
     {
         while (true)
         {
+            anim.SetBool("IsIdle", false);
 
             if (enemyInZone && isActive)
             {
@@ -65,15 +66,13 @@ public class ArcherTowerScript : MonoBehaviour
                 //Sound when arrow shoots
                 arrowShootSound.Play();
 
-                anim.SetBool("IsAttacking", true);
-
                 queue.Sort();
                 //KnightScript knightScript = queue[0].GetComponent<KnightScript>();
                 KnightScript knightScript = queue[0];
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
                 Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot * (int)(knightScript.speed * directionMultiplier)] + knightScript.offset;
-                arrowScript.target = target;
+                arrowScript.target = target; anim.SetBool("Attack", true);
                 arrowScript.start = arrowStartPosition.transform.position;
 
                 foreach (SpriteRenderer person in peopleSprites)

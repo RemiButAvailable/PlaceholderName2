@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 public class SoldierScript : MonoBehaviour
 {
-    //soldier state bools
+    //soldier state and tower bools
     //[HideInInspector]
     public bool engaged;
     [HideInInspector]
@@ -13,6 +13,8 @@ public class SoldierScript : MonoBehaviour
     bool atStation;
     [HideInInspector]
     bool isDying;
+    [HideInInspector]
+    public bool isActive; //is the tower active
 
     //stat vals that can be edited in the inspector
     [Range(0f, 12f)]
@@ -28,17 +30,18 @@ public class SoldierScript : MonoBehaviour
     SoldierTowerScript soldierTowerScript;
     BaseTower baseTowerScript;
     GameObject castleObj;
+    KnightScript knightScript;
+    public WaveCode waveCode;
 
     [SerializeField] Animator anim;
-    [SerializeField] Animator knightAnim;
-
-    public bool isActive; //is the tower active    
+    [SerializeField] Animator knightAnim;    
 
     //This was made by Dante Jones
     [SerializeField] AudioSource hitSound;
     [SerializeField] AudioResource deathSound;
     [SerializeField] AudioPlayer aSoundPrefab;
     [SerializeField] float deathSoundVolume = .5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,6 +49,7 @@ public class SoldierScript : MonoBehaviour
         engaged = false;
         baseTowerScript = GetComponent<BaseTower>();
         soldierTowerScript = soldierTower.GetComponent<SoldierTowerScript>();
+        anim.SetBool("isIdle", true);
     }
 
     // Update is called once per frame
@@ -53,10 +57,15 @@ public class SoldierScript : MonoBehaviour
     {
         if (engaged == true && target != null)
         {
+            anim.SetBool("isIdle", false);
             direction = target.transform.position - transform.position;
             direction.Normalize();
             if (fighting == false)
+            {
                 transform.position += direction * speed * Time.deltaTime;
+                anim.SetBool("isWalking", true);
+                anim.SetBool("isAttacking", false);
+            }
         }
         else
         {
@@ -64,6 +73,8 @@ public class SoldierScript : MonoBehaviour
             direction.Normalize();
             if (atStation == false)
                 transform.position += direction * speed * Time.deltaTime;
+            else
+                anim.SetBool("isIdle", true);
         }
 
         if (target != null)
@@ -86,6 +97,8 @@ public class SoldierScript : MonoBehaviour
 
         if (health <= 0)
         {
+            anim.SetBool("isAttacking", false);
+            anim.SetBool("isWalking", false);
             anim.SetBool("isDead", true);
         }
 
@@ -99,7 +112,7 @@ public class SoldierScript : MonoBehaviour
                     target = enemy;
                     engaged = true;
                     fighting = false;
-                    anim.SetBool("isAttackin", false);
+                    anim.SetBool("isAttacking", false);
                     anim.SetBool("isWalking", true);
                 }
             }
@@ -111,10 +124,24 @@ public class SoldierScript : MonoBehaviour
         {
             if(fighting == true)
             {
-                anim.SetBool("isAttackin", true);
-                target.GetComponent<KnightScript>().move.SetBool("isAttacking", true);
+                if(target != null)
+                knightScript = target.GetComponent<KnightScript>();
+
+                anim.SetBool("isWalking", false);
+                anim.SetBool("isAttacking", true);
+
+                if(target != null)
+                {
+                    knightScript.move.SetBool("isWalking", false);
+                    knightScript.move.SetBool("isAttacking", true);
+                }
+
                 hitSound.Play();
-                target.GetComponent<KnightScript>().TakeDamage(1);
+
+                if(target != null)
+                {
+                    knightScript.TakeDamage(1);
+                }
                 yield return new WaitForSeconds(1);
                 hitSound.Play();
                 health -= 1;
@@ -136,5 +163,10 @@ public class SoldierScript : MonoBehaviour
         }
         soldierTowerScript.RemoveSoldier(this.gameObject);
         Destroy(gameObject);
+    }
+
+    public void OnNewWave()
+    {
+        anim.SetBool("isIdle", true);
     }
 }

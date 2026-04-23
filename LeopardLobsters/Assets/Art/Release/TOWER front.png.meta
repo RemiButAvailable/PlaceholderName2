@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: e9350c8edaaf8a941a4c74b6419338f8
+guid: 9c67ef5dca4cee643b075cd3bd5bf3fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7107862743366547023
-    second: RIVER_0
+      213: -6670618724561147474
+    second: TOWER front_0
   - first:
-      213: -8839309312641193607
-    second: RIVER_1
+      213: -6038970603648181970
+    second: TOWER front_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,45 +116,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RIVER_0
+      name: TOWER front_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 390
-        height: 2154
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 94
+        y: 50
+        width: 417
+        height: 664
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1481253}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f46b89a818334a260800000000000000
-      internalID: 7107862743366547023
+      spriteID: ea9a67acc933d63a0800000000000000
+      internalID: -6670618724561147474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RIVER_1
+      name: TOWER front_1
       rect:
         serializedVersion: 2
-        x: 389
-        y: 0
-        width: 389
-        height: 2154
+        x: 153
+        y: 708
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97928384307745580800000000000000
-      internalID: -8839309312641193607
+      spriteID: e2916885b34413ca0800000000000000
+      internalID: -6038970603648181970
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bf44f2b33e3441f4a92689cc94d2bc27
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RIVER_0: 7107862743366547023
-      RIVER_1: -8839309312641193607
+      TOWER front_0: -6670618724561147474
+      TOWER front_1: -6038970603648181970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

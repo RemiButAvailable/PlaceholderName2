@@ -99,6 +99,8 @@ public class SoldierScript : MonoBehaviour
                     target = enemy;
                     engaged = true;
                     fighting = false;
+                    anim.SetBool("isAttackin", false);
+                    anim.SetBool("isWalking", true);
                 }
             }
         }
@@ -110,7 +112,7 @@ public class SoldierScript : MonoBehaviour
             if(fighting == true)
             {
                 anim.SetBool("isAttackin", true);
-                knightAnim.SetBool("isAttackin", true);
+                target.GetComponent<KnightScript>().move.SetBool("isAttacking", true);
                 hitSound.Play();
                 target.GetComponent<KnightScript>().TakeDamage(1);
                 yield return new WaitForSeconds(1);
@@ -128,6 +130,8 @@ public class SoldierScript : MonoBehaviour
         if (target != null)
         {
             target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
+            target.GetComponent<KnightScript>().move.SetBool("isAttacking", false);
+            target.GetComponent<KnightScript>().move.SetBool("isWalking", true);
             target.GetComponent<KnightScript>().targeted = false;
         }
         soldierTowerScript.RemoveSoldier(this.gameObject);

@@ -56,7 +56,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     Happiness_ManagerScript happinessManagerScript => Happiness_ManagerScript.self;
 
     //Animation :D
-    [SerializeField] Animator move;
+    public Animator move;
 
     //(Made by Dante Jones)
     //The audio for enemy getting hurt
@@ -110,22 +110,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         //death
         if (health <= 0)
         {
-            if(waveCode.EnemyNum > 0)
-            waveCode.EnemyNum -= 1;
-
-            moneyManagerScript.ChangeMoney(money);
-
-            //move.Play("BarbIAN_guy_DEATH");
-            //sounds
-            AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
-            AudioPlayer aHitSound = Instantiate(aHitSoundPrefab);
-            aPlayer.playClip(transform.position, hitDeathSound, deathSoundVolume);
-            aHitSoundPrefab.playClip(transform.position, deathSound, deathSoundVolume);
-           
-            //if (inhabitedTowerZone != null)
-            //inhabitedTowerZone.queue.Remove(this.gameObject);
-
-            Destroy(gameObject);
+            move.SetBool("isDead", true);
         }
     }
     public void ReachedCastle() {
@@ -161,5 +146,25 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         if(other.compareIndex < compareIndex) return 1;
         if (other.compareIndex > compareIndex) return -1;
         return 0;
+    }
+
+    public void Die()
+    {
+        if (waveCode.EnemyNum > 0)
+            waveCode.EnemyNum -= 1;
+
+        moneyManagerScript.ChangeMoney(money);
+
+        //move.Play("BarbIAN_guy_DEATH");
+        //sounds
+        AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
+        AudioPlayer aHitSound = Instantiate(aHitSoundPrefab);
+        aPlayer.playClip(transform.position, hitDeathSound, deathSoundVolume);
+        aHitSoundPrefab.playClip(transform.position, deathSound, deathSoundVolume);
+
+        //if (inhabitedTowerZone != null)
+        //inhabitedTowerZone.queue.Remove(this.gameObject);
+
+        Destroy(gameObject);
     }
 }

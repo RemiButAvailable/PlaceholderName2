@@ -139,6 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8519832345613961757}
   - component: {fileID: 250816718428601404}
+  - component: {fileID: 5193199917532819660}
   m_Layer: 0
   m_Name: ArrowHitSound
   m_TagString: Untagged
@@ -258,6 +259,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &5193199917532819660
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6388693300992268409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce67c64971fe9c641b84cdc836ca62f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6679188643013759877
 GameObject:
   m_ObjectHideFlags: 0

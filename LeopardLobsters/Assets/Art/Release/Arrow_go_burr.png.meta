@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 04e732e2f2e0d30459f27822f669a8b2
+guid: a80e6031ba46959458b878c1e244dc7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5811284177391603587
-    second: TOWER back_0
+      213: 4071526042533811814
+    second: Arrow_go_burr_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TOWER back_0
+      name: Arrow_go_burr_0
       rect:
         serializedVersion: 2
-        x: 113
-        y: 405
-        width: 365
-        height: 284
+        x: 33
+        y: 10
+        width: 157
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38f464a7b24d5a050800000000000000
-      internalID: 5811284177391603587
+      spriteID: 666daf22d57f08830800000000000000
+      internalID: 4071526042533811814
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1a10bb1473bc9ed45a68cdac360b9aa5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TOWER back_0: 5811284177391603587
+      Arrow_go_burr_0: 4071526042533811814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

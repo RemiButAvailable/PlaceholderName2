@@ -366,7 +366,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 8871934436575277189, guid: 49f51170365bbc14a88cd6f3fae99cd0, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
   defaultSpeed: 0.89
   damage: 1
   money: 3
-  health: 1
+  health: 3
   detectionObjDistFromKnight: 0.6
   index: 0
   targeted: 0

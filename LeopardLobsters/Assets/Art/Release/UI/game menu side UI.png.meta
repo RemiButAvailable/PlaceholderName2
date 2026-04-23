@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 04e732e2f2e0d30459f27822f669a8b2
+guid: 5f6d747c6bd6a5141b55371952d3165b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5811284177391603587
-    second: TOWER back_0
+      213: -8493776716222155553
+    second: game menu side UI_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TOWER back_0
+      name: game menu side UI_0
       rect:
         serializedVersion: 2
-        x: 113
-        y: 405
-        width: 365
-        height: 284
+        x: 0
+        y: 0
+        width: 250
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38f464a7b24d5a050800000000000000
-      internalID: 5811284177391603587
+      spriteID: fd4381c141b002a80800000000000000
+      internalID: -8493776716222155553
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1a10bb1473bc9ed45a68cdac360b9aa5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TOWER back_0: 5811284177391603587
+      game menu side UI_0: -8493776716222155553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

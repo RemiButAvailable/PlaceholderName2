@@ -87,7 +87,9 @@ public class WaveCode : MonoBehaviour
     [Range(0, 12)]
     public float enemyMaxMultiplier;
     [Range(0, 50)]
-    public int pointInWaveAtWhichBossSpawnsRandomness;
+    public int pointInWaveAtWhichBossSpawnsRandomnessMin;
+    [Range(0, 50)]
+    public int pointInWaveAtWhichBossSpawnsRandomnessMax;
     [Range(0, 50)]
     public int waveAtWhichBossSpawns;
 
@@ -211,7 +213,7 @@ public class WaveCode : MonoBehaviour
             EnemySpawnStart = EnemySpawnPositions[RandomNum];
             StartingEnemyPath = enemyPaths[RandomNum];
 
-            int RandomNum2 = Random.Range(0, pointInWaveAtWhichBossSpawnsRandomness);
+            int RandomNum2 = Random.Range(pointInWaveAtWhichBossSpawnsRandomnessMin, pointInWaveAtWhichBossSpawnsRandomnessMax);
             pointInWaveAtWhichBossSpawns = RandomNum2;
 
             waveText.text = "Wave Phase: " + WaveNum;

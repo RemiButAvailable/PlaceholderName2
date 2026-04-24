@@ -20,6 +20,7 @@ public class TestFountain : MonoBehaviour
     [SerializeField] AudioSource happySound;
     //animation
     [SerializeField] Animator happinessGain;
+    public Animator Water;
 
     Happiness_ManagerScript happyMan => Happiness_ManagerScript.self;
 
@@ -83,8 +84,9 @@ public class TestFountain : MonoBehaviour
         {
             happyMan.FountainRemove(this);
             WaterSound.Stop();
+            Water.SetBool("water_active", false);
         }
-        else { happyMan.FountainAdd(this); }
+        else { happyMan.FountainAdd(this); Water.SetBool("water_active", true); }
     }
 
     //tower selectable events

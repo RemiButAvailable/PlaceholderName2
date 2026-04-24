@@ -833,7 +833,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 30
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2396c2a9bc2b6db49891f52d577b9081, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -864,7 +864,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -903,7 +903,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 2685314775829593916}
   m_maskType: 0
 --- !u!1 &5710603673466090856
@@ -1428,9 +1428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a66a2f4b763444783c402615346f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peopleAtCastle: 2
-  peopleMax: 3
-  peopleMaxCost: 30
+  peopleAtCastle: 3
+  peopleMax: 5
+  peopleMaxCost: 60
   peopleMaxCostMult: 2
   moneyPerPerson: 5
   minPeopleNeeded: 1

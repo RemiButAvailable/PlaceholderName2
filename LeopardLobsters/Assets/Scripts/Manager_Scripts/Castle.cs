@@ -220,8 +220,8 @@ public class Castle : MonoBehaviour
     }
 
     // Text stuff
-    void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString() +" / "  +peopleMax.ToString(); }
-    void textUpdatePIn() { textPeopleIn.text = peopleAtCastle.ToString(); }
+    void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString() +" / "  +peopleMax.ToString()+" people"; }
+    void textUpdatePIn() { textPeopleIn.text = peopleAtCastle.ToString()+" in castle"; }
 
     private void Update()
     {

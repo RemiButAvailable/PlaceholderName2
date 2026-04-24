@@ -123,7 +123,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 125
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -188,12 +188,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 1998
-        width: 603
-        height: 463
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1988
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_1
       rect:
         serializedVersion: 2
-        x: 663
-        y: 1998
-        width: 603
-        height: 463
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 636
+        y: 1988
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -232,12 +232,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_2
       rect:
         serializedVersion: 2
-        x: 1299
-        y: 1998
-        width: 606
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1272
+        y: 1988
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -254,12 +254,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_3
       rect:
         serializedVersion: 2
-        x: 1935
-        y: 1998
-        width: 606
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1908
+        y: 1988
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -276,12 +276,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_4
       rect:
         serializedVersion: 2
-        x: 2571
-        y: 1998
-        width: 606
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2544
+        y: 1988
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -298,12 +298,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_5
       rect:
         serializedVersion: 2
-        x: 27
-        y: 1501
-        width: 606
-        height: 459
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1491
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -320,12 +320,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_6
       rect:
         serializedVersion: 2
-        x: 663
-        y: 1501
-        width: 606
-        height: 459
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 636
+        y: 1491
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -342,12 +342,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_7
       rect:
         serializedVersion: 2
-        x: 1299
-        y: 1501
-        width: 606
-        height: 459
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1272
+        y: 1491
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -364,12 +364,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_8
       rect:
         serializedVersion: 2
-        x: 1935
-        y: 1501
-        width: 600
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1908
+        y: 1491
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -386,12 +386,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_9
       rect:
         serializedVersion: 2
-        x: 2571
-        y: 1501
-        width: 600
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2544
+        y: 1491
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -408,12 +408,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_10
       rect:
         serializedVersion: 2
-        x: 27
-        y: 1004
-        width: 600
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 994
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -430,12 +430,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_11
       rect:
         serializedVersion: 2
-        x: 663
-        y: 1004
-        width: 603
-        height: 463
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 636
+        y: 994
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -452,12 +452,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_12
       rect:
         serializedVersion: 2
-        x: 1299
-        y: 1004
-        width: 603
-        height: 463
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1272
+        y: 994
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -474,12 +474,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_13
       rect:
         serializedVersion: 2
-        x: 1935
-        y: 1004
-        width: 603
-        height: 463
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1908
+        y: 994
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -496,12 +496,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_14
       rect:
         serializedVersion: 2
-        x: 2571
-        y: 1004
-        width: 603
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2544
+        y: 994
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -518,12 +518,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_15
       rect:
         serializedVersion: 2
-        x: 27
-        y: 507
-        width: 603
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 497
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -540,12 +540,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_16
       rect:
         serializedVersion: 2
-        x: 663
-        y: 507
-        width: 603
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 636
+        y: 497
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -562,12 +562,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_17
       rect:
         serializedVersion: 2
-        x: 1299
-        y: 507
-        width: 603
-        height: 459
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1272
+        y: 497
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -584,12 +584,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_18
       rect:
         serializedVersion: 2
-        x: 1935
-        y: 507
-        width: 603
-        height: 459
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1908
+        y: 497
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -606,12 +606,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_19
       rect:
         serializedVersion: 2
-        x: 2571
-        y: 507
-        width: 603
-        height: 459
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2544
+        y: 497
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -628,12 +628,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_20
       rect:
         serializedVersion: 2
-        x: 27
-        y: 10
-        width: 603
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -650,12 +650,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_21
       rect:
         serializedVersion: 2
-        x: 663
-        y: 10
-        width: 603
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 636
+        y: 0
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -672,12 +672,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_22
       rect:
         serializedVersion: 2
-        x: 1299
-        y: 10
-        width: 603
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1272
+        y: 0
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -694,12 +694,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_23
       rect:
         serializedVersion: 2
-        x: 1935
-        y: 10
-        width: 603
-        height: 463
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1908
+        y: 0
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -716,12 +716,12 @@ TextureImporter:
       name: BarbIAN_guy_walk_24
       rect:
         serializedVersion: 2
-        x: 2571
-        y: 10
-        width: 603
-        height: 463
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2544
+        y: 0
+        width: 636
+        height: 497
+      alignment: 9
+      pivot: {x: 0.425, y: 0.44}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -738,7 +738,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d3d30478d1eb14841bfb3aa9523713a1
     internalID: 0
     vertices: []
     indices: 

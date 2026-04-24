@@ -57,22 +57,22 @@ public class ArcherTowerScript : MonoBehaviour
     {
         while (true)
         {
-            anim.SetBool("IsIdle", false);
-
             if (enemyInZone && isActive)
             {
-                ArrowScript arrowScript = Instantiate(Arrow, arrowStartPosition.transform.position, Quaternion.identity);
-
+                //animation
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("Attack", true);
                 //Sound when arrow shoots
                 arrowShootSound.Play();
 
+
+                ArrowScript arrowScript = Instantiate(Arrow, arrowStartPosition.transform.position, Quaternion.identity);
                 queue.Sort();
-                //KnightScript knightScript = queue[0].GetComponent<KnightScript>();
                 KnightScript knightScript = queue[0];
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
                 Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot * (int)(knightScript.speed * directionMultiplier)] + knightScript.offset;
-                arrowScript.target = target; anim.SetBool("Attack", true);
+                arrowScript.target = target; 
                 arrowScript.start = arrowStartPosition.transform.position;
 
                 foreach (SpriteRenderer person in peopleSprites)
@@ -92,18 +92,5 @@ public class ArcherTowerScript : MonoBehaviour
     }
 
     void IsActive(bool active) { isActive = active; }
-
-    //public void ChangeTarget(GameObject knight)
-    //{
-    //    queue[0] = knight;
-    //}
-
-    void printQueue() {
-        string full = "";
-        foreach (KnightScript knight in queue) {
-            full += knight + ", ";
-        }
-        print(full);
-    }
 
 }

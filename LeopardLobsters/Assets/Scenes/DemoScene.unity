@@ -6384,7 +6384,9 @@ MonoBehaviour:
   cooldown: 2
   phantomEnemyNumBeforeAltEnemies: 4
   enemyMaxMultiplier: 1.5
-  pointAtWhichBossSpawns: 12
+  pointInWaveAtWhichBossSpawnsRandomnessMin: 2
+  pointInWaveAtWhichBossSpawnsRandomnessMax: 3
+  waveAtWhichBossSpawns: 13
 --- !u!1 &621185549
 GameObject:
   m_ObjectHideFlags: 0

@@ -112,6 +112,8 @@ public class SoldierScript : MonoBehaviour
 
         if(fighting == true && target == null)
         {
+            anim.SetBool("isAttacking", false);
+            anim.SetBool("isWalking", true);
             fighting = false;
             soldierTowerScript.enemiesInZone.Sort();
             foreach(var enemy in soldierTowerScript.enemiesInZone)
@@ -120,8 +122,6 @@ public class SoldierScript : MonoBehaviour
                 {
                     target = enemy;
                     engaged = true;
-                    anim.SetBool("isAttacking", false);
-                    anim.SetBool("isWalking", true);
                 }
             }
         }
@@ -130,6 +130,7 @@ public class SoldierScript : MonoBehaviour
         {
             //Debug.Log("atStation");
             atStation = true;
+            anim.SetBool("isIdle", true);
         }
         else
         {

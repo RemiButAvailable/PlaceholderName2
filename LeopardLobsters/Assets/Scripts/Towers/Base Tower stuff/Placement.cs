@@ -99,6 +99,7 @@ public class Placement : MonoBehaviour //places tower, created when pressing buy
             PlaceSound.Play();
             baseTower.TowerDeselected();
 
+            Happiness_ManagerScript.self.towerPlaced.Invoke();
             Destroy(this); //removes this script
         }
     }

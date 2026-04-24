@@ -1,13 +1,23 @@
 /* Date: 4/8/26
  * 
  * The script that will help move between scenes, usually is used in the main menu */
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
     //scene that is gone to when no string is placed
-    public string defaultScene; 
+    public string defaultScene;
+    [SerializeField] TextMeshProUGUI waveScoreCur;
+    [SerializeField] TextMeshProUGUI waveScoreHi;
+
+
+    private void Start()
+    {
+        if(waveScoreCur) waveScoreCur.text = "Score: "+Global.curWave.ToString();
+        if(waveScoreHi) waveScoreHi.text = "Top Score: "+ Global.topWave.ToString();
+    }
 
     //functions connected through buttons in scene
     public void NextScene(string nextScene) {

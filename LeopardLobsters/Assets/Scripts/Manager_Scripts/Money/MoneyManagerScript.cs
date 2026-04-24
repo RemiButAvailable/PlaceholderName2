@@ -1,6 +1,7 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 public class MoneyManagerScript : MonoBehaviour 
 {
@@ -27,12 +28,10 @@ public class MoneyManagerScript : MonoBehaviour
     public AudioSource TowerPlaceSound;
     //
     public AudioSource BuySound;
-
-    [SerializeField] Transform numAnimatorParent;
-    [SerializeField] NumberScript numAnimator;
-
     public AudioSource BuyDenySound;
-    
+
+    [SerializeField] AnimationHolder aniHolder;
+
     static public MoneyManagerScript self;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,7 +39,7 @@ public class MoneyManagerScript : MonoBehaviour
     {
         happiness_ManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();
         self = this;
-        textMoney.text = moneyNum.ToString();
+        updateText();
     }
 
     // Update is called once per frame
@@ -139,19 +138,16 @@ public class MoneyManagerScript : MonoBehaviour
     public void ChangeMoney(int num)
     {
         moneyNum += num;
-        textMoney.text = moneyNum.ToString();
+        updateText();
 
         BuySound.Play();
 
-        NumberScript ani = Instantiate(numAnimator,numAnimatorParent);
-        string text = num.ToString();
-        if (num > 0) text = "+" + text;
-        ani.text.text = text;
-        ani.Play("Down");
+        aniHolder.Add(num);
     }
     public bool Check(int num)
     {
         if ((moneyNum + num) < 0) return false;
         return true;
     }
+    void updateText() { textMoney.text = moneyNum.ToString() + "$"; }
 }

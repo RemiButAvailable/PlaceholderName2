@@ -112,6 +112,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         {
             move.SetBool("isWalking", false);
             move.SetBool("isDead", true);
+            Die();
         }
     }
     public void ReachedCastle() {

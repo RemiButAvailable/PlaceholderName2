@@ -28,6 +28,7 @@ public class WaveCode : MonoBehaviour
     //Private vals
     private int PhantomEnemyNum = 0; //amount of enemies that have spawned since the wave started
     private int order;
+    private int pointInWaveAtWhichBossSpawns;
 
     //Prefabs
     public GameObject bossEnemy;
@@ -86,7 +87,9 @@ public class WaveCode : MonoBehaviour
     [Range(0, 12)]
     public float enemyMaxMultiplier;
     [Range(0, 50)]
-    public int pointAtWhichBossSpawns;
+    public int pointInWaveAtWhichBossSpawnsRandomness;
+    [Range(0, 50)]
+    public int waveAtWhichBossSpawns;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -175,9 +178,16 @@ public class WaveCode : MonoBehaviour
                 }
                 enemiesStartedSpawning = true;
 
-                if (PhantomEnemyNum > pointAtWhichBossSpawns && PhantomEnemyNum < pointAtWhichBossSpawns + 1)//spawn boss
+                if (PhantomEnemyNum == pointInWaveAtWhichBossSpawns && WaveNum == waveAtWhichBossSpawns)//spawn boss
                 {
                     spawnedBossEnemy = Instantiate(bossEnemy, EnemySpawnSpot, Quaternion.identity);
+                    KnightScript knightScript = spawnedBossEnemy.GetComponent<KnightScript>();
+                    knightScript.lineRenderer = enemyPath;
+                    float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
+                    Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
+                    knightScript.offset = new Vector3(enemySpawnPosOffsetFloat, enemySpawnPosOffsetFloat, 0);
+                    knightScript.order = PhantomEnemyNum;
+                    Debug.Log("spawned boss");
                 }
             }
             float cooldownMultiplier = Random.Range(1 / timeBetweenEnemySpawnsRandomness, timeBetweenEnemySpawnsRandomness);
@@ -200,6 +210,9 @@ public class WaveCode : MonoBehaviour
             int RandomNum = Random.Range(0, 2);
             EnemySpawnStart = EnemySpawnPositions[RandomNum];
             StartingEnemyPath = enemyPaths[RandomNum];
+
+            int RandomNum2 = Random.Range(0, pointInWaveAtWhichBossSpawnsRandomness);
+            pointInWaveAtWhichBossSpawns = RandomNum2;
 
             waveText.text = "Wave Phase: " + WaveNum;
 

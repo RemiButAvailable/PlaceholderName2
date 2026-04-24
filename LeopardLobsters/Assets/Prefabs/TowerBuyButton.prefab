@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 503498816323630705}
   - component: {fileID: 2833820990796719831}
   - component: {fileID: 3002668090619779778}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: People Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 7879379650192139688}
   - component: {fileID: 5456101348269577972}
   - component: {fileID: 7362842014264369413}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: People NUmber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 4238937078698623575}
   - component: {fileID: 7012681237681398749}
   - component: {fileID: 636003841795069084}
-  m_Layer: 28
+  m_Layer: 6
   m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 6469503428075644650}
   - component: {fileID: 7854824366331364764}
   - component: {fileID: 1966074606784735813}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Coin Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 5939596204043234789}
   - component: {fileID: 7148997584093925951}
   - component: {fileID: 4873965096016916154}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text + price n stuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 679949751005248024}
   - component: {fileID: 4112090288613324350}
   - component: {fileID: 6768738244543236749}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Coin Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 5899030054232236491}
   - component: {fileID: 3217309884024706143}
   - component: {fileID: 4868177172759747177}
-  m_Layer: 28
+  m_Layer: 6
   m_Name: Highlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +868,7 @@ GameObject:
   - component: {fileID: 7681664425324814754}
   - component: {fileID: 1267698464055442226}
   - component: {fileID: 7276588989142609581}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: TowerBuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 7275821596273143859}
   - component: {fileID: 2344140610103194482}
   - component: {fileID: 265751266341915789}
-  m_Layer: 28
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -192,7 +192,7 @@ public class Castle : MonoBehaviour
             textUpdatePIn();
             
             //disable people sprites
-            if (peopleAtCastle < peopleSprites.Length)
+            if (peopleAtCastle >0)
             {
                 peopleSprites[peopleAtCastle].enabled = false;
             }

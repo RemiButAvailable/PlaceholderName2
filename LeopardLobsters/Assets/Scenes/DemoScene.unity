@@ -1032,8 +1032,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.506
+  m_PlayOnAwake: 0
+  m_Volume: 0.267
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6525,9 +6525,9 @@ MonoBehaviour:
   cooldown: 2
   phantomEnemyNumBeforeAltEnemies: 4
   enemyMaxMultiplier: 1.5
-  pointInWaveAtWhichBossSpawnsRandomnessMin: 0
-  pointInWaveAtWhichBossSpawnsRandomnessMax: 0
-  waveAtWhichBossSpawns: 0
+  pointInWaveAtWhichBossSpawnsRandomnessMin: 4
+  pointInWaveAtWhichBossSpawnsRandomnessMax: 20
+  waveAtWhichBossSpawns: 6
 --- !u!1 &621185549
 GameObject:
   m_ObjectHideFlags: 0
@@ -10723,7 +10723,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3751fb34585a94e4ea8f8670176391f8, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.496
   m_Pitch: 1
   Loop: 0
@@ -10852,7 +10852,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 6d9240c35b3b45a4a9c6a1d8122ed3bd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.436
   m_Pitch: 1
   Loop: 0
@@ -17876,11 +17876,50 @@ PrefabInstance:
       propertyPath: denySound
       value: 
       objectReference: {fileID: 1147211851}
+    - target: {fileID: 8659777532140464354, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: towerPlaced.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659777532140464354, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: towerPlaced.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659777532140464354, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: towerPlaced.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2106100237}
+    - target: {fileID: 8659777532140464354, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: towerPlaced.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659777532140464354, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: towerPlaced.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659777532140464354, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: towerPlaced.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659777532140464354, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+      propertyPath: towerPlaced.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03fe92b3ad7ad244ba64ee1a62c92b5d, type: 3}
+--- !u!114 &2106100237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 630069949295742712, guid: c7aa516d0c18e4d41a7584155360f5cb, type: 3}
+  m_PrefabInstance: {fileID: 2050686939}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8061d7a69463942b3ee4a92a669cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2910183811234038226 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2910183811473147238, guid: e67e966444adaad4da4357eec0712194, type: 3}

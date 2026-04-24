@@ -7,7 +7,7 @@ AudioContainerElement:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SFX_BossChain_{-7641325264899584949}
-  m_AudioClip: {fileID: 8300000, guid: bd2cf16d702e14e4b99405f5627d6024, type: 3}
+  m_AudioClip: {fileID: 8300000, guid: 7f46e5020909445419b9c4981f544dfb, type: 3}
   m_Volume: 0
   m_Enabled: 1
 --- !u!1307931743 &6418180475301049370
@@ -22,7 +22,7 @@ AudioRandomContainer:
   m_AutomaticTriggerTime: 0
   m_LoopCount: 1
   m_VolumeRandomizationRange: {x: 0, y: 0}
-  m_PitchRandomizationRange: {x: -1200, y: 1200}
+  m_PitchRandomizationRange: {x: -5, y: 5}
   m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
   m_LoopCountRandomizationRange: {x: 0, y: 0}
   m_Elements:

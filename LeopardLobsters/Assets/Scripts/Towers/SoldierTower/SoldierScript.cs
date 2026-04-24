@@ -46,6 +46,7 @@ public class SoldierScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(FightEnemy());
+        StartCoroutine(Printer());
         engaged = false;
         baseTowerScript = GetComponent<BaseTower>();
         soldierTowerScript = soldierTower.GetComponent<SoldierTowerScript>();
@@ -55,13 +56,11 @@ public class SoldierScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("isIdle " + anim.GetBool("isIdle"));
-        Debug.Log("isWalking " + anim.GetBool("isWalking"));
-        Debug.Log("isAttacking " + anim.GetBool("isAttacking"));
         //Debug.Log("isIdle " + anim.GetBool("isIdle"));
         if (engaged == true && target != null)
         {
             anim.SetBool("isIdle", false);
+            anim.SetBool("isWalking", true);
             direction = target.transform.position - transform.position;
             direction.Normalize();
             if (fighting == false)
@@ -141,19 +140,12 @@ public class SoldierScript : MonoBehaviour
     {
         while (true)
         {
-            if(fighting == true)
+            if(fighting == true && target != null)
             {
-                if(target != null)
                 knightScript = target.GetComponent<KnightScript>();
 
-                anim.SetBool("isWalking", false);
-                anim.SetBool("isAttacking", true);
-
-                if(target != null)
-                {
-                    knightScript.move.SetBool("isWalking", false);
-                    knightScript.move.SetBool("isAttacking", true);
-                }
+                knightScript.move.SetBool("isWalking", false);
+                knightScript.move.SetBool("isAttacking", true);
 
                 hitSound.Play();
 
@@ -176,10 +168,11 @@ public class SoldierScript : MonoBehaviour
         aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
         if (target != null)
         {
-            target.GetComponent<KnightScript>().speed = target.GetComponent<KnightScript>().defaultSpeed;
-            target.GetComponent<KnightScript>().move.SetBool("isAttacking", false);
-            target.GetComponent<KnightScript>().move.SetBool("isWalking", true);
-            target.GetComponent<KnightScript>().targeted = false;
+            KnightScript knightScript = target.GetComponent<KnightScript>();
+            knightScript.speed = target.GetComponent<KnightScript>().defaultSpeed;
+            knightScript.move.SetBool("isAttacking", false);
+            knightScript.move.SetBool("isWalking", true);
+            knightScript.targeted = false;
         }
         soldierTowerScript.RemoveSoldier(this.gameObject);
         Destroy(gameObject);
@@ -188,5 +181,16 @@ public class SoldierScript : MonoBehaviour
     public void OnNewWave()
     {
         anim.SetBool("isIdle", true);
+    }
+
+    public IEnumerator Printer()
+    {
+        while (true)
+        {
+            Debug.Log("isIdle " + anim.GetBool("isIdle"));
+            Debug.Log("isWalking " + anim.GetBool("isWalking"));
+            Debug.Log("isAttacking " + anim.GetBool("isAttacking"));
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }

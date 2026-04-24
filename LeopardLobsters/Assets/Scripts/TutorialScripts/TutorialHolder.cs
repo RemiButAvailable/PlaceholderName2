@@ -16,6 +16,10 @@ public class TutorialHolder : MonoBehaviour
     [Tooltip("use either this or tutorial list")]
     GameObject TutorialListObject;
 
+    [SerializeField]
+    [Tooltip("only scripts with IDisableable")]
+    TutorialDisable[] disable;
+
     private void Start()
     {
         if (!Global.inTutorial) { return; }
@@ -28,6 +32,10 @@ public class TutorialHolder : MonoBehaviour
             for (int i = 0; i < childC; i++) {
                 TutorialList[i] = TutorialListObject.transform.GetChild(i).GetComponent<TutorialPopup>();
             }
+        }
+
+        foreach (TutorialDisable thing in disable) {
+            thing.Disable();
         }
 
         OpenNew(cur);

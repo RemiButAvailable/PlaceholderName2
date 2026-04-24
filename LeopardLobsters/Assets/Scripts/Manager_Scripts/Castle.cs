@@ -54,6 +54,7 @@ public class Castle : MonoBehaviour
     [Space]
     [Header("people gain and killed feedback")]
     [SerializeField] AudioSource castleHitSound;
+    [SerializeField] AudioSource enemyCastleHitSound;
     [SerializeField] AudioSource PeopleGainSound;
     [SerializeField] Animator PeopleGainAnimator;
 
@@ -180,6 +181,7 @@ public class Castle : MonoBehaviour
         {
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
+            enemyCastleHitSound.Play();
             KnightScript enemy = other.gameObject.GetComponent<KnightScript>();
             enemy.ReachedCastle();
 

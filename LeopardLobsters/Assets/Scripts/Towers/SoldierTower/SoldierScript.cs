@@ -103,8 +103,10 @@ public class SoldierScript : MonoBehaviour
 
         if (health <= 0)
         {
+            Debug.Log("should die");
             anim.SetBool("isAttacking", false);
             anim.SetBool("isWalking", false);
+            anim.SetBool("isIdle", true);
             anim.SetBool("isDead", true);
         }
 
@@ -168,6 +170,7 @@ public class SoldierScript : MonoBehaviour
     }
     public void Die()
     {
+        Debug.Log("Died");
         AudioPlayer aPlayer = Instantiate(aSoundPrefab);
         aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
         if (target != null)

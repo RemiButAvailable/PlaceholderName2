@@ -102,10 +102,9 @@ public class SoldierScript : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log("should die");
             anim.SetBool("isAttacking", false);
             anim.SetBool("isWalking", false);
-            anim.SetBool("isIdle", true);
+            anim.SetBool("isIdle", false);
             anim.SetBool("isDead", true);
         }
 
@@ -142,6 +141,8 @@ public class SoldierScript : MonoBehaviour
         {
             if(fighting == true && target != null)
             {
+                anim.SetBool("isAttacking", true);
+                anim.SetBool("isWalking", false);
                 knightScript = target.GetComponent<KnightScript>();
 
                 knightScript.move.SetBool("isWalking", false);
@@ -190,6 +191,7 @@ public class SoldierScript : MonoBehaviour
             Debug.Log("isIdle " + anim.GetBool("isIdle"));
             Debug.Log("isWalking " + anim.GetBool("isWalking"));
             Debug.Log("isAttacking " + anim.GetBool("isAttacking"));
+            Debug.Log("isDead " + anim.GetBool("isDead"));
             yield return new WaitForSeconds(0.5f);
         }
     }

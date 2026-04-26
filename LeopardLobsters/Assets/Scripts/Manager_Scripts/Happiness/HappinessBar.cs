@@ -19,6 +19,9 @@ public class HappinessBar : MonoBehaviour
 
     private void Start()
     {
+        float num = Happiness_ManagerScript.self.happiness;
+        GetIndex(num);
+        ChangeBar(num);
         Array.Sort(colorChanges);
 
     }

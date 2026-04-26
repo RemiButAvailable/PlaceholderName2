@@ -104,7 +104,7 @@ public class BaseTower : MonoBehaviour
     }
 
     public void BaseTowerInactiveTint() {
-        if (needsMax) towerSprite.color = inactiveTint;
+        towerSprite.color = inactiveTint;
     }
 
     public void TowerSelected()

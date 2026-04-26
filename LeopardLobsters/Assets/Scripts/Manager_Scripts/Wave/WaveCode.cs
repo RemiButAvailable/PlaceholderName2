@@ -28,6 +28,7 @@ public class WaveCode : MonoBehaviour
     //Private vals
     private int PhantomEnemyNum = 0; //amount of enemies that have spawned since the wave started
     private int order;
+    private int pointInWaveAtWhichBossSpawns;
 
     //Prefabs
     public GameObject bossEnemy;
@@ -61,7 +62,9 @@ public class WaveCode : MonoBehaviour
     //Diffrent music for diffrent parts of the game
     public AudioSource buildMusic;
     public AudioSource battleMusic;
-
+    public AudioSource bossMusic;
+    public AudioSource startWaveSound;
+    
     public TextMeshProUGUI waveText;
     public TextMeshProUGUI buildPhaseText;
     bool enemiesStartedSpawning;
@@ -86,7 +89,11 @@ public class WaveCode : MonoBehaviour
     [Range(0, 12)]
     public float enemyMaxMultiplier;
     [Range(0, 50)]
-    public int pointAtWhichBossSpawns;
+    public int pointInWaveAtWhichBossSpawnsRandomnessMin;
+    [Range(0, 50)]
+    public int pointInWaveAtWhichBossSpawnsRandomnessMax;
+    [Range(0, 50)]
+    public int waveAtWhichBossSpawns;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -175,9 +182,20 @@ public class WaveCode : MonoBehaviour
                 }
                 enemiesStartedSpawning = true;
 
-                if (PhantomEnemyNum > pointAtWhichBossSpawns && PhantomEnemyNum < pointAtWhichBossSpawns + 1)//spawn boss
+                if (PhantomEnemyNum == pointInWaveAtWhichBossSpawns && WaveNum == waveAtWhichBossSpawns)//spawn boss
                 {
                     spawnedBossEnemy = Instantiate(bossEnemy, EnemySpawnSpot, Quaternion.identity);
+                    KnightScript knightScript = spawnedBossEnemy.GetComponent<KnightScript>();
+                    knightScript.lineRenderer = enemyPath;
+                    float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
+                    Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
+                    knightScript.offset = new Vector3(enemySpawnPosOffsetFloat, enemySpawnPosOffsetFloat, 0);
+                    knightScript.order = PhantomEnemyNum;
+                    Debug.Log("spawned boss");
+
+                    //Start Music
+                    battleMusic.Stop();
+                    bossMusic.Play();
                 }
             }
             float cooldownMultiplier = Random.Range(1 / timeBetweenEnemySpawnsRandomness, timeBetweenEnemySpawnsRandomness);
@@ -201,11 +219,16 @@ public class WaveCode : MonoBehaviour
             EnemySpawnStart = EnemySpawnPositions[RandomNum];
             StartingEnemyPath = enemyPaths[RandomNum];
 
+            int RandomNum2 = Random.Range(pointInWaveAtWhichBossSpawnsRandomnessMin, pointInWaveAtWhichBossSpawnsRandomnessMax);
+            pointInWaveAtWhichBossSpawns = RandomNum2;
+
             waveText.text = "Wave Phase: " + WaveNum;
 
             //Turns on battle phase music stops building phase music
             buildMusic.Stop();
             battleMusic.Play();
+            bossMusic?.Stop();
+            startWaveSound.Play();
             endedWave = false;
         }
     }
@@ -222,6 +245,7 @@ public class WaveCode : MonoBehaviour
         //Turns on building phase music stops battle phase music
         buildMusic.Play();
         battleMusic.Stop();
+        bossMusic.Stop();
         //buildPhaseText.enabled = true;
         waveText.text = "Build Phase: " + (WaveNum + 1);
     }

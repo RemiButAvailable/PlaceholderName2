@@ -18,7 +18,7 @@ public class SoldierScript : MonoBehaviour
 
     //stat vals that can be edited in the inspector
     [Range(0f, 12f)]
-    public static float speed;
+    public float speed;
     [Range (0f, 12f)]
     public float health;
 
@@ -47,7 +47,7 @@ public class SoldierScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(FightEnemy());
-        StartCoroutine(Printer());
+        //StartCoroutine(Printer());
 
         engaged = false;
 
@@ -59,7 +59,7 @@ public class SoldierScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (target != null)//if the soldier has a target
         {
@@ -180,7 +180,6 @@ public class SoldierScript : MonoBehaviour
             knightScript.targeted = false;
         }
         soldierTowerScript.RemoveSoldier(this.gameObject);
-
         Destroy(gameObject);
     }
 

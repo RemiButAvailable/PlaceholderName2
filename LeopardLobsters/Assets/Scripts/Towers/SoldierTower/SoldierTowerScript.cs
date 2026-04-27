@@ -17,10 +17,11 @@ public class SoldierTowerScript : MonoBehaviour
     [SerializeField]BaseTower baseTower;
     public int soldierSpawnPosDistFromClosestPointOnPath;
     GameObject castleObj;
-    PolygonCollider2D radius;
+    public PolygonCollider2D radius;
 
     [SerializeField] AudioSource RemoveSoldierSound;
     [SerializeField] AudioSource SoldierDeathSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -85,7 +86,7 @@ public class SoldierTowerScript : MonoBehaviour
     }
     public void RemoveSoldier(GameObject soldier)
     {
-        Castle.self.PersonDead(soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>());
+        //Castle.self.PersonDead(soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>());
 
         for (int i = 0; i < soldierPositions.Count; i++)//set the soldier's station position to empty
         {
@@ -199,6 +200,8 @@ public class SoldierTowerScript : MonoBehaviour
 
     public bool CheckIfSoldierCanReachEnemy(int i_index, int o_index)
     {
+        Physics2D.Simulate(Time.deltaTime);
+
         bool canReachEnemy = false;
 
         //find the point at which the enemy will leave the radius
@@ -211,12 +214,14 @@ public class SoldierTowerScript : MonoBehaviour
         enemyO_LR.GetPositions(pointsAlongEnemyPath);
         Vector2[] convertedArr = System.Array.ConvertAll(pointsAlongEnemyPath, v => new Vector2(v.x, v.y));
         enemyPathColldier2D.points = convertedArr;
-        enemyPathColldier2D.edgeRadius = 0.01f;
+        enemyPathColldier2D.edgeRadius = 0.1f;
+        enemiesInZone[o_index].layer = LayerMask.NameToLayer("edgeColliders");
 
         //make an edge collider from the points along the circumfrence of the radius
         EdgeCollider2D radiusCollider2D = gameObject.AddComponent<EdgeCollider2D>();
         radiusCollider2D.points = radius.points;
-        radiusCollider2D.edgeRadius = 0.01f;
+        radiusCollider2D.edgeRadius = 0.1f;
+        gameObject.layer = LayerMask.NameToLayer("edgeColliders");
 
         //find all contact points between the two
         int layerMask = 1 << LayerMask.NameToLayer("edgeColliders");
@@ -229,6 +234,7 @@ public class SoldierTowerScript : MonoBehaviour
         Vector2 closestContactToCastle = contacts[0].point;
         for (int p = 0; p < contactCount; p++)
         {
+            Debug.Log("there was a contact");
             if (Vector3.Distance(contacts[p].point, castleObj.transform.position) < Vector3.Distance(closestContactToCastle, castleObj.transform.position))
             {
                 closestContactToCastle = contacts[p].point;
@@ -244,7 +250,7 @@ public class SoldierTowerScript : MonoBehaviour
         {
             Vector2 enemyPosAtTimeT = enemyStartingPos + enemyDir * enemiesInZone[o_index].GetComponent<KnightScript>().speed * t;
             float soldierDistAtTimeT = Vector2.Distance(soldierStartingPos, enemyPosAtTimeT);
-            float distanceSoldierCanTravel = SoldierScript.speed * t;
+            float distanceSoldierCanTravel = soldiers[i_index].GetComponent<SoldierScript>().speed * t;
 
             if(distanceSoldierCanTravel >= soldierDistAtTimeT)
             {

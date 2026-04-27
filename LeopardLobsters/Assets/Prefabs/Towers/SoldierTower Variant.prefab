@@ -309,7 +309,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3752856688824227733, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4637188148630771071, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
@@ -325,6 +326,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6730111401246257610, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 672195577911211984}
+    - targetCorrespondingSourceObject: {fileID: 6730111401246257610, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2109761983306387426}
   m_SourcePrefab: {fileID: 100100000, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
 --- !u!1 &3720325453208777616 stripped
 GameObject:
@@ -348,6 +352,7 @@ MonoBehaviour:
   enemiesInZone: []
   baseTower: {fileID: 3874348672811365585}
   soldierSpawnPosDistFromClosestPointOnPath: 5
+  radius: {fileID: 2109761983306387426}
   RemoveSoldierSound: {fileID: 0}
   SoldierDeathSound: {fileID: 7038404273192679490}
 --- !u!111 &828553542742003043
@@ -395,6 +400,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soliderTower: {fileID: 3720325453208777616}
+--- !u!60 &2109761983306387426
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5433523390993831625}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5}
+      - {x: -0.15234375, y: 0.47265625}
+      - {x: -0.29296875, y: 0.40234375}
+      - {x: -0.40234375, y: 0.29296875}
+      - {x: -0.47265625, y: 0.15234375}
+      - {x: -0.5, y: 0}
+      - {x: -0.47265625, y: -0.15234375}
+      - {x: -0.40234375, y: -0.29296875}
+      - {x: -0.29296875, y: -0.40234375}
+      - {x: -0.15234375, y: -0.47265625}
+      - {x: 0, y: -0.5}
+      - {x: 0.15234375, y: -0.47265625}
+      - {x: 0.29296875, y: -0.40234375}
+      - {x: 0.40234375, y: -0.29296875}
+      - {x: 0.47265625, y: -0.15234375}
+      - {x: 0.5, y: 0}
+      - {x: 0.47265625, y: 0.15234375}
+      - {x: 0.40234375, y: 0.29296875}
+      - {x: 0.29296875, y: 0.40234375}
+      - {x: 0.15234375, y: 0.47265625}
+  m_UseDelaunayMesh: 0
 --- !u!4 &6222692759278039676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637188148630771071, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}

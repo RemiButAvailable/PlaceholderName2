@@ -91,7 +91,7 @@ public class Neighborhood : MonoBehaviour
 
         return happinessChange;
     }
-
+    // If a tower enters the neighborhood, change the happiness based on the tower.
     public void towerEnter(BaseTower tower)
     {
         float happinessChange = calcTower(tower);

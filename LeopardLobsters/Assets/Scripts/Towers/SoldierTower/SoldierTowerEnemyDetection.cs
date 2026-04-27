@@ -19,14 +19,12 @@ public class SoldierTowerEnemyDetection : MonoBehaviour
         if (collision.gameObject.tag == "knight")
         {
             soliderTower.GetComponent<SoldierTowerScript>().AddEnemy(collision.gameObject);
-            Debug.Log("detected enemy");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "knight")
         {
-            Debug.Log("enemy left");
             soliderTower.GetComponent<SoldierTowerScript>().RemoveEnemy(collision.gameObject);
         }
     }

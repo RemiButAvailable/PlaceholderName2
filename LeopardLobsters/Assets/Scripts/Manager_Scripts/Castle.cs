@@ -4,6 +4,7 @@
  * enemy has hit it. Will also generate more people as time goes on.
  */
 
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -192,7 +193,7 @@ public class Castle : MonoBehaviour
             textUpdatePIn();
             
             //disable people sprites
-            if (peopleAtCastle < peopleSprites.Length)
+            if (peopleAtCastle < peopleSprites.Length && peopleAtCastle>0)
             {
                 peopleSprites[peopleAtCastle].enabled = false;
             }

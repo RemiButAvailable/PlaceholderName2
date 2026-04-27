@@ -227,7 +227,7 @@ public class WaveCode : MonoBehaviour
             //Turns on battle phase music stops building phase music
             buildMusic.Stop();
             battleMusic.Play();
-            bossMusic.Stop();
+            bossMusic?.Stop();
             startWaveSound.Play();
             endedWave = false;
         }

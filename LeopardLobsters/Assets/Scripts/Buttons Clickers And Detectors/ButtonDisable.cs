@@ -1,14 +1,18 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ButtonDisable : MonoBehaviour
 {
     [SerializeField] Button button;
+    [SerializeField] EventTrigger trigger;
     public void Disable()
     {
-        button.enabled = false;
+        if(button) button.enabled = false;
+        if(trigger) trigger.enabled = false;
     }
     public void Enable(){
-        button.enabled = true;
+        if (button) button.enabled = true;
+        if (trigger) trigger.enabled = true;
     }
 }

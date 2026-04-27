@@ -138,8 +138,8 @@ public class BaseTower : MonoBehaviour
 
     private void OnDestroy()
     {
-        Destroyed.Invoke(this);
         Happiness_ManagerScript.self.towerRemoved.Invoke(); //man i just want this too work even though its spagetti
+        Destroyed.Invoke(this);
     }
 }
 public enum TowerType { Attack, Happy }

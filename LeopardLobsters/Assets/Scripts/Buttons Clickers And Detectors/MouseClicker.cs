@@ -45,7 +45,7 @@ public class MouseClicker : MonoBehaviour
                 towerSelected?.Selected();
 
 
-                if (towerSelected.gameObject.tag == "Tower")
+                if (towerSelected?.gameObject.tag == "Tower")
                 {
                     buttonPanel.transform.position = hit.collider.transform.position;
                     //ButtonPanelAnimation.Play("Clicked"); //maybe later

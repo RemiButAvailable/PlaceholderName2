@@ -251,8 +251,8 @@ MonoBehaviour:
   - {r: 0.27450982, g: 0.27450982, b: 0.27450982, a: 1}
   - {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   audioSource: {fileID: 2941655807362388567}
-  happyUp: {fileID: 8300000, guid: 2e61c8b5662ce2e49a42776910d867a3, type: 3}
-  happyDown: {fileID: 8300000, guid: e732e0a707e421a489429bfaaf503f89, type: 3}
+  happyUp: {fileID: 8300000, guid: 6f74b180a1419454bb6d9465023acdf6, type: 3}
+  happyDown: {fileID: 8300000, guid: 17d721800dde4624e93c3375d0cd4fb9, type: 3}
 --- !u!82 &2941655807362388567
 AudioSource:
   m_ObjectHideFlags: 0

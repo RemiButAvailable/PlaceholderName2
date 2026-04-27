@@ -14,11 +14,11 @@ public class SoldierScript : MonoBehaviour
     [HideInInspector]
     bool isDying;
     [HideInInspector]
-    public bool isActive;//is the tower active
+    public bool isActive; //is the tower active
 
     //stat vals that can be edited in the inspector
     [Range(0f, 12f)]
-    public static float speed;
+    public float speed;
     [Range (0f, 12f)]
     public float health;
 
@@ -33,7 +33,6 @@ public class SoldierScript : MonoBehaviour
     KnightScript knightScript;
     public WaveCode waveCode;
 
-    //Animation
     [SerializeField] Animator anim;
     [SerializeField] Animator knightAnim;    
 
@@ -48,68 +47,60 @@ public class SoldierScript : MonoBehaviour
     {
         StartCoroutine(FightEnemy());
         StartCoroutine(Printer());
-
         engaged = false;
-
-        //set script refrences
         baseTowerScript = GetComponent<BaseTower>();
         soldierTowerScript = soldierTower.GetComponent<SoldierTowerScript>();
-
         anim.SetBool("isIdle", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target != null)//if the soldier has a target
+        //Debug.Log("isIdle " + anim.GetBool("isIdle"));
+        if (engaged == true && target != null)
         {
-            engaged = true;
-
             anim.SetBool("isIdle", false);
-
+            anim.SetBool("isWalking", true);
             direction = target.transform.position - transform.position;
             direction.Normalize();
-
-            if (fighting == false)//if the soldier is gaining on the target
+            if (fighting == false)
             {
                 transform.position += direction * speed * Time.deltaTime;
                 anim.SetBool("isWalking", true);
                 anim.SetBool("isAttacking", false);
             }
-
-            if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)//if the soldier is in close range of its target
-            {
-                fighting = true;
-                target.GetComponent<KnightScript>().speed = 0;
-            }
         }
-        else//if the soldier doesn't have a target
+        else
         {
-            engaged = false;
             direction = stationPosition - transform.position;
             direction.Normalize();
-
-            if (atStation == false)//if the soldier isn't back at its station
+            if (atStation == false)
             {
                 transform.position += direction * speed * Time.deltaTime;
             }
             else
             {
+                //Debug.Log("at station");
                 anim.SetBool("isIdle", true);
             }
         }
 
-        if (Vector3.Distance(transform.position, stationPosition) < 0.1f && engaged == false)//if the soldier returns to its staion
+        if (target != null)
         {
-            atStation = true;
-            anim.SetBool("isIdle", true);
+            engaged = true;
+            if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
+            {
+                fighting = true;
+                target.GetComponent<KnightScript>().speed = 0;
+            }
+            atStation = false;
         }
         else
         {
-            atStation = false;
+            engaged = false;
         }
 
-        if (health <= 0)//if the soldier should die
+        if (health <= 0)
         {
             anim.SetBool("isAttacking", false);
             anim.SetBool("isWalking", false);
@@ -117,23 +108,31 @@ public class SoldierScript : MonoBehaviour
             anim.SetBool("isDead", true);
         }
 
-        if (fighting == true && target == null)//if the soldier's target dies
+        if(fighting == true && target == null)
         {
-            fighting = false;
-
             anim.SetBool("isAttacking", false);
             anim.SetBool("isWalking", true);
-
-            //target a new enemy
+            fighting = false;
             soldierTowerScript.enemiesInZone.Sort();
-            foreach (var enemy in soldierTowerScript.enemiesInZone)
+            foreach(var enemy in soldierTowerScript.enemiesInZone)
             {
-                if (enemy.GetComponent<KnightScript>().targeted == false)
+                if(enemy.GetComponent<KnightScript>().targeted == false)
                 {
                     target = enemy;
                     engaged = true;
                 }
             }
+        }
+
+        if(Vector3.Distance(transform.position, stationPosition) < 0.1f && engaged == false)
+        {
+            //Debug.Log("atStation");
+            atStation = true;
+            anim.SetBool("isIdle", true);
+        }
+        else
+        {
+            atStation = false;
         }
     }
     IEnumerator FightEnemy()
@@ -142,24 +141,22 @@ public class SoldierScript : MonoBehaviour
         {
             if(fighting == true && target != null)
             {
+                anim.SetBool("isAttacking", true);
+                anim.SetBool("isWalking", false);
                 knightScript = target.GetComponent<KnightScript>();
 
                 knightScript.move.SetBool("isWalking", false);
                 knightScript.move.SetBool("isAttacking", true);
 
-                anim.SetBool("isAttacking", true);
-                anim.SetBool("isWalking", false);
-
-                knightScript.TakeDamage(1);
-                
                 hitSound.Play();
 
+                if(target != null)
+                {
+                    knightScript.TakeDamage(1);
+                }
                 yield return new WaitForSeconds(1);
-
-                health -= 1;
-
                 hitSound.Play();
-
+                health -= 1;
                 yield return new WaitForSeconds(1);
             }
             yield return null;
@@ -167,20 +164,18 @@ public class SoldierScript : MonoBehaviour
     }
     public void Die()
     {
+        Debug.Log("Died");
         AudioPlayer aPlayer = Instantiate(aSoundPrefab);
         aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
         if (target != null)
         {
             KnightScript knightScript = target.GetComponent<KnightScript>();
-
+            knightScript.speed = target.GetComponent<KnightScript>().defaultSpeed;
             knightScript.move.SetBool("isAttacking", false);
             knightScript.move.SetBool("isWalking", true);
-
-            knightScript.speed = target.GetComponent<KnightScript>().defaultSpeed;
             knightScript.targeted = false;
         }
         soldierTowerScript.RemoveSoldier(this.gameObject);
-
         Destroy(gameObject);
     }
 

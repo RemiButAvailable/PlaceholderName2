@@ -20,7 +20,7 @@ public class ArcherTowerScript : MonoBehaviour
     //(Made by Dante Jones)
     //Sound that plays when enemy shoots
     [SerializeField] AudioSource arrowShootSound;
-    [SerializeField] Animator anim;
+    [SerializeField] Animator[] peopleAnims;
     SpriteRenderer[] peopleSprites;
 
     public float directionMultiplier;
@@ -36,7 +36,8 @@ public class ArcherTowerScript : MonoBehaviour
         attackZone?.KnightEntered.AddListener(EnemyEntered);
         attackZone?.KnightExited.AddListener(EnemyExited);
 
-        anim.SetBool("IsIdle",true);
+
+        AnimatePeople("IsIdle",true);
         
         queue = new List<KnightScript>();
         StartCoroutine(ShootArrows());
@@ -60,8 +61,8 @@ public class ArcherTowerScript : MonoBehaviour
             if (enemyInZone && isActive)
             {
                 //animation
-                anim.SetBool("IsIdle", false);
-                anim.SetBool("Attack", true);
+                AnimatePeople("IsIdle", false);
+                AnimatePeople("Attack", true);
                 //Sound when arrow shoots
                 arrowShootSound.Play();
 
@@ -72,7 +73,7 @@ public class ArcherTowerScript : MonoBehaviour
 
                 //predicted spot will be based on enemy speed if we have multiple types of enemies
                 Vector3 target = knightScript.waypoints[knightScript.index + predictedSpot * (int)(knightScript.speed * directionMultiplier)] + knightScript.offset;
-                arrowScript.target = target; 
+                arrowScript.target = target;
                 arrowScript.start = arrowStartPosition.transform.position;
 
                 foreach (SpriteRenderer person in peopleSprites)
@@ -81,10 +82,15 @@ public class ArcherTowerScript : MonoBehaviour
                     {
                         person.flipX = true;
                     }
-                    else {
-                        person.flipX= false;
+                    else
+                    {
+                        person.flipX = false;
                     }
                 }
+            }
+            else {
+                AnimatePeople("Attack", false);
+                AnimatePeople("IsIdle", true);
             }
             yield return new WaitForSeconds(cooldown);
         }
@@ -92,5 +98,11 @@ public class ArcherTowerScript : MonoBehaviour
     }
 
     void IsActive(bool active) { isActive = active; }
+
+    void AnimatePeople(string animation, bool isTrue) {
+        foreach (Animator anim in peopleAnims) {
+            anim.SetBool(animation, isTrue);
+        }
+    }
 
 }

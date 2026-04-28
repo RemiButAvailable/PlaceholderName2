@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd3ab304705c2047a30388725a98fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soliderTower: {fileID: 3720325453208777616}
+  soldierTower: {fileID: 3720325453208777616}
 --- !u!60 &2109761983306387426
 PolygonCollider2D:
   m_ObjectHideFlags: 0

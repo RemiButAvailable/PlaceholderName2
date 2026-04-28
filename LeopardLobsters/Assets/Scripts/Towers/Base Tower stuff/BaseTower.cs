@@ -6,86 +6,110 @@ using UnityEngine.UIElements;
 public class BaseTower : MonoBehaviour
 {
     public int people = 0;
+
     public int peopleNeeded = 2;
+    [SerializeField] bool needsMax = true; //if needs max amuont of people to work
+
     public int towerCost = 10;
     public int sellPrice = 5;
-    public String toolTip;
 
+    // for active and deactive feedback
     [SerializeField] SpriteRenderer areaOfEffect;
-    [SerializeField] SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
+    [SerializeField] public SpriteRenderer[] peopleSprites = new SpriteRenderer[5];
 
-    // Have an active and inactive sprite
-    [SerializeField] SpriteRenderer towerSprite;
-    [SerializeField] Color colorTint;
+    [SerializeField] public SpriteRenderer towerSprite;
+    [SerializeField] public Color inactiveTint;
+    [SerializeField] public TowerHighlight highlight;
 
-    [SerializeField] AudioSource PeopleAddedSound;
-    [SerializeField] AudioSource PeopleRemovedSound;
+    [SerializeField] AudioSource towerActiveSound;
+    [SerializeField] AudioSource towerDeactiveSound;
 
+    // events for tower types
     [HideInInspector] public UnityEvent<bool> isActive;
     [HideInInspector] public UnityEvent<BaseTower> Destroyed;
-    [HideInInspector] public UnityEvent OnPlace; //add change sprite layer later
+    [HideInInspector] public UnityEvent<BaseTower> OnPlace;
     [HideInInspector] public UnityEvent AddedPeople;
     [HideInInspector] public UnityEvent RemovedPeople;
+    [HideInInspector] public UnityEvent Selected;
+    [HideInInspector] public UnityEvent Activated;
+
+    [SerializeField] AudioSource DenySound;
 
     public TowerType type;
 
+    //Tower button effects
+    public void AddPeople() { //acessed through button panel
 
-    public void AddPeople() { //connected through events
-
-        if (people >= peopleNeeded) return;
-        if (!Castle.self.personGoesOut()) return;
-
-        if(peopleSprites[people])peopleSprites[people].enabled = true;
+        if (people >= peopleNeeded || !Castle.self.personGoesOut())
+        { DenySound.Play();
+            return; }
+        //sound 
+        //enables the sprites of the people in the tower
+        if (peopleSprites[people])
+            peopleSprites[people].enabled = true;
 
         people++;
         AddedPeople.Invoke();
-        
-        if (people >= peopleNeeded) {
-           isActive.Invoke(true);
-           // PeopleAddedSound.Play();
-           towerSprite.color = Color.white;
-        }
 
+        //checks if active + sfx vfx
+        if (people >= peopleNeeded && needsMax) {
+            isActive.Invoke(true);
+            Activated.Invoke();
+            towerActiveSound?.Play();
+            towerSprite.color = Color.white;
+        }
     }
-    public bool RemovePeople() { //connected through events
-        if (people <= 0) return false;
-        if (people >= peopleNeeded) isActive.Invoke(false);
+
+    public bool RemovePeople() { //acessed through button panel
+        if (people <= 0)
+        { DenySound.Play();
+            return false; }
+        //sound
+        //checks if still active
+        if (people >= peopleNeeded && needsMax) {
+            isActive.Invoke(false);
+            towerDeactiveSound?.Play();
+            towerSprite.color = inactiveTint;
+        }
 
         people--;
         RemovedPeople.Invoke();
         Castle.self.personGoesIn();
-        //PeopleRemovedSound.Play();
-        towerSprite.color = colorTint;
 
         if (peopleSprites[people]) peopleSprites[people].enabled = false;
 
         return true;
     }
 
-    public void Sell() { //connected through events
-        //MoneyManagerScript.self.changeMoney(sellPrice);
-        MoneyManagerScript.self.ChangeMoney(sellPrice);
+    public void Sell() { //acessed through button panel
+        if (WaveCode.self.WaveStart) MoneyManagerScript.self.ChangeMoney(sellPrice);
+        else MoneyManagerScript.self.ChangeMoney(towerCost);
         while (RemovePeople()) ;
-        //VFX SFX
         Destroy(gameObject);
     }
 
-    /* what gets put on towers
-     GetComponent<BaseTower>().isActive.AddListener(IsActive); 
-    
-     void IsActive(bool isTrue){
-        active = isTrue;
-    }
-     */
-    [SerializeField]TowerSelectable towerSelectable;
+
+
+    //tower selected stuff
+    [SerializeField] TowerSelectable towerSelectable;
     public void Start()
     {
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
-        towerSprite.color = colorTint;
+
+        highlight.Highlighted.AddListener(TowerHighlighted);
+        highlight.DeHighlighted.AddListener(TowerDehighlighted);
+
+        BaseTowerInactiveTint();
     }
+
+    public void BaseTowerInactiveTint() {
+        towerSprite.color = inactiveTint;
+    }
+
     public void TowerSelected()
     {
+        Selected.Invoke();
         if (!areaOfEffect) return;
         areaOfEffect.enabled = true;
     }
@@ -95,15 +119,27 @@ public class BaseTower : MonoBehaviour
         areaOfEffect.enabled = false;
     }
 
-    private void OnDestroy()
-    {
-        Destroyed.Invoke(this);
+    void TowerHighlighted() {
+        if (!areaOfEffect) return;
+        areaOfEffect.enabled = true;
     }
 
-    public Vector3 GetClosestPointOnCollider(Collider2D neighborhoodCollider)
+    void TowerDehighlighted() {
+        if (!areaOfEffect) return;
+        areaOfEffect.enabled = false;
+    }
+
+    public void Placed() { 
+        //changes sprite layer from UI 2
+        towerSprite.sortingLayerID = SortingLayer.NameToID("Default");
+        towerSprite.sortingOrder = 0;
+        OnPlace.Invoke(this);
+    }
+
+    private void OnDestroy()
     {
-        Vector3 closestPointOnCollider = neighborhoodCollider.GetComponent<Collider2D>().ClosestPoint(transform.position);
-        return closestPointOnCollider;
+        Happiness_ManagerScript.self.towerRemoved.Invoke(); //man i just want this too work even though its spagetti
+        Destroyed.Invoke(this);
     }
 }
 public enum TowerType { Attack, Happy }

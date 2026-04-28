@@ -1,6 +1,7 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 public class MoneyManagerScript : MonoBehaviour 
 {
@@ -27,9 +28,10 @@ public class MoneyManagerScript : MonoBehaviour
     public AudioSource TowerPlaceSound;
     //
     public AudioSource BuySound;
-    //
     public AudioSource BuyDenySound;
-    
+
+    [SerializeField] AnimationHolder aniHolder;
+
     static public MoneyManagerScript self;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,25 +39,26 @@ public class MoneyManagerScript : MonoBehaviour
     {
         happiness_ManagerScript = happinessManager.GetComponent<Happiness_ManagerScript>();
         self = this;
+        updateText();
     }
 
     // Update is called once per frame
     void Update()
     {
-        textMoney.text = moneyNum.ToString();
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
-        if (Input.GetMouseButtonDown(0) && false)
-        {
-            for (int i = 0; i < products.Count; i++)
-            {
-                if(Vector3.Distance(mousePos, products[i].transform.position) <= 1)
-                {
-                    Buy(products[i]);
-                    break;
-                }
-            }
-        }
+        
+        //mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //mousePos.z = 0;
+        //if (Input.GetMouseButtonDown(0) && false)
+        //{
+        //    for (int i = 0; i < products.Count; i++)
+        //    {
+        //        if(Vector3.Distance(mousePos, products[i].transform.position) <= 1)
+        //        {
+        //            Buy(products[i]);
+        //            break;
+        //        }
+        //    }
+        //}
         /*if(DragnDrop && Input.GetMouseButton(0) && false)
         {
             spawnedProduct.transform.position = mousePos;
@@ -120,7 +123,7 @@ public class MoneyManagerScript : MonoBehaviour
                 spawnedProduct = Instantiate(product, mousePos, Quaternion.identity);
 
                 //Sound that plays when you by something
-                BuySound.Play();
+                //BuySound.Play();
             }
 
         }
@@ -135,11 +138,16 @@ public class MoneyManagerScript : MonoBehaviour
     public void ChangeMoney(int num)
     {
         moneyNum += num;
-        textMoney.text = moneyNum.ToString();
+        updateText();
+
+        BuySound.Play();
+
+        aniHolder.Add(num);
     }
     public bool Check(int num)
     {
         if ((moneyNum + num) < 0) return false;
         return true;
     }
+    void updateText() { textMoney.text = moneyNum.ToString() + "$"; }
 }

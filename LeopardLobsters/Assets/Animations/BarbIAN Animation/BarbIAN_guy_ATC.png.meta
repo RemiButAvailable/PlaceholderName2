@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: b9894b32440bac84dbae5aeec41d4418
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6458268535028044568
+    second: BarbIAN_guy_ATC_0
+  - first:
+      213: 1336075576279900060
+    second: BarbIAN_guy_ATC_1
+  - first:
+      213: -8867879442107026840
+    second: BarbIAN_guy_ATC_2
+  - first:
+      213: -6028075348900703424
+    second: BarbIAN_guy_ATC_3
+  - first:
+      213: -1882050837917554431
+    second: BarbIAN_guy_ATC_4
+  - first:
+      213: -4604445190861320595
+    second: BarbIAN_guy_ATC_5
+  - first:
+      213: -681856376034019366
+    second: BarbIAN_guy_ATC_6
+  - first:
+      213: -6450086051443926328
+    second: BarbIAN_guy_ATC_7
+  - first:
+      213: -7346588327740313132
+    second: BarbIAN_guy_ATC_8
+  - first:
+      213: 5643174656736232778
+    second: BarbIAN_guy_ATC_9
+  - first:
+      213: 6020337694931842802
+    second: BarbIAN_guy_ATC_10
+  - first:
+      213: -6084554111790350674
+    second: BarbIAN_guy_ATC_11
+  - first:
+      213: 1270856255224058618
+    second: BarbIAN_guy_ATC_12
+  - first:
+      213: 5954528960458623736
+    second: BarbIAN_guy_ATC_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 125
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1701
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813dd66e30160a950800000000000000
+      internalID: 6458268535028044568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_1
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1701
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f1d3568a1ba8210800000000000000
+      internalID: 1336075576279900060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_2
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1701
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862b836a1a6fee480800000000000000
+      internalID: -8867879442107026840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_3
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 1701
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0431c758869f75ca0800000000000000
+      internalID: -6028075348900703424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1134
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 109a2b40cbc91e5e0800000000000000
+      internalID: -1882050837917554431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_5
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1134
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e84fa8e79b910c0800000000000000
+      internalID: -4604445190861320595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_6
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1134
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad738a61d3f8986f0800000000000000
+      internalID: -681856376034019366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_7
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 1134
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca9bf409e0bc76a0800000000000000
+      internalID: -6450086051443926328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 567
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d1f10ef6dcab0a90800000000000000
+      internalID: -7346588327740313132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_9
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 567
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4500449375905e40800000000000000
+      internalID: 5643174656736232778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_10
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 567
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f67e468c398c8350800000000000000
+      internalID: 6020337694931842802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_11
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 567
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaef71ec5425f8ba0800000000000000
+      internalID: -6084554111790350674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af29635e70df2a110800000000000000
+      internalID: 1270856255224058618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbIAN_guy_ATC_13
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 630
+        height: 567
+      alignment: 9
+      pivot: {x: 0.41, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa89e48a8cb2a250800000000000000
+      internalID: 5954528960458623736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e52b274e4ef66b046b670f9dfb3b888d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BarbIAN_guy_ATC_0: 6458268535028044568
+      BarbIAN_guy_ATC_1: 1336075576279900060
+      BarbIAN_guy_ATC_10: 6020337694931842802
+      BarbIAN_guy_ATC_11: -6084554111790350674
+      BarbIAN_guy_ATC_12: 1270856255224058618
+      BarbIAN_guy_ATC_13: 5954528960458623736
+      BarbIAN_guy_ATC_2: -8867879442107026840
+      BarbIAN_guy_ATC_3: -6028075348900703424
+      BarbIAN_guy_ATC_4: -1882050837917554431
+      BarbIAN_guy_ATC_5: -4604445190861320595
+      BarbIAN_guy_ATC_6: -681856376034019366
+      BarbIAN_guy_ATC_7: -6450086051443926328
+      BarbIAN_guy_ATC_8: -7346588327740313132
+      BarbIAN_guy_ATC_9: 5643174656736232778
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ArrowScript : MonoBehaviour
 {
-    
-    [SerializeField] float timerMax;
-    float timer;
+    [SerializeField] float speed = 1.0f;
+
+    float timerMax;
+    float timer = 0;
 
     [SerializeField] int damage;
 
@@ -17,6 +18,10 @@ public class ArrowScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //speed and time
+        timerMax = Vector2.Distance(start, target)/speed;
+
+        //Direction and angle
         Vector2 direction = (target - start).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);

@@ -1,0 +1,12 @@
+Patch notes 5_3_1
+
+new music that should loop
+added new death and hurt sounds
+implemented sounds for place deny
+fixed issue where there'd be multiple sounds playing 
+
+Made new neighborhoods
+fixed wave code more
+made pause resume and quit button
+edited soldier script
+change where the credits is

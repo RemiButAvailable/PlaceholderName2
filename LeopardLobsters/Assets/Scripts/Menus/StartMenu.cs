@@ -1,10 +1,23 @@
+/* Date: 4/8/26
+ * 
+ * The script that will help move between scenes, usually is used in the main menu */
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
     //scene that is gone to when no string is placed
-    public string defaultScene; 
+    public string defaultScene;
+    [SerializeField] TextMeshProUGUI waveScoreCur;
+    [SerializeField] TextMeshProUGUI waveScoreHi;
+
+
+    private void Start()
+    {
+        if(waveScoreCur) waveScoreCur.text = "Score: "+Global.curWave.ToString();
+        if(waveScoreHi) waveScoreHi.text = "Top Score: "+ Global.topWave.ToString();
+    }
 
     //functions connected through buttons in scene
     public void NextScene(string nextScene) {
@@ -18,5 +31,26 @@ public class StartMenu : MonoBehaviour
 
     public void Quit() {
         Application.Quit();
+    }
+
+    // To activate and deactivate the credits on the main menu with the buttons.
+    public void Credits(GameObject gameObject)
+    {
+        if (gameObject.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
+
+        else
+        {
+            gameObject.SetActive(true);
+        }
+
+
+    }
+
+    public void Tutorial(string scene) {
+        Global.inTutorial = true;
+        SceneManager.LoadScene(scene);
     }
 }

@@ -6,8 +6,8 @@ public class TestFountain : MonoBehaviour
 {
     int towerCount = 0;
 
-    [SerializeField] float happyPerTower = .004f;
-    [SerializeField] float cooldown = .5f;
+    [SerializeField] float happyPerTower = .03f;
+    [SerializeField] float cooldown = 1f;
 
     float timer = 0;
 
@@ -20,23 +20,21 @@ public class TestFountain : MonoBehaviour
     [SerializeField] AudioSource happySound;
     //animation
     [SerializeField] Animator happinessGain;
+    public Animator Water;
+
+    Happiness_ManagerScript happyMan => Happiness_ManagerScript.self;
 
     private void Start()
     {
         //hManager = Happiness_ManagerScript.self
         baseTower.isActive.AddListener(SetActive);
         baseTower.OnPlace.AddListener(CheckTowersInArea);
+
+        baseTower.highlight.Highlighted.AddListener(TowerHighlighted);
+        baseTower.highlight.DeHighlighted.AddListener(TowerDehighlighted);
+
         checker.towerEnter.AddListener(TowerEnter);
         checker.towerExit.AddListener(TowerExit);
-    }
-
-    void TowerEnter(BaseTower other)
-    {
-            towerCount++;
-    }
-    void TowerExit(BaseTower other)
-    {
-            towerCount--;
     }
 
     private void FixedUpdate()
@@ -58,7 +56,8 @@ public class TestFountain : MonoBehaviour
         }
     }
 
-    void CheckTowersInArea() {
+    //basetower active event
+    void CheckTowersInArea(BaseTower tower) {
         Collider2D col = GetComponent<Collider2D>();
 
         col.gameObject.layer = LayerMask.NameToLayer("CheckTowerPlacement");
@@ -78,15 +77,43 @@ public class TestFountain : MonoBehaviour
 
     }
 
-    void SetActive(bool towerActive) { active = towerActive;
+    void SetActive(bool towerActive) { 
+        active = towerActive;
+
+        if (!active)
+        {
+            happyMan.FountainRemove(this);
+            WaterSound.Stop();
+            Water.SetBool("water_active", false);
+        }
+        else { happyMan.FountainAdd(this); Water.SetBool("water_active", true); }
+    }
+
+    //tower selectable events
+    void TowerEnter(BaseTower other)
+    {
+        towerCount++;
+    }
+    void TowerExit(BaseTower other)
+    {
+        towerCount--;
+    }
+
+    //tower higlighted events
+    void TowerHighlighted()
+    {
         if (active)
         {
             WaterSound.Play();
         }
-        else
-        {
-            WaterSound.Stop();
-        }
+    }
+    void TowerDehighlighted()
+    {
+        WaterSound.Stop();
+    }
+
+    public float getHappinessWithTime(float dur) {
+        return happyPerTower*towerCount/ (cooldown / dur);
     }
 }
 

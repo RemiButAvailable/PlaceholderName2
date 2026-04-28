@@ -1,0 +1,1037 @@
+fileFormatVersion: 2
+guid: ddc2b50370f35984abf4b12e2681053c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4604758657127544047
+    second: Archer_guy_ATC_0
+  - first:
+      213: 3705619489178398626
+    second: Archer_guy_ATC_1
+  - first:
+      213: -552893646212531681
+    second: Archer_guy_ATC_2
+  - first:
+      213: 2451116890893401929
+    second: Archer_guy_ATC_3
+  - first:
+      213: -9191089402671774913
+    second: Archer_guy_ATC_4
+  - first:
+      213: 7571172553894321107
+    second: Archer_guy_ATC_5
+  - first:
+      213: 4918851968860503125
+    second: Archer_guy_ATC_6
+  - first:
+      213: 4634139139839106791
+    second: Archer_guy_ATC_7
+  - first:
+      213: 7074053137536486981
+    second: Archer_guy_ATC_8
+  - first:
+      213: 2464261176841309276
+    second: Archer_guy_ATC_9
+  - first:
+      213: 3547211438652137009
+    second: Archer_guy_ATC_10
+  - first:
+      213: 6054513312145416394
+    second: Archer_guy_ATC_11
+  - first:
+      213: -9185434377582972302
+    second: Archer_guy_ATC_12
+  - first:
+      213: 6110013447607026379
+    second: Archer_guy_ATC_13
+  - first:
+      213: 1337754124811080029
+    second: Archer_guy_ATC_14
+  - first:
+      213: 4109526651541271206
+    second: Archer_guy_ATC_15
+  - first:
+      213: 779181709732650833
+    second: Archer_guy_ATC_16
+  - first:
+      213: -8362330027579631356
+    second: Archer_guy_ATC_17
+  - first:
+      213: 2945685206308382137
+    second: Archer_guy_ATC_18
+  - first:
+      213: 2020038457882877535
+    second: Archer_guy_ATC_19
+  - first:
+      213: -7751669352222507161
+    second: Archer_guy_ATC_20
+  - first:
+      213: 2926817481844771988
+    second: Archer_guy_ATC_21
+  - first:
+      213: 8556648415453298871
+    second: Archer_guy_ATC_22
+  - first:
+      213: 8632734511340535427
+    second: Archer_guy_ATC_23
+  - first:
+      213: -5319978450577381332
+    second: Archer_guy_ATC_24
+  - first:
+      213: -3708478466470324420
+    second: Archer_guy_ATC_25
+  - first:
+      213: -124601084720913377
+    second: Archer_guy_ATC_26
+  - first:
+      213: -3934646552542103386
+    second: Archer_guy_ATC_27
+  - first:
+      213: 235776184217657212
+    second: Archer_guy_ATC_28
+  - first:
+      213: -316124632081107514
+    second: Archer_guy_ATC_29
+  - first:
+      213: -4326823846044301144
+    second: Archer_guy_ATC_30
+  - first:
+      213: 2935525340833067927
+    second: Archer_guy_ATC_31
+  - first:
+      213: 2731526918869843172
+    second: Archer_guy_ATC_32
+  - first:
+      213: 9043599709385882051
+    second: Archer_guy_ATC_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Archer_guy_ATC_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2265
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b028df56c9810c0800000000000000
+      internalID: -4604758657127544047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 2265
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af2e3dca410d6330800000000000000
+      internalID: 3705619489178398626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_2
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 2265
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a7eea782ab358f0800000000000000
+      internalID: -552893646212531681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_3
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 2265
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f39a063dd140220800000000000000
+      internalID: 2451116890893401929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_4
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 2265
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3344ee72e0b27080800000000000000
+      internalID: -9191089402671774913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_5
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 2265
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dbde00f255321960800000000000000
+      internalID: 7571172553894321107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1812
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c39a2fdc5434440800000000000000
+      internalID: 4918851968860503125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_7
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1812
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee18d5bef4cf4040800000000000000
+      internalID: 4634139139839106791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_8
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1812
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e891149d51c2260800000000000000
+      internalID: 7074053137536486981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_9
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 1812
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c896feb70d23220800000000000000
+      internalID: 2464261176841309276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_10
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1812
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e1010720a3a3130800000000000000
+      internalID: 3547211438652137009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_11
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 1812
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac02d4a77c3f50450800000000000000
+      internalID: 6054513312145416394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1359
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2727180a918c68080800000000000000
+      internalID: -9185434377582972302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_13
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1359
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc20a7dbbd02bc450800000000000000
+      internalID: 6110013447607026379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_14
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1359
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d519d2ee948a09210800000000000000
+      internalID: 1337754124811080029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_15
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 1359
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a23e1467b8f70930800000000000000
+      internalID: 4109526651541271206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_16
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1359
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f981003a530da00800000000000000
+      internalID: 779181709732650833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_17
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 1359
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409988b352903fb80800000000000000
+      internalID: -8362330027579631356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 906
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b56226961d21e820800000000000000
+      internalID: 2945685206308382137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_19
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 906
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e9cba564e980c10800000000000000
+      internalID: 2020038457882877535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_20
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 906
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fbe745bc98c6490800000000000000
+      internalID: -7751669352222507161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_21
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 906
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49cc2c72ef42e9820800000000000000
+      internalID: 2926817481844771988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_22
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 906
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0c00716625fb670800000000000000
+      internalID: 8556648415453298871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_23
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 906
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e35b4cc42adc770800000000000000
+      internalID: 8632734511340535427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 453
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c282a9029c3ab26b0800000000000000
+      internalID: -5319978450577381332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_25
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 453
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37d9dcab76d88cc0800000000000000
+      internalID: -3708478466470324420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_26
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 453
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f14e49e39f3554ef0800000000000000
+      internalID: -124601084720913377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_27
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 453
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8330f9ec35569c0800000000000000
+      internalID: -3934646552542103386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_28
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 453
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7f5acab035a54300800000000000000
+      internalID: 235776184217657212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_29
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 453
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5fd007256ec9bf0800000000000000
+      internalID: -316124632081107514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a807d2f2a804f3c0800000000000000
+      internalID: -4326823846044301144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_31
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79333819eb41db820800000000000000
+      internalID: 2935525340833067927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_32
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 0
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec77ada24558e520800000000000000
+      internalID: 2731526918869843172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_33
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 0
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c975c84502518d70800000000000000
+      internalID: 9043599709385882051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer_guy_ATC_34
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 0
+        width: 410
+        height: 453
+      alignment: 9
+      pivot: {x: 0.47, y: 0.08}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bc541487e2f174cba5511615a48acc
+      internalID: -953507057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b6a3eeb870ee5474997d8404486c508c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Archer_guy_ATC_0: -4604758657127544047
+      Archer_guy_ATC_1: 3705619489178398626
+      Archer_guy_ATC_10: 3547211438652137009
+      Archer_guy_ATC_11: 6054513312145416394
+      Archer_guy_ATC_12: -9185434377582972302
+      Archer_guy_ATC_13: 6110013447607026379
+      Archer_guy_ATC_14: 1337754124811080029
+      Archer_guy_ATC_15: 4109526651541271206
+      Archer_guy_ATC_16: 779181709732650833
+      Archer_guy_ATC_17: -8362330027579631356
+      Archer_guy_ATC_18: 2945685206308382137
+      Archer_guy_ATC_19: 2020038457882877535
+      Archer_guy_ATC_2: -552893646212531681
+      Archer_guy_ATC_20: -7751669352222507161
+      Archer_guy_ATC_21: 2926817481844771988
+      Archer_guy_ATC_22: 8556648415453298871
+      Archer_guy_ATC_23: 8632734511340535427
+      Archer_guy_ATC_24: -5319978450577381332
+      Archer_guy_ATC_25: -3708478466470324420
+      Archer_guy_ATC_26: -124601084720913377
+      Archer_guy_ATC_27: -3934646552542103386
+      Archer_guy_ATC_28: 235776184217657212
+      Archer_guy_ATC_29: -316124632081107514
+      Archer_guy_ATC_3: 2451116890893401929
+      Archer_guy_ATC_30: -4326823846044301144
+      Archer_guy_ATC_31: 2935525340833067927
+      Archer_guy_ATC_32: 2731526918869843172
+      Archer_guy_ATC_33: 9043599709385882051
+      Archer_guy_ATC_34: -953507057
+      Archer_guy_ATC_4: -9191089402671774913
+      Archer_guy_ATC_5: 7571172553894321107
+      Archer_guy_ATC_6: 4918851968860503125
+      Archer_guy_ATC_7: 4634139139839106791
+      Archer_guy_ATC_8: 7074053137536486981
+      Archer_guy_ATC_9: 2464261176841309276
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-9218842808026517168
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie_{-9218842808026517168}
+  m_AudioClip: {fileID: 8300000, guid: bce31b30771dee842a8411ce711609cd, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6107301426327030635
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[10]_{-6107301426327030635}
+  m_AudioClip: {fileID: 8300000, guid: b8066fba7f4d95a47970b797f738b67e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-3594656216151034922
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[7]_{-3594656216151034922}
+  m_AudioClip: {fileID: 8300000, guid: 272c525f25799ef4dabedf22c691ee69, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1968627801896914759
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[14]_{-1968627801896914759}
+  m_AudioClip: {fileID: 8300000, guid: e3e82d2555f9aa1429bb2b8639db7be8, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-69441363093301310
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[3]_{-69441363093301310}
+  m_AudioClip: {fileID: 8300000, guid: b5335876190e8db4ea26d5902a5e21e0, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &373485660137775573
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[11]_{373485660137775573}
+  m_AudioClip: {fileID: 8300000, guid: 3bab883d30cd1bf468edf7864cf9bcbb, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &657392276339910791
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[13]_{657392276339910791}
+  m_AudioClip: {fileID: 8300000, guid: 7d95e552d0d387d4ebfbe0c0dfa0ce61, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &733089909339213041
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[8]_{733089909339213041}
+  m_AudioClip: {fileID: 8300000, guid: 5ca9d152bbe51dc4790f4a4e66f2b41a, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &804819923558644741
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[4]_{804819923558644741}
+  m_AudioClip: {fileID: 8300000, guid: f78f154187d2d8d4aabbef64b3cab8f7, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1483317056450420367
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[12]_{1483317056450420367}
+  m_AudioClip: {fileID: 8300000, guid: 7114b637094163b4d93358a6f2a1fa50, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1565660087817641473
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[2]_{1565660087817641473}
+  m_AudioClip: {fileID: 8300000, guid: 44ebfaadac720394f8990ac48e90d4d2, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &2023479102961546380
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[9]_{2023479102961546380}
+  m_AudioClip: {fileID: 8300000, guid: 823c5484cebb42b4ca4ac2c2baf2f507, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5303337694178602898
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[5]_{5303337694178602898}
+  m_AudioClip: {fileID: 8300000, guid: d85ddb33ac7d84044b45e0c8bdd84872, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5990785276008213847
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[15]_{5990785276008213847}
+  m_AudioClip: {fileID: 8300000, guid: b63a8b8063976b84983ceefbb7cc6171, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CitizenDeath
+  m_Volume: -1
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 1200}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -9218842808026517168}
+  - {fileID: 1565660087817641473}
+  - {fileID: -69441363093301310}
+  - {fileID: 804819923558644741}
+  - {fileID: 5303337694178602898}
+  - {fileID: 7288296718583737957}
+  - {fileID: -3594656216151034922}
+  - {fileID: 733089909339213041}
+  - {fileID: 2023479102961546380}
+  - {fileID: -6107301426327030635}
+  - {fileID: 373485660137775573}
+  - {fileID: 1483317056450420367}
+  - {fileID: 657392276339910791}
+  - {fileID: -1968627801896914759}
+  - {fileID: 5990785276008213847}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 1
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &7288296718583737957
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_CitizenDie[6]_{7288296718583737957}
+  m_AudioClip: {fileID: 8300000, guid: e29facff1ec432d4787eb610c087a766, type: 3}
+  m_Volume: 0
+  m_Enabled: 1

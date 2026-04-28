@@ -1,47 +1,86 @@
+/*
+ * 
+ * Description: The script for the castle, keeping track of the people there are and if an
+ * enemy has hit it. Will also generate more people as time goes on.
+ */
+
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Castle : MonoBehaviour
 {
+    [Header("Editable values")]
     public int peopleAtCastle = 2; //starting amount of people
-    [SerializeField] int peopleMax = 6;
-    [SerializeField] int peopleMaxCost = 30;
-    [SerializeField] float peopleMaxCostMult = 2;
-
-    [SerializeField] TowerSelectable towerSelectable;
-    [SerializeField] GameObject buttonPanel;
-    [SerializeField] TextMeshPro maxPeoplCostButtonText;
-
-    [SerializeField] SpriteRenderer castleSprite;
-    [SerializeField] Color tintColor;
-
     int peopleTotal;
-    [SerializeField] int moneyPerPerson = 5;
+
+    [SerializeField] int peopleMax = 6; //max amount of people can have
+    [SerializeField] int peopleMaxCost = 30; //cost to add to people max
+    [SerializeField] float peopleMaxCostMult = 2; //cost multiplier each time bought
+    [SerializeField] int moneyPerPerson = 5; //money gained after a wave
+    [Space]
+    public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
+    public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
+    public int timerMax = 10; // time needed if minPeople needed is in castle
+    public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
+    
+    [Space]
+    [Header("People add progress bar")]
+    [SerializeField] Image progressBar; //instantiate in inspector
+    [SerializeField] Image barParent;
+    [SerializeField] GameObject barPosition;
+
+    [Space]
+    [Header("text and objects for castle")]
     [SerializeField] TextMeshProUGUI textPeopleTotal;
     [SerializeField] TextMeshProUGUI textPeopleIn;
+    [SerializeField] TowerSelectable towerSelectable;
 
-    //(Made by Dante Jones)
-    //The audio for castle being hit
-    public AudioSource castleHitSound;
+    [Space]
+    [Header("button pannel stuff")]
+    [SerializeField] TextMeshPro maxPeoplCostButtonText;
+    [SerializeField] GameObject buttonPanel;
+
+    [Space]
+    [Header("tower active stuff")]
+    [SerializeField] SpriteRenderer castleSprite;
+    [SerializeField] SpriteRenderer[] peopleSprites;
+    [SerializeField] Color tintColor;
+    [SerializeField] AudioSource towerActive;
+    [SerializeField] AudioSource towerDeactive;
+
+    [Space]
+    [Header("people gain and killed feedback")]
+    [SerializeField] AudioSource castleHitSound;
+    [SerializeField] AudioSource enemyCastleHitSound;
     [SerializeField] AudioSource PeopleGainSound;
+    [SerializeField] Animator PeopleGainAnimator;
 
     public static Castle self;
+    [HideInInspector] public UnityEvent gameOver;
 
     private void Awake()
     {
         self = this;
         peopleTotal = peopleAtCastle;
+        //WaveCode.self.waveEnd.AddListener(endOfWave);
     }
     private void Start()
     {
+        //Setting UI
         maxPeoplCostButtonText.text = peopleMaxCost.ToString();
         textUpdatePTotal();
         textUpdatePIn();
+        progressBar.fillAmount = timer;
 
+        //connecting events
         towerSelectable.selected.AddListener(TowerSelected);
         towerSelectable.deSelected.AddListener(TowerDeselected);
+
+        WaveCode.self.waveEnded.AddListener(endOfWave);
     }
 
     void TowerSelected() { buttonPanel?.SetActive(true); }
@@ -50,50 +89,65 @@ public class Castle : MonoBehaviour
 
     //adds money based on population
     public void endOfWave() {
-        MoneyManagerScript.self.ChangeMoney (peopleAtCastle * moneyPerPerson);
-
-        //DO: add money sfx vfx
+        MoneyManagerScript.self.ChangeMoney (peopleTotal * moneyPerPerson);
+        //DO: add money sfx
     }
-
+    // Everytime a person gets put out to the field, remove from the castle if available
     public bool personGoesOut() {
         if (peopleAtCastle > 0) {
+            bool wasActive = peopleAtCastle >= minPeopleNeeded;
+
             peopleAtCastle--;
             textUpdatePIn();
+
+            //enabling people sprites
+            if (peopleAtCastle < peopleSprites.Length)
+            {
+                peopleSprites[peopleAtCastle].enabled = false;
+            }
+
+            //checking active or not
+            if (peopleAtCastle < minPeopleNeeded && wasActive)
+            {
+                towerDeactive.Play();
+                castleSprite.color = tintColor;
+                progressBar.color = tintColor;
+            }
+
             return true;
         }
         return false;
 
     }
+    // When a person gets removed from the field, add to the castle
     public void personGoesIn() {
+        bool wasInactive = peopleAtCastle < minPeopleNeeded;
+
+        //enabling people sprites
+        if (peopleAtCastle < peopleSprites.Length)
+        {
+            peopleSprites[peopleAtCastle].enabled = true;
+        }
+
         peopleAtCastle++;
         textUpdatePIn();
+
+        //checking active
+        if (peopleAtCastle >= minPeopleNeeded && wasInactive)
+        {
+            towerActive.Play();
+            castleSprite.color = Color.white;
+            progressBar.color = Color.white;
+        }
     }
 
 
     //people making stuff
     bool inWave => WaveCode.self.WaveStart;
     float timer = 0;
-    public int timerMax = 10;
-
-    public int minPeopleNeeded = 2; //amount of people that are required to be at castle to make more people
-    public int maxPeopleDecrease = 10; //max amount of people that increase speed of timer
-    public float percentPerPerson = 1.1f; //the percent multiplied that reduce time for timer
-
-    [SerializeField] Image progressBar; //instantiate in inspector
-    [SerializeField] Image barParent;
-    [SerializeField] GameObject barPosition;
 
     private void FixedUpdate()
     {
-        /*if (peopleAtCastle >= minPeopleNeeded)
-        {
-            castleSprite.color = Color.white;
-        }
-        else
-        {
-            castleSprite.color = tintColor;
-            return;
-        }*/
         if (inWave && peopleAtCastle >= minPeopleNeeded && peopleTotal < peopleMax)
         {
             progressBar.fillAmount = timer / timerMax;
@@ -109,8 +163,11 @@ public class Castle : MonoBehaviour
 
                 //DO: people added SFX VFX
                 PeopleGainSound.Play();
+                PeopleGainAnimator.Play("People_Gain");
+
                 peopleAtCastle++;
                 peopleTotal++;
+
                 textUpdatePTotal();
                 textUpdatePIn();
             }
@@ -120,19 +177,30 @@ public class Castle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // The people in castle killer
         if (other.gameObject.tag == "knight")
         {
             //Sound that plays when enemy hits castle
             castleHitSound.Play();
+            enemyCastleHitSound.Play();
             KnightScript enemy = other.gameObject.GetComponent<KnightScript>();
+            enemy.ReachedCastle();
 
+            //changing numbers
             PersonDead(enemy);
 
             peopleAtCastle -= enemy.damage;
             textUpdatePIn();
+            
+            //disable people sprites
+            if (peopleAtCastle < peopleSprites.Length && peopleAtCastle>0)
+            {
+                peopleSprites[peopleAtCastle].enabled = false;
+            }
 
-            enemy.ReachedCastle();
+            // One of the reasons for the loss
             if (peopleAtCastle < 0) {
+                gameOver.Invoke();
                 SceneManager.LoadScene("PeopleLoseScreen");
             }
         }
@@ -143,7 +211,7 @@ public class Castle : MonoBehaviour
         textUpdatePTotal();
     }
 
-
+    // Increase the max amount of people that can be housed in the castle
     public void BuyMaxPeople() { //connected through inspector
         if (!MoneyManagerScript.self.Check(-peopleMaxCost)) return;
 
@@ -154,8 +222,9 @@ public class Castle : MonoBehaviour
         textUpdatePTotal();
     }
 
-    void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString() +" / "  +peopleMax.ToString(); }
-    void textUpdatePIn() { textPeopleIn.text = peopleAtCastle.ToString(); }
+    // Text stuff
+    void textUpdatePTotal() { textPeopleTotal.text = peopleTotal.ToString() +" / "  +peopleMax.ToString()+" people"; }
+    void textUpdatePIn() { textPeopleIn.text = peopleAtCastle.ToString()+" in castle"; }
 
     private void Update()
     {

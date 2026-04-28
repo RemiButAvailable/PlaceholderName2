@@ -2,11 +2,14 @@
  * Remi de Plater
  * Knight enemy functionality
  */
-using UnityEngine;
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Events;
 
-public class KnightScript : MonoBehaviour
+// HI
+public class KnightScript : MonoBehaviour, IComparable<KnightScript>
 {
     //vals that can be edited in the inspector
     [Range(0, 12)]
@@ -17,9 +20,10 @@ public class KnightScript : MonoBehaviour
     public int money;
     [Range(0, 12)]
     public int health;
+    [Range(0, 12)]
+    public float detectionObjDistFromKnight;//the distance from the knight of the line that checks if an enemy surpassed this enemy
 
     //vals that are public but not cause they're meant to be edited in the inspector
-
     [HideInInspector]
     public int index;
     [HideInInspector]
@@ -32,23 +36,37 @@ public class KnightScript : MonoBehaviour
     public Vector3 nextWayPoint;
     [HideInInspector]
     public float speed;
+    [HideInInspector]
+    public float order;
+    [HideInInspector]
+    public ArcherTowerScript inhabitedTowerZone;
 
     //public objects and lists
     [HideInInspector]
     public LineRenderer lineRenderer;
     [HideInInspector]
     public Vector3[] waypoints;
+    //public GameObject detectionObj;
+    [HideInInspector]
+    public UnityEvent<KnightScript> onDeath;
 
     //Manager Scripts
     WaveCode waveCode => WaveCode.self;
     MoneyManagerScript moneyManagerScript => MoneyManagerScript.self;
-    Happiness_ManagerScript happinessManagerScript=>Happiness_ManagerScript.self;
+    Happiness_ManagerScript happinessManagerScript => Happiness_ManagerScript.self;
+
+    //Animation :D
+    public Animator move;
 
     //(Made by Dante Jones)
     //The audio for enemy getting hurt
     [SerializeField] AudioSource hurtSound;
+    [SerializeField] AudioSource ArrowHitSound;
     [SerializeField] AudioResource deathSound;
+    [SerializeField] AudioResource hitDeathSound;
+
     [SerializeField] AudioPlayer aPlayerPrefab;
+    [SerializeField] AudioPlayer aHitSoundPrefab;
     [SerializeField] float deathSoundVolume = .5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -62,6 +80,7 @@ public class KnightScript : MonoBehaviour
             waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, 0);
         }
         speed = defaultSpeed;
+        move.SetBool("isWalking", true);
     }
 
     // Update is called once per frame
@@ -78,31 +97,75 @@ public class KnightScript : MonoBehaviour
             {
                 index++;
             }
+            //detectionObj.transform.position = transform.position + direction * detectionObjDistFromKnight;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //detectionObj.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-       
     }
     public void TakeDamage(int dmg) {
         health -= dmg;
         hurtSound.Play();
+        ArrowHitSound.Play();
 
         //death
         if (health <= 0)
         {
-            if(waveCode.EnemyNum > 0)
-            waveCode.EnemyNum -= 1;
-
-            moneyManagerScript.ChangeMoney(money);
-
-            //sounds
-            AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
-            aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
-
-            Destroy(gameObject);
+            move.SetBool("isWalking", false);
+            move.SetBool("isDead", true);
+            Die();
         }
     }
     public void ReachedCastle() {
         if(waveCode.EnemyNum > 0)
         waveCode.EnemyNum -= 1;
+
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        onDeath.Invoke(this);
+    }
+
+    //albert test code
+    [SerializeField] float minLRNodeDistance;
+    [SerializeField] float timeCheckPass;
+    public int compareIndex => (lineRenderer.positionCount - index + (int)(speed * timeCheckPass / minLRNodeDistance));
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if(collision.tag == "detectionLine")
+        //{
+        //    order--;
+        //    collision.gameObject.GetComponentInParent<KnightScript>().order++;
+        //    if(inhabitedTowerZone != null && inhabitedTowerZone.queue[0] == collision.gameObject)
+        //    {
+        //        inhabitedTowerZone.ChangeTarget(collision.gameObject);
+        //    }
+        //}
+    }
+
+    public int CompareTo(KnightScript other) {
+        if(other.compareIndex < compareIndex) return 1;
+        if (other.compareIndex > compareIndex) return -1;
+        return 0;
+    }
+
+    public void Die()
+    {
+        if (waveCode.EnemyNum > 0)
+            waveCode.EnemyNum -= 1;
+
+        moneyManagerScript.ChangeMoney(money);
+
+        //move.Play("BarbIAN_guy_DEATH");
+        //sounds
+        AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
+        AudioPlayer aHitSound = Instantiate(aHitSoundPrefab);
+        aPlayer.playClip(transform.position, hitDeathSound, deathSoundVolume);
+        aHitSoundPrefab.playClip(transform.position, deathSound, deathSoundVolume);
+
+        //if (inhabitedTowerZone != null)
+        //inhabitedTowerZone.queue.Remove(this.gameObject);
 
         Destroy(gameObject);
     }

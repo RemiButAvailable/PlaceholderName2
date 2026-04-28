@@ -177,6 +177,7 @@ public class Castle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        bool wasActive = peopleAtCastle >= minPeopleNeeded;
         // The people in castle killer
         if (other.gameObject.tag == "knight")
         {
@@ -196,6 +197,12 @@ public class Castle : MonoBehaviour
             if (peopleAtCastle < peopleSprites.Length && peopleAtCastle>0)
             {
                 peopleSprites[peopleAtCastle].enabled = false;
+            }
+
+            if (peopleAtCastle < minPeopleNeeded && wasActive)
+            {
+                castleSprite.color = tintColor;
+                progressBar.color = tintColor;
             }
 
             // One of the reasons for the loss

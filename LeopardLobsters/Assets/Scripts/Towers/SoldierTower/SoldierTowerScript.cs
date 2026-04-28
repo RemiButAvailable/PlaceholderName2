@@ -49,36 +49,39 @@ public class SoldierTowerScript : MonoBehaviour
     public void RemoveSoldierViaButton()
     {
         GameObject soldier = soldiers[0];//default to first soldier in the array if removing with button
+        soldiers.Remove(soldier);
 
-        for (int i = 0; i < soldierPositions.Count; i++)//set the soldier's station position to empty
+        if (soldiers.Count > 0)
         {
-            Vector3 convertedSoldierPosition = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);//convert soldier positions i to be able to be compared to the removed soldier's station position
-            if (Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, convertedSoldierPosition) < 0.1f)//if converted soldier position is the removed soldier's position
+            for (int i = 0; i < soldierPositions.Count; i++)//set the soldier's station position to empty
             {
-                soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
-
-                if(soldier.GetComponent<SoldierScript>().target != null)
+                Vector3 convertedSoldierPosition = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);//convert soldier positions i to be able to be compared to the removed soldier's station position
+                if (Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, convertedSoldierPosition) < 0.1f)//if converted soldier position is the removed soldier's position
                 {
-                    soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().defaultSpeed;
-                    soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().targeted = false;
-                }
-                soldiers.Remove(soldier);
-                Destroy(soldier);
-                break;
-            }
-        }
+                    soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
 
-        for (int i = 0; i < soldiers.Count; i++) //check if there's any soldiers who don't have a target and direct them to attack the enemy that's closest to reaching the castle
-        {
-            if (soldiers[i].GetComponent<SoldierScript>().target == null)
-            {
-                enemiesInZone.Sort();
-                for (int o = 0; o < enemiesInZone.Count; o++)
-                {
-                    bool canReachEnemy = CheckIfSoldierCanReachEnemy(i, o);
-                    if (enemiesInZone[o].GetComponent<KnightScript>().targeted == false && canReachEnemy)
+                    if (soldier.GetComponent<SoldierScript>().target != null)
                     {
-                        soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
+                        soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().defaultSpeed;
+                        soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().targeted = false;
+                    }
+                    Destroy(soldier);
+                    break;
+                }
+            }
+
+            for (int i = 0; i < soldiers.Count; i++) //check if there's any soldiers who don't have a target and direct them to attack the enemy that's closest to reaching the castle
+            {
+                if (soldiers[i].GetComponent<SoldierScript>().target == null)
+                {
+                    enemiesInZone.Sort();
+                    for (int o = 0; o < enemiesInZone.Count; o++)
+                    {
+                        bool canReachEnemy = CheckIfSoldierCanReachEnemy(i, o);
+                        if (enemiesInZone[o].GetComponent<KnightScript>().targeted == false && canReachEnemy)
+                        {
+                            soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
+                        }
                     }
                 }
             }
@@ -86,31 +89,34 @@ public class SoldierTowerScript : MonoBehaviour
     }
     public void RemoveSoldier(GameObject soldier)
     {
-        //Castle.self.PersonDead(soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>());
+        Castle.self.PersonDead(soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>());
+        soldiers.Remove(soldier);
 
-        for (int i = 0; i < soldierPositions.Count; i++)//set the soldier's station position to empty
+        if (soldiers.Count > 0)
         {
-            Vector3 convertedSoldierPosition = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);//convert soldier positions i to be able to be compared to the removed soldier's station position
-            if (Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, convertedSoldierPosition) < 0.1f)//if converted soldier position is the removed soldier's position
+            for (int i = 0; i < soldierPositions.Count; i++)//set the soldier's station position to empty
             {
-                soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
-                soldiers.Remove(soldier);
-                GetComponent<BaseTower>().people -= 1;
-                break;
-            }
-        }
-
-        for(int i = 0; i < soldiers.Count; i++) //check if there's any soldiers who don't have a target and direct them to attack the enemy that's closest to reaching the castle
-        {
-            if (soldiers[i].GetComponent<SoldierScript>().target == null)
-            {
-                enemiesInZone.Sort();
-                for(int o = 0; o < enemiesInZone.Count; o++)
+                Vector3 convertedSoldierPosition = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);//convert soldier positions i to be able to be compared to the removed soldier's station position
+                if (Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, convertedSoldierPosition) < 0.1f)//if converted soldier position is the removed soldier's position
                 {
-                    bool canReachEnemy = CheckIfSoldierCanReachEnemy(i, o);
-                    if(enemiesInZone[o].GetComponent<KnightScript>().targeted == false && canReachEnemy)
+                    soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
+                    GetComponent<BaseTower>().people -= 1;
+                    break;
+                }
+            }
+
+            for (int i = 0; i < soldiers.Count; i++) //check if there's any soldiers who don't have a target and direct them to attack the enemy that's closest to reaching the castle
+            {
+                if (soldiers[i].GetComponent<SoldierScript>().target == null)
+                {
+                    enemiesInZone.Sort();
+                    for (int o = 0; o < enemiesInZone.Count; o++)
                     {
-                        soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
+                        bool canReachEnemy = CheckIfSoldierCanReachEnemy(i, o);
+                        if (enemiesInZone[o].GetComponent<KnightScript>().targeted == false && canReachEnemy)
+                        {
+                            soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
+                        }
                     }
                 }
             }
@@ -200,7 +206,7 @@ public class SoldierTowerScript : MonoBehaviour
 
     public bool CheckIfSoldierCanReachEnemy(int i_index, int o_index)
     {
-        Physics2D.Simulate(Time.deltaTime);
+        Physics2D.SyncTransforms();
 
         bool canReachEnemy = false;
 
@@ -209,18 +215,39 @@ public class SoldierTowerScript : MonoBehaviour
         //make an edge collider from the points along the enemy path
         LineRenderer enemyO_LR = enemiesInZone[o_index].GetComponent<KnightScript>().lineRenderer;
         enemyO_LR.useWorldSpace = false;
+
+        qpoints = new Vector2[enemyO_LR.positionCount];
+        enemyO_LR.GetPositions(qpoints);
+        Vector2[] parentPoints = new Vector2[enemyO_LR.positionCount];
+
+        for (int i = 0; i < enemyO_LR.positionCount; i++)
+        {
+            Vector2 worldPoint = radius.transform.TransformPoint(childPoints[i]);
+            parentPoints[i] = radiusCollider2D.transform.InverseTransformPoint(worldPoint);
+        }
+
         EdgeCollider2D enemyPathColldier2D = enemiesInZone[o_index].AddComponent<EdgeCollider2D>();
         Vector3[] pointsAlongEnemyPath = new Vector3[enemyO_LR.positionCount];
         enemyO_LR.GetPositions(pointsAlongEnemyPath);
         Vector2[] convertedArr = System.Array.ConvertAll(pointsAlongEnemyPath, v => new Vector2(v.x, v.y));
         enemyPathColldier2D.points = convertedArr;
-        enemyPathColldier2D.edgeRadius = 0.1f;
+        enemyPathColldier2D.edgeRadius = 0.01f;
         enemiesInZone[o_index].layer = LayerMask.NameToLayer("edgeColliders");
 
         //make an edge collider from the points along the circumfrence of the radius
         EdgeCollider2D radiusCollider2D = gameObject.AddComponent<EdgeCollider2D>();
-        radiusCollider2D.points = radius.points;
-        radiusCollider2D.edgeRadius = 0.1f;
+
+        Vector2[] childPoints = radius.points;
+        Vector2[] parentPoints = new Vector2[childPoints.Length];
+        
+        for(int i = 0; i < childPoints.Length; i++)
+        {
+            Vector2 worldPoint = radius.transform.TransformPoint(childPoints[i]);
+            parentPoints[i] = radiusCollider2D.transform.InverseTransformPoint(worldPoint);
+        }
+
+        radiusCollider2D.points = parentPoints;
+        radiusCollider2D.edgeRadius = 0.01f;
         gameObject.layer = LayerMask.NameToLayer("edgeColliders");
 
         //find all contact points between the two
@@ -229,6 +256,7 @@ public class SoldierTowerScript : MonoBehaviour
         filter.SetLayerMask(layerMask);
         ContactPoint2D[] contacts = new ContactPoint2D[12];
         int contactCount = radiusCollider2D.GetContacts(filter, contacts);
+        Debug.Log("contact count is " + contactCount);
 
         //find the contact point that's closest to the castle
         Vector2 closestContactToCastle = contacts[0].point;

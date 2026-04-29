@@ -359,7 +359,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &2577637345428575186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +463,7 @@ MonoBehaviour:
   towerCollider: {fileID: 4520742874935805274}
   towerClickCollider: {fileID: 2629366124167305250}
   baseTower: {fileID: 2577637345428575186}
+  offset: -0.3
   denyTint: {r: 0.9245283, g: 0.44918123, b: 0.44918123, a: 1}
   PlaceSound: {fileID: 6066638028545896687}
   PlaceDenySound: {fileID: 8300000, guid: 4f553f0124c65e347bf76d303224493f, type: 3}

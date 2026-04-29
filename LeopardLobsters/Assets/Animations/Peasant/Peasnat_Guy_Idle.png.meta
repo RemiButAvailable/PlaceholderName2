@@ -141,11 +141,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 865
-        width: 335
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 866
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Peasnat_Guy_Idle_1
       rect:
         serializedVersion: 2
-        x: 341
-        y: 865
-        width: 336
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 342
+        y: 866
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Peasnat_Guy_Idle_2
       rect:
         serializedVersion: 2
-        x: 683
-        y: 865
-        width: 336
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 684
+        y: 866
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -207,11 +207,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 432
-        width: 335
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 433
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: Peasnat_Guy_Idle_4
       rect:
         serializedVersion: 2
-        x: 341
-        y: 432
-        width: 336
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 342
+        y: 433
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,12 +250,12 @@ TextureImporter:
       name: Peasnat_Guy_Idle_5
       rect:
         serializedVersion: 2
-        x: 683
-        y: 432
-        width: 336
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 684
+        y: 433
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,10 +274,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 335
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,12 +294,12 @@ TextureImporter:
       name: Peasnat_Guy_Idle_7
       rect:
         serializedVersion: 2
-        x: 341
+        x: 342
         y: 0
-        width: 336
-        height: 420
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -316,12 +316,12 @@ TextureImporter:
       name: Peasnat_Guy_Idle_8
       rect:
         serializedVersion: 2
-        x: 683
+        x: 684
         y: 0
-        width: 336
-        height: 420
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 342
+        height: 433
+      alignment: 9
+      pivot: {x: 0.5631, y: 0.002674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -338,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 200850e3fd1652c4eac67ae6c449e162
     internalID: 0
     vertices: []
     indices: 

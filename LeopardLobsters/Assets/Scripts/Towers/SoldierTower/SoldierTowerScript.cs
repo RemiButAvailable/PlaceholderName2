@@ -1,15 +1,27 @@
 /*
+ * SoldierTowerScript.cs
  * Remi de Plater
- * 3/27/26
+ * remi.deplater@digipen.edu
  * Soldier Tower Functionality
  */
 using UnityEngine;
 using System.Collections.Generic;
 using static UnityEngine.GraphicsBuffer;
+using System.Collections;
+using System;
 
 public class SoldierTowerScript : MonoBehaviour
 {
+    //bools
     bool allSoldiersDead;
+    bool ranCoroutine;
+    bool canReachEnemy = false;
+
+    //GameOb
+
+    //GameObjects
+
+
     public GameObject soldier;
     public List<GameObject> soldiers;
     List<Vector3> soldierPositions;
@@ -30,12 +42,18 @@ public class SoldierTowerScript : MonoBehaviour
         baseTower.OnPlace.AddListener(SetSoldierStationPositions);
     }
 
+    /*
+     * Name: AddSoldier
+     * 
+     * Desc: logic for adding a soldier
+     */
     public void AddSoldier()
     {
         GameObject spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
         spawnedSoldier.GetComponent<SoldierScript>().soldierTower = this.gameObject;
         soldiers.Add(spawnedSoldier);
-        for(int i = 0; i < soldierPositions.Count; i++)
+
+        for(int i = 0; i < soldierPositions.Count; i++)//find an open station, set the soldier's position to it, and set it to filled
         {
             if (soldierPositions[i].z == 0)
             {
@@ -46,6 +64,14 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
+
+    /*
+     * Name: RemoveSoldierViaButton
+     * 
+     * Input: soldier - the soldier that has to be removed
+     * 
+     * Desc: logic for removing a soldier (button version)
+     */
     public void RemoveSoldierViaButton()
     {
         GameObject soldier = soldiers[0];//default to first soldier in the array if removing with button
@@ -77,7 +103,9 @@ public class SoldierTowerScript : MonoBehaviour
                     enemiesInZone.Sort();
                     for (int o = 0; o < enemiesInZone.Count; o++)
                     {
-                        //bool canReachEnemy = CheckIfSoldierCanReachEnemy(i, o);
+                        /*EdgeCollider2D radiusCollider2D = CheckIfSoldierCanReachEnemy(i, o);
+                        ranCoroutine = false;
+                        StartCoroutine(CheckForContacts(radiusCollider2D, i, o));*/
                         if (enemiesInZone[o].GetComponent<KnightScript>().targeted == false/* && canReachEnemy*/)
                         {
                             soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
@@ -86,7 +114,17 @@ public class SoldierTowerScript : MonoBehaviour
                 }
             }
         }
+        canReachEnemy = false;
     }
+
+    /*
+     * Name: RemoveSoldier
+     * 
+     * Input: soldier - the soldier that has to be removed
+     * 
+     * Desc: logic for removing a soldier (death version)
+     */
+    [System.Obsolete]
     public void RemoveSoldier(GameObject soldier)
     {
         Castle.self.PersonDead(soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>());
@@ -112,7 +150,9 @@ public class SoldierTowerScript : MonoBehaviour
                     enemiesInZone.Sort();
                     for (int o = 0; o < enemiesInZone.Count; o++)
                     {
-                        //bool canReachEnemy = CheckIfSoldierCanReachEnemy(i, o);
+                        /*EdgeCollider2D radiusCollider2D = CheckIfSoldierCanReachEnemy(i, o);
+                        ranCoroutine = false;
+                        StartCoroutine(CheckForContacts(radiusCollider2D, i, o));*/
                         if (enemiesInZone[o].GetComponent<KnightScript>().targeted == false/* && canReachEnemy*/)
                         {
                             soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
@@ -123,6 +163,8 @@ public class SoldierTowerScript : MonoBehaviour
         }
         SoldierDeathSound?.Play();
     }
+
+    //Logic for adding an enemy to the zone
     public void AddEnemy(GameObject enemy)
     {
         enemiesInZone.Add(enemy);
@@ -137,6 +179,8 @@ public class SoldierTowerScript : MonoBehaviour
             }
         }
     }
+
+    //Logic for removing an enemy from the zone
     public void RemoveEnemy(GameObject enemy)
     {
         enemiesInZone.Remove(enemy);
@@ -151,11 +195,18 @@ public class SoldierTowerScript : MonoBehaviour
         }
     }
 
+    /*
+     * Name: SetSoldierStationPositions
+     * 
+     * Input: tower - refrence to the BaseTower script attached to the obj
+     * 
+     * Desc: sets the soldier station positions to be the closest points along the closest enemy path
+     */
     [System.Obsolete]
     public void SetSoldierStationPositions(BaseTower tower)
     {
         //Arrays
-        LineRenderer[] enemyPaths = Object.FindObjectsOfType<LineRenderer>(); //array of the line renderers
+        LineRenderer[] enemyPaths = UnityEngine.Object.FindObjectsOfType<LineRenderer>(); //array of the line renderers
         float[] closestPointsOnEachLineDists = new float[enemyPaths.Length]; //array of distances from the closest point to the tower on each line to the tower
 
         for (int i = 0; i < closestPointsOnEachLineDists.Length; i++)//set each dist to a default val
@@ -208,39 +259,37 @@ public class SoldierTowerScript : MonoBehaviour
     /*
      * Name: CheckIfSoldierCanReachEnemy
      * 
-     * Input: i_index - which soldier 
-     *        o_index - whatever
+     * Input: i_index - which soldier is being parsed in
+     *        o_index - which enemy is being parsed in
      *        
-     * Output: A boolean that does this
+     * Output: radiusCollider2D - edge collider with the same shape and size as the tower's radius
      * 
-     * Desc:
+     * Desc: generates an edge collider equivalent of the radius and the enemy path
      */
-    public bool CheckIfSoldierCanReachEnemy(int i_index, int o_index)
+    [System.Obsolete]
+    public EdgeCollider2D CheckIfSoldierCanReachEnemy(int i_index, int o_index)
     {
-        Physics2D.SyncTransforms();
-
-        bool canReachEnemy = false;
-
         //find the point at which the enemy will leave the radius
 
         //Get the enemy's path
         LineRenderer enemyO_LR = enemiesInZone[o_index].GetComponent<KnightScript>().lineRenderer;
 
         //make an edge collider from the points along the enemy path
-        EdgeCollider2D enemyPathCollider2D = /*enemiesInZone[o_index]*/enemyO_LR.gameObject.AddComponent<EdgeCollider2D>();
+        EdgeCollider2D enemyPathCollider2D = enemyO_LR.gameObject.AddComponent<EdgeCollider2D>();
 
         //parse the line renderer's points into an array that'll be converted to be the right dimensions
         Vector3[] child_points = new Vector3[enemyO_LR.positionCount];
         enemyO_LR.GetPositions(child_points);
 
-        Vector2[] convertedArr = System.Array.ConvertAll(/*pointsAlongEnemyPath*/child_points, v => new Vector2(v.x, v.y));
+        Vector2[] convertedArr = System.Array.ConvertAll(child_points, v => new Vector2(v.x, v.y));
         enemyPathCollider2D.points = convertedArr;
-        enemyPathCollider2D.edgeRadius = 0.01f;
+        enemyPathCollider2D.edgeRadius = 0.1f;
 
         enemyO_LR.gameObject.layer = LayerMask.NameToLayer("edgeColliders");
 
         //make an edge collider from the points along the circumfrence of the radius
         EdgeCollider2D radiusCollider2D = gameObject.AddComponent<EdgeCollider2D>();
+        radiusCollider2D.isTrigger = false;
 
         //parse the radius's points into an array that'll be converted to be the right dimensions
         Vector2[] childPoints = radius.points;
@@ -253,46 +302,66 @@ public class SoldierTowerScript : MonoBehaviour
         }
 
         radiusCollider2D.points = parentPoints;
-        radiusCollider2D.edgeRadius = 0.01f;
+        radiusCollider2D.edgeRadius = 0.1f;
 
         gameObject.layer = LayerMask.NameToLayer("edgeColliders");
 
-        //find all contact points between the two
-        int layerMask = 1 << LayerMask.NameToLayer("edgeColliders");
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.SetLayerMask(layerMask);
-        ContactPoint2D[] contacts = new ContactPoint2D[12];
-        int contactCount = radiusCollider2D.GetContacts(filter, contacts);
-        Debug.Log("contact count is " + contactCount);
+        return radiusCollider2D;
+    }
 
-        //find the contact point that's closest to the castle
-        Vector2 closestContactToCastle = contacts[0].point;
-        for (int p = 0; p < contactCount; p++)
+    /*
+     * Name: CheckIfSoldierCanReachEnemy
+     * 
+     * Input: i_index - which soldier is being parsed in
+     *        o_index - which enemy is being parsed in
+     *        
+     * Output: radiusCollider2D - edge collider with the same shape and size as the tower's radius
+     * 
+     * Desc: generates an edge collider equivalent of the radius and the enemy path
+     */
+    IEnumerator CheckForContacts(EdgeCollider2D radiusCollider2D, int i_index, int o_index)
+    {
+        yield return new WaitForFixedUpdate();
+
+        if (ranCoroutine == false)
         {
-            Debug.Log("there was a contact");
-            if (Vector3.Distance(contacts[p].point, castleObj.transform.position) < Vector3.Distance(closestContactToCastle, castleObj.transform.position))
+            Physics2D.SyncTransforms();
+            int layerMask = 1 << LayerMask.NameToLayer("edgeColliders");
+            ContactFilter2D filter = new ContactFilter2D();
+            filter.SetLayerMask(layerMask);
+            ContactPoint2D[] contacts = new ContactPoint2D[12];
+            int contactCount = radiusCollider2D.GetContacts(/*filter, */contacts);
+            Debug.Log("contact count = " + contactCount);
+
+            //find the contact point that's closest to the castle
+            Vector2 closestContactToCastle = contacts[0].point;
+            for (int p = 0; p < contactCount; p++)
             {
-                closestContactToCastle = contacts[p].point;
+                if (Vector3.Distance(contacts[p].point, castleObj.transform.position) < Vector3.Distance(closestContactToCastle, castleObj.transform.position))
+                {
+                    closestContactToCastle = contacts[p].point;
+                }
             }
-        }
 
-        //check if the enemy will leave the radius before the knight reaches them
-        Vector2 enemyStartingPos = (Vector2)enemiesInZone[o_index].transform.position;
-        Vector2 enemyDir = (closestContactToCastle - (Vector2)enemiesInZone[o_index].transform.position).normalized;
-        Vector2 soldierStartingPos = (Vector2)soldiers[i_index].transform.position;
+            //check if the enemy will leave the radius before the knight reaches them
+            Vector2 enemyStartingPos = (Vector2)enemiesInZone[o_index].transform.position;
+            Vector2 enemyDir = (closestContactToCastle - (Vector2)enemiesInZone[o_index].transform.position).normalized;
+            Vector2 soldierStartingPos = (Vector2)soldiers[i_index].transform.position;
 
-        for (float t = 0; t < 12; t += Time.deltaTime)//checks if the soldier can reach the knight within 12 seconds
-        {
-            Vector2 enemyPosAtTimeT = enemyStartingPos + enemyDir * enemiesInZone[o_index].GetComponent<KnightScript>().speed * t;
-            float soldierDistAtTimeT = Vector2.Distance(soldierStartingPos, enemyPosAtTimeT);
-            float distanceSoldierCanTravel = soldiers[i_index].GetComponent<SoldierScript>().speed * t;
-
-            if(distanceSoldierCanTravel >= soldierDistAtTimeT)
+            for (float t = 0; t < 12; t += Time.deltaTime)//checks if the soldier can reach the knight within 12 seconds
             {
-                canReachEnemy = true;
-                break;
+                Vector2 enemyPosAtTimeT = enemyStartingPos + enemyDir * enemiesInZone[o_index].GetComponent<KnightScript>().speed * t;
+                float soldierDistAtTimeT = Vector2.Distance(soldierStartingPos, enemyPosAtTimeT);
+                float distanceSoldierCanTravel = soldiers[i_index].GetComponent<SoldierScript>().speed * t;
+
+                if (distanceSoldierCanTravel >= soldierDistAtTimeT)
+                {
+                    canReachEnemy = true;
+                    ranCoroutine = true;
+                    break;
+                }
             }
+            ranCoroutine = true;
         }
-        return canReachEnemy;
     }
 }

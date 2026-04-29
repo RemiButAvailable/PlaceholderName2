@@ -128,6 +128,7 @@ public class SoldierScript : MonoBehaviour
 
             if(soldierTowerScript.soldiers.Count > 0)
             soldierTowerScript.enemiesInZone.Sort();
+
             foreach (var enemy in soldierTowerScript.enemiesInZone)
             {
                 if (enemy.GetComponent<KnightScript>().targeted == false)

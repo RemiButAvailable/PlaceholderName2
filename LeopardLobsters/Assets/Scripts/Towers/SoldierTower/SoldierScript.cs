@@ -47,7 +47,7 @@ public class SoldierScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(FightEnemy());
-        //StartCoroutine(Printer());
+        StartCoroutine(Printer());
 
         engaged = false;
 

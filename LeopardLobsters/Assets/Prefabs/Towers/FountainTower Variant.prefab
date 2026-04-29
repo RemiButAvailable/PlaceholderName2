@@ -933,6 +933,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2944909436972018632, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+      propertyPath: toolTip
+      value: Fountain gives happiness to surrounding towers
+      objectReference: {fileID: 0}
     - target: {fileID: 4520742874935805274, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       propertyPath: m_Size.x
       value: 4.612897

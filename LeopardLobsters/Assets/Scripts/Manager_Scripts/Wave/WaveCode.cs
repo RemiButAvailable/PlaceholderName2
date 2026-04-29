@@ -166,7 +166,7 @@ public class WaveCode : MonoBehaviour
                         selectedEnemy = enemies[RandomNumTwo];
                     }
                     //spawn an enemy at the clump's shared starting point with a randomized offset
-                    float enemySpawnPosOffsetFloat = Random.Range(-enemySpawnPosOffsetRandomness, enemySpawnPosOffsetRandomness);
+                    float enemySpawnPosOffsetFloat = 0;
                     Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
 
                     //spawn a new enemy

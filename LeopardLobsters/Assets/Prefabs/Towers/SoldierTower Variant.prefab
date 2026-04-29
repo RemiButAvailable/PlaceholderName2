@@ -213,10 +213,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2944909436972018632, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
-      propertyPath: toolTip
-      value: Soldiers will stall enemies, don't let the soldiers die
-      objectReference: {fileID: 0}
     - target: {fileID: 4520742874935805274, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       propertyPath: m_Size.x
       value: 0.9456947
@@ -351,6 +347,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba453391aa58fce4897c5369feaefb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soldier: {fileID: 6608690578147413099, guid: 455d08329958ac440b240baf054fe5b6, type: 3}
+  soldiers: []
+  enemiesInZone: []
+  baseTower: {fileID: 3874348672811365585}
+  soldierSpawnPosDistFromClosestPointOnPath: 5
+  radius: {fileID: 2109761983306387426}
+  RemoveSoldierSound: {fileID: 0}
+  SoldierDeathSound: {fileID: 7038404273192679490}
 --- !u!111 &828553542742003043
 Animation:
   m_ObjectHideFlags: 0
@@ -367,6 +371,17 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &3874348672811365585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2577637345428575186, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+  m_PrefabInstance: {fileID: 1585803720784897795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720325453208777616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c234c014fab4aee44be70eda1f48db19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5433523390993831625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6730111401246257610, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
@@ -384,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd3ab304705c2047a30388725a98fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soldierTower: {fileID: 3720325453208777616}
 --- !u!60 &2109761983306387426
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -161,8 +161,6 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
             waveCode.EnemyNum -= 1;
 
         moneyManagerScript.ChangeMoney(money);
-
-        //move.Play("BarbIAN_guy_DEATH");
         //sounds
         AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
         AudioPlayer aHitSound = Instantiate(aHitSoundPrefab);

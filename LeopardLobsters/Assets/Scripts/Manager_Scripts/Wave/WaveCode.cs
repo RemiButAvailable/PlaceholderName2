@@ -1,5 +1,7 @@
-/* Author: Victoria T. (And the other two)
+/* Name: WaveCode.cs
+ * Author: Victoria T. (And the other two)
  * Date: 3/16/26
+ * E-Mail: victoria.troshkov@digipen.com
  * 
  * Description: The code for the wave/rounds of the game,
  * will also keep track of stuff like enemy number, and total wealth.*/
@@ -101,6 +103,7 @@ public class WaveCode : MonoBehaviour
         // Keep Game alive
         WaveStart = false;
         waveText.text = "Build Phase: " + 1;
+        WaveNum = 0;
 
         Castle.self.gameOver.AddListener(GameOver);
 
@@ -252,6 +255,7 @@ public class WaveCode : MonoBehaviour
 
     void GameOver() {
         Global.GameOver(WaveNum);
+        WaveNum = 0;
     }
 }
 

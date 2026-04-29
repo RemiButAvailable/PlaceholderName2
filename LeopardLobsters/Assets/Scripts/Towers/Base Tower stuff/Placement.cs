@@ -8,6 +8,7 @@ public class Placement : MonoBehaviour //places tower, created when pressing buy
     [SerializeField] Collider2D towerCollider;
     [SerializeField] GameObject towerClickCollider;
     [SerializeField] BaseTower baseTower;
+    [SerializeField] float offset = 0;
 
     //Colors n stuff
     [SerializeField] Color denyTint;
@@ -30,7 +31,7 @@ public class Placement : MonoBehaviour //places tower, created when pressing buy
         //moving tower to mouse pos
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        transform.position = mousePos + towerCollider.offset;
+        transform.position = mousePos + Vector2.up*offset;
 
 
         //checking if is placeable spots

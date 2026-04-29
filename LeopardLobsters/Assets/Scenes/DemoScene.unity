@@ -3027,8 +3027,8 @@ MonoBehaviour:
   phantomEnemyNumBeforeAltEnemies: 4
   enemyMaxMultiplier: 1.5
   pointInWaveAtWhichBossSpawnsRandomnessMin: 0
-  pointInWaveAtWhichBossSpawnsRandomnessMax: 1
-  waveAtWhichBossSpawns: 1
+  pointInWaveAtWhichBossSpawnsRandomnessMax: 10
+  waveAtWhichBossSpawns: 6
 --- !u!1 &621185549
 GameObject:
   m_ObjectHideFlags: 0
@@ -17798,6 +17798,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2058164490}
     m_Modifications:
+    - target: {fileID: 1274249608956101627, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.19379586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274249608956101627, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.19379586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274249608956101627, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.19379586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274249608956101627, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274249608956101627, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17013538
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.17013538
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.17013538
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 2910183811473147238, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.6
@@ -17843,6 +17883,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 765353319}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: peopleMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 71087717}
@@ -17851,13 +17895,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1037222312}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: peopleAtCastle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: textPeopleTotal
       value: 
       objectReference: {fileID: 268697999}
+    - target: {fileID: 7036524531779390355, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7edb98ec2dd95dc4a8e24123206db5c8, type: 2}
     - target: {fileID: 7453410710167554773, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_Name
       value: CastleTemp_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7541767434465161037, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7edb98ec2dd95dc4a8e24123206db5c8, type: 2}
     - target: {fileID: 9191165828177757334, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: ButtonSound
       value: 

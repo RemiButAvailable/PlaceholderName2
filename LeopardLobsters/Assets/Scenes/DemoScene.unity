@@ -17736,23 +17736,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.13595603
+      value: 0.17013538
       objectReference: {fileID: 0}
     - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.13595603
+      value: 0.17013538
       objectReference: {fileID: 0}
     - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.13595603
+      value: 0.17013538
       objectReference: {fileID: 0}
     - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.23
+      value: -1.44
       objectReference: {fileID: 0}
     - target: {fileID: 2863213002501431639, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 2910183811473147238, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17818,10 +17818,18 @@ PrefabInstance:
       propertyPath: textPeopleTotal
       value: 
       objectReference: {fileID: 268697999}
+    - target: {fileID: 7036524531779390355, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7edb98ec2dd95dc4a8e24123206db5c8, type: 2}
     - target: {fileID: 7453410710167554773, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: m_Name
       value: CastleTemp_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7541767434465161037, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7edb98ec2dd95dc4a8e24123206db5c8, type: 2}
     - target: {fileID: 9191165828177757334, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: ButtonSound
       value: 

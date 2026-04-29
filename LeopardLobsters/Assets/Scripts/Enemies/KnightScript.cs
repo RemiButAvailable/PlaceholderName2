@@ -1,6 +1,9 @@
 /*
- * Remi de Plater
- * Knight enemy functionality
+* Name: KnightScript.cs
+* Authors: Remi 
+* Email: r.deplater
+* Desc:
+*
  */
 using System;
 using System.Collections.Generic;
@@ -102,6 +105,8 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
             //detectionObj.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
+
+    // what does this function do
     public void TakeDamage(int dmg) {
         health -= dmg;
         hurtSound.Play();

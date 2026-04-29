@@ -204,6 +204,17 @@ public class SoldierTowerScript : MonoBehaviour
         };
     }
 
+
+    /*
+     * Name: CheckIfSoldierCanReachEnemy
+     * 
+     * Input: i_index - which soldier 
+     *        o_index - whatever
+     *        
+     * Output: A boolean that does this
+     * 
+     * Desc:
+     */
     public bool CheckIfSoldierCanReachEnemy(int i_index, int o_index)
     {
         Physics2D.SyncTransforms();
@@ -221,24 +232,12 @@ public class SoldierTowerScript : MonoBehaviour
         //parse the line renderer's points into an array that'll be converted to be the right dimensions
         Vector3[] child_points = new Vector3[enemyO_LR.positionCount];
         enemyO_LR.GetPositions(child_points);
-        /*Vector2[] pointsAlongEnemyPath = new Vector2[child_points.Length];
-
-        for (int i = 0; i < child_points.Length; i++)
-        {
-            Vector2 worldPoint = enemyO_LR.transform.TransformPoint(child_points[i]);
-            pointsAlongEnemyPath[i] = enemyPathCollider2D.transform.InverseTransformPoint(worldPoint);
-        }*/
 
         Vector2[] convertedArr = System.Array.ConvertAll(/*pointsAlongEnemyPath*/child_points, v => new Vector2(v.x, v.y));
         enemyPathCollider2D.points = convertedArr;
         enemyPathCollider2D.edgeRadius = 0.01f;
 
-        /*Vector3 worldOffset = enemyO_LR.transform.position - enemyPathCollider2D.transform.position;
-        Vector2 localOffset = enemyPathCollider2D.transform.InverseTransformVector(worldOffset);*/
-
-        //enemyPathCollider2D.offset = new Vector3();
-
-        /*enemiesInZone[o_index].layer*/enemyO_LR.gameObject.layer = LayerMask.NameToLayer("edgeColliders");
+        enemyO_LR.gameObject.layer = LayerMask.NameToLayer("edgeColliders");
 
         //make an edge collider from the points along the circumfrence of the radius
         EdgeCollider2D radiusCollider2D = gameObject.AddComponent<EdgeCollider2D>();

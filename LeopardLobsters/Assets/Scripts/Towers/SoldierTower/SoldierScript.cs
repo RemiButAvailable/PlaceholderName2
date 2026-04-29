@@ -47,7 +47,7 @@ public class SoldierScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(FightEnemy());
-        //StartCoroutine(Printer());
+        StartCoroutine(Printer());
 
         engaged = false;
 
@@ -125,6 +125,8 @@ public class SoldierScript : MonoBehaviour
             anim.SetBool("isWalking", true);
 
             //target a new enemy
+
+            if(soldierTowerScript.soldiers.Count > 0)
             soldierTowerScript.enemiesInZone.Sort();
             foreach (var enemy in soldierTowerScript.enemiesInZone)
             {

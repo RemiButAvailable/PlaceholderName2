@@ -68,6 +68,7 @@ public class Neighborhood : MonoBehaviour
             building.transform.position = position;
             spriteR.sprite = sprite;
             spriteR.color = color;
+            spriteR.spriteSortPoint = SpriteSortPoint.Pivot;
         }
         
     }

@@ -1,7 +1,7 @@
 /* Name: WaveCode.cs
  * Author: Victoria T. (And the other two)
  * Date: 3/16/26
- * E-Mail: victoria.troshkov@digipen.com
+ * E-Mail: victoria.troshkov@digipen.edu
  * 
  * Description: The code for the wave/rounds of the game,
  * will also keep track of stuff like enemy number, and total wealth.*/
@@ -125,6 +125,13 @@ public class WaveCode : MonoBehaviour
             EndWave();
         }
     }
+    /********************* 
+     * Function: Spawner
+     *
+     * Desc: The spawner will take care of spawning the enemies, keeping track
+     * of how many have spawned, how to spawn them, and where to spawn them. Will also spawn the boss
+     * after a certain amount of waves.
+     **********************/
 
     public IEnumerator Spawner(float cooldown)
     {

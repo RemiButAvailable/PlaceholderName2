@@ -217,6 +217,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TutorialPopup, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &7307129064112876237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -456,7 +468,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5119980863986964875, guid: c5fbf94d66d248c42b2bbba77b4cb0c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -495,8 +507,8 @@ Transform:
   m_GameObject: {fileID: 3087539910661363158}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.236, y: -0.109, z: 0}
-  m_LocalScale: {x: 0.16514347, y: 0.16514347, z: 0.16514347}
+  m_LocalPosition: {x: 1.25, y: -0.41, z: 0}
+  m_LocalScale: {x: 0.19379586, y: 0.19379586, z: 0.19379586}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2157915696241934743}
@@ -566,7 +578,7 @@ Animator:
   m_GameObject: {fileID: 3087539910661363158}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cc11000c06bc7714fa24d44de488e9be, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7edb98ec2dd95dc4a8e24123206db5c8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -605,8 +617,8 @@ Transform:
   m_GameObject: {fileID: 3694729337005095314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.49, y: -0.0909, z: 0}
-  m_LocalScale: {x: 0.16514347, y: 0.16514347, z: 0.16514347}
+  m_LocalPosition: {x: -1.44, y: -0.42, z: 0}
+  m_LocalScale: {x: 0.17013538, y: 0.17013538, z: 0.17013538}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2157915696241934743}
@@ -676,7 +688,7 @@ Animator:
   m_GameObject: {fileID: 3694729337005095314}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cc11000c06bc7714fa24d44de488e9be, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7edb98ec2dd95dc4a8e24123206db5c8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1507,6 +1519,8 @@ GameObject:
   - component: {fileID: 2933898425939903883}
   - component: {fileID: 755959105296300116}
   - component: {fileID: 6818197484687524806}
+  - component: {fileID: 2407414929127549467}
+  - component: {fileID: 5582725994254468937}
   m_Layer: 0
   m_Name: CastleTemp_0
   m_TagString: castle
@@ -1632,9 +1646,41 @@ MonoBehaviour:
   enemyCastleHitSound: {fileID: 4909624646013632074}
   PeopleGainSound: {fileID: 8909137761355052742}
   PeopleGainAnimator: {fileID: 1733706189440422690}
+  aniHolderCastle: {fileID: 5582725994254468937}
+  aniHolderTotal: {fileID: 2407414929127549467}
   gameOver:
     m_PersistentCalls:
       m_Calls: []
+  PersonAdded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TutorialPopup, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  PersonDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TutorialPopup, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &2933898425939903883
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1805,6 +1851,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.5078955, y: 1.7408608}
   m_EdgeRadius: 0
+--- !u!114 &2407414929127549467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453410710167554773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d203bd9def774d4eb04e7421b30a090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2746398056380186373, guid: 0b111b5f391e89b4f8757c1735697d82, type: 3}
+  numAnimatorParent: {fileID: 0}
+  hold: 
+  cooldown: 0.1
+  textAfter: 
+  direction: 4
+--- !u!114 &5582725994254468937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453410710167554773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d203bd9def774d4eb04e7421b30a090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2746398056380186373, guid: 0b111b5f391e89b4f8757c1735697d82, type: 3}
+  numAnimatorParent: {fileID: 0}
+  hold: 
+  cooldown: 0.1
+  textAfter: 
+  direction: 4
 --- !u!1 &7763126868099367529
 GameObject:
   m_ObjectHideFlags: 0

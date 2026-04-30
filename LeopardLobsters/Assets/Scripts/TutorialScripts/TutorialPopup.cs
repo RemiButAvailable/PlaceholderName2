@@ -18,17 +18,24 @@ class TutorialPopup : MonoBehaviour
     }
 
     [SerializeField] float towerOffset;
+    BaseTower curTower => TutorialHolder.curTower;
     public void startAtBaseTower()
     {
-        transform.position = TutorialHolder.curTower.transform.position + (Vector3)Vector2.up * towerOffset;
+        transform.position = curTower.transform.position + (Vector3)Vector2.up * towerOffset;
     }
 
     public void nextWhenTowerSelected() {
-        TutorialHolder.curTower.Selected.AddListener(Next);
+        curTower.Selected.AddListener(Next);
     }
     public void nextWhenTowerActive()
     {
-        TutorialHolder.curTower.Activated.AddListener(Next);
+        curTower.Activated.AddListener(Next);
+    }
+    public void nextWhenTowerRemove() {
+        curTower.RemovedPeople.AddListener(nextWhenTowerRemovePt2);
+    }
+    void nextWhenTowerRemovePt2(){
+        if (curTower.people == 0) Next();
     }
 
 

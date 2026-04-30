@@ -1,5 +1,5 @@
 /* Name: WaveCode.cs
- * Author: Victoria T. (And the other two)
+ * Author: Victoria T, Remi de Plater, Albert Tan
  * Date: 3/16/26
  * E-Mail: victoria.troshkov@digipen.edu
  * 
@@ -263,6 +263,17 @@ public class WaveCode : MonoBehaviour
     void GameOver() {
         Global.GameOver(WaveNum);
         WaveNum = 0;
+    }
+
+    public void spawnAGuy()
+    {
+        LineRenderer path = enemyPaths[Random.Range(0, enemyPaths.Length)];
+        spawnedEnemy = Instantiate(enemies[0], path.GetPosition(0), Quaternion.identity);
+        KnightScript knightScript = spawnedEnemy.GetComponent<KnightScript>();
+        knightScript.lineRenderer = path;
+        
+        knightScript.offset = new Vector3(0f, 0f, 0);
+        knightScript.order = PhantomEnemyNum;
     }
 }
 

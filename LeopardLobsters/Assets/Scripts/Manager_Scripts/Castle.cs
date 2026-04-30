@@ -58,9 +58,16 @@ public class Castle : MonoBehaviour
     [SerializeField] AudioSource enemyCastleHitSound;
     [SerializeField] AudioSource PeopleGainSound;
     [SerializeField] Animator PeopleGainAnimator;
+    [SerializeField] AnimationHolder aniHolderCastle;
+    [SerializeField] AnimationHolder aniHolderTotal;
 
     public static Castle self;
     [HideInInspector] public UnityEvent gameOver;
+
+    [Space]
+    [Header("Unity Events")]
+    [SerializeField] UnityEvent PersonAdded;
+    [SerializeField] UnityEvent PersonDied;
 
     private void Awake()
     {
@@ -99,6 +106,7 @@ public class Castle : MonoBehaviour
 
             peopleAtCastle--;
             textUpdatePIn();
+            aniHolderCastle.Add(-1);
 
             //enabling people sprites
             if (peopleAtCastle < peopleSprites.Length)
@@ -131,6 +139,7 @@ public class Castle : MonoBehaviour
 
         peopleAtCastle++;
         textUpdatePIn();
+        aniHolderCastle.Add(1);
 
         //checking active
         if (peopleAtCastle >= minPeopleNeeded && wasInactive)
@@ -144,11 +153,12 @@ public class Castle : MonoBehaviour
 
     //people making stuff
     bool inWave => WaveCode.self.WaveStart;
+    bool inTutorial = false;
     float timer = 0;
 
     private void FixedUpdate()
     {
-        if (inWave && peopleAtCastle >= minPeopleNeeded && peopleTotal < peopleMax)
+        if ((inWave||inTutorial) && peopleAtCastle >= minPeopleNeeded && peopleTotal < peopleMax)
         {
             progressBar.fillAmount = timer / timerMax;
 
@@ -170,6 +180,10 @@ public class Castle : MonoBehaviour
 
                 textUpdatePTotal();
                 textUpdatePIn();
+
+                aniHolderTotal.Add(1);
+                aniHolderCastle.Add(1);
+                PersonAdded.Invoke();
             }
         }
     }
@@ -188,16 +202,19 @@ public class Castle : MonoBehaviour
             enemy.ReachedCastle();
 
             //changing numbers
-            PersonDead(enemy);
+            PersonDead(enemy.damage);
 
-            peopleAtCastle -= enemy.damage;
-            textUpdatePIn();
-            
-            //disable people sprites
-            if (peopleAtCastle < peopleSprites.Length && peopleAtCastle>0)
-            {
-                peopleSprites[peopleAtCastle].enabled = false;
+            for(int i = 0; i< enemy.damage; i++) { 
+                peopleAtCastle -= 1;
+
+                //disable people sprites
+                if (peopleAtCastle < peopleSprites.Length && peopleAtCastle>=0)
+                {
+                    peopleSprites[peopleAtCastle].enabled = false;
+                }
             }
+            textUpdatePIn();
+
 
             if (peopleAtCastle < minPeopleNeeded && wasActive)
             {
@@ -210,11 +227,13 @@ public class Castle : MonoBehaviour
                 gameOver.Invoke();
                 SceneManager.LoadScene("PeopleLoseScreen");
             }
+
+            PersonDied.Invoke();
         }
     }
 
-    public void PersonDead(KnightScript enemy){    
-        peopleTotal -= enemy.damage;
+    public void PersonDead(int damage){    
+        peopleTotal -= damage;
         textUpdatePTotal();
     }
 
@@ -239,4 +258,13 @@ public class Castle : MonoBehaviour
     }
 
     public void CastleSelected() { }
+
+    public void ChangeBarTutorial(float timeTilDone) {
+
+        timer = timerMax - timeTilDone;
+        inTutorial = true;
+    }
+    public void stopTimerTutorial() {
+        inTutorial = false;
+    }
 }

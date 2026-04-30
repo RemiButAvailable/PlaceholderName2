@@ -155,7 +155,7 @@ public class SoldierTowerScript : MonoBehaviour
     public void RemoveSoldier(GameObject soldier)
     {
         if(soldier.GetComponent<SoldierScript>().target != null)
-        Castle.self.PersonDead(soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>());
+        Castle.self.PersonDead(1);
 
         soldiers.Remove(soldier);
 
@@ -186,7 +186,7 @@ public class SoldierTowerScript : MonoBehaviour
                         StartCoroutine(CheckForContacts(radiusCollider2D, i, o));*/
                         if (enemiesInZone[o].GetComponent<KnightScript>().targeted == false/* && canReachEnemy*/)
                         {
-                            soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];
+                            soldiers[i].GetComponent<SoldierScript>().target = enemiesInZone[o];    
                         }
                     }
                 }

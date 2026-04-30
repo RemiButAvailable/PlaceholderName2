@@ -127,7 +127,7 @@ public class SoldierTowerScript : MonoBehaviour
     [System.Obsolete]
     public void RemoveSoldier(GameObject soldier)
     {
-        Castle.self.PersonDead(soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>());
+        Castle.self.PersonDead(1);
         soldiers.Remove(soldier);
 
         if (soldiers.Count > 0)

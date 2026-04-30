@@ -103,6 +103,8 @@ public class SoldierScript : MonoBehaviour
         {
             atStation = true;
             anim.SetBool("isIdle", true);
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isAttacking", false);
         }
         else
         {
@@ -111,10 +113,10 @@ public class SoldierScript : MonoBehaviour
 
         if (health <= 0)//if the soldier should die
         {
+            anim.SetBool("isDead", true);
             anim.SetBool("isAttacking", false);
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", false);
-            anim.SetBool("isDead", true);
         }
 
         if (fighting == true && target == null)//if the soldier's target dies
@@ -168,8 +170,11 @@ public class SoldierScript : MonoBehaviour
             yield return null;
         }
     }
+    [System.Obsolete]
     public void Die()
     {
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isIdle", true);
         AudioPlayer aPlayer = Instantiate(aSoundPrefab);
         aPlayer.playClip(transform.position, deathSound, deathSoundVolume);
         if (target != null)

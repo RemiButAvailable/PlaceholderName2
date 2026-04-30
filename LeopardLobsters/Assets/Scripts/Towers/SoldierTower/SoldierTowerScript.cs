@@ -17,23 +17,25 @@ public class SoldierTowerScript : MonoBehaviour
     bool ranCoroutine;
     bool canReachEnemy = false;
 
-    //GameOb
-
-    //GameObjects
-
-
-    public GameObject soldier;
-    public List<GameObject> soldiers;
-    List<Vector3> soldierPositions;
-    public List<GameObject> enemiesInZone;
-    [SerializeField]BaseTower baseTower;
+    //ints
     public int soldierSpawnPosDistFromClosestPointOnPath;
+
+    //GameObjects and refrences
+    public GameObject soldier;
+    [SerializeField] BaseTower baseTower;
     GameObject castleObj;
     public PolygonCollider2D radius;
 
+    //Audio
     [SerializeField] AudioSource RemoveSoldierSound;
     [SerializeField] AudioSource SoldierDeathSound;
 
+    //Lists
+    public List<GameObject> soldiers;
+    List<Vector3> soldierPositions;
+    public List<GameObject> enemiesInZone;
+
+    [System.Obsolete]
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

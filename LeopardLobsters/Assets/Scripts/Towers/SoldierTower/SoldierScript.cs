@@ -1,3 +1,9 @@
+/*
+ * SoldierTower.cs
+ * Remi de Plater, Dante Jones
+ * remi.deplater@digipen.edu
+ * Soldier Functionality
+ */
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -5,11 +11,11 @@ using UnityEngine.Audio;
 public class SoldierScript : MonoBehaviour
 {
     //soldier state and tower bools
-    //[HideInInspector]
+    [HideInInspector]
     public bool engaged;
     [HideInInspector]
     public bool fighting;
-    //[HideInInspector]
+    [HideInInspector]
     public bool atStation;
     [HideInInspector]
     bool isDying;
@@ -37,7 +43,7 @@ public class SoldierScript : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Animator knightAnim;
 
-    //This was made by Dante Jones
+    //Audio
     [SerializeField] AudioSource hitSound;
     [SerializeField] AudioResource deathSound;
     [SerializeField] AudioPlayer aSoundPrefab;
@@ -47,7 +53,7 @@ public class SoldierScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(FightEnemy());
-        StartCoroutine(Printer());
+        //StartCoroutine(Printer());
 
         engaged = false;
 
@@ -141,6 +147,8 @@ public class SoldierScript : MonoBehaviour
             }
         }
     }
+
+    //If the soldier is engaged in combat, incrementally detract from it and its opponent's health
     IEnumerator FightEnemy()
     {
         while (true)
@@ -170,6 +178,8 @@ public class SoldierScript : MonoBehaviour
             yield return null;
         }
     }
+
+    //Kill the soldier
     [System.Obsolete]
     public void Die()
     {
@@ -191,6 +201,7 @@ public class SoldierScript : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //Ensure the soldier is idle when the new wave starts
     public void OnNewWave()
     {
         anim.SetBool("isIdle", true);

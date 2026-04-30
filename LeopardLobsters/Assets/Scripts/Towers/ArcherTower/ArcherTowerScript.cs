@@ -1,3 +1,10 @@
+/*
+* Name: ArcherTowerScript.cs
+* Authors: Remi de Plater, Albert Tan
+* Email: remi.deplater@digipen.edu
+* Desc: Archer tower functionality
+*
+ */
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
@@ -45,15 +52,22 @@ public class ArcherTowerScript : MonoBehaviour
 
     }
 
+    //when an enemy enters the radius, add it to the queue
     public void EnemyEntered(KnightScript enemy) {
         if (queue.Contains(enemy)) return;
         queue.Add(enemy);
     }
+
+    //when an enemy exits the radius, remove it from the queue
     public void EnemyExited(KnightScript enemy) {
         queue.Remove(enemy);
     }
 
-
+    /*
+     * Name: ShootArrows
+     * 
+     * Desc: Shoots arrows at the knight that's closest to reaching the castle in the radius
+     */
     public IEnumerator ShootArrows()
     {
         while (true)
@@ -99,6 +113,7 @@ public class ArcherTowerScript : MonoBehaviour
 
     void IsActive(bool active) { isActive = active; }
 
+    //Animate the archers
     void AnimatePeople(string animation, bool isTrue) {
         foreach (Animator anim in peopleAnims) {
             anim.SetBool(animation, isTrue);

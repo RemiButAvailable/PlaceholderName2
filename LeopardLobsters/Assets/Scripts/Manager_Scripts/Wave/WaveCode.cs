@@ -1,5 +1,5 @@
 /* Name: WaveCode.cs
- * Author: Victoria T. (And the other two)
+ * Author: Victoria T, Remi de Plater, Albert Tan
  * Date: 3/16/26
  * E-Mail: victoria.troshkov@digipen.edu
  * 

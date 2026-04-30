@@ -17,23 +17,25 @@ public class SoldierTowerScript : MonoBehaviour
     bool ranCoroutine;
     bool canReachEnemy = false;
 
-    //GameOb
-
-    //GameObjects
-
-
-    public GameObject soldier;
-    public List<GameObject> soldiers;
-    List<Vector3> soldierPositions;
-    public List<GameObject> enemiesInZone;
-    [SerializeField]BaseTower baseTower;
+    //ints
     public int soldierSpawnPosDistFromClosestPointOnPath;
+
+    //GameObjects and refrences
+    public GameObject soldier;
+    [SerializeField] BaseTower baseTower;
     GameObject castleObj;
     public PolygonCollider2D radius;
 
+    //Audio
     [SerializeField] AudioSource RemoveSoldierSound;
     [SerializeField] AudioSource SoldierDeathSound;
 
+    //Lists
+    public List<GameObject> soldiers;
+    List<Vector3> soldierPositions;
+    public List<GameObject> enemiesInZone;
+
+    [System.Obsolete]
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,18 +51,34 @@ public class SoldierTowerScript : MonoBehaviour
      */
     public void AddSoldier()
     {
-        GameObject spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
-        spawnedSoldier.GetComponent<SoldierScript>().soldierTower = this.gameObject;
-        soldiers.Add(spawnedSoldier);
-
-        for(int i = 0; i < soldierPositions.Count; i++)//find an open station, set the soldier's position to it, and set it to filled
+        if(soldiers.Count < 3)
         {
-            if (soldierPositions[i].z == 0)
+            GameObject spawnedSoldier = Instantiate(soldier, new Vector3(0, 0, 0), Quaternion.identity);
+            spawnedSoldier.GetComponent<SoldierScript>().soldierTower = this.gameObject;
+            soldiers.Add(spawnedSoldier);
+
+            for (int i = 0; i < soldierPositions.Count; i++)//find an open station, set the soldier's position to it, and set it to filled
             {
-                spawnedSoldier.transform.position = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
-                soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 1);
-                spawnedSoldier.GetComponent<SoldierScript>().stationPosition = spawnedSoldier.transform.position;
-                break;
+                if (soldierPositions[i].z == 0)
+                {
+                    spawnedSoldier.transform.position = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
+                    soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 1);
+                    spawnedSoldier.GetComponent<SoldierScript>().stationPosition = spawnedSoldier.transform.position;
+                    break;
+                }
+            }
+
+            if(enemiesInZone.Count > 0)
+            {
+                enemiesInZone.Sort();
+                for(int i = 0; i < enemiesInZone.Count; i++)
+                {
+                    if(enemiesInZone[i].GetComponent<KnightScript>().targeted == false)
+                    {
+                        spawnedSoldier.GetComponent<SoldierScript>().target = enemiesInZone[i];
+                        spawnedSoldier.GetComponent<SoldierScript>().engaged = true;
+                    }
+                }
             }
         }
     }
@@ -77,6 +95,13 @@ public class SoldierTowerScript : MonoBehaviour
         GameObject soldier = soldiers[0];//default to first soldier in the array if removing with button
         soldiers.Remove(soldier);
 
+        if (soldier.GetComponent<SoldierScript>().target != null)
+        {
+            soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().defaultSpeed;
+            soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().targeted = false;
+            soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().move.SetBool("isWalking", true);
+        }
+
         if (soldiers.Count > 0)
         {
             for (int i = 0; i < soldierPositions.Count; i++)//set the soldier's station position to empty
@@ -85,13 +110,6 @@ public class SoldierTowerScript : MonoBehaviour
                 if (Vector3.Distance(soldier.GetComponent<SoldierScript>().stationPosition, convertedSoldierPosition) < 0.1f)//if converted soldier position is the removed soldier's position
                 {
                     soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
-
-                    if (soldier.GetComponent<SoldierScript>().target != null)
-                    {
-                        soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().speed = soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().defaultSpeed;
-                        soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>().targeted = false;
-                    }
-                    Destroy(soldier);
                     break;
                 }
             }
@@ -114,6 +132,15 @@ public class SoldierTowerScript : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            for(int i = 0; i < soldierPositions.Count; i++)
+            {
+                soldierPositions[i] = new Vector3(soldierPositions[i].x, soldierPositions[i].y, 0);
+                Debug.Log("soldier pos i z is " + soldierPositions[i].z);
+            }
+        }
+        Destroy(soldier);
         canReachEnemy = false;
     }
 
@@ -127,7 +154,9 @@ public class SoldierTowerScript : MonoBehaviour
     [System.Obsolete]
     public void RemoveSoldier(GameObject soldier)
     {
-        Castle.self.PersonDead(1);
+        if(soldier.GetComponent<SoldierScript>().target != null)
+        Castle.self.PersonDead(soldier.GetComponent<SoldierScript>().target.GetComponent<KnightScript>());
+
         soldiers.Remove(soldier);
 
         if (soldiers.Count > 0)
@@ -147,7 +176,9 @@ public class SoldierTowerScript : MonoBehaviour
             {
                 if (soldiers[i].GetComponent<SoldierScript>().target == null)
                 {
+                    if(enemiesInZone.Count > 0)
                     enemiesInZone.Sort();
+
                     for (int o = 0; o < enemiesInZone.Count; o++)
                     {
                         /*EdgeCollider2D radiusCollider2D = CheckIfSoldierCanReachEnemy(i, o);

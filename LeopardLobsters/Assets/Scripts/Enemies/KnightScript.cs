@@ -1,8 +1,8 @@
 /*
 * Name: KnightScript.cs
-* Authors: Remi 
-* Email: r.deplater
-* Desc:
+* Authors: Remi de Plater, Albert Tan
+* Email: remi.deplater@digipen.edu
+* Desc: Knight functionality
 *
  */
 using System;
@@ -11,7 +11,6 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 
-// HI
 public class KnightScript : MonoBehaviour, IComparable<KnightScript>
 {
     //vals that can be edited in the inspector
@@ -109,7 +108,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         }
     }
 
-    // what does this function do
+    //Knight loses health
     public void TakeDamage(int dmg) {
         health -= dmg;
         hurtSound.Play();
@@ -124,6 +123,8 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
             isDead = true;
         }
     }
+
+    //Knight reaches castle
     public void ReachedCastle() {
         if(waveCode.EnemyNum > 0)
         waveCode.EnemyNum -= 1;
@@ -135,18 +136,6 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     [SerializeField] float minLRNodeDistance;
     [SerializeField] float timeCheckPass;
     public int compareIndex => (lineRenderer.positionCount - index + (int)(speed * timeCheckPass / minLRNodeDistance));
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //if(collision.tag == "detectionLine")
-        //{
-        //    order--;
-        //    collision.gameObject.GetComponentInParent<KnightScript>().order++;
-        //    if(inhabitedTowerZone != null && inhabitedTowerZone.queue[0] == collision.gameObject)
-        //    {
-        //        inhabitedTowerZone.ChangeTarget(collision.gameObject);
-        //    }
-        //}
-    }
 
     public int CompareTo(KnightScript other) {
         if(other.compareIndex < compareIndex) return 1;
@@ -154,6 +143,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         return 0;
     }
 
+    //Knight dies
     public void Die()
     {
         if (waveCode.EnemyNum > 0)
@@ -165,9 +155,6 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         AudioPlayer aHitSound = Instantiate(aHitSoundPrefab);
         aPlayer.playClip(transform.position, hitDeathSound, deathSoundVolume);
         aHitSoundPrefab.playClip(transform.position, deathSound, deathSoundVolume);
-
-        //if (inhabitedTowerZone != null)
-        //inhabitedTowerZone.queue.Remove(this.gameObject);
 
         Destroy(gameObject);
     }

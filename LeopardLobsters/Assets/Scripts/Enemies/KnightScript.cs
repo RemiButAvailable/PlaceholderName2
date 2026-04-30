@@ -43,6 +43,8 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     public float order;
     [HideInInspector]
     public ArcherTowerScript inhabitedTowerZone;
+    [HideInInspector]
+    bool isDead;
 
     //public objects and lists
     [HideInInspector]
@@ -89,6 +91,7 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     // Update is called once per frame
     void Update()
     {
+        if (isDead) speed = .1f;
         //movement
         if(index < waypoints.Length)
         {
@@ -115,9 +118,10 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         //death
         if (health <= 0)
         {
+            onDeath.Invoke(this);
             move.SetBool("isWalking", false);
             move.SetBool("isDead", true);
-            Die();
+            isDead = true;
         }
     }
     public void ReachedCastle() {
@@ -125,11 +129,6 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
         waveCode.EnemyNum -= 1;
 
         Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        onDeath.Invoke(this);
     }
 
     //albert test code

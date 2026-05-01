@@ -53,7 +53,7 @@ public class SoldierScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(FightEnemy());
-        //StartCoroutine(Printer());
+        StartCoroutine(Printer());
 
         engaged = false;
 
@@ -119,6 +119,7 @@ public class SoldierScript : MonoBehaviour
 
         if (health <= 0)//if the soldier should die
         {
+            speed = 0;
             anim.SetBool("isDead", true);
             anim.SetBool("isAttacking", false);
             anim.SetBool("isWalking", false);

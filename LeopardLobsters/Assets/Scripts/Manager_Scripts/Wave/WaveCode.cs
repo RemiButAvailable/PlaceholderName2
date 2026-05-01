@@ -204,6 +204,7 @@ public class WaveCode : MonoBehaviour
                     Vector3 offsetEnemySpawnPos = new Vector3(EnemySpawnSpot.x + enemySpawnPosOffsetFloat, EnemySpawnSpot.y + enemySpawnPosOffsetFloat, 0);
                     knightScript.offset = new Vector3(enemySpawnPosOffsetFloat, enemySpawnPosOffsetFloat, 0);
                     knightScript.order = PhantomEnemyNum;
+                    EnemyNum++;
                     Debug.Log("spawned boss");
 
                     //Start Music

@@ -18745,6 +18745,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 765353319}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: peopleMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 71087717}
@@ -18752,6 +18756,10 @@ PrefabInstance:
       propertyPath: textPeopleIn
       value: 
       objectReference: {fileID: 1037222312}
+    - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
+      propertyPath: peopleAtCastle
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5256602122703259530, guid: e67e966444adaad4da4357eec0712194, type: 3}
       propertyPath: textPeopleTotal
       value: 

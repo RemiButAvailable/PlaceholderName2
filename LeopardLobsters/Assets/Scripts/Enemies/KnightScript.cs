@@ -70,7 +70,6 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
     [SerializeField] AudioResource hitDeathSound;
 
     [SerializeField] AudioPlayer aPlayerPrefab;
-    [SerializeField] AudioPlayer aHitSoundPrefab;
     [SerializeField] float deathSoundVolume = .5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -151,10 +150,10 @@ public class KnightScript : MonoBehaviour, IComparable<KnightScript>
 
         moneyManagerScript.ChangeMoney(money);
         //sounds
-        AudioPlayer aPlayer = Instantiate(aPlayerPrefab);
-        AudioPlayer aHitSound = Instantiate(aHitSoundPrefab);
-        aPlayer.playClip(transform.position, hitDeathSound, deathSoundVolume);
-        aHitSoundPrefab.playClip(transform.position, deathSound, deathSoundVolume);
+        AudioPlayer aDeathSound = Instantiate(aPlayerPrefab);
+        AudioPlayer aHitSound = Instantiate(aPlayerPrefab);
+        aHitSound.playClip(transform.position, hitDeathSound, deathSoundVolume);
+        aDeathSound.playClip(transform.position, deathSound, deathSoundVolume);
 
         Destroy(gameObject);
     }

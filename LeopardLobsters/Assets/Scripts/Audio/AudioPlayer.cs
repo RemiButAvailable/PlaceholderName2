@@ -53,6 +53,8 @@ public class AudioPlayer : MonoBehaviour
     //destroys iteself when done.
     public void Update()
     {
-        if (started && !player.isPlaying) Destroy(gameObject);
+        if (started && !player.isPlaying) { 
+            Destroy(gameObject); 
+        }
     }
 }

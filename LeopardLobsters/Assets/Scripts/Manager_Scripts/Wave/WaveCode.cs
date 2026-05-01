@@ -32,6 +32,8 @@ public class WaveCode : MonoBehaviour
     private int order;
     private int pointInWaveAtWhichBossSpawns;
     private int probOfFastEnemyDeterminerStartingVal;
+    private int cooldownStartingVal;
+    private bool bossHasntSpawnedYet = true;
 
     //Prefabs
     public GameObject bossEnemy;
@@ -112,6 +114,7 @@ public class WaveCode : MonoBehaviour
         StartCoroutine(Spawner(cooldown));
 
         probOfFastEnemyDeterminerStartingVal = probOfFastEnemyDeterminer;
+        cooldownStartingVal = cooldown;
     }
 
     private void Awake()
@@ -197,8 +200,9 @@ public class WaveCode : MonoBehaviour
                 }
                 enemiesStartedSpawning = true;
 
-                if (PhantomEnemyNum == pointInWaveAtWhichBossSpawns && WaveNum == waveAtWhichBossSpawns)//spawn boss
+                if (PhantomEnemyNum == pointInWaveAtWhichBossSpawns && WaveNum >= waveAtWhichBossSpawns && bossHasntSpawnedYet)//spawn boss
                 {
+                    bossHasntSpawnedYet = false;
                     spawnedBossEnemy = Instantiate(bossEnemy, EnemySpawnSpot, Quaternion.identity);
                     KnightScript knightScript = spawnedBossEnemy.GetComponent<KnightScript>();
                     knightScript.lineRenderer = enemyPath;
@@ -231,6 +235,7 @@ public class WaveCode : MonoBehaviour
             EnemyMax = (int)Mathf.Round(EnemyMax * enemyMaxMultiplier);
             PhantomEnemyNum = 0;
             probOfFastEnemyDeterminer = probOfFastEnemyDeterminerStartingVal;
+            cooldown = cooldownStartingVal;
 
             int RandomNum = Random.Range(0, 2);
             EnemySpawnStart = EnemySpawnPositions[RandomNum];

@@ -144,8 +144,8 @@ public class WaveCode : MonoBehaviour
             {
                 cooldown -= PhantomEnemyNum * 0.01f;//cooldown decreases over the course of the wave as the amount of enemies increases
 
-                if (PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies && probOfFastEnemyDeterminer > 4 /*min amount probOfFastEnemyDeterminerCanBe*/)//if a certain amount of enemies have spawned and the prob of fast enemy determiner hasn't decreased too much, decrease it
-                    probOfFastEnemyDeterminer -= 1;
+                if (PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies && probOfFastEnemyDeterminer < 12 /*min amount probOfFastEnemyDeterminerCanBe*/)//if a certain amount of enemies have spawned and the prob of fast enemy determiner hasn't decreased too much, decrease it
+                    probOfFastEnemyDeterminer += 1;
 
                 if (PhantomEnemyNum <= phantomEnemyNumBeforeAltEnemies)
                 {
@@ -170,10 +170,10 @@ public class WaveCode : MonoBehaviour
                 for (int i = 0; i < enemyClumpSize; i++)
                 {
                     //select an enemy type. The prob of getting a fast one increases over the course of the game
-                    if(PhantomEnemyNum < phantomEnemyNumBeforeAltEnemies)
+                    if(PhantomEnemyNum > phantomEnemyNumBeforeAltEnemies)
                     {
-                        int RandomNumTwo = Random.Range(0, 1 + probOfFastEnemyDeterminer);
-                        if (RandomNumTwo >= 1)
+                        int RandomNumTwo = Random.Range(0, 5 + probOfFastEnemyDeterminer);
+                        if (RandomNumTwo >= 5)
                             RandomNumTwo = 1;
 
                         selectedEnemy = enemies[RandomNumTwo];

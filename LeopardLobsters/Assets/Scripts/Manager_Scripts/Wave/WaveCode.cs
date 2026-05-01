@@ -1,5 +1,5 @@
 /* Name: WaveCode.cs
- * Author: Victoria T, Remi de Plater, Albert Tan
+ * Authors: Victoria T, Remi de Plater, Albert Tan
  * Date: 3/16/26
  * E-Mail: victoria.troshkov@digipen.edu
  * 
@@ -31,6 +31,7 @@ public class WaveCode : MonoBehaviour
     private int PhantomEnemyNum = 0; //amount of enemies that have spawned since the wave started
     private int order;
     private int pointInWaveAtWhichBossSpawns;
+    private int probOfFastEnemyDeterminerStartingVal;
 
     //Prefabs
     public GameObject bossEnemy;
@@ -109,6 +110,8 @@ public class WaveCode : MonoBehaviour
 
         DontDestroyOnLoad(this);
         StartCoroutine(Spawner(cooldown));
+
+        probOfFastEnemyDeterminerStartingVal = probOfFastEnemyDeterminer;
     }
 
     private void Awake()
@@ -224,6 +227,7 @@ public class WaveCode : MonoBehaviour
             WaveNum++;
             EnemyMax = (int)Mathf.Round(EnemyMax * enemyMaxMultiplier);
             PhantomEnemyNum = 0;
+            probOfFastEnemyDeterminer = probOfFastEnemyDeterminerStartingVal;
 
             int RandomNum = Random.Range(0, 2);
             EnemySpawnStart = EnemySpawnPositions[RandomNum];

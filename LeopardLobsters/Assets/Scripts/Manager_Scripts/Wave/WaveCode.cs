@@ -175,6 +175,8 @@ public class WaveCode : MonoBehaviour
                         int RandomNumTwo = Random.Range(0, 5 + probOfFastEnemyDeterminer);
                         if (RandomNumTwo >= 5)
                             RandomNumTwo = 1;
+                        else
+                            RandomNumTwo = 0;
 
                         selectedEnemy = enemies[RandomNumTwo];
                     }

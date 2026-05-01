@@ -3482,8 +3482,8 @@ MonoBehaviour:
   - {fileID: 6679188643013759877, guid: 46caf2468df8c8e45b658782927a6806, type: 3}
   enemyPaths:
   - {fileID: 694960353}
-  - {fileID: 1460171686}
   - {fileID: 1067015714}
+  - {fileID: 1460171686}
   waveStarted:
     m_PersistentCalls:
       m_Calls: []
@@ -3507,7 +3507,7 @@ MonoBehaviour:
   enemyMaxMultiplier: 1.5
   pointInWaveAtWhichBossSpawnsRandomnessMin: 0
   pointInWaveAtWhichBossSpawnsRandomnessMax: 19
-  waveAtWhichBossSpawns: 8
+  waveAtWhichBossSpawns: 4
 --- !u!1 &621185549
 GameObject:
   m_ObjectHideFlags: 0

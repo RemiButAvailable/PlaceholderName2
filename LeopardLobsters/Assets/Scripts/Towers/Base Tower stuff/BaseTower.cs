@@ -132,7 +132,7 @@ public class BaseTower : MonoBehaviour
     public void Placed() { 
         //changes sprite layer from UI 2
         towerSprite.sortingLayerID = SortingLayer.NameToID("Default");
-        towerSprite.sortingOrder = 0;
+        towerSprite.sortingOrder = 10;
         OnPlace.Invoke(this);
     }
 

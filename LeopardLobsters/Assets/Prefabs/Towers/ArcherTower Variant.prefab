@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1555016454559816582}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.32200003, y: -0.12, z: -0.0038874801}
+  m_LocalPosition: {x: 0.32200003, y: -0.12, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.12500001}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 89804693, guid: 7c85ede3fc742b94b8b6151f01442777, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -170,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 3423567526666622061}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.377, y: -0.12, z: -0.0038874801}
+  m_LocalPosition: {x: -0.377, y: -0.12, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.12500001}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -219,7 +219,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 89804693, guid: 7c85ede3fc742b94b8b6151f01442777, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -554,7 +554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2898813432193744242, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2898813432193744242, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       propertyPath: m_LocalRotation.w
@@ -615,6 +615,18 @@ PrefabInstance:
     - target: {fileID: 6938744550829511025, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938744550829511025, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938744550829511025, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938744550829511025, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6938744550829511025, guid: abbf0ae0f2febcf418ca30d261416c17, type: 3}
       propertyPath: m_WasSpriteAssigned

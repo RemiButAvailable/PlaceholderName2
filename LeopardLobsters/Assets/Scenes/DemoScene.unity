@@ -2269,8 +2269,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 100
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -8053,6 +8053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neighborhood 1
       objectReference: {fileID: 0}
+    - target: {fileID: 51896977982719558, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 709671868741874179, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
       propertyPath: m_Tiles.Array.size
       value: 50
@@ -8498,6 +8502,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -5565349990999575122, guid: 42a1c3bafa7ddf64e8d92c7908c1c6b6, type: 3}
     - target: {fileID: 709671868741874179, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[21].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 709671868741874179, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[22].m_Data
       value: 
       objectReference: {fileID: 4305298862021019424, guid: 42a1c3bafa7ddf64e8d92c7908c1c6b6, type: 3}
@@ -8800,6 +8808,10 @@ PrefabInstance:
     - target: {fileID: 709671868741874179, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[19].m_RefCount
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 709671868741874179, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[21].m_RefCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 709671868741874179, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[22].m_RefCount
@@ -9608,6 +9620,14 @@ PrefabInstance:
     - target: {fileID: 4513324523903683737, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
       propertyPath: m_Tiles.Array.data[3].second.m_TileObjectToInstantiateIndex
       value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153345763555735862, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572467362467778573, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7797148616264088384, guid: dac55392052fa2d4dbac451a160ab979, type: 3}
       propertyPath: m_LocalPosition.x
